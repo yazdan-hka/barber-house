@@ -12,7 +12,6 @@ def home_page():
 
     search_form = braider_finder_form()
     name = 'BRAIDSTARZ'
-    loged_in = False
     true_user = False
 
     sub_form = subscribe_form()
@@ -213,6 +212,7 @@ def profile_page(username):
 
     return render_template('profile.html', info=info, sub_form=sub_form, loged_in=loged_in, true_user=true_user, name=name)
 
+
 @app.route('/edit-profile', methods=['GET', 'POST'])
 def edit_profile_page():
 
@@ -220,7 +220,6 @@ def edit_profile_page():
     
     sub_form = subscribe_form()
     subscribe(sub_form)
-    name, loged_in , true_user= authenticated(current_user, true_user, name)
 
     if edit_form.validate_on_submit():
 
