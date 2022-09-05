@@ -7,7 +7,7 @@ from BRAIDSTARZ.func import find_braiders, subscribe, authenticated
 
 
 @app.route('/', methods=['GET', 'POST'])
-@app.route('/home', methods=['GET', 'POST'])
+@app.route('/home/', methods=['GET', 'POST'])
 def home_page():
 
     search_form = braider_finder_form()
@@ -18,7 +18,7 @@ def home_page():
     sub_form = subscribe_form()
     subscribe(sub_form)
 
-    name, loged_in , true_user= authenticated(current_user, true_user, name)
+    name, loged_in, true_user = authenticated(current_user, true_user, name)
 
     if search_form.validate_on_submit():
 
