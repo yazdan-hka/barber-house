@@ -335,7 +335,7 @@ def collection_page():
     true_user = False
 
     images = []
-    i = 0
+    i = 1
 
     while i <= 78:
 
