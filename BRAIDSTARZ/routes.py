@@ -343,8 +343,7 @@ def collection_page():
 
         i = i + 1
 
-
-    name, loged_in , true_user= authenticated(current_user, true_user, name)
+    name, loged_in, true_user = authenticated(current_user, true_user, name)
 
     sub_form = subscribe_form()
     subscribe(sub_form)
@@ -363,7 +362,7 @@ def collection_filter_page():
     sub_form = subscribe_form()
     subscribe(sub_form)
 
-    name, loged_in , true_user= authenticated(current_user, true_user, name)
+    name, loged_in, true_user = authenticated(current_user, true_user, name)
 
     filter_form = collection_filter_form()
 
