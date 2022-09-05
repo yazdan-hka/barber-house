@@ -2,6 +2,7 @@ from BRAIDSTARZ import db, login_manager
 from BRAIDSTARZ import bcrypt
 from flask_login import UserMixin
 
+
 @login_manager.user_loader
 def load_user(user_id):
     return braiders.query.get(user_id)

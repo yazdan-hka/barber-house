@@ -6,7 +6,6 @@ from flask_login import login_user, current_user, logout_user
 from BRAIDSTARZ.func import find_braiders, subscribe, authenticated
 
 
-
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/home', methods=['GET', 'POST'])
 def home_page():

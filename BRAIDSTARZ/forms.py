@@ -5,7 +5,6 @@ from wtforms.validators import Length, EqualTo, Email, DataRequired, ValidationE
 from BRAIDSTARZ.models import braiders
 
 
-
 class register_form(FlaskForm):
 
     def validate_username(self, username_to_check):
