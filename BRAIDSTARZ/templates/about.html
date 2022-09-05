@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  About | BRAIDSTARZ
+{% endblock %}
+
+{% block style %}
+    .container {
+    height:max-content;
+    width:90%;
+    box-shadow:0 0 10px #330033;
+  }
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="content-text-black">
+        BRAIDSTARZ, your favorite place if you are addicted to <b class="content-text-black">braids</b>.
+    </h1>
+    <h4 class="content-text-black">
+        We are a company which provide cool features for those ones who are <b class="content-text-black">looking for a braider</b>
+        and for those <b class="content-text-black">braiders</b> that would like to grow.
+    </h4>
+    <h4 class="content-text-black">
+      check out our <a href="{{ url_for('home_page') }}">braider finder</a> engine.
+    </h4>
+  </div>
+  <br>
+  <br>
+{% endblock %}
+
+<!---->

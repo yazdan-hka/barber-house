@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block style %}
+<!-- <style> -->
+
+.filters{
+    background-color:rgba(0, 0, 0, 0.493);
+
+}
+
+option {
+    color:grey;
+    background-color:black;
+    font-family:monospace;
+    transition:0.5s ease-out;
+    font-size:0.7em;
+  
+}
+
+
+
+option:first-child{
+
+    text-align: center;
+    font-size:1em;
+    background-color:#330033;
+    color:white;
+    text-shadow: 0 0 8px black;
+}
+
+select{
+    border:none;
+    padding:6px;
+    margin:13px 8px 8px 8px;
+    font-size:2em;
+    background-color:#330033;
+    color:white;
+    transition:0.3s ease-out;
+
+
+}
+select:hover{
+    background-color:black;
+    color:white;
+    box-shadow:0 0 15px #330033;
+    
+}
+select:focus{
+    background-color:#330033;
+    box-shadow:0 0 15px black;
+}
+
+
+{% endblock %}
+
+{% block content %}
+  <div class="cf-container">
+      <center>
+      <h1>Whats On Your Mind?</h1>
+      </center>
+      <h3 style=''>Explore Our Braid Collection And Find Exactly What You Want Or Better Of It.</h3>
+
+      <div class="filters">
+        <center>
+          <form method="POST">
+
+          <h2>Select Braid Style:</h2>
+          {{ filter_form.styles }}
+
+          <h2>For Under 14 Years Old:</h2>
+          {{ filter_form.under14 }}
+    
+          <h2>Special:</h2>
+          {{ filter_form.special }}
+
+          </form>
+        </center>
+      </div>
+  </div>
+{% endblock %}

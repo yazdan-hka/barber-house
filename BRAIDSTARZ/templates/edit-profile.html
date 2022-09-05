@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Edit Profile | BRAIDSTARZ
+{% endblock %}
+
+{% block style %}
+  .register-div {
+      width:80%;
+  }
+{% endblock %}
+
+{% block content %}
+  <center>
+  <div class="register-div">
+    <h2 class="content-text-black">
+      Edit your profile info!
+    </h2>
+    <br>
+    <h5 style="font-size:2rem" class="content-text-black">
+      The information you enter, help us to show it to customers near you.<br>So for a better experience
+      for you and us,
+    </h5>
+    <h4 style="font-size:2.2rem" class="content-text-black">
+      please enter the <b class="cool-text">INFORMATION CORRECTLY.</b>
+    </h4>
+
+      <form method="POST" class="form-register" style="color:black;">
+
+        {{ edit_form.hidden_tag() }}
+
+        {{ edit_form.username.label(class="content-text-black", style="font-size:2rem;") }}<br>
+        {{ edit_form.username(class="input-text-black", placeholder="braider123...") }}<br>
+
+        {{ edit_form.fullname.label(class="content-text-black", style="font-size:2rem;") }}<br>
+        {{ edit_form.fullname(class="input-text-black", placeholder="e.g. Braid Starz") }}<br>
+
+        {{ edit_form.email.label(class="content-text-black", style="font-size:2rem;") }}<br>
+        {{ edit_form.email(class="input-text-black", placeholder="e.g. braidstarz@gmail.com") }}<br>
+
+        {{ edit_form.phone_num.label(class="content-text-black", style="font-size:2rem;") }}<br>
+        {{ edit_form.phone_num(class="input-text-black", placeholder="e.g. 0123456789") }}<br>
+
+        {{ edit_form.country.label(class="content-text-black", style="font-size:2rem;") }}<br>
+        {{ edit_form.country(class="input-text-black", placeholder="e.g. United States") }}<br>
+
+        {{ edit_form.city.label(class="content-text-black", style="font-size:2rem;") }}<br>
+        {{ edit_form.city(class="input-text-black", placeholder="e.g. New York") }}<br>
+
+        {{ edit_form.address.label(class="content-text-black", style="font-size:2rem;") }}<br>
+        {{ edit_form.address(class="input-text-black", placeholder="you or your salon address(optional)") }}<br>
+
+        {{ edit_form.website.label(class="content-text-black", style="font-size:2rem;") }}<br>
+        {{ edit_form.website(class="input-text-black", placeholder="e.g. braidstarz.com(optional)") }}<br>
+
+        {{ edit_form.instagram.label(class="content-text-black", style="font-size:2rem;") }}<br>
+        {{ edit_form.instagram(class="input-text-black", placeholder="e.g. braidstarz(optional)") }}<br>
+
+        {{ edit_form.twitter.label(class="content-text-black", style="font-size:2rem;") }}<br>
+        {{ edit_form.twitter(class="input-text-black", placeholder="e.g. braidstarz(optional)") }}<br>
+
+        {{ edit_form.youtube.label(class="content-text-black", style="font-size:2rem;") }}<br>
+        {{ edit_form.youtube(class="input-text-black", placeholder="...(optional)") }}<br>
+
+        <br><br>
+        {{ edit_form.submit(style="font-weight:bold; box-shadow:0 0 8px #330033;height:6rem;" ,class="inline-link-1") }}
+
+      </form>
+    </div>
+<br><br>
+  </center>
+{% endblock %}

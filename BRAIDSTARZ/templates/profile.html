@@ -1,0 +1,347 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  {{ info.username }} | BRAIDSTARZ
+{% endblock %}
+
+{% block style %}
+
+    .pro {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      width: 95%;
+      height: 100%;
+      background-color: #b9b9b9;
+      box-shadow: 0 0 10px #330033;
+      border-radius:15px;
+      padding:6px;
+    }
+
+    .pro-info {
+      width: 100%;
+      height: min-content;
+      background-color: transparent;
+      border-radius:15px;
+    }
+
+    .pro-pic{
+        justify-content: center;
+        width: 70%;
+        height: 32rem;
+        border:1px solid #330033;
+        transition: ease-in-out 1s;
+    }
+
+    .pro-pic:hover{
+        justify-content: center;
+        width: 80%;
+        height: 35rem;
+        transition: ease-in-out 1s;
+        box-shadow:0 0 30px #330033;
+        border-bottom:0px solid #330033;
+    }
+
+    .pro-pic img{
+        width: 16rem;
+        height: 16rem;
+        border-radius:4rem;
+        box-shadow:0 0 10px black;
+    }
+
+    .pro-text {
+        width: 90%;
+        height: 50vh;
+        background: #cccccc;
+        border-radius:15px;
+        box-shadow: 0 0 10px #330033;
+    }
+
+    .pro-info-2 {
+      justify-content: center;
+      width: 70%;
+      height: 100%;
+      transition: ease-in-out 1s;
+      border:1px solid #330033;
+    }
+
+    .pro-info-2 a{
+      background-color: #330033;
+        justify-content: center;
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        line-height: 1.42857143;;
+        text-shadow: 1px 0.5px 1px black;
+        text-align: center;
+        padding: 3px;
+        border-radius: 4px;
+        box-sizing: border-box;
+        color: #9c9c9c;
+        margin: 0.8rem 1rem 0.8rem 0;
+        transition: 0.3s ease-out;
+        box-shadow: 0 0 7px black;
+
+    }
+
+    .pro-info-2 a:hover{
+        color: #101010;
+        background-color: #a02ca077;
+        text-shadow: 0px 0px 2px #330033;
+        border-radius: 5px;
+        box-shadow: 0 0 30px black;
+        transition: 0.3s ease-out;
+        font-size:2.1rem;
+
+    }
+    .back-to-home b:hover{
+        color: #330033;
+        background-color: #101010;
+        text-shadow: 0px 0px 2px black;
+        border-radius: 5px;
+        box-shadow: 0 0 30px black;
+        transition:all 0.3s ease-out;
+        font-size:3rem;
+        padding:3px;
+
+  }
+
+  .back-to-home b{
+      text-shadow:3px 1px 2px #330033;
+      color:#1f1f1f;
+      transition:all 0.3s ease-out;
+
+}
+
+    .pro-info-2:hover{
+        justify-content: center;
+        width: 80%;
+        height: 100%;
+        transition: ease-in-out 1s;
+        box-shadow:0px 20px 30px #330033;
+    }
+
+    .back-to-home {
+      background:#101010;
+      width:100%;
+      height:min-content;
+      padding:2rem 4rem 2rem 4rem;
+      transition:1.5s ease-out;
+      box-shadow:0 -5px 10px #330033;
+    }
+
+    .back-to-home:hover {
+      background:#330033;
+      width:100%;
+      height:min-content;
+      box-shadow:0 -20px 50px black;
+      transition:1.5s ease-out;
+    }
+
+    .log-out {
+        width:16rem;
+        height:min-content;
+        background:rgba(100,1,1,0.9);
+        border:solid 1px #330033;
+        border-radius:2rem;
+        transition:all ease-out 0.3s;
+        text-align:center;
+
+    }
+
+    .log-out:hover {
+        box-shadow:0 0 70px #330033;
+        background-color:black;
+        border-radius:0rem;
+        height:4.3rem;
+    }
+
+    .edit-pro:hover {
+        box-shadow:0 0 70px #330033;
+        background-color:black;
+        border-radius:0rem;
+        height:4.3rem;
+    }
+
+    .edit-pro {
+        background:rgba(1,1,1,0.9);
+        border:solid 1px #330033;
+        width:16rem;
+        height:min-content;
+        border-radius:2rem;
+          transition:all ease-out 0.3s;
+        text-align:center;
+        box-shadow:0 0 5px #330033;
+    }
+
+    .btnq-div {
+        width:100%;
+        height:min-content;
+        min-height:42px;
+        background-color:transparent;
+    }
+    .ed{
+        width:50%;
+        height:42px;
+        min-width:min-content;
+        background-color:transparent;
+        display:inline;
+    }
+    .ld{
+        width:50%;
+        height:42px;
+        min-width:min-content;
+        background-color:transparent;
+        display:inline;
+    }
+{% endblock %}
+
+{% block content %}
+{% if true_user==True %}
+
+  <div class="btnq-div">
+    <div class='ld'>
+      <center>
+
+        <a href="{{url_for('logout_page')}}">
+
+          <button class="log-out">
+            <h3 style="margin:7px;" class="content-text-white">
+              log out
+            </h3>
+          </button>
+
+        </a>
+
+      </center>
+    </div>
+    <br>
+    <div class='ed'>
+      <center>
+
+        <a href="{{url_for('edit_profile_page')}}">
+
+          <button class="edit-pro">
+            <h3 style='margin:7px;'  class="content-text-white">
+              edit profile
+            </h3>
+          </button>
+
+        </a>
+
+      </center>
+    </div>
+  </div>
+
+{% endif %}
+<center>
+  <div class="pro"><br><br>
+    <div class="pro-info">
+      <div class="pro-pic">
+        <img style="width:10rem;" src="https://i.pinimg.com/originals/50/d3/25/50d325a729713b2c2e3ae1ead77778ef.jpg" alt="braidstarz {{ info.fullname }} account">
+      </div>
+      <div style="padding:1px" class="pro-text">
+        <h2  class="content-text-black">
+          {{ info.fullname }}
+        </h2>
+        <h3 style="font-size:1.7rem;margin-top:-6px; color: #330033; text-decoration: underline;" class="content-text-black">
+          @{{ info.username }}
+        </h3>
+        <br>
+        <i class="material-icons" style="text-align: left; font-size:3rem;color:#cccccc; text-shadow: 0 0 7px #101010; float: left;">place</i>
+        <h4 style="background-color: #101010; box-shadow: 0 0 4px black; width: 100%; padding: 9px; float:inline-start; text-align: left; font-size:1.8rem;margin-top:-3px" class="braider-info-text content-text-white">
+          {{ info.country }}, {{ info.city }} | {{ info.address }}
+        </h4><center>
+
+        <h2 style="background-color: #b9b9b9; box-shadow: 0 0 4px black; width: 100%; padding: 9px; font-size:3rem; display: inline; border-radius: 10px;" class="braider-info-text content-text-black"><i class="material-icons" style="width: min-content; font-size:3rem;color:#101010; text-shadow: 0 0 7px #101010; ">local_phone</i>
+          {{ info.phone_num }}
+        </h2></center>
+        <!--           <i class="material-icons" style="text-align: left; font-size:3.5rem;color:#330033; text-shadow: 0 0 7px #101010;">place</i>
+
+                  <i class="material-icons" style="text-align: left; font-size:3rem;color:#101010; text-shadow: 0 0 7px #101010; float: left;">local_phone</i>
+        <h2 style="background-color: #b9b9b9; box-shadow: 0 0 4px black; width: 100%; padding: 9px; float:inline-start; text-align: left; font-size:2.2rem;margin-top:-3px" class="braider-info-text content-text-black">
+         09384272106
+        </h2>
+        -->
+      </div>
+    </div>
+    <div class="pro-info-2">
+      <center>
+        <h1 style="width: min-content;" class="content-text-black"><br>
+          Check {{ info.fullname }}'s social media or book an apointment:
+        </h1><br><br>
+        <h5 style="padding:3px; font-size:2rem;" class="content-text-black">
+          Instagram ID:<br><br>
+          {% if info.instagram %}
+            <a target="_blank" href="https://www.instagram.com/{{ info.instagram }}">
+              @{{ info.instagram }}
+            </a>
+          {% else %}
+            <a href="{{url_for('home_page')}}">
+              no instagram
+            </a>
+        {% endif %}
+        </h5>
+        <h5 style="padding:3px; font-size:2rem;" class="content-text-black">
+          Twitter ID:<br><br>
+
+            {% if info.twitter %}
+              <a target="_blank" href="https://www.twitter.com/{{ info.twitter }}">
+                @{{ info.twitter }}
+              </a>
+            {% else %}
+              <a href="{{url_for('home_page')}}">
+                no twitter
+              </a>
+            {% endif %}
+        </h5>
+        <h5 style="padding:3px; font-size:2rem;" class="content-text-black">
+          Youtube ID:<br><br>
+
+        {% if info.youtube %}
+          <a target="_blank" href="https://www.youtube.com/{{ info.youtube }}">
+            @{{ info.youtube }}
+          </a>
+        {% else %}
+          <a href="{{url_for('home_page')}}">
+            no youtube
+          </a>
+        {% endif %}
+        </h5>
+        <h5 style="padding:3px; font-size:2rem;" class="content-text-black">
+          Email Address :<br><br>
+          <a href="#">
+            {{ info.email }}
+          </a>
+        </h5>
+        <h5 style="padding:3px; font-size:2rem;" class="content-text-black">
+        Webstie Address:<br><br>
+           {% if info.website %}
+          <a target="_blank" href="www.{{ info.website }}">
+            {{ info.website }}
+          </a>
+        {% else %}
+          <a href="{{url_for('home_page')}}">
+            no website
+          </a>
+        {% endif %}
+        </h5>
+        <br>
+      </center>
+    </div><br><br>
+  </div>
+  {% if true_user == False %}
+  <div class="back-to-home">
+    <h2  style="text-shadow: 1px 1px 3px black; padding:0px;" class="content-text-white">
+      Wasn't {{info.fullname}} the right braider for you?<br>
+      <br>No problem!<br><br>
+      Get back to
+      <a href="{{url_for('home_page')}}">
+        <b class="cool-text">
+          Braider Finder
+        </b>
+      </a>
+      now.
+    </h2><br>
+  </div>
+  {% endif %}
+</center>
+{% endblock %}

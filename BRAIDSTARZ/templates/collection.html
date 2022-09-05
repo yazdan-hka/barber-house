@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block style %}
+  .container{
+    width:100%;
+    padding:10px;
+  }
+  .box{
+    width:190px;
+    height:210px;
+    transition:0.4s ease-out;
+    background-color:#330033;
+    float:left;
+    margin:10px;
+  }
+  .image{
+    max-height:190px;
+    max-width:190px;
+    transition:0.4s ease-out;
+
+  }
+  .box:hover .image{
+    max-height:170px;
+    max-width:170px;
+    opacity:90%;
+    box-shadow:20px 0px 0px #330033;
+
+  }
+      
+  .box:hover .image-info{
+    opacity:100%;
+    transition:0.4s ease-out;
+  }
+  .box:hover{
+    background-color:transparent;
+    border:solid 1px black;
+    background-color:rgba(0, 0, 0, 0.246);
+    box-shadow:0 0 10px black;
+  }
+  .image-info{
+    width:100%;
+    height:min-content;
+    transition:0.4s ease-out;
+    opacity:0%;
+  }
+ 
+  h3{
+    text-transfrom:capitalize;  
+    margin:0;
+  }
+  .inline-link-1{
+    width:max-content;
+    padding:4px;
+    margin:13px;
+    box-shadow:0 0 7px #330033;
+  }
+  .inline-link-1:hover{
+    width:max-content;
+    padding:4px;
+    margin:13px;
+    box-shadow:0 0 50px black;
+
+  }
+{% endblock %}
+
+{% block content %}
+
+  <div class="container">
+    {% for i in images %}
+      <div class="box">
+        <img class="image" src='{{url_for("static", filename="images/normal-design-braid/" + i + ".jpg")}}' alt="braidstarz logo"> 
+          <div class="image-info">
+            <a href="{{url_for('collection_page')}}">
+              <center>
+                <button class="inline-link-1">
+                  <b>
+                    Click For Details  
+                  </b>
+                </button>
+              </center>
+            </a>
+          </div>
+        </div>  
+    {% endfor %}  
+  </div>
+
+{% endblock %}

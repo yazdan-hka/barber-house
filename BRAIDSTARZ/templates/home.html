@@ -1,0 +1,449 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Find braiders or salons near you for hair braiding | BraidStarz
+{% endblock %}
+
+{% block style %}
+
+
+strong{
+color:black;
+font-weight:bold;
+text-shadow:0 0 5px purple;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 2px solid #330033;
+  border-bottom: none;
+  border-top: none;
+  width:max-content;
+background-color:transparent;
+<!--  z-index: 99;-->
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+box-shadow:0 0 20px #330033;
+transition:all ease-out 0.3s;
+  right: 0;
+}
+.autocomplete-items div {
+  transition: all ease-out 0.4s;
+  padding: 10px;
+  cursor: pointer;
+  color:black;
+box-shadow:0 5px 6px #330033;
+  background-color: #cccccc;
+margin-bottom:5px;
+
+}
+.autocomplete-items div {
+font-size:1.5em;
+}
+
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: purple;
+}
+.autocomplete-active {
+
+  background-color: #330033 !important;
+  color: #cccccc;
+}
+
+
+   .register-div {
+        width:80%;
+        text-align:center;
+        height:40vh;
+        background-color:rgba(10, 10, 10, 0.6);
+        border:1px solid black;
+        box-shadow: 5px 5px 1px black;
+   }
+   .register-btn {
+        color:#212121;
+        width:60%;
+        background-color:#cccccc;
+        height:4rem;
+        border:3px solid black;
+        transition:0.2s;
+   }
+
+   .register-btn:hover {
+        transition:0.2s;
+        color:#212121;
+        width:66%;
+        background-color:#000000;
+        height:4rem;
+        border:3px solid black;
+   }
+
+   .flexbox {
+      background: #9b9b9b;
+      width:90%;
+      height:max-content;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      border: 2px black solid;
+      transition:all ease-out 1s;
+      box-shadow:0 0 3px #330033;
+   }
+
+   .flexbox:hover {
+
+      width:94%;
+      height:max-content;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      box-shadow:0 0 50px #330033;
+      transition:all ease-out 1s;
+   }
+
+   .search {
+      margin:20px;
+   }
+
+   .search > h1{
+      margin-bottom:25px;
+   }
+
+   .search > div {
+    display:inline-block;
+    position:relative;
+   }
+
+   .search > div:after {
+     content: "";
+     background:#101010;
+     box-shadow:0 0 4px black;
+     width:5px;
+     height:40px;
+     position:absolute;
+     top:6.3rem;
+     right:0;
+     transform:rotate(135deg);
+     border-radius:2px;
+   }
+
+   .search > div > form > div > input {
+     font-weight:700;
+     font-size: 2rem;
+     color:#101010;
+     background:purple;
+     box-shadow:0 0 4px black;
+     height:8rem;
+     width:8rem;
+     padding:10px;
+     border:solid 3px #101010;
+     outline:none;
+     border-radius:4rem;
+     transition:width 0.5s;
+     transition:all 0.4s ease-out;
+   }
+
+   .search > div > form > div > input:hover {
+      background:#666666;
+      transition:all 0.4s ease-out;
+  }
+
+   .search > div > form > div > input::placeholder {
+     font-weight:700;
+     font-size: 2rem;
+     color:#101010;
+     opacity:0;
+     transition:opacity 150ms ease-out;
+
+   }
+
+   .search > div > form > div > input:focus::placeholder {
+    opacity:1;
+  }
+
+  .search > div > form > div > input:focus,
+  .search > div > form > div > input:not(:placeholder-shown) {
+    width:25rem;
+  }
+
+
+{% endblock %}
+
+{% block content %}
+  <center>
+    <div style="width:80%;">
+      <h2 class="content-text-black">
+        Hello, Braid lover!<br>
+        BraidStarz love <b class="content-text-black">braid</b> & provide incredible services to those who like <b class="content-text-black">braids</b> too.<br><br>
+      </h2>
+      <p style="font-size:1.75rem;" class="content-text-black">Enjoy our services.<br>for both <b class="content-text-black">Braiders </b>&<b class="content-text-black"> Customers.</b></p>
+    </div>
+  </center>
+  <center>
+
+<!--           <form method="POST">
+            {{ search.hidden_tag() }}
+            {{ search.search_content(class="input-text-black", style="font-size:2rem;") }}
+            <br>
+            {{ search.submit(class="inline-link-1", style="font-size:2rem;") }}<br> -->
+
+    <div class="flexbox">
+      <div class="search">
+        <h1 class='content-text-black'>
+          Find your braider now!
+        </h1>
+        <h3 style="text-align: left;" class='content-text-black'>
+          Easily click on the search icon bellow and find <b class='content-text-black'>braiders around you</b> by searching:<br><br>1. Your <b class='cool-text'>City</b><br>2. Your <b class='cool-text'>Country</b><br>3. The <b class='cool-text'>Braider name</b><br>4. Their <b class='cool-text'>Social meida ID</b><br><br>
+        </h3>
+        <div>
+          <form method="POST" autocomplete="off">
+            {{ search.hidden_tag() }}
+            <div style="width: min-content; height: min-content;">
+              {{ search.search_content(placeholder="Search...", type="text", id="autocomplete") }}
+            </div><br><br><br>
+              {{ search.submit(class="inline-link-1", style="width:8rem; font-size:2rem;") }}
+          </form>
+          <br><br><br>
+        </div>
+      </div>
+    </div>
+<script>
+    function autocomplete(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+          /*insert a input field that will hold the current array item's value:*/
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+          /*execute a function when someone clicks on the item value (DIV element):*/
+              b.addEventListener("click", function(e) {
+              /*insert the value for the autocomplete text field:*/
+              inp.value = this.getElementsByTagName("input")[0].value;
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:*/
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        /*If the arrow DOWN key is pressed,
+        increase the currentFocus variable:*/
+        currentFocus++;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        /*If the arrow UP key is pressed,
+        decrease the currentFocus variable:*/
+        currentFocus--;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+        e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+      x[i].parentNode.removeChild(x[i]);
+    }
+  }
+}
+/*execute a function when someone clicks in the document:*/
+document.addEventListener("click", function (e) {
+    closeAllLists(e.target);
+});
+}
+
+/*An array containing ingredients*/
+var ingredients = ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Botswana', 'Brazil', 'Brunei', 'Bulgaria', 'Burkina Faso', 'Burundi', "Cأ´te d'Ivoire", 'Cabo Verde', 'Cambodia', 'Cameroon', 'Canada', 'Central African Republic', 'Chad', 'Chile', 'China', 'Colombia', 'Comoros', 'Congo (Congo-Brazzaville)', 'Costa Rica', 'Croatia', 'Cuba', 'Cyprus', 'Czechia (Czech Republic)', 'Democratic Republic of the Congo', 'Denmark', 'Djibouti', 'Dominica', 'Dominican Republic', 'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 'Eritrea', 'Estonia', 'Eswatini (fmr. "Swaziland")', 'Ethiopia', 'Fiji', 'Finland', 'France', 'Gabon', 'Gambia', 'Georgia', 'Germany', 'Ghana', 'Greece', 'Grenada', 'Guatemala', 'Guinea', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Holy See', 'Honduras,  Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Israel', 'Italy', 'Jamaica', 'Japan', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati', 'Kuwait', 'Kyrgyzstan', 'Laos', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall Islands', 'Mauritania', 'Mauritius', 'Mexico', 'Micronesia', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Morocco', 'Mozambique', 'Myanmar (formerly Burma)', 'Namibia', 'Nauru', 'Nepal', 'Netherlands', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'North Korea', 'North Macedonia', 'Norway', 'Oman', 'Pakistan', 'Palau', 'Palestine State', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Poland', 'Portugal', 'Qatar', 'Romania', 'Russia', 'Rwanda', 'Saint Kitts and Nevis', 'Saint Lucia', 'Saint Vincent and the Grenadines', 'Samoa', 'San Marino', 'Sao Tome and Principe', 'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovakia', 'Slovenia', 'Solomon Islands', 'Somalia', 'South Africa', 'South Korea', 'South Sudan', 'Spain', 'Sri Lanka', 'Sudan', 'Suriname', 'Sweden', 'Switzerland', 'Syria', 'Tajikistan', 'Tanzania', 'Thailand', 'Timor-Leste', 'Togo', 'Tonga', 'Trinidad and Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Tuvalu', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States of America', 'Uruguay', 'Uzbekistan', 'Vanuatu', 'Venezuela', 'Vietnam', 'Yemen', 'Zambia', 'Zimbabwe'];
+autocomplete(document.getElementById("autocomplete"), ingredients);
+</script>
+  </center>
+    <div class="braider-div">
+      {% for b in braider %}
+        <div class="braider-profile-demo">
+          <div class="braider-profile-more">
+            <br>
+            <h5 class="content-text-white">
+              Click for more info.
+            </h5>
+            <br>
+            <a href="{{ url_for('profile_page', username=b.username) }}">
+              <button style="box-shadow: 0 0px 6px #330033; margin:0px;" class="inline-link-1" >
+                <b style=" color:black;">More</b>
+              </button>
+            </a>
+          </div>
+          <div class="braider-info">
+            <h5  class="content-text-black info-title">
+              &nbsp;Braider Username:
+            </h5>
+            <h5 style="display:inline;" class="braider-info-text content-text-black">
+              {{ b.username }}
+            </h5>
+          </div>
+          <div class="braider-info">
+            <h5  class="content-text-black info-title">
+              &nbsp;Country:
+            </h5>
+            <h5 style="display:inline;" class="braider-info-text content-text-black">
+              {{ b.country }}
+            </h5>
+          </div>
+          <div class="braider-info">
+            <h5  class="content-text-black info-title">
+              &nbsp;City:
+            </h5>
+            <h5 style="display:inline;" class="braider-info-text content-text-black">
+              {{ b.city }}
+            </h5>
+          </div>
+          <div class="braider-info">
+            <h5 class="content-text-black info-title">
+              &nbsp;Address:
+            </h5>
+            <h5 style="display:inline;" class="braider-info-text content-text-black">
+              {% if b.address|length > 20 %}
+
+              {{ b.address[:20] + '...' }}
+
+              {% else %}
+
+              {{ b.address}}
+
+              {% endif %}
+            </h5>
+          </div>
+        </div>
+
+      {% endfor %}
+      <br>
+    </div>
+    <div style="width:100%; background-color:#1a1a1a;">
+      <h2 style="padding:2rem;" class="content-text-white">As a braider, you can <i class="content-text-white">create braider account</i> that:</h2>
+      <h2 style="font-size:2.4rem; padding: 2rem 3rem 1rem 3rem;" class="content-text-white">
+          -- Make you visible to anyone looking for a <i class="content-text-white">braider</i> from anywhere, but mostly near you.
+      </h2>
+      <h2 style="font-size:2.4rem; padding: 0 3rem 1rem 3rem;" class="content-text-white">
+          -- You can sell your <i class="content-text-white">braiding products</i> in our <i class="content-text-white">braid market</i> (coming soon).
+      </h2>
+      <h2 style="font-size:2.4rem;padding: 0 3rem 1rem 3rem;" class="content-text-white">
+          -- You can share your photos & videos to let everyone see your <i class="content-text-white">braid work</i> quality (coming soon).
+      </h2>
+      <h2 style="font-size:2.4rem; padding: 0 3rem 1rem 3rem;" class="content-text-white">
+        -- You can have organized resevations &amp; have a backup of them that only you can see (coming soon).
+      </h2>
+      <h2 style="font-size:2.4rem; padding: 0 3rem 1rem 3rem;" class="content-text-white">
+        -- You can communicate with your customers (coming soon).
+      </h2>
+      <h2 style="font-size:2.4rem; padding: 0 3rem 1rem 3rem;" class="content-text-white">
+        -- Make yourself a famous braider!
+      </h2><br><br>
+    </div>
+    <div style="width:100%; background-color:#cccccc;">
+      <h2 style="padding:2rem;" class="content-text-black">As a customer, you can:</h2>
+      <h2 style="font-size:2.4rem; padding: 2rem 3rem 1rem 3rem;" class="content-text-black">
+        -- Read articles about braid and everything within it.
+      </h2>
+      <h2 style="font-size:2.4rem; padding: 0 3rem 1rem 3rem;" class="content-text-black">
+          -- Read news and see <i class="content-text-black">trends of braid</i>.
+      </h2>
+      <h2 style="font-size:2.4rem;padding: 0 3rem 1rem 3rem;" class="content-text-black">
+          -- Find <i class="content-text-black">licensed hair braider</i>.
+      </h2>
+      <h2 style="font-size:2.4rem; padding: 0 3rem 1rem 3rem;" class="content-text-black">
+          -- See different <i class="content-text-black">braided hairstyles</i> and find the braider of that dirrectly (coming soon).
+      </h2>
+      <h2 style="font-size:2.4rem; padding: 0 3rem 1rem 3rem;" class="content-text-black">
+          -- You can learn <i class="content-text-black">how to braid</i> with our <i class="content-text-black">braid toturial</i> (coming soon).
+      </h2>
+      <h2 style="font-size:2.4rem; padding: 0 3rem 1rem 3rem;" class="content-text-black">
+        -- You can communicate with your braider. (coming soon)
+      </h2>
+      <h2 style="font-size:2.4rem; padding: 0 3rem 1rem 3rem;" class="content-text-black">
+        -- Buy cool braid NFTs! (coming soon).
+      </h2><br><br>
+    </div>
+    <center>
+      <div class="ad-div">
+        here for <a href="{{ url_for('contact_page') }}">advertisment</a>
+      </div><br><br>
+    </center>
+    <div style="width:100%; background-color:#330033; height: 45vh;">
+      <br>
+      <center>
+        <div class="register-div">
+          <h2  style="padding:0px;" class="content-text-white">
+            Create your braider account Now!
+          </h2><br><br>
+            <a href="{{ url_for('register_page') }}">
+              <button style="margin:0px;" class="inline-link-1" >
+                <b style="color:black;">register now! </b>
+              </button>
+            </a>
+            <h4 style="margin:-10px 0px 10px 0px; font-size:1.7rem; text-align:center;" class="content-text-white">
+                <br>already have an account?
+            </h4>
+            <a href="{{ url_for('login_page') }}">
+              <button style="font-weight:bold;width:20%; margin:-40px;" class="inline-link-1">
+                login
+              </button>
+            </a>
+        </div>
+      </center>
+    </div>
+
+
+{% endblock %}
