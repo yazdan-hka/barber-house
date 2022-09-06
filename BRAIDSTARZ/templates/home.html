@@ -167,6 +167,52 @@ font-size:1.5em;
     width:25rem;
   }
 
+  .cd-container{
+    width:90%;
+    padding:8px 0 8px 0;
+    margin-top:4rem;
+    margin-bottom:4rem;
+    transition:0.4s ease-out;
+    border-radius:25px;
+  }
+  .cd-container:hover{ 
+    background-color:#330033df;
+    box-shadow:0 0 10px black;
+    border-radius:0px;
+  }
+
+
+  .img-1{
+    width:175px;
+    margin:5px;
+    border-top:solid 5px black;
+    box-shadow:0 15px 10px black;
+    transition:0.5s ease-out;
+  }
+  .img-1:hover{
+
+    margin-bottom:10px;
+    border-top:solid 0px #330033;
+    box-shadow:0 25px 20px black;
+    transition:0.1s ease-out;
+    opacity:100%;
+  }
+
+  .img-logo{
+    width:175px;
+    margin:5px;
+    border-top:solid 5px black;
+    box-shadow:0 15px 10px black;
+    transition:1s ease-out;
+  }
+  .img-logo:hover{
+
+    margin-bottom:10px;
+    border-top:solid 0px #330033;
+    box-shadow:0px -900px 200px transparent;
+    transition:2s ease-in;
+  }
+
 
 {% endblock %}
 
@@ -180,14 +226,8 @@ font-size:1.5em;
       <p style="font-size:1.75rem;" class="content-text-black">Enjoy our services.<br>for both <b class="content-text-black">Braiders </b>&<b class="content-text-black"> Customers.</b></p>
     </div>
   </center>
+
   <center>
-
-<!--           <form method="POST">
-            {{ search.hidden_tag() }}
-            {{ search.search_content(class="input-text-black", style="font-size:2rem;") }}
-            <br>
-            {{ search.submit(class="inline-link-1", style="font-size:2rem;") }}<br> -->
-
     <div class="flexbox">
       <div class="search">
         <h1 class='content-text-black'>
@@ -371,6 +411,48 @@ autocomplete(document.getElementById("autocomplete"), ingredients);
       {% endfor %}
       <br>
     </div>
+    <center>
+    </div>
+      <div class="cd-container">
+        <div class="cd-title">
+          <center>
+            <h1 class="content-text-black" style="text-shadow:2px 1px 1px grey;">
+            Check our Braid Collection!
+            </h1>
+          </center>
+        </div>
+        <div class="cd-imgs">
+
+          <img src='{{url_for("static", filename="images/normal-design-braid/" + images[0] + ".jpg")}}' alt="images of braids" class="img-1">      
+          <img src='{{url_for("static", filename="images/normal-design-braid/" + images[1] + ".jpg")}}' alt="images of braids" class="img-1"><br>
+
+          <img src='{{url_for("static", filename="images/normal-design-braid/" + images[2] + ".jpg")}}' alt="images of braids" class="img-1">      
+          <img src='{{url_for("static", filename="images/normal-design-braid/" + images[3] + ".jpg")}}' alt="images of braids" class="img-1"><br>
+
+          <img src='{{url_for("static", filename="images/normal-design-braid/" + images[4] + ".jpg")}}' alt="images of braids" class="img-1">      
+          <img src='{{url_for("static", filename="images/normal-design-braid/" + images[5] + ".jpg")}}' alt="images of braids" class="img-1" ><br>
+
+          <img src='{{url_for("static", filename="images/normal-design-braid/" + images[6] + ".jpg")}}' alt="images of braids" class="img-1">      
+          <img src='{{url_for("static", filename="images/normal-design-braid/" + images[7] + ".jpg")}}' alt="images of braids" class="img-1"><br>
+
+          <img src='{{url_for("static", filename="images/normal-design-braid/" + images[8] + ".jpg")}}' alt="images of braids" class="img-1">      
+          <img src='{{url_for("static", filename="images/normal-design-braid/" + images[9] + ".jpg")}}' alt="images of braids" class="img-1"><br>
+
+          <img src='{{url_for("static", filename="images/astral logo.jpg")}}' alt="images of braids" class="img-logo" >      
+          <img src='{{url_for("static", filename="images/astral logo.jpg")}}' alt="images of braids" class="img-logo" ><br>
+          
+        </div>
+      <div class="cd-more">
+        <center>
+          <a href="{{url_for('collection_filter_page')}}">
+            <button style="font-weight:bold; margin:20px;box-shadow:0 0 20px black;"class="inline-link-1">
+              Click For More
+            </button>
+          </a>
+        </center>
+      </div>
+    </div>
+    </center>
     <div style="width:100%; background-color:#1a1a1a;">
       <h2 style="padding:2rem;" class="content-text-white">As a braider, you can <i class="content-text-white">create braider account</i> that:</h2>
       <h2 style="font-size:2.4rem; padding: 2rem 3rem 1rem 3rem;" class="content-text-white">
