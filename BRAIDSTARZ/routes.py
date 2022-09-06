@@ -17,6 +17,15 @@ def home_page():
     sub_form = subscribe_form()
     subscribe(sub_form)
 
+    images = []
+    i = 1
+
+    while i <= 78:
+
+        images.append(f'normal-design ({i})')
+
+        i = i + 1
+
     name, loged_in, true_user = authenticated(current_user, true_user, name)
 
     if search_form.validate_on_submit():
@@ -29,9 +38,9 @@ def home_page():
             flash(f'No matches for your search. try again.', category='danger')
         else:
 
-            return render_template('home.html', search=search_form, braider=results, sub_form=sub_form, name=name, loged_in=loged_in, true_user=true_user)
+            return render_template('home.html', search=search_form, braider=results, sub_form=sub_form, name=name, loged_in=loged_in, true_user=true_user,images=images)
 
-    return render_template('home.html', search=search_form, sub_form=sub_form, name=name, loged_in=loged_in, true_user=true_user)
+    return render_template('home.html', search=search_form, sub_form=sub_form, name=name, loged_in=loged_in, true_user=true_user,images=images)
 
 
 @app.route('/about', methods=['GET', 'POST'])
