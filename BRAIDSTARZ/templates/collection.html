@@ -8,7 +8,7 @@
   .filter-container{
     background-color:#330033;
     width:90%;
-    height:12rem;
+    height:min-content;
     box-shadow:0 0 10px black;
     transition:0.4s ease-out;
   }
@@ -22,29 +22,27 @@
   .ft{
     height:100%;
     width:100%;
+    transition:0.4s ease-out;
     padding-top:8px;
   }
 
   
-  .ft:hover .filter-container{
+  .filter-container:hover{
     background-color:black;
-    height:28rem;
+    box-shadow: 0 0 30px black;
+    width:88%;
+    height:min-content;
   }
 
 
-  .ft:hover .filter-link{
-
+  .filter-container:hover .filter-link{
     opacity:100%;
     transition:0.4s ease-out;
   }
 
-  .ft:hover{
-    background-color:yellow;
-  }
-
 
   .container{
-    width:100%;
+    width:90%;
     padding:10px;
   }
   .box{
@@ -53,7 +51,7 @@
     transition:0.4s ease-out;
     background-color:#330033;
     float:left;
-    margin:10px;
+    margin:2%;
   }
   .image{
     max-height:210px;
@@ -110,14 +108,14 @@
 {% block content %}
 <center>
   <div class="filter-container">
-  <div class='ft'>
-    <h1 class='content-text-white'>
-      looking for something more specific?
-    </h1>
-  </div>
+    <div class='ft'>
+      <h1 class='content-text-white'>
+        Looking for something more specific?
+      </h1>
+    </div>
     <div class="filter-link">
       <h2 class='content-text-white'>
-        Click the button bellow for filter your search
+        Click the button bellow to filter your search
       </h2>
       <a href="{{url_for('collection_filter_page')}}">
         <button style="padding:3px; width:16rem; font-size:2em;text-decoration: bold;" class="inline-link-1">
@@ -127,6 +125,8 @@
     </div>
   </div>
 </center>
+
+
   <div class="container">
     {% for i in images %}
       <div class="box">
@@ -145,5 +145,7 @@
         </div>  
     {% endfor %}  
   </div>
+
+
 
 {% endblock %}
