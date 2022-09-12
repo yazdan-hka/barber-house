@@ -4,7 +4,9 @@ from BRAIDSTARZ.models import braiders, email_messages, subscribers
 from BRAIDSTARZ.forms import register_form, login_form, braider_finder_form, email_messages_form, subscribe_form, edit_braider_form, collection_filter_form
 from flask_login import login_user, current_user, logout_user
 from BRAIDSTARZ.func import find_braiders, subscribe, authenticated
-import smtplib
+import smtplib, ssl
+import random
+from time import sleep
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -104,9 +106,10 @@ def register_page():
 
     if form.validate_on_submit():
 
+        email = form.email.data.lower()
+    
         if form.address.data.lower() == "" or " ":
             no_address = 'no address'
-
         else:
             no_address = form.address.data.lower()
 
@@ -125,12 +128,9 @@ def register_page():
                                           twitter=form.twitter.data.lower(),
                                           youtube=form.youtube.data.lower(),
                                           )
-        db.session.add(create_braider_account)
-        db.session.commit()
 
-        flash('your account has been created', category='success')
+        return redirect(url_for("verify_page", email=email))
 
-        return redirect(url_for('home_page'))
 
 
     if form.errors != {}:
@@ -327,6 +327,8 @@ def collection_page():
     loged_in = False
     true_user = False
 
+    images = []
+
     while i <= 78:
 
         images.append(f'normal-design ({i})')
@@ -358,20 +360,26 @@ def collection_filter_page():
 
     return render_template('collection-filter.html', sub_form=sub_form, name=name, loged_in=loged_in, true_user=true_user, filter_form=filter_form)
 
-@app.route('/verify/<code>')
-def verify_page():
+@app.route('/verify/<email>')
+def verify_page(email, braider):
 
+    name = 'BRAIDSTARZ'
     loged_in = False
     true_user = False
     sub_form = subscribe_form()
     subscribe(sub_form)
     name, loged_in, true_user = authenticated(current_user, true_user, name)
-    
+
+    db.session.add(create_braider_account)
+    db.session.commit()
+
+    flash('your account has been created', category='success')
+
+    return redirect(url_for('home_page'))
 
     
 
-
-    return render_template('verify.html', sub_form=sub_form, name=name, loged_in=loged_in, true_user=true_user)
+    return render_template('verify.html', sub_form=sub_form, name=name, loged_in=loged_in, true_user=true_user, email=email)
 
 
 
@@ -409,3 +417,39 @@ def authenticated(current_user, true_user, name):
 
     return name, loged_in, true_user
 
+
+def verify_email(email):
+
+    a = 'a b c 1 2 3 4 5 6 7 8 9 0 d e f g h i j k l m n o p q r s t u v w x y z'
+
+    a = a.split(' ')
+    b = []
+    n = 0
+
+    while n <= 32 :
+        b.append(random.choice(a))
+        n += 1
+
+    code = ''.join(b)
+
+    port = 587  # For starttls
+    smtp_server = "smtp.gmail.com"
+    sender_email = "yazdan.unknown@gmail.com"
+    password = "nhdcubwbvjzpppss"
+    message = f"""\
+    Subject: -0:
+    Don't be afraid! its not the way you think it is..
+
+    just click on the link bellow..
+    https://www.braidstarz.art/register/{code}
+    """
+
+    context = ssl.create_default_context()
+    with smtplib.SMTP(smtp_server, port) as server:
+        server.ehlo()  # Can be omitted
+        server.starttls(context=context)
+        server.ehlo()  # Can be omitted
+        server.login(sender_email, password)
+        server.sendmail(sender_email, email, message)
+
+    return code
