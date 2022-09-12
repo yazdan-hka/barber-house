@@ -4,6 +4,7 @@ from BRAIDSTARZ.models import braiders, email_messages, subscribers
 from BRAIDSTARZ.forms import register_form, login_form, braider_finder_form, email_messages_form, subscribe_form, edit_braider_form, collection_filter_form
 from flask_login import login_user, current_user, logout_user
 from BRAIDSTARZ.func import find_braiders, subscribe, authenticated
+import smtplib
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -104,50 +105,33 @@ def register_page():
     if form.validate_on_submit():
 
         if form.address.data.lower() == "" or " ":
-
             no_address = 'no address'
 
-            create_braider_account = braiders(username=form.username.data.lower(),
-                                              fullname=form.fullname.data.lower(),
-                                              email=form.email.data.lower(),
-                                              password=form.password1.data.lower(),
-                                              phone_num=form.phone_num.data.lower(),
-                                              country=form.country.data.lower(),
-                                              city=form.city.data.lower(),
-                                              address=no_address,
-                                              instagram=form.instagram.data.lower(),
-                                              website=form.website.data.lower(),
-                                              twitter=form.twitter.data.lower(),
-                                              youtube=form.youtube.data.lower(),
-                                              )
-            db.session.add(create_braider_account)
-            db.session.commit()
-
-            flash('your account has been created', category='success')
-
-            return redirect(url_for('home_page'))
-
         else:
+            no_address = form.address.data.lower()
 
-            create_braider_account = braiders(username=form.username.data.lower(),
-                                              fullname=form.fullname.data.lower(),
-                                              email=form.email.data.lower(),
-                                              password=form.password1.data.lower(),
-                                              phone_num=form.phone_num.data.lower(),
-                                              country=form.country.data.lower(),
-                                              city=form.city.data.lower(),
-                                              address=form.address.data.lower(),
-                                              website=form.website.data.lower(),
-                                              instagram=form.instagram.data.lower(),
-                                              twitter=form.twitter.data.lower(),
-                                              youtube=form.youtube.data.lower()
-                                              )
-            db.session.add(create_braider_account)
-            db.session.commit()
+        
 
-            flash('your account has been created', category='success')
+        create_braider_account = braiders(username=form.username.data.lower(),
+                                          fullname=form.fullname.data.lower(),
+                                          email=form.email.data.lower(),
+                                          password=form.password1.data.lower(),
+                                          phone_num=form.phone_num.data.lower(),
+                                          country=form.country.data.lower(),
+                                          city=form.city.data.lower(),
+                                          address=no_address,
+                                          instagram=form.instagram.data.lower(),
+                                          website=form.website.data.lower(),
+                                          twitter=form.twitter.data.lower(),
+                                          youtube=form.youtube.data.lower(),
+                                          )
+        db.session.add(create_braider_account)
+        db.session.commit()
 
-            return redirect(url_for('home_page'))
+        flash('your account has been created', category='success')
+
+        return redirect(url_for('home_page'))
+
 
     if form.errors != {}:
 
@@ -157,7 +141,7 @@ def register_page():
                 flash(f'Entered passwords was not the same. please try again.', category='danger')
 
             else:
-                flash(f'There was an error: {err_msg}', category='danger')
+                flash(f'There was an error: {err_msg}\n Please try again', category='danger')
 
     return render_template('register.html', form=form, sub_form=sub_form)
 
@@ -374,6 +358,20 @@ def collection_filter_page():
 
     return render_template('collection-filter.html', sub_form=sub_form, name=name, loged_in=loged_in, true_user=true_user, filter_form=filter_form)
 
+@app.route('/verify/<code>')
+def verify_page():
+
+    loged_in = False
+    true_user = False
+    sub_form = subscribe_form()
+    subscribe(sub_form)
+    name, loged_in, true_user = authenticated(current_user, true_user, name)
+    
+
+    
+
+
+    return render_template('verify.html', sub_form=sub_form, name=name, loged_in=loged_in, true_user=true_user)
 
 
 
