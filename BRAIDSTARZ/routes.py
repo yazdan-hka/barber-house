@@ -343,9 +343,6 @@ def collection_page():
     loged_in = False
     true_user = False
 
-    images = []
-    i = 1
-
     while i <= 78:
 
         images.append(f'normal-design ({i})')

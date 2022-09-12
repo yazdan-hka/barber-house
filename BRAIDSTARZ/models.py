@@ -53,7 +53,9 @@ class subscribers(db.Model, UserMixin):
 class images(db.Model):
 
     id = db.Column(db.Integer(), primary_key=True)
-    file_name = db.Column(db.String(64), unique=True)
+    path = db.Column(db.String(),unique=True)
+    instagram_id = db.Column(db.String(), nullable=True)
+    pintrest_id = db.Column(db.String(), nullable=True)
     under_14 = db.Column(db.Boolean(), default=False, nullable=False)
     design = db.Column(db.Boolean(), default=False, nullable=False)
     box = db.Column(db.Boolean(), default=False, nullable=False)
@@ -63,7 +65,7 @@ class images(db.Model):
     cornrows = db.Column(db.Boolean(), default=False, nullable=False)
     stitch = db.Column(db.Boolean(), default=False, nullable=False)
     special = db.Column(db.Boolean(), default=False, nullable=False)  
-    trend = db.Column(db.Boolean(), default=False, nullable=False)   
+    hit = db.Column(db.Boolean(), default=False, nullable=False)   
 
 
 
