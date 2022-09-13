@@ -389,6 +389,8 @@ def collection_page():
 
     images = []
 
+    i = 1
+
     while i <= 78:
 
         images.append(f'normal-design ({i})')
