@@ -7,6 +7,8 @@ from BRAIDSTARZ.func import find_braiders, subscribe, authenticated
 import smtplib, ssl
 import random
 from time import sleep
+from email.message import EmailMessage
+
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -82,6 +84,50 @@ def login_page():
 
     return render_template('login.html', form=form, sub_form=sub_form)
 
+verified = True
+
+@app.route('/ToBeConfirmed/<code>', methods=['GET'])
+def to_be_confirmed(code):
+
+
+    visited = braiders.query.filter_by(token=code).first_or_404()
+    if visited:
+        visited.confirmed = True
+        db.session.commit()
+        flash(f'Success! your account has been created successfully', category='success')
+
+    return redirect(url_for('home_page'))
+
+
+def verify_email(email, code):
+
+    email_sender = 'yazdan.unknown@gmail.com'
+    email_password = 'nhdcubwbvjzpppss'
+    email_receiver = email
+
+    subject = ''
+    body = f"""\
+    Subject: BraidStarz
+    Hey! Welcome to BraidStarz Family..
+
+    Click on the Link Bellow to Confirm Your Registration.
+
+    https://www.braidstarz.art/ToBeConfirmed/{code}
+    """
+    em = EmailMessage()
+    em['BraidStarz'] = email_sender
+    em['To'] = email_receiver
+    em['Email Verification'] = subject
+    em.set_content(body)
+
+    context = ssl.create_default_context()
+
+    with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
+        smtp.login(email_sender, email_password)
+        smtp.sendmail(email_sender, email_receiver, em.as_string())
+
+    print('email is sent')
+    
 
 @app.route('/register', methods=['GET', 'POST'])
 def register_page():
@@ -105,32 +151,46 @@ def register_page():
             return render_template('register.html', form=form, sub_form=sub_form)
 
     if form.validate_on_submit():
-
-        email = form.email.data.lower()
     
         if form.address.data.lower() == "" or " ":
             no_address = 'no address'
         else:
             no_address = form.address.data.lower()
 
-        
+        a = 'a b c 1 2 3 4 5 6 7 8 9 0 d e f g h i j k l m n o p q r s t u v w x y z'
 
-        create_braider_account = braiders(username=form.username.data.lower(),
-                                          fullname=form.fullname.data.lower(),
-                                          email=form.email.data.lower(),
-                                          password=form.password1.data.lower(),
-                                          phone_num=form.phone_num.data.lower(),
-                                          country=form.country.data.lower(),
-                                          city=form.city.data.lower(),
-                                          address=no_address,
-                                          instagram=form.instagram.data.lower(),
-                                          website=form.website.data.lower(),
-                                          twitter=form.twitter.data.lower(),
-                                          youtube=form.youtube.data.lower(),
-                                          )
+        a = a.split(' ')
+        b = []
+        n = 0
 
-        return redirect(url_for("verify_page", email=email))
+        while n <= 32 :
+            b.append(random.choice(a))
+            n += 1
 
+        code = ''.join(b)
+        verify_email(form.email.data.lower(), code)
+    
+        braider = braiders(username=form.username.data.lower(),
+                                        fullname=form.fullname.data.lower(),
+                                        email=form.email.data.lower(),
+                                        password=form.password1.data.lower(),
+                                        token=code,
+                                        phone_num=form.phone_num.data.lower(),
+                                        country=form.country.data.lower(),
+                                        city=form.city.data.lower(),
+                                        address=no_address,
+                                        instagram=form.instagram.data.lower(),
+                                        website=form.website.data.lower(),
+                                        twitter=form.twitter.data.lower(),
+                                        youtube=form.youtube.data.lower(),
+                                        )      
+
+        db.session.add(braider)
+        db.session.commit()
+
+        # flash('your account has been created', category='success')
+
+        return redirect(url_for('verify_page', email=form.email.data.lower()))
 
 
     if form.errors != {}:
@@ -361,25 +421,18 @@ def collection_filter_page():
     return render_template('collection-filter.html', sub_form=sub_form, name=name, loged_in=loged_in, true_user=true_user, filter_form=filter_form)
 
 @app.route('/verify/<email>')
-def verify_page(email, braider):
+def verify_page(email):
 
     name = 'BRAIDSTARZ'
     loged_in = False
     true_user = False
     sub_form = subscribe_form()
     subscribe(sub_form)
-    name, loged_in, true_user = authenticated(current_user, true_user, name)
-
-    db.session.add(create_braider_account)
-    db.session.commit()
-
-    flash('your account has been created', category='success')
-
-    return redirect(url_for('home_page'))
-
-    
+    name, loged_in, true_user = authenticated(current_user, true_user, name)  
 
     return render_template('verify.html', sub_form=sub_form, name=name, loged_in=loged_in, true_user=true_user, email=email)
+
+
 
 
 
@@ -418,38 +471,3 @@ def authenticated(current_user, true_user, name):
     return name, loged_in, true_user
 
 
-def verify_email(email):
-
-    a = 'a b c 1 2 3 4 5 6 7 8 9 0 d e f g h i j k l m n o p q r s t u v w x y z'
-
-    a = a.split(' ')
-    b = []
-    n = 0
-
-    while n <= 32 :
-        b.append(random.choice(a))
-        n += 1
-
-    code = ''.join(b)
-
-    port = 587  # For starttls
-    smtp_server = "smtp.gmail.com"
-    sender_email = "yazdan.unknown@gmail.com"
-    password = "nhdcubwbvjzpppss"
-    message = f"""\
-    Subject: -0:
-    Don't be afraid! its not the way you think it is..
-
-    just click on the link bellow..
-    https://www.braidstarz.art/register/{code}
-    """
-
-    context = ssl.create_default_context()
-    with smtplib.SMTP(smtp_server, port) as server:
-        server.ehlo()  # Can be omitted
-        server.starttls(context=context)
-        server.ehlo()  # Can be omitted
-        server.login(sender_email, password)
-        server.sendmail(sender_email, email, message)
-
-    return code
