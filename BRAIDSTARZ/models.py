@@ -26,7 +26,7 @@ class braiders(db.Model, UserMixin):
     fullname = db.Column(db.String(length=40), nullable=False)
     email = db.Column(db.String(length=50), nullable=False, unique=True)
     password_hash = db.Column(db.String(100), nullable=False)
-    phone_num = db.Column(db.String(length=15), nullable=True, unique=True)
+    phone_num = db.Column(db.String(length=15), nullable=True)
     country = db.Column(db.String(length=30), nullable=False)
     city = db.Column(db.String(length=30), nullable=False)
     address = db.Column(db.String(length=512))
@@ -34,8 +34,10 @@ class braiders(db.Model, UserMixin):
     instagram = db.Column(db.String(length=30))
     youtube = db.Column(db.String(length=50))
     twitter = db.Column(db.String(length=30))
+    token = db.Column(db.String, nullable=True)
+    confirmed = db.Column(db.Boolean, default=False )
 
-
+    
 class email_messages(db.Model, UserMixin):
 
     id = db.Column(db.Integer(), primary_key=True)

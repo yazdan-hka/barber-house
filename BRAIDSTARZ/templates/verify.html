@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Verify your account
+{% endblock %}
+
+{% block style %}
+.v-c{
+    padding:20px;
+    border: 1px solid black;
+    background-color:#d4d4d4;
+    height:max-height;
+    margin:30px;
+
+}
+.v-t{
+    margin:10px;
+}
+{% endblock %}
+
+{% block content %}
+
+<div class="v-c">
+    <div class="v-t">
+        <h1 class='content-text-black'>
+            Thanks For Your Registration!
+        </h1>
+        <h3 class='content-text-black'>
+            To make sure it is you trying to register i n BraidStarz, we have sent an email to <b>{{email}}</b> which includes a link.<br><br>
+            Please click on that link to compelete your registeration.
+        </h3>
+    </div>
+</div>
+
+{% endblock %}
