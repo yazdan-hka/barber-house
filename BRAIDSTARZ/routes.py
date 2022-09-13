@@ -1,9 +1,10 @@
 from BRAIDSTARZ import app, db
 from flask import render_template, redirect, url_for, flash, request
-from BRAIDSTARZ.models import braiders, email_messages, subscribers
+from BRAIDSTARZ.models import braiders, email_messages, images, subscribers
 from BRAIDSTARZ.forms import register_form, login_form, braider_finder_form, email_messages_form, subscribe_form, edit_braider_form, collection_filter_form
 from flask_login import login_user, current_user, logout_user
 from BRAIDSTARZ.func import find_braiders, subscribe, authenticated
+import os
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -17,14 +18,8 @@ def home_page():
     sub_form = subscribe_form()
     subscribe(sub_form)
 
-    images = []
-    i = 1
-
-    while i <= 78:
-
-        images.append(f'normal-design ({i})')
-
-        i = i + 1
+    images = os.listdir(r'C:/Users/cmos\Desktop/code\BraidStarz/2 - latest, links work, connected to db, online/BRAIDSTARZ/static/images/normal-design-braid')
+    print(images)
 
     name, loged_in, true_user = authenticated(current_user, true_user, name)
 
