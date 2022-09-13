@@ -1,13 +1,36 @@
 {% extends 'base.html' %}
 
 {% block title %}
-  BraidStarz Braids Image | desgin braid | {{ path }}
+  BraidStarz Braids Image | desgin braid | braider: {{ img_name }}
 {% endblock %}
 
 {% block style %}
-
+.img-con{
+    margin:10px;
+    padding:10px;
+    border: 1px solid black;
+    background-color:#1105112c;
+    box-shadow:0 0 20px black;
+}
+.img{
+    width:80%;
+    border: 1px solid black;
+    box-shadow:0 0 20px #330033;
+}
 {% endblock %}
 
 {% block content %}
+<center>
+  <div class="img-con">
+      <img class='img' src='{{url_for("static", filename="images/normal-design-braid/" + img_name )}}' alt="braid of the braider: {{ img_name }} insta id">
+      <div class="img-info">
+        
+            <h3 class='content-text-black'>
+                Braider id: {{ img_name }}
+            </h3>
+        
+      </div>
+  </div>
+</center>
 
 {% endblock %}

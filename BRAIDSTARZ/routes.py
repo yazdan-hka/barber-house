@@ -361,7 +361,7 @@ def image_page(path):
     image = 'images/normal-design-braid/{}'.format(path)
     img_name = path
 
-    return render_template('collection.html', sub_form=sub_form, name=name, loged_in=loged_in, true_user=true_user, image=image, img_name=img_name)
+    return render_template('image.html', sub_form=sub_form, name=name, loged_in=loged_in, true_user=true_user, image=image, img_name=img_name)
 
 
 
