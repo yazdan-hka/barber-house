@@ -1,3 +1,4 @@
+from importlib_metadata import pathlib
 from BRAIDSTARZ import app, db
 from flask import render_template, redirect, url_for, flash, request
 from BRAIDSTARZ.models import braiders, email_messages, images, subscribers
@@ -346,6 +347,23 @@ def collection_page():
     subscribe(sub_form)
 
     return render_template('collection.html', sub_form=sub_form, name=name, loged_in=loged_in, true_user=true_user, images=images)
+
+@app.route('/image/<path>')
+def image_page(path):
+
+    name = 'BRAIDSTARZ'
+    loged_in = False
+    true_user = False
+    name, loged_in, true_user = authenticated(current_user, true_user, name)
+    sub_form = subscribe_form()
+    subscribe(sub_form)
+
+    image = 'images/normal-design-braid/{}'.format(path)
+    img_name = path
+
+    return render_template('collection.html', sub_form=sub_form, name=name, loged_in=loged_in, true_user=true_user, image=image, img_name=img_name)
+
+
 
 '''
 @app.route('/collection-filter', methods=['GET', 'POST'])
