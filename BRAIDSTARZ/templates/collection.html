@@ -106,7 +106,7 @@
 {% endblock %}
 
 {% block content %}
-<center>
+<!-- <center>
   <div class="filter-container">
     <div class='ft'>
       <h1 class='content-text-white'>
@@ -117,20 +117,20 @@
       <h2 class='content-text-white'>
         Click the button bellow to filter your search
       </h2>
-      <a href="{{url_for('collection_filter_page')}}">
+      <a href="">
         <button style="padding:3px; width:16rem; font-size:2em;text-decoration: bold;" class="inline-link-1">
           Filter
         </button>
       </a>
     </div>
   </div>
-</center>
+</center> -->
 
 
   <div class="container">
     {% for i in images %}
       <div class="box">
-        <img class="image" src='{{url_for("static", filename="images/normal-design-braid/" + i + ".jpg")}}' alt="braidstarz logo"> 
+        <img class="image" src='{{url_for("static", filename="images/normal-design-braid/" + i )}}' alt="braidstarz logo"> 
           <div class="image-info">
             <a href="{{url_for('collection_page')}}">
               <center>

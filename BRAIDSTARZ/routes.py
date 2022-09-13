@@ -19,7 +19,7 @@ def home_page():
     subscribe(sub_form)
 
     images = os.listdir(r'C:/Users/cmos\Desktop/code\BraidStarz/2 - latest, links work, connected to db, online/BRAIDSTARZ/static/images/normal-design-braid')
-    print(images)
+
 
     name, loged_in, true_user = authenticated(current_user, true_user, name)
 
@@ -338,14 +338,7 @@ def collection_page():
     loged_in = False
     true_user = False
 
-    images = []
-    i = 1
-
-    while i <= 78:
-
-        images.append(f'normal-design ({i})')
-
-        i = i + 1
+    images = os.listdir(r'C:/Users/cmos\Desktop/code\BraidStarz/2 - latest, links work, connected to db, online/BRAIDSTARZ/static/images/normal-design-braid')
 
     name, loged_in, true_user = authenticated(current_user, true_user, name)
 
@@ -354,7 +347,7 @@ def collection_page():
 
     return render_template('collection.html', sub_form=sub_form, name=name, loged_in=loged_in, true_user=true_user, images=images)
 
-
+'''
 @app.route('/collection-filter', methods=['GET', 'POST'])
 def collection_filter_page():
 
@@ -371,6 +364,7 @@ def collection_filter_page():
     filter_form = collection_filter_form()
 
     return render_template('collection-filter.html', sub_form=sub_form, name=name, loged_in=loged_in, true_user=true_user, filter_form=filter_form)
+'''
 
 
 
