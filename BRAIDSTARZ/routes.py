@@ -1,6 +1,7 @@
+from importlib_metadata import pathlib
 from BRAIDSTARZ import app, db
 from flask import render_template, redirect, url_for, flash, request
-from BRAIDSTARZ.models import braiders, email_messages, subscribers
+from BRAIDSTARZ.models import braiders, email_messages, images, subscribers
 from BRAIDSTARZ.forms import register_form, login_form, braider_finder_form, email_messages_form, subscribe_form, edit_braider_form, collection_filter_form
 from flask_login import login_user, current_user, logout_user
 from BRAIDSTARZ.func import find_braiders, subscribe, authenticated
@@ -8,6 +9,7 @@ import smtplib, ssl
 import random
 from time import sleep
 from email.message import EmailMessage
+import os
 
 
 
@@ -22,14 +24,8 @@ def home_page():
     sub_form = subscribe_form()
     subscribe(sub_form)
 
-    images = []
-    i = 1
+    images = os.listdir(r'C:/Users/cmos\Desktop/code\BraidStarz/2 - latest, links work, connected to db, online/BRAIDSTARZ/static/images/normal-design-braid')
 
-    while i <= 78:
-
-        images.append(f'normal-design ({i})')
-
-        i = i + 1
 
     name, loged_in, true_user = authenticated(current_user, true_user, name)
 
@@ -387,15 +383,7 @@ def collection_page():
     loged_in = False
     true_user = False
 
-    images = []
-
-    i = 1
-
-    while i <= 78:
-
-        images.append(f'normal-design ({i})')
-
-        i = i + 1
+    images = os.listdir(r'C:/Users/cmos\Desktop/code\BraidStarz/2 - latest, links work, connected to db, online/BRAIDSTARZ/static/images/normal-design-braid')
 
     name, loged_in, true_user = authenticated(current_user, true_user, name)
 
@@ -404,7 +392,24 @@ def collection_page():
 
     return render_template('collection.html', sub_form=sub_form, name=name, loged_in=loged_in, true_user=true_user, images=images)
 
+@app.route('/image/<path>')
+def image_page(path):
 
+    name = 'BRAIDSTARZ'
+    loged_in = False
+    true_user = False
+    name, loged_in, true_user = authenticated(current_user, true_user, name)
+    sub_form = subscribe_form()
+    subscribe(sub_form)
+
+    image = 'images/normal-design-braid/{}'.format(path)
+    img_name = path
+
+    return render_template('image.html', sub_form=sub_form, name=name, loged_in=loged_in, true_user=true_user, image=image, img_name=img_name)
+
+
+
+'''
 @app.route('/collection-filter', methods=['GET', 'POST'])
 def collection_filter_page():
 
@@ -421,6 +426,7 @@ def collection_filter_page():
     filter_form = collection_filter_form()
 
     return render_template('collection-filter.html', sub_form=sub_form, name=name, loged_in=loged_in, true_user=true_user, filter_form=filter_form)
+'''
 
 @app.route('/verify/<email>')
 def verify_page(email):
