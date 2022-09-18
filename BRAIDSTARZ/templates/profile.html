@@ -292,7 +292,7 @@
             {% endif %}
         </h5>
         <h5 style="padding:3px; font-size:2rem;" class="content-text-black">
-          Youtube ID:<br><br>
+          Youtube Channel:<br><br>
 
         {% if info.youtube %}
           <a target="_blank" href="https://www.youtube.com/{{ info.youtube }}">
@@ -304,12 +304,18 @@
           </a>
         {% endif %}
         </h5>
-        <h5 style="padding:3px; font-size:2rem;" class="content-text-black">
-          Email Address :<br><br>
-          <a href="#">
-            {{ info.email }}
+
+        {% if info.tiktok %}
+          <a target="_blank" href="https://www.youtube.com/{{ info.youtube }}">
+            @{{ info.tiktok }}
           </a>
+        {% else %}
+          <a href="{{url_for('home_page')}}">
+            no youtube
+          </a>
+        {% endif %}
         </h5>
+
         <h5 style="padding:3px; font-size:2rem;" class="content-text-black">
         Webstie Address:<br><br>
            {% if info.website %}

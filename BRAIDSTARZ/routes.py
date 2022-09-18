@@ -245,6 +245,7 @@ def register_page():
                                         instagram=form.instagram.data.lower(),
                                         website=form.website.data.lower(),
                                         twitter=form.twitter.data.lower(),
+                                        tiktok=form.tiktok.data.lower(),
                                         youtube=form.youtube.data.lower(),
                                         )
 
@@ -383,6 +384,11 @@ def edit_profile_page():
             pass
         else:
             current_user.youtube = edit_form.youtube.data.lower()
+
+        if edit_form.tiktok.data == '':
+            pass
+        else:
+            current_user.tiktok = edit_form.tiktok.data.lower()
 
         if edit_form.website.data == '':
             pass

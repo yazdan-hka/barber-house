@@ -28,19 +28,20 @@ class register_form(FlaskForm):
         if name:
             raise ValidationError(f'There is already an account with the name of "{name.fullname}". Please pick another one.')
 
-    username = StringField(label='Enter a username: ', validators=[DataRequired()])
-    fullname = StringField(label='Enter your full name: ', validators=[DataRequired()])
-    email = StringField(label='Enter your email address: ', validators=[DataRequired()]) # Email(),
-    password1 = PasswordField(label='Enter a password: ', validators=[Length(min=8), DataRequired()])
-    password2 = PasswordField(label='Confirm your password: ', validators=[EqualTo('password1'), DataRequired()])
-    phone_num = StringField(label='Enter your phone number: ')
-    country = StringField(label='Enter your country: ', validators=[DataRequired()])
-    city = StringField(label='Enter your city: ', validators=[DataRequired()])
+    username = StringField(label='*Choose a Username ', validators=[DataRequired()])
+    fullname = StringField(label='*Enter your full name ', validators=[DataRequired()])
+    email = StringField(label='*Enter your Email Address: ', validators=[DataRequired()]) # Email(),
+    password1 = PasswordField(label='*Enter a password: ', validators=[Length(min=8), DataRequired()])
+    password2 = PasswordField(label='*Confirm your password: ', validators=[EqualTo('password1'), DataRequired()])
+    phone_num = StringField(label='Enter your Phone number: ')
+    country = StringField(label='*Enter your Country: ', validators=[DataRequired()])
+    city = StringField(label='*Enter your city: ', validators=[DataRequired()])
     address = StringField(label='Enter the address of where you work: ', validators=[Length(max=512)])
-    instagram = StringField(label='Enter your instagram id: ')
-    website = StringField(label='Enter your website address: ')
-    twitter = StringField(label='Enter your twitter id: ')
-    youtube = StringField(label='Enter your youtube id: ')
+    instagram = StringField(label='Enter your Instagram id: ')
+    website = StringField(label='Enter your Website Address: ')
+    twitter = StringField(label='Enter your Twitter id: ')
+    tiktok = StringField(label='Enter your TikTok id: ')
+    youtube = StringField(label='Enter your YouTube Channel: ')
 
     submit = SubmitField(label='Register')
 
@@ -79,7 +80,8 @@ class edit_braider_form(FlaskForm):
     website = StringField(label='Enter your website address: ')
     instagram = StringField(label='Instagram id: ')
     twitter = StringField(label='Twitter id: ')
-    youtube = StringField(label='Youtube id: ')
+    tiktok = StringField(label='TikTok id: ')
+    youtube = StringField(label='Youtube Channel: ')
 
     submit = SubmitField(label='Confirm changes')
 

@@ -33,6 +33,7 @@ class braiders(db.Model, UserMixin):
     website = db.Column(db.String(length=128))
     instagram = db.Column(db.String(length=30))
     youtube = db.Column(db.String(length=50))
+    tiktok = db.Column(db.String(length=30))
     twitter = db.Column(db.String(length=30))
     token = db.Column(db.String, nullable=True)
     confirmed = db.Column(db.Boolean, default=False )
