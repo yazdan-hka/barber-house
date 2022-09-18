@@ -175,7 +175,7 @@ font-size:1.5em;
     transition:0.4s ease-out;
     border-radius:25px;
   }
-  .cd-container:hover{ 
+  .cd-container:hover{
     background-color:#330033df;
     box-shadow:0 0 10px black;
     border-radius:0px;
@@ -417,30 +417,36 @@ autocomplete(document.getElementById("autocomplete"), ingredients);
         <div class="cd-title">
           <center>
             <h1 class="content-text-black" style="text-shadow:2px 1px 1px grey;">
-            Check our Braid Collection!
+            Choose your braid style:
             </h1>
           </center>
         </div>
         <div class="cd-imgs">
+            <!--os list dir:
+            /home/braidstarz/mysite/BRAIDSTARZ/static/images-->
+            <!--working url:
+            https://www.pythonanywhere.com/user/braidstarz/files/home/braidstarz/mysite/BRAIDSTARZ/static/images/-->
 
-          <img src='{{url_for("static", filename="images/normal-design-braid/" + images[0])}}' alt="images of braids" class="img-1">      
-          <img src='{{url_for("static", filename="images/normal-design-braid/" + images[1])}}' alt="images of braids" class="img-1"><br>
 
-          <img src='{{url_for("static", filename="images/normal-design-braid/" + images[2])}}' alt="images of braids" class="img-1">      
-          <img src='{{url_for("static", filename="images/normal-design-braid/" + images[3])}}' alt="images of braids" class="img-1"><br>
+          <img src='https://www.pythonanywhere.com/user/braidstarz/files/home/braidstarz/mysite/BRAIDSTARZ/static/images/{{images[0]}}' alt="images of braids" class="img-1">
+          <img src='https://www.pythonanywhere.com/user/braidstarz/files/home/braidstarz/mysite/BRAIDSTARZ/static/images/{{images[1]}}' alt="images of braids" class="img-1"><br>
 
-          <img src='{{url_for("static", filename="images/normal-design-braid/" + images[4])}}' alt="images of braids" class="img-1">      
-          <img src='{{url_for("static", filename="images/normal-design-braid/" + images[5])}}' alt="images of braids" class="img-1" ><br>
+          <img src='https://www.pythonanywhere.com/user/braidstarz/files/home/braidstarz/mysite/BRAIDSTARZ/static/images/{{images[2]}}' alt="images of braids" class="img-1">
+          <img src='https://www.pythonanywhere.com/user/braidstarz/files/home/braidstarz/mysite/BRAIDSTARZ/static/images/{{images[3]}}' alt="images of braids" class="img-1"><br>
 
-          <img src='{{url_for("static", filename="images/normal-design-braid/" + images[6])}}' alt="images of braids" class="img-1">      
-          <img src='{{url_for("static", filename="images/normal-design-braid/" + images[7])}}' alt="images of braids" class="img-1"><br>
+          <img src='https://www.pythonanywhere.com/user/braidstarz/files/home/braidstarz/mysite/BRAIDSTARZ/static/images/{{images[4]}}' alt="images of braids" class="img-1">
+          <img src='https://www.pythonanywhere.com/user/braidstarz/files/home/braidstarz/mysite/BRAIDSTARZ/static/images/{{images[5]}}' alt="images of braids" class="img-1"><br>
 
-          <img src='{{url_for("static", filename="images/normal-design-braid/" + images[8])}}' alt="images of braids" class="img-1">      
-          <img src='{{url_for("static", filename="images/normal-design-braid/" + images[9])}}' alt="images of braids" class="img-1"><br>
+          <img src='https://www.pythonanywhere.com/user/braidstarz/files/home/braidstarz/mysite/BRAIDSTARZ/static/images/{{images[6]}}' alt="images of braids" class="img-1">
+          <img src='https://www.pythonanywhere.com/user/braidstarz/files/home/braidstarz/mysite/BRAIDSTARZ/static/images/{{images[7]}}' alt="images of braids" class="img-1"><br>
 
-          <img src='{{url_for("static", filename="images/astral logo.jpg")}}' alt="images of braids" class="img-logo" >      
-          <img src='{{url_for("static", filename="images/astral logo.jpg")}}' alt="images of braids" class="img-logo" ><br>
-          
+          <img src='https://www.pythonanywhere.com/user/braidstarz/files/home/braidstarz/mysite/BRAIDSTARZ/static/images/{{images[8]}}' alt="images of braids" class="img-1">
+          <img src='https://www.pythonanywhere.com/user/braidstarz/files/home/braidstarz/mysite/BRAIDSTARZ/static/images/{{images[9]}}' alt="images of braids" class="img-1"><br>
+
+          <img src='https://www.pythonanywhere.com/user/braidstarz/files/home/braidstarz/mysite/BRAIDSTARZ/static/logo.jpg' alt="images of braids" class="img-logo">
+          <img src='https://www.pythonanywhere.com/user/braidstarz/files/home/braidstarz/mysite/BRAIDSTARZ/static/logo.jpg' alt="images of braids" class="img-logo"><br>
+
+
         </div>
       <div class="cd-more">
         <center>

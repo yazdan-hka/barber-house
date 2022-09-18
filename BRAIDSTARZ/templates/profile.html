@@ -26,26 +26,24 @@
 
     .pro-pic{
         justify-content: center;
-        width: 70%;
+        width: min-content;
         height: 32rem;
         border:1px solid #330033;
-        transition: ease-in-out 1s;
+        transition: ease-in-out 2s;
     }
 
     .pro-pic:hover{
         justify-content: center;
-        width: 80%;
         height: 35rem;
         transition: ease-in-out 1s;
-        box-shadow:0 0 30px #330033;
+        box-shadow:0 0 100px #330033;
         border-bottom:0px solid #330033;
     }
 
     .pro-pic img{
-        width: 16rem;
-        height: 16rem;
-        border-radius:4rem;
-        box-shadow:0 0 10px black;
+        height: 100%;
+
+        box-shadow:0 0 20px black;
     }
 
     .pro-text {
@@ -236,7 +234,7 @@
   <div class="pro"><br><br>
     <div class="pro-info">
       <div class="pro-pic">
-        <img style="width:10rem;" src="https://i.pinimg.com/originals/50/d3/25/50d325a729713b2c2e3ae1ead77778ef.jpg" alt="braidstarz {{ info.fullname }} account">
+        <img src="https://www.pythonanywhere.com/user/braidstarz/files/home/braidstarz/mysite/BRAIDSTARZ/static/logo.jpg" alt="braidstarz braider {{ info.fullname }} account, braider in {{info.city}}, {{info.country}}">
       </div>
       <div style="padding:1px" class="pro-text">
         <h2  class="content-text-black">

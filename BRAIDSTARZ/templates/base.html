@@ -317,9 +317,9 @@
             <span class="icon-bar" style="border:solid 1px black;box-shadow: 0 0 5px #330033; border:solid 1px black;"></span>
             <span class="icon-bar" style="box-shadow: 0 0 5px #330033; border:solid 1px black;"></span>
           </button>
-          <img style='float:left; height:50px;' src='{{url_for("static", filename="images/logo.jpg")}}' alt="">
+          <img style='float:left; height:50px;' src='https://www.pythonanywhere.com/user/braidstarz/files/home/braidstarz/mysite/BRAIDSTARZ/static/logo.jpg' alt="">
           <a class="navbar-brand" style=" color:#cccccc; text-shadow: 0px 0px 7px #330033;" href="{{ url_for('home_page') }}">BraidStarz</a>
-          {% if loged_in==True and true_user==False %}
+          {% if loged_in==True and true_user==True %}
           <a href="{{ url_for('profile_page', username=name)}}">
             <div style="border:1px solid #212121; width: 45px;height:34px; float:right; background:#330033; border-radius:5px; margin:8px 15px 8px 0;">
               <center>

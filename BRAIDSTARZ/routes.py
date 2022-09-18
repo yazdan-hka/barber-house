@@ -1,16 +1,15 @@
 from importlib_metadata import pathlib
 from BRAIDSTARZ import app, db
 from flask import render_template, redirect, url_for, flash, request
-from BRAIDSTARZ.models import braiders, email_messages, images, subscribers
+from BRAIDSTARZ.models import braiders, email_messages, subscribers
 from BRAIDSTARZ.forms import register_form, login_form, braider_finder_form, email_messages_form, subscribe_form, edit_braider_form, collection_filter_form
 from flask_login import login_user, current_user, logout_user
 from BRAIDSTARZ.func import find_braiders, subscribe, authenticated
 import smtplib, ssl
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 import random
-from time import sleep
-from email.message import EmailMessage
 import os
-
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -24,7 +23,10 @@ def home_page():
     sub_form = subscribe_form()
     subscribe(sub_form)
 
-    images = os.listdir(r'C:/Users/cmos\Desktop/code\BraidStarz/2 - latest, links work, connected to db, online/BRAIDSTARZ/static/images/normal-design-braid')
+    try:
+        images = os.listdir(r'/home/braidstarz/mysite/BRAIDSTARZ/static/images')
+    except:
+        images = os.listdir(r'C:\Users\cmos\Desktop\code\BraidStarz\2 - latest, links work, connected to db, online\BRAIDSTARZ\static\images\normal-design-braid')
 
 
     name, loged_in, true_user = authenticated(current_user, true_user, name)
@@ -49,7 +51,7 @@ def about_page():
 
     name = 'BRAIDSTARZ'
     true_user = False
-    
+
     sub_form = subscribe_form()
     subscribe(sub_form)
 
@@ -96,34 +98,99 @@ def to_be_confirmed(code):
 
 
 def verify_email(email, code):
+    sender = 'yazdan.unknown@gmail.com'
+    password = 'nhdcubwbvjzpppss'
 
-    email_sender = 'yazdan.unknown@gmail.com'
-    email_password = 'nhdcubwbvjzpppss'
-    email_receiver = email
+    msg = MIMEMultipart('alternative')
+    msg['Subject'] = "BraidStarz Confirmation"
+    msg['From'] = 'BraidStarz'
+    msg['To'] = 'Braider'
 
-    subject = ''
-    body = f"""\
-    Subject: BraidStarz
-    Hey! Welcome to BraidStarz Family..
+    text = "Welcome To the Big Braid Family of BraidStarz..\n\n"
+    html = """
+    <!DOCTYPE html>
+    <html>
+      <head>
+      </head>
 
-    Click on the Link Bellow to Confirm Your Registration.
+      <body>
+        <style>
+        .container{
+            margin:20px;
+            text-align:center;
+            padding:10px;
+            background-color:black;
+            border:1px solid #330033;
+            }
+            .inline-link-1 {
+            display: inline-block;
+            margin: 0 0.2em;
+            padding: 10px;
+            width: 50%;
+            background-color: #330033;
+            transition: all 0.4s ease-out;
+            box-shadow:0 0 10px #330033;
+            border:none;
+            color: grey;
+            }
 
-    https://www.braidstarz.art/ToBeConfirmed/{code}
-    """
-    em = EmailMessage()
-    em['BraidStarz'] = email_sender
-    em['To'] = email_receiver
-    em['Email Verification'] = subject
-    em.set_content(body)
+        .inline-link-1:hover {
+            background-color: black;
+            }
 
-    context = ssl.create_default_context()
+        .inline-link-1:active h2{
+            color: black;
+            }
 
-    with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
-        smtp.login(email_sender, email_password)
-        smtp.sendmail(email_sender, email_receiver, em.as_string())
+        .inline-link-1:visited {
+            background: grey;
+        }
+        .content-text-black {
+            color:grey;
+            text-shadow:0.5px 2px 3px #330033;
+        }
+      </style>
 
-    print('email is sent')
-    
+        <div class='container'>
+          <h2 class="content-text-black">
+            Welcome To the Big Braid Family of BraidStarz..
+          </h2> <br>
+          <h3 class="content-text-black">
+            Please Click on the Button Bellow to Confirm Your Registration.
+          </h3> <br>
+
+          <a href='https://www.braidstarz.art/ToBeConfirmed/++' target='_blank'>  
+            <button class='inline-link-1'>
+                <center>
+                  <h2 class="content-text-black">
+                    Confirm
+                  </h2> 
+                </center>  
+            </button><br>
+          </a>
+        </div>
+      </body>
+    </html>
+    """.replace('++', code)
+
+    part1 = MIMEText(text, 'plain')
+    part2 = MIMEText(html, 'html')
+    print(' messages are attached.')
+
+    msg.attach(part1)
+    msg.attach(part2)
+    mail = smtplib.SMTP('smtp.gmail.com', 587)
+    print('mail is connected to local')
+
+    mail.ehlo()
+    mail.starttls()
+    mail.login(sender, password)
+    mail.sendmail(sender, email, msg.as_string())
+    print('mail is sent')
+
+    mail.quit()
+    print('out of mail')
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register_page():
@@ -147,7 +214,7 @@ def register_page():
             return render_template('register.html', form=form, sub_form=sub_form)
 
     if form.validate_on_submit():
-    
+
         if form.address.data.lower() == "" or " ":
             no_address = 'no address'
         else:
@@ -159,13 +226,13 @@ def register_page():
         b = []
         n = 0
 
-        while n <= 32 :
+        while n <= 32:
             b.append(random.choice(a))
             n += 1
+        code = ''.join()
 
-        code = ''.join(b)
         verify_email(form.email.data.lower(), code)
-    
+
         braider = braiders(username=form.username.data.lower(),
                                         fullname=form.fullname.data.lower(),
                                         email=form.email.data.lower(),
@@ -179,12 +246,12 @@ def register_page():
                                         website=form.website.data.lower(),
                                         twitter=form.twitter.data.lower(),
                                         youtube=form.youtube.data.lower(),
-                                        )      
+                                        )
 
         db.session.add(braider)
         db.session.commit()
 
-        # flash('your account has been created', category='success')
+        flash('your account has been created', category='success')
 
         return redirect(url_for('verify_page', email=form.email.data.lower()))
 
@@ -266,7 +333,7 @@ def profile_page(username):
 def edit_profile_page():
 
     edit_form = edit_braider_form()
-    
+
     sub_form = subscribe_form()
     subscribe(sub_form)
 
@@ -383,7 +450,10 @@ def collection_page():
     loged_in = False
     true_user = False
 
-    images = os.listdir(r'C:/Users/cmos\Desktop/code\BraidStarz/2 - latest, links work, connected to db, online/BRAIDSTARZ/static/images/normal-design-braid')
+    try:
+        images = os.listdir(r'/home/braidstarz/mysite/BRAIDSTARZ/static/images')
+    except:
+        images = os.listdir(r'C:\Users\cmos\Desktop\code\BraidStarz\2 - latest, links work, connected to db, online\BRAIDSTARZ\static\images\normal-design-braid')
 
     name, loged_in, true_user = authenticated(current_user, true_user, name)
 
@@ -436,7 +506,7 @@ def verify_page(email):
     true_user = False
     sub_form = subscribe_form()
     subscribe(sub_form)
-    name, loged_in, true_user = authenticated(current_user, true_user, name)  
+    name, loged_in, true_user = authenticated(current_user, true_user, name)
 
     return render_template('verify.html', sub_form=sub_form, name=name, loged_in=loged_in, true_user=true_user, email=email)
 
@@ -471,7 +541,7 @@ def authenticated(current_user, true_user, name):
         name = current_user.username
         loged_in  = True
 
-        if current_user.username == username:
+        if current_user.username == name:
             true_user = True
 
     return name, loged_in, true_user
