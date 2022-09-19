@@ -35,6 +35,7 @@ def home_page():
 
         searched = search_form.search_content.data
         results = find_braiders(db, searched, braiders)
+        print(type(results))
 
         if results is False:
 
