@@ -1,0 +1,42 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Introducing different hairstyles">
+    <meta name="keywords" content="Hairstyles, New hairstyle, Old hairstyle, Different hairstyles">
+    <meta name="author" content="Arash Ajorlou">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/post-details.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/responsive.css' %}">
+    <script src="{% static 'scripts/all.min.js' %}"></script>
+    <title>Hairstyles</title>
+
+{% endblock %}
+
+
+{% block content %}
+
+    <section class="sec-20 overflow-hidden">
+        <div class="post-details">
+            <div class="post">
+                <img src="{% static 'img/profile/post/9.png' %}" alt="Post">
+            </div>
+            <div>
+                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Description..."></textarea>
+            </div>
+            <button>Post</button>
+        </div>
+    </section>
+
+{% endblock %}
+
+
+{% block script %}
+    <script src="{% static 'scripts/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'scripts/script.js' %}"></script>
+{% endblock %}

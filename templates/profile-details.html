@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Introducing different hairstyles">
+    <meta name="keywords" content="Hairstyles, New hairstyle, Old hairstyle, Different hairstyles">
+    <meta name="author" content="Arash Ajorlou">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/profile-details.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/responsive.css' %}">
+    <script src="{% static 'scripts/all.min.js' %}"></script>
+    <title>Hairstyles</title>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+    <section class="sec-21 overflow-hidden">
+        <div class="profile-details">
+            <div class="profile-img">
+                <img src="{% static 'img/profile/profile/6-1.png.jpg' %}" alt="Profile Image">
+            </div>
+            <form action="#">
+                <input type="text" placeholder="Name...">
+                <input type="text" placeholder="Family...">
+                <input type="text" placeholder="Username...">
+                <input type="email" placeholder="Email...">
+                <input type="text" placeholder="Phone number...">
+
+            </form>
+            <div class="btn">
+                <button>Yes</button>
+                <button>No</button>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}
+
+
+{% block script %}
+    <script src="{% static 'scripts/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'scripts/script.js' %}"></script>
+{% endblock %}

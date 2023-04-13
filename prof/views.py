@@ -14,3 +14,11 @@ def post(request):
 def saved(request):
     return render(request, 'saved.html')
 
+
+def profile_details(request):
+    return render(request, 'profile-details.html')
+
+
+def post_details(request):
+    return render(request, 'post-details.html')
+
