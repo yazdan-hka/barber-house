@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Introducing different hairstyles">
+    <meta name="keywords" content="Hairstyles, New hairstyle, Old hairstyle, Different hairstyles">
+    <meta name="author" content="Arash Ajorlou">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/login.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/responsive.css' %}">
+    <script src="{% static 'scripts/all.min.js' %}"></script>
+    <title>Hairstyles</title>
+</head>
+
+<body>
+
+    <section class="sec-16 overflow-hidden">
+        <div class="login">
+            <div class="user-login">
+                <i class="fa-regular fa-user"></i>
+                <h1>User Login</h1>
+            </div>
+            <form action="#">
+                <input type="text" placeholder="Email ID,Username" class="text" required>
+                <br>
+                <input type="password" placeholder="Password" class="pass" required>
+                <div class="details">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Remember me
+                        </label>
+                    </div>
+                    <a href="#"></a>
+                    <p>Forget Password?</p>
+                </div>
+                <button class="login-button">Login</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="{% static 'scripts/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'scripts/script.js' %}"></script>
+
+</body>
+
+</html>

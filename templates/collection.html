@@ -1,0 +1,311 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="description" content="Introducing different hairstyles">
+    <meta name="keywords" content="Hairstyles, New hairstyle, Old hairstyle, Different hairstyles">
+    <meta name="author" content="Arash Ajorlou">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/collection.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/responsive.css' %}">
+    <script src="{% static 'styles/all.min.js' %}"></script>
+    <title>Hairstyles</title>
+{% endblock %}
+
+
+{% block content %}
+
+    <section class="sec-5 overflow-hidden">
+        <div class="collection">
+            <div class="title">
+                <h1>Collection</h1>
+            </div>
+            <div class="search">
+                <form action="#">
+                    <div class="search-box">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <button class="btn" type="button" id="button-addon2"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <a href="#">
+                    <div class="img-collection">
+                        <img src="{% static 'img/collection/braids/1.png' %}" alt="Braid">
+                    </div>
+                    <div class="details">
+                        <div class="profile">
+                            <img src="{% static 'img/collection/profile/1.png' %}" alt="Braider profile">
+                        </div>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit elit el...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#">
+                    <div class="img-collection">
+                        <img src="{% static 'img/collection/braids/2.png' %}" alt="Braid">
+                    </div>
+                    <div class="details">
+                        <div class="profile">
+                            <img src="{% static 'img/collection/profile/2.png' %}" alt="Braider profile">
+                        </div>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit elit el...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#">
+                    <div class="img-collection">
+                        <img src="{% static 'img/collection/braids/3.png' %}" alt="Braid">
+                    </div>
+                    <div class="details">
+                        <div class="profile">
+                            <img src="{% static 'img/collection/profile/3.png' %}" alt="Braider profile">
+                        </div>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit elit el...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#">
+                    <div class="img-collection">
+                        <img src="{% static 'img/collection/braids/4.png' %}" alt="Braid">
+                    </div>
+                    <div class="details">
+                        <div class="profile">
+                            <img src="{% static 'img/collection/profile/4.png' %}" alt="Braider profile">
+                        </div>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit elit el...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <a href="#">
+                    <div class="img-collection">
+                        <img src="{% static 'img/collection/braids/5.png' %}" alt="Braid">
+                    </div>
+                    <div class="details">
+                        <div class="profile">
+                            <img src="{% static 'img/collection/profile/5.png' %}" alt="Braider profile">
+                        </div>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit elit el...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#">
+                    <div class="img-collection">
+                        <img src="{% static 'img/collection/braids/6.png' %}" alt="Braid">
+                    </div>
+                    <div class="details">
+                        <div class="profile">
+                            <img src="{% static 'img/collection/profile/6.png' %}" alt="Braider profile">
+                        </div>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit elit el...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#">
+                    <div class="img-collection">
+                        <img src="{% static 'img/collection/braids/7.png' %}" alt="Braid">
+                    </div>
+                    <div class="details">
+                        <div class="profile">
+                            <img src="{% static 'img/collection/profile/7.png' %}" alt="Braider profile">
+                        </div>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit elit el...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#">
+                    <div class="img-collection">
+                        <img src="{% static 'img/collection/braids/8.png' %}" alt="Braid">
+                    </div>
+                    <div class="details">
+                        <div class="profile">
+                            <img src="{% static 'img/collection/profile/8.png' %}" alt="Braider profile">
+                        </div>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit elit el...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <a href="#">
+                    <div class="img-collection">
+                        <img src="{% static 'img/collection/braids/1.png' %}" alt="Braid">
+                    </div>
+                    <div class="details">
+                        <div class="profile">
+                            <img src="{% static 'img/collection/profile/1.png' %}" alt="Braider profile">
+                        </div>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit elit el...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#">
+                    <div class="img-collection">
+                        <img src="{% static 'img/collection/braids/2.png' %}" alt="Braid">
+                    </div>
+                    <div class="details">
+                        <div class="profile">
+                            <img src="{% static 'img/collection/profile/2.png' %}" alt="Braider profile">
+                        </div>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit elit el...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#">
+                    <div class="img-collection">
+                        <img src="{% static 'img/collection/braids/3.png' %}" alt="Braid">
+                    </div>
+                    <div class="details">
+                        <div class="profile">
+                            <img src="{% static 'img/collection/profile/3.png' %}" alt="Braider profile">
+                        </div>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit elit el...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#">
+                    <div class="img-collection">
+                        <img src="{% static 'img/collection/braids/4.png' %}" alt="Braid">
+                    </div>
+                    <div class="details">
+                        <div class="profile">
+                            <img src="{% static 'img/collection/profile/4.png' %}" alt="Braider profile">
+                        </div>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit elit el...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <a href="#">
+                    <div class="img-collection">
+                        <img src="{% static 'img/collection/braids/5.png' %}" alt="Braid">
+                    </div>
+                    <div class="details">
+                        <div class="profile">
+                            <img src="{% static 'img/collection/profile/5.png' %}" alt="Braider profile">
+                        </div>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit elit el...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#">
+                    <div class="img-collection">
+                        <img src="{% static 'img/collection/braids/6.png' %}" alt="Braid">
+                    </div>
+                    <div class="details">
+                        <div class="profile">
+                            <img src="{% static 'img/collection/profile/6.png' %}" alt="Braider profile">
+                        </div>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit elit el...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#">
+                    <div class="img-collection">
+                        <img src="{% static 'img/collection/braids/7.png' %}" alt="Braid">
+                    </div>
+                    <div class="details">
+                        <div class="profile">
+                            <img src="{% static 'img/collection/profile/7.png' %}" alt="Braider profile">
+                        </div>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit elit el...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#">
+                    <div class="img-collection">
+                        <img src="{% static 'img/collection/braids/8.png' %}" alt="Braid">
+                    </div>
+                    <div class="details">
+                        <div class="profile">
+                            <img src="{% static 'img/collection/profile/8.png' %}" alt="Braider profile">
+                        </div>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit elit el...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="btn-np ">
+            <div class="previous "><a href="# ">Prev</a></div>
+
+            <div class="numbers ">
+                <div class="number ">
+                    <a href="# ">1</a>
+                </div>
+                <div class="number ">
+                    <a href="# ">2</a>
+                </div>
+                <div class="number ">
+                    <a href="# ">3</a>
+                </div>
+            </div>
+            <div class="next "><a href="# ">Next</a></div>
+        </div>
+    </section>
+
+{% endblock %}
+
+
+{% block script %}
+
+<script src="{% static 'styles/bootstrap.bundle.min.js' %}"></script>
+
+{% endblock %}

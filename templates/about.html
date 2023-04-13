@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="description" content="Introducing different hairstyles">
+    <meta name="keywords" content="Hairstyles, New hairstyle, Old hairstyle, Different hairstyles">
+    <meta name="author" content="Arash Ajorlou">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'styles/about.css'%}">
+    <link rel="stylesheet" href="{% static 'styles/responsive.css'%}">
+    <script src="{% static 'scripts/all.min.js' %}"></script>
+    <title>Hairstyles</title>
+    
+{% endblock %}
+
+
+{% block content %}
+ <section class="sec-11 overflow-hidden">
+        <div class="about">
+            <div class="container">
+                <div class="title">
+                    <h1>BraidStarz</h1>
+                </div>
+                <div class="description">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam veniam quos dignissimos. Officiis quas voluptatibus et quasi blanditiis ad quisquam! Commodi quisquam eos dolorem aperiam. Temporibus at ipsum ut porro! Lorem, ipsum dolor
+                        sit amet consectetur adipisicing elit. Cupiditate perspiciatis provident quaerat velit nisi eligendi itaque maxime dignissimos! Nihil nulla natus sint et voluptates corporis quidem a enim nam voluptatibus. Lorem, ipsum dolor sit
+                        amet consectetur adipisicing elit. Ipsam veniam quos dignissimos. Officiis quas voluptatibus et quasi blanditiis ad quisquam! Commodi quisquam eos dolorem aperiam. Temporibus at ipsum ut porro! Lorem, ipsum dolor sit amet consectetur
+                        adipisicing elit. Cupiditate perspiciatis provident quaerat velit nisi eligendi itaque maxime dignissimos! Nihil nulla natus sint et voluptates corporis quidem a enim nam voluptatibus. Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Ipsam veniam quos dignissimos. Officiis quas voluptatibus et quasi blanditiis ad quisquam! Commodi quisquam eos dolorem aperiam. Temporibus at ipsum ut porro! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
+                        perspiciatis provident quaerat velit nisi eligendi itaque maxime dignissimos! Nihil nulla natus sint et voluptates corporis quidem a enim nam voluptatibus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec-12 overflow-hidden">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="feedback">
+                        <form action="#">
+                            <label for="name">Your Name : </label>
+                            <input type="text" id="name">
+                            <br>
+                            <label for="email">Your Email : </label>
+                            <input type="text" id="email">
+                            <br>
+                            <label for="comment">Your Comment : </label><br>
+                            <textarea id="comment">
+                            </textarea>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="socialmedia">
+                        <h2>Join the community</h2>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-discord"></i></a>
+                        <h3>BraidStarz@gmail.com</h3>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+{% endblock %}
+
+
+{% block script %}
+    <script src="{% static 'scripts/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'scripts/script.js' %}"></script>
+{% endblock %}

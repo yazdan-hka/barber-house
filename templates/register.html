@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Introducing different hairstyles">
+    <meta name="keywords" content="Hairstyles, New hairstyle, Old hairstyle, Different hairstyles">
+    <meta name="author" content="Arash Ajorlou">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/register.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/responsive.css' %}">
+    <script src="{% static 'scripts/all.min.js' %}"></script>
+    <title>Hairstyles</title>
+</head>
+
+<body>
+
+    <section class="sec-17 overflow-hidden">
+        <div class="register">
+            <div class="user-login">
+                <i class="fa-regular fa-user"></i>
+                <h1>User Register</h1>
+            </div>
+            <form action="#">
+                <input type="text" placeholder="Firstname" class="text" required>
+                <input type="text" placeholder="lastname" class="text" required>
+                <div class="flex">
+                    <input type="text" placeholder="Username" class="text" required>
+                    <select class="form-select text text-1" aria-label="Default select example">
+                        <option selected>Customer</option>
+                        <option value="1">Braider</option>
+                    </select>
+                </div>
+
+                <input type="email" placeholder="Email" class="email" required>
+                <input type="password" placeholder="Password" class="pass" required>
+                <input type="text" placeholder="Phone number" class="number" required>
+
+                <button class="login-button">Sign up</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="{% static 'scripts/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'scripts/script.js' %}"></script>
+
+</body>
+
+</html>

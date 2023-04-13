@@ -1,0 +1,88 @@
+Existing web pages:
+
+    base
+    about'
+    collection'
+    collection-1'
+    index'
+    login'
+    loginfirst'
+    nfts'
+    post'
+    profile'
+    register'
+    registerfirst'
+    saved'
+    search'
+
+Web applications:
+
+    main:
+        index
+        about
+
+    auth:
+        register
+        registerfirst
+        login
+        loginfirst
+
+    profile:
+        post
+        profile
+        saved
+
+    collection:
+        collection
+        collection-1
+
+    nft:
+        nfts
+
+Models:
+
+    Braider:
+
+        id
+        firstname
+        lastname
+        instagram_id
+        username
+        country
+        city
+        email
+        password
+
+        address
+        biography
+        phone_num
+        profilepic
+        posted
+        saved
+        
+
+    posts:
+
+        category(design, snitch, goddess, etc)
+        uploader(foreign)
+        city(city of the uploader)
+        country(country of the uploader)
+        discription
+        comments
+
+    messages:
+
+        name
+        email
+        comment
+
+    nft/
+
+
+Forms:
+
+    register
+    login
+    message
+    search
+

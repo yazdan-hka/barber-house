@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Introducing different hairstyles">
+    <meta name="keywords" content="Hairstyles, New hairstyle, Old hairstyle, Different hairstyles">
+    <meta name="author" content="Arash Ajorlou">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/loginfirst.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/responsive.css' %}">
+    <script src="{% static 'scripts/all.min.js' %}"></script>
+    <title>Hairstyles</title>
+</head>
+
+<body>
+
+    <section class="sec-18 overflow-hidden">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="background"></div>
+            </div>
+            <div class="col-md-5">
+                <div class="title">
+                    <h1><img src="{% static 'img/logo.png' %}" alt="Logo">BraidStarz</h1>
+                </div>
+                <h3>Login</h3>
+                <a href="#"><span><img src="{% static 'img/loginfirst/google.svg' %}" alt="Google icon">Continue with Google</span></a>
+                <a href="#"><span><i class="fa-brands fa-facebook facebook"></i>Continue with Facebook</span></a>
+                <a href="{% url 'login' %}"><span><i class="fa-regular fa-envelope"></i>Continue with Email</span></a>
+                <p>Don't you have an account? <a href="{% url 'fregister' %}">Sign up</a></p>
+            </div>
+        </div>
+    </section>
+
+    <script src="{% static 'scripts/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'scripts/script.js' %}"></script>
+
+</body>
+
+</html>

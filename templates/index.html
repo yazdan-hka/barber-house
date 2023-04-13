@@ -1,0 +1,332 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="description" content="Introducing different hairstyles">
+    <meta name="keywords" content="Hairstyles, New hairstyle, Old hairstyle, Different hairstyles">
+    <meta name="author" content="Arash Ajorlou">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/search.css'%} ">
+    <script src="{% static 'scripts/all.min.js' %}"></script>
+    <title>Hairstyles</title>
+{% endblock %}
+
+
+{% block content %}
+
+    <section class="sec-1 overflow-hidden">
+        <div class="title">
+            <h1>BraidStarz</h1>
+            <p>Hello, Braid lover!<br>BraidStarz love braid & provide incredible services to those who like braids too.</p>
+        </div>
+        <div class="search">
+            <div class="cont1">
+                <h2>Find your braider now!</h2>
+                <p>You can find braider near you<br>by searching one of the following items</p>
+                <p>Your Country / Your City / The Braider name / Their Social meida ID</p>
+                <form action="#">
+                    <div class="search-box">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <button class="btn" type="button" id="button-addon2"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+<!-- search result -->
+    <section class="sec-13 overflow-hidden">
+        <div class="container">
+            <div class="r-search">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="title">
+                            <img src="{% static 'img/collection/profile/1.png' %}" alt="Braider profile">
+                            <h2>USER NAME</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Country : Iran</h4>
+                        <h4>City : Tehran</h4>
+                        <h4>Phone : +9812345678</h4>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <button class="v-profile"><a href="#">View Profile</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec-2 overflow-hidden">
+        <div class="title">
+            <h2>
+                Collection of braids
+            </h2>
+        </div>
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="collection.html">
+                        <div class="position-relative">
+                            <img src="{% static 'img/home/briads/1.jpg' %}" class="d-block" alt="Braid">
+                            <div class="img-title position-absolute top-50 start-50 translate-middle">
+                                <h5>First slide label</h5>
+                                <p>Some representative placeholder content for the first slide.</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="collection.html">
+                        <div class="position-relative">
+                            <img src="{% static 'img/home/briads/2.jpg' %}" class="d-block" alt="Braid">
+                            <div class="img-title position-absolute top-50 start-50 translate-middle">
+                                <h5>First slide label</h5>
+                                <p>Some representative placeholder content for the first slide.</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="collection.html">
+                        <div class="position-relative">
+                            <img src="{% static 'img/home/briads/3.jpg' %}" class="d-block" alt="Braid">
+                            <div class="img-title position-absolute top-50 start-50 translate-middle">
+                                <h5>First slide label</h5>
+                                <p>Some representative placeholder content for the first slide.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="collection.html">
+                        <div class="position-relative">
+                            <img src="{% static 'img/home/briads/4.jpg' %}" class="d-block" alt="Braid">
+                            <div class="img-title position-absolute top-50 start-50 translate-middle">
+                                <h5>First slide label</h5>
+                                <p>Some representative placeholder content for the first slide.</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="collection.html">
+                        <div class="position-relative">
+                            <img src="{% static 'img/home/briads/5.jpg' %}" class="d-block" alt="Braid">
+                            <div class="img-title position-absolute top-50 start-50 translate-middle">
+                                <h5>First slide label</h5>
+                                <p>Some representative placeholder content for the first slide.</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="collection.html">
+                        <div class="position-relative">
+                            <img src="{% static 'img/home/briads/6.jpg' %}" class="d-block" alt="Braid">
+                            <div class="img-title position-absolute top-50 start-50 translate-middle">
+                                <h5>First slide label</h5>
+                                <p>Some representative placeholder content for the first slide.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="collection.html">
+                        <div class="position-relative">
+                            <img src="{% static 'img/home/briads/7.jpg' %}" class="d-block" alt="Braid">
+                            <div class="img-title position-absolute top-50 start-50 translate-middle">
+                                <h5>First slide label</h5>
+                                <p>Some representative placeholder content for the first slide.</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="collection.html">
+                        <div class="position-relative">
+                            <img src="{% static 'img/home/briads/8.jpg' %}" class="d-block" alt="Braid">
+                            <div class="img-title position-absolute top-50 start-50 translate-middle">
+                                <h5>First slide label</h5>
+                                <p>Some representative placeholder content for the first slide.</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="collection.html">
+                        <div class="position-relative">
+                            <img src="{% static 'img/home/briads/9.jpg' %}" class="d-block" alt="Braid">
+                            <div class="img-title position-absolute top-50 start-50 translate-middle">
+                                <h5>First slide label</h5>
+                                <p>Some representative placeholder content for the first slide.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="collection.html">
+                        <div class="position-relative">
+                            <img src="{% static 'img/home/briads/10.jpg' %}" class="d-block" alt="Braid">
+                            <div class="img-title position-absolute top-50 start-50 translate-middle">
+                                <h5>First slide label</h5>
+                                <p>Some representative placeholder content for the first slide.</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="collection.html">
+                        <div class="position-relative">
+                            <img src="{% static 'img/home/briads/11.jpg' %}" class="d-block" alt="Braid">
+                            <div class="img-title position-absolute top-50 start-50 translate-middle">
+                                <h5>First slide label</h5>
+                                <p>Some representative placeholder content for the first slide.</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="collection.html">
+                        <div class="position-relative">
+                            <img src="{% static 'img/home/briads/12.jpg' %}" class="d-block" alt="Braid">
+                            <div class="img-title position-absolute top-50 start-50 translate-middle">
+                                <h5>First slide label</h5>
+                                <p>Some representative placeholder content for the first slide.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="more">
+            <span><a href="collection.html">More<i class="fa-solid fa-angle-right"></i></a></span>
+        </div>
+    </section>
+
+    <section class="sec-3 overflow-hidden">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="intro-nfts">
+                    <h2>NFTs GALLERY</h2>
+                    <p>By purchasing from this collection, you will also receive a token in real life. Wherever you live, you can search your city and find the nearest Braider approved by our team and use your token.</p>
+                    <a href="nfts.html"><button>Learn More</button></a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="nfts-img">
+                    <img src="{% static 'img/home/nft.gif' %}" alt="NFTs">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec-4 overflow-hidden">
+        <div class="braider">
+            <div class="title">
+                <h3>
+                    As a braider, you can create braider account that:
+                </h3>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <p>Make you visible to anyone looking for a braider from anywhere, but mostly near you.</p>
+                            </div>
+                            <div class="carousel-item">
+                                <p>You can sell your braiding products in our braid market (coming soon).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <p> You can share your photos & videos to let everyone see your braid work quality (coming soon).</p>
+                            </div>
+                            <div class="carousel-item">
+                                <p>You can have organized resevations & have a backup of them that only you can see (coming soon).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <p>You can communicate with your customers (coming soon).</p>
+                            </div>
+                            <div class="carousel-item">
+                                <p>Make yourself a famous braider! </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="customer">
+            <div class="title">
+                <h3>
+                    As a customer, you can:
+                </h3>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <p>Read articles about braid and everything within it.</p>
+                            </div>
+                            <div class="carousel-item">
+                                <p>Read news and see trends of braid.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <p>Find licensed hair braider.</p>
+                            </div>
+                            <div class="carousel-item">
+                                <p>See different braided hairstyles and find the braider of that dirrectly (coming soon).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <p>You can learn how to braid with our braid toturial (coming soon).</p>
+                            </div>
+                            <div class="carousel-item">
+                                <p>You can communicate with your braider (coming soon).</p>
+                            </div>
+                            <div class="carousel-item">
+                                <p>Buy cool braid NFTs! (coming soon).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+
+{% block script %}
+
+<script src="{% static 'scripts/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'scripts/script.js' %}"></script>
+
+{% endblock %}
