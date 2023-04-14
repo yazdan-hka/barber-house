@@ -48,8 +48,10 @@ Models:
         lastname
         instagram_id
         username
+        business_name
         country
         city
+        number
         email
         password
 
