@@ -25,22 +25,23 @@
                 <h1>User Register</h1>
             </div>
 
-            <form action="#">
+            <form method='post' action="{% url 'user:login' %}">
+            {% csrf_token %}
 
-                <input type="text" placeholder="Firstname" class="text" required>
-                <input type="text" placeholder="lastname" class="text" required>
+                <input name='firstname' type="text" placeholder="Firstname" class="text" required>
+                <input name='lastname' type="text" placeholder="lastname" class="text" required>
                 <div class="flex">
-                    <input type="text" placeholder="Username" class="text" required>
-                    <select class="form-select text text-1" aria-label="Default select example">
+                    <input name='username' type="text" placeholder="Username" class="text" required>
+                    <select name='usertype' class="form-select text text-1" aria-label="Default select example">
                         <option selected>Customer</option>
                         <option value="1">Braider</option>
                     </select>
                 </div>
 
-                <input type="email" placeholder="Email" class="email" required>
-                <input type="password" placeholder="Password" class="pass" required>
+                <input name='email' type="email" placeholder="Email" class="email" required>
+                <input name='password' type="password" placeholder="Password" class="pass" required>
                 <!-- Country names and Country Name -->
-                <select class="form-select" id="country" name="country">
+                <select name='country' class="form-select" id="country" name="country">
                     <option value="">country</option>
                     <option value="Afghanistan">Afghanistan</option>
                     <option value="Aland Islands">Aland Islands</option>
@@ -295,6 +296,9 @@
                     <option value="Zambia">Zambia</option>
                     <option value="Zimbabwe">Zimbabwe</option>
                 </select>
+
+
+
                 <select name="countryCode" id="">
                 <option data-countryCode="GB" value="44" Selected>UK (+44)</option>
                 <option data-countryCode="US" value="1">USA (+1)</option>
@@ -515,7 +519,7 @@
                         <option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
                     </optgroup>
                 </select>
-                <input type="text" placeholder="Phone number" class="number" required>
+                <input  name='phonenumber'type="text" placeholder="Phone number" class="number" required>
 
                 <button class="login-button">Sign up</button>
 

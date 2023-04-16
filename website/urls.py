@@ -22,5 +22,5 @@ urlpatterns = [
     path('', include('prof.urls')),
     path('', include('collection.urls')),
     path('', include('nft.urls')),
-    path('auth/', include('auth.urls')),
+    path('user/', include('user.urls')),
 ]
