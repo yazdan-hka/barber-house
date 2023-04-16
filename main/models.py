@@ -1,4 +1,5 @@
 from django.db import models
+from phonenumber_field.modelfields import PhoneNumberField
 
 # Create your models here.
 
@@ -17,14 +18,16 @@ class Braider(models.Model):
     last_name = models.CharField(max_length=30)
     user_name = models.CharField(max_length=30)
     user_type = models.CharField(max_length=8, choices=COLOR_CHOICES, default='green')
-    insta_id = models.CharField(max_length=40)
+    insta_id = models.CharField(max_length=40, default='braidstarz')
     email = models.EmailField()
     password = models.CharField(max_length=120)
-    number = models.CharField(max_length=20)
-    country = models.CharField(max_length=30)
-    city = models.CharField(max_length=50)
+    phone_number = PhoneNumberField(default='No Number.')
+    country = models.CharField(max_length=30, default='none')
+    city = models.CharField(max_length=50, default='none')
 
+    def get_absolute_url(self):
 
+        return "/profile/%i/" % self.id
 
 
 
