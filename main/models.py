@@ -4,11 +4,9 @@ from phonenumber_field.modelfields import PhoneNumberField
 # Create your models here.
 
 COLOR_CHOICES = (
-    ('green','GREEN'),
-    ('blue', 'BLUE'),
-    ('red','RED'),
-    ('orange','ORANGE'),
-    ('black','BLACK'),
+    ('braider','Braider'),
+    ('customer', 'Customer'),
+
 )
 
 
@@ -17,7 +15,7 @@ class Braider(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     user_name = models.CharField(max_length=30)
-    user_type = models.CharField(max_length=8, choices=COLOR_CHOICES, default='green')
+    user_type = models.CharField(max_length=8, choices=COLOR_CHOICES, default='customer')
     insta_id = models.CharField(max_length=40, default='braidstarz')
     email = models.EmailField()
     password = models.CharField(max_length=120)

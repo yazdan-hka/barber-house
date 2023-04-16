@@ -1,5 +1,4 @@
 from django.apps import AppConfig
-from .models import Braider
 
 
 class MainConfig(AppConfig):
@@ -7,4 +6,3 @@ class MainConfig(AppConfig):
     name = 'main'
 
 
-admin.site.register(Braider)

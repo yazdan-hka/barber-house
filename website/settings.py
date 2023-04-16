@@ -76,15 +76,15 @@ WSGI_APPLICATION = 'website.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES =\
-	{'default':
-		{
-		'ENGINE':'django.db.backends.postgresql',
-		'NAME':'braidstarz',
-		'USER':'postgres',
-		'PASSWORD':'password',
-		'HOST':'localhost', # or localhost
-		}
-	}
+    {'default':
+        {
+            'ENGINE':'django.db.backends.postgresql',
+            'NAME': 'braidstarz',
+            'USER':'postgres',
+            'PASSWORD':'password',
+            'HOST':'localhost', # or localhost
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
