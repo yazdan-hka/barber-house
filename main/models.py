@@ -1,5 +1,7 @@
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
+from django.core.exceptions import ValidationError
+from django.urls import reverse
 
 # Create your models here.
 
@@ -23,9 +25,13 @@ class Braider(models.Model):
     country = models.CharField(max_length=30, default='none')
     city = models.CharField(max_length=50, default='none')
 
-    def get_absolute_url(self):
+    def clean(self):
+        if len(password) < 9:
+            raise ValidationError('Password too short. please enter a password with 8 characters or more.')
 
-        return "/profile/%i/" % self.id
+
+
+
 
 
 
