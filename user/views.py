@@ -21,7 +21,7 @@ def register(request):
         print(f'\n\ndear {firstname}, we are Glad that you joined Braidstarz!! we konw that you are from {country}, '
               f'and your email is {email}.\n\n')
 
-        return redirect(reverse("user:login"))
+        return redirect(reverse("login"))
 
     return render(request, 'register.html')
 
