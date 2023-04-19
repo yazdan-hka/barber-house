@@ -19,6 +19,13 @@
 <body>
 
     <section class="sec-16 overflow-hidden">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
         <div class="login">
             <div class="user-login">
                 <i class="fa-regular fa-user"></i>
