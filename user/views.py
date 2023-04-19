@@ -50,8 +50,18 @@ def register(request):
     #     messages.add_message(request, messages.INFO, "Hello world.")
     #
     #     return redirect(reverse("register"))
-
-    form = Registration()
+    if request.method == 'POST':
+        form = Registration(request.POST)
+        if form.is_valid():
+            print('form is valid bitch')
+            return redirect('profile')
+        else:
+            for field_name, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f'{field_name}: {error}')
+            return redirect('register')
+    else:
+        form = Registration()
 
     context = {'form': form}
 

@@ -1,6 +1,6 @@
 from django import forms
 from main.models import Braider
-
+from django.core.exceptions import ValidationError
 
 class Registration(forms.ModelForm):
 
@@ -19,6 +19,7 @@ class Registration(forms.ModelForm):
                   ]
 
     def validate_password(value):
+
         number = '0123456789'
         chars = 'abcdefghijklmnopqrstuvwxyz'
         cap_chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -63,9 +64,19 @@ class Registration(forms.ModelForm):
                                   'and special characters in the length of 8 or more? '.title(),
                                   params={'value': value})
 
+    def validate_username(value):
+        chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456_789'
+        for i in value:
+            if i not in chars:
+                raise ValidationError('Invalid Username. be sure that your username includes only capital and small'
+                                      'letters, numbers, and underscores(_).')
+
+
+
     acc_types = (('c', 'Customer'), ('b', 'Braider'))
-    phone_codes = (('44', 'UK (+44)'),
+    phone_codes = (
                     ('1', 'USA (+1)'),
+                    ('44', 'UK (+44)'),
                     ('213', 'Algeria (+213)'),
                     ('376', 'Andorra (+376)'),
                     ('244', 'Angola (+244)'),
@@ -561,7 +572,7 @@ class Registration(forms.ModelForm):
         strip=True,
         label='',
         required=True,
-        validators=[],
+        validators=[validate_username],
         widget=forms.TextInput(attrs={'class': 'text', 'placeholder': 'Username(no white space)'})
     )
     insta_id = forms.CharField(
@@ -590,7 +601,6 @@ class Registration(forms.ModelForm):
         required=True,
         max_length=120,
         min_length=8,
-        validators=[validate_password]
     )
     phone_code = forms.ChoiceField(
         choices=phone_codes,

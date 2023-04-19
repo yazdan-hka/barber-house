@@ -7,8 +7,8 @@ from django.contrib.auth.models import auth
 # Create your models here.
 
 types = (
-    ('braider', 'braider'),
-    ('customer', 'customer')
+    ('c', 'braider'),
+    ('b', 'customer')
 )
 
 
