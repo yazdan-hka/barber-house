@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
-    
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Introducing different hairstyles">
@@ -19,23 +19,30 @@
 <body>
 
     <section class="sec-17 overflow-hidden">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
         <div class="register">
             <div class="user-login">
                 <i class="fa-regular fa-user"></i>
                 <h1>User Register</h1>
             </div>
 
-            <form action="#">
+            <form method='post' action="#">
+            {% csrf_token %}
 
-                <input type="text" placeholder="Firstname" class="text" required>
-                <input type="text" placeholder="lastname" class="text" required>
+                {{ form.first_name }}
+                {{ form.last_name }}
+
                 <div class="flex">
-                    <input type="text" placeholder="Username" class="text" required>
-                    <select class="form-select text text-1" aria-label="Default select example">
-                        <option selected>Customer</option>
-                        <option value="1">Braider</option>
-                    </select>
+                    {{ form.user_name }}
+                    {{ form.user_type }}
                 </div>
+<<<<<<< HEAD
                 <div class="country">
                     <input type="text" placeholder="Country" class="text" required>
                     <input type="text" placeholder="City" class="text" required>
@@ -519,6 +526,24 @@
                     </optgroup>
                 </select>
                 <input type="text" placeholder="Phone number" class="number" required>
+=======
+
+                {{ form.email }}
+                {{ form.password1 }}
+                {{ form.password2 }}
+
+                {{ form.country }}
+                {{ form.city }}
+
+                {{ form.phone_code }}
+                {{ form.phone_num }}
+
+
+
+
+
+                <input  name='phonenumber'type="text" placeholder="Phone number" class="number" required>
+>>>>>>> register-api
 
                 <button class="login-button">Sign up</button>
 
