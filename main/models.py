@@ -70,7 +70,7 @@ class Braider(models.Model):
     email = models.EmailField(max_length=256, null=False, unique=True)
     password = models.CharField(max_length=120, validators=[validate_password], null=False)
     phone_number = PhoneNumberField(default='No Number.', null=False, unique=True)
-    country = models.CharField(max_length=30, default='none', null=False)
+    country = models.CharField(max_length=50, default='none', null=False)
     city = models.CharField(max_length=50, default='none', null=False)
 
     def __str__(self):
