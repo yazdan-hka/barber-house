@@ -3,6 +3,8 @@ from phonenumber_field.modelfields import PhoneNumberField
 from django.core.exceptions import ValidationError
 from django.urls import reverse
 from django.contrib.auth.models import auth
+from django.contrib.auth.hashers import make_password, check_password
+
 
 # Create your models here.
 
@@ -60,16 +62,25 @@ def validate_password(value):
 
 class Braider(models.Model):
 
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    user_name = models.CharField(max_length=30)
-    user_type = models.CharField(max_length=8, choices=types, default='customer')
-    insta_id = models.CharField(max_length=40, default='braidstarz')
-    email = models.EmailField(max_length=254)
-    password = models.CharField(max_length=120, validators=[validate_password])
-    phone_number = PhoneNumberField(default='No Number.')
-    country = models.CharField(max_length=30, default='none')
-    city = models.CharField(max_length=50, default='none')
+    first_name = models.CharField(max_length=30, null=False)
+    last_name = models.CharField(max_length=30, null=False)
+    user_name = models.CharField(max_length=30, null=False, unique=True)
+    user_type = models.CharField(max_length=8, choices=types, default='customer', null=False)
+    insta_id = models.CharField(max_length=40, default='braidstarz', null=False, unique=True)
+    email = models.EmailField(max_length=256, null=False, unique=True)
+    password = models.CharField(max_length=120, validators=[validate_password], null=False)
+    phone_number = PhoneNumberField(default='No Number.', null=False, unique=True)
+    country = models.CharField(max_length=30, default='none', null=False)
+    city = models.CharField(max_length=50, default='none', null=False)
+
+    def __str__(self):
+        value = self.country + '/' + self.city + ' ID: ' +self.user_name
+        return value
+
+    def save(self):
+        # Hash the password before saving the model
+        self.password = make_password(self.password)
+        super().save()
 
 
 
