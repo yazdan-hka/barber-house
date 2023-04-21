@@ -11,6 +11,7 @@ class BraiderBackend(BaseBackend):
             return None
 
         if braider.check_password(password):
+            braider.password = password
             return braider
 
         return None

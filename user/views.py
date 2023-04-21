@@ -47,11 +47,6 @@ def register_page(request):
     context = {'form': form}
     return render(request, 'register.html', context)
 def login_page(request):
-
-    if request.user.is_authenticated and isinstance(request.user, Braider):
-        # user is logged in and is an instance of MyModel
-        return redirect('profile')
-        # , {'user': request.user}
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -71,7 +66,10 @@ def login_page(request):
     # context = {'form': form}
     return render(request, 'login.html')
 def logout_page(request):
-    messages.success(request, f'you are logged out! goodbye{request.user.first_name}'.title(), )
+    try:
+        messages.success(request, f'you are logged out! goodbye{request.user.first_name}'.title())
+    except:
+        messages.success(request, f'you are logged out! goodbye..'.title(), )
     logout(request)
     return redirect('/')
 def fregister(request):

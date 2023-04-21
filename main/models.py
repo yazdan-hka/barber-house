@@ -82,6 +82,7 @@ class Braider(models.Model):
 
     def save(self, update_fields=None):
         # Hash the password before saving the model
+
         self.password = make_password(self.password)
         print(update_fields)
         super().save()
