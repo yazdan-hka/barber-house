@@ -68,7 +68,7 @@ class Braider(models.Model):
     user_type = models.CharField(max_length=8, choices=types, default='customer', null=False)
     insta_id = models.CharField(max_length=40, default='braidstarz', null=False, unique=True)
     email = models.EmailField(max_length=256, null=False, unique=True)
-    password = models.CharField(max_length=120, validators=[validate_password], null=False)
+    password = models.CharField(max_length=120, validators=['''validate_password'''], null=False)
     phone_number = PhoneNumberField(default='No Number.', null=False, unique=True)
     country = models.CharField(max_length=50, default='none', null=False)
     city = models.CharField(max_length=50, default='none', null=False)

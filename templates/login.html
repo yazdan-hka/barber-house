@@ -31,10 +31,11 @@
                 <i class="fa-regular fa-user"></i>
                 <h1>User Login</h1>
             </div>
-            <form action="#">
-                <input type="text" placeholder="Email ID,Username" class="text" required>
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" placeholder="Email ID,Username" name="user_name" class="text" required>
                 <br>
-                <input type="password" placeholder="Password" class="pass" required>
+                <input type="password" placeholder="Password" class="pass" name="password" required>
                 <div class="details">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">

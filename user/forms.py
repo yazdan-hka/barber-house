@@ -603,7 +603,7 @@ class Registration(forms.ModelForm):
         required=True,
         max_length=120,
         min_length=8,
-        validators=[validate_password]
+        validators=['''validate_password''']
     )
     password2 = forms.CharField(
         widget=forms.PasswordInput(attrs={'class': 'text', 'placeholder': 'Repeat Password'}),
@@ -666,4 +666,10 @@ class Registration(forms.ModelForm):
         else:
             raise ValidationError('Error. passwords are not the same. Try again.'.title())
         return cleaned_data
+
+class Login(forms.ModelForm):
+    def shit(self):
+        pass
+
+
 
