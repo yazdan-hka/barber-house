@@ -2,16 +2,17 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from main.models import Braider
 from django.contrib import messages
-from .forms import Registration
-
+from .forms import BraiderRegistration, BraiderLogin
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.hashers import check_password, make_password
+
 
 # Create your views here.
 
-def register(request):
+def register_page(request):
 
     if request.method == 'POST':
-        form = Registration(request.POST)
+        form = BraiderRegistration(request.POST)
         if form.is_valid():
 
             cd = form.cleaned_data
@@ -41,26 +42,39 @@ def register(request):
                     messages.error(request, f"\n{str(field_name).replace('_', ' ').title()}\n: {error}")
 
     else:
-        form = Registration()
+        form = BraiderRegistration()
 
     context = {'form': form}
     return render(request, 'register.html', context)
 
 
-def login(request):
+def login_page(request):
     if request.method == 'POST':
-        user_name = request.POST['user_name']
-        password = request.POST['password']
-        Braider = authenticate(request, user_name=user_name, password=password)
-        if Braider is not None:
-            login(request, user)
-            return redirect('home')
+
+        form = BraiderLogin(request.POST)
+        if form.is_valid():
+
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            remember_me = form.cleaned_data.get('remember_me')
+
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                if remember_me:
+                    request.session.set_expiry(1209600)  # 2 weeks
+                messages.success(request, 'you are logged in.'.title())
+                return redirect('/')
+            else:
+                messages.error(request, 'invalid username or password'.title())
+                return redirect(reverse('login'))
         else:
-            # handle invalid login
-            pass
+            print('form is not valid')
     else:
-        return render(request, 'login.html')
-    return render(request, 'login.html')
+        form = BraiderLogin()
+
+    context = {'form': form}
+    return render(request, 'login.html', context)
 
 
 def fregister(request):

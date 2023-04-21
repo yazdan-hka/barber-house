@@ -1,8 +1,8 @@
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 from django.core.exceptions import ValidationError
-from django.urls import reverse
-from django.contrib.auth.models import auth
+# from django.urls import reverse
+# from django.contrib.auth.models import auth
 from django.contrib.auth.hashers import make_password, check_password
 
 
@@ -64,11 +64,11 @@ class Braider(models.Model):
 
     first_name = models.CharField(max_length=30, null=False)
     last_name = models.CharField(max_length=30, null=False)
-    user_name = models.CharField(max_length=30, null=False, unique=True)
+    user_name = models.CharField(max_length=70, null=False, unique=True)
     user_type = models.CharField(max_length=8, choices=types, default='customer', null=False)
     insta_id = models.CharField(max_length=40, default='braidstarz', null=False, unique=True)
     email = models.EmailField(max_length=256, null=False, unique=True)
-    password = models.CharField(max_length=120, validators=['''validate_password'''], null=False)
+    password = models.CharField(max_length=120, validators=[], null=False)
     phone_number = PhoneNumberField(default='No Number.', null=False, unique=True)
     country = models.CharField(max_length=50, default='none', null=False)
     city = models.CharField(max_length=50, default='none', null=False)
