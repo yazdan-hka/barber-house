@@ -1,0 +1,118 @@
+/* Main color #1b1c1e
+Secend color #ececeb
+Third color #bfbfbf
+other #5d0088 & #003380
+width,height,background,margin,padding,font*/
+
+
+/* Start General Setting */
+
+@font-face {
+    font-family: Open Sans regular;
+    src: url("../Fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: Open Sans bold;
+    src: url("../Fonts/OpenSans-Semibold.ttf");
+}
+
+body {
+    font-family: Open Sans regular;
+    background-color: #1b1c1e;
+}
+
+
+/* End General Setting */
+
+
+/* Start Sec18 */
+
+.sec-18 .row {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.sec-18 .col-md-7 {
+    padding: 0 !important;
+}
+
+.sec-18 .col-md-7 .background {
+    width: 100%;
+    height: 703px;
+    background-image: url("../img/section/Sec18/sec18.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.sec-18 .col-md-5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ececeb;
+    color: #1b1c1e;
+    margin: 0 !important;
+    padding: 10px !important;
+    text-align: center;
+}
+
+.sec-18 .col-md-5 .title img {
+    width: 50px;
+    margin-top: -10px;
+}
+
+.sec-18 .col-md-5 .title h1 {
+    margin-top: -80px;
+    padding: 0 10px;
+    font-family: open sans bold;
+    font-weight: bold;
+    font-size: 45px;
+}
+
+.sec-18 .col-md-5 h3 {
+    padding-bottom: 30px;
+    font-family: open sans bold;
+    font-size: 40px;
+}
+
+.sec-18 .col-md-5 span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin: 10px 0;
+    padding: 10px;
+    border: 2px solid #bfbfbf;
+    border-radius: 10px;
+}
+
+.sec-18 .col-md-5 img {
+    width: 30px;
+    margin: 0 5px;
+}
+
+.sec-18 .col-md-5 .facebook {
+    color: #3b5998;
+}
+
+.sec-18 .col-md-5 svg {
+    color: #1b1c1e;
+    padding: 0 5px;
+    font-size: 32px;
+}
+
+.sec-18 .col-md-5 a {
+    color: #1b1c1e;
+    text-decoration: none;
+    font-family: open sans bold;
+    font-size: 18px;
+}
+
+.sec-18 .col-md-5 p {
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+
+/* End Sec18 */

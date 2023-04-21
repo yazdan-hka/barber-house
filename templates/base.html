@@ -31,15 +31,25 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Youtube</a>
-                        </li>,
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'about' %}">About Us</a>
                         </li>
                     </ul>
                     <div id="login">
+                        {% if user.is_authenticated %}
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'profile' %}">{{ user.user_name }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'logout' %}">logout</a>
+                            </li>
+                        {% else %}
                         <a class="signup" href="{% url 'fregister' %}">Sign up</a>
                         <p>|</p>
                         <a class="login" href="{% url 'flogin' %}">Login</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>

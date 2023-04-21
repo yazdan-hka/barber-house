@@ -577,7 +577,7 @@ class BraiderRegistration(forms.ModelForm):
         choices=acc_types,
         required=True,
         label='',
-        widget=forms.Select(attrs={'class': 'form-select text text-1', 'aria-label': 'Default select example'})
+        widget=forms.Select(attrs={'class': 'form-select email text-1', 'aria-label': 'Default select example'})
     )
     user_name = forms.CharField(
         max_length=30,
@@ -599,17 +599,17 @@ class BraiderRegistration(forms.ModelForm):
         required=True,
         max_length=254,
         label='',
-        widget=forms.TextInput(attrs={'class': 'text', 'placeholder': 'Email Address'})
+        widget=forms.TextInput(attrs={'class': 'email', 'placeholder': 'Email Address'})
     )
     password1 = forms.CharField(
-        widget=forms.PasswordInput(attrs={'class': 'text', 'placeholder': 'Password'}),
+        widget=forms.PasswordInput(attrs={'class': 'pass', 'placeholder': 'Password'}),
         required=True,
         max_length=120,
         min_length=8,
         validators=[validate_password]
     )
     password2 = forms.CharField(
-        widget=forms.PasswordInput(attrs={'class': 'text', 'placeholder': 'Repeat Password'}),
+        widget=forms.PasswordInput(attrs={'class': 'pass', 'placeholder': 'Repeat Password'}),
         required=True,
         max_length=120,
         min_length=8,
@@ -624,20 +624,20 @@ class BraiderRegistration(forms.ModelForm):
         choices=phone_codes,
         label='',
         required=True,
-        widget=forms.Select(attrs={'class': 'form-select text text-1', 'aria-label': 'Default select example'})
+        widget=forms.Select(attrs={'class': 'code', 'aria-label': 'Default select example'})
     )
     phone_number = forms.CharField(
         min_length=5,
         max_length=15,
         label='',
         required=True,
-        widget=forms.TextInput(attrs={'class': 'text', 'placeholder': 'Phone Number'})
+        widget=forms.TextInput(attrs={'class': 'number', 'placeholder': 'Phone Number'})
     )
     country = forms.ChoiceField(
         choices=countries,
         label='',
         required=True,
-        widget=forms.Select(attrs={'class': 'form-select text text-1', 'aria-label': 'Default select example'}))
+        widget=forms.Select(attrs={'class': 'form-select email text-1', 'aria-label': 'Default select example'}))
     city = forms.CharField(
         max_length=50,
         strip=False,
@@ -686,8 +686,8 @@ class BraiderLogin(forms.Form):
         widget=forms.PasswordInput(attrs={'autocomplete': 'current-password', 'class': 'pass', 'placeholder': 'Password'}),
     )
     remember_me = forms.BooleanField(
-    widget=forms.CheckboxInput(attrs={'class': 'form-check-input', 'id': 'flexCheckDefault'}),
-    required=False
+        widget=forms.CheckboxInput(attrs={'class': 'form-check-input', 'id': 'flexCheckDefault'}),
+        required=False
     )
 
 

@@ -3,7 +3,7 @@ from django.urls import reverse
 from main.models import Braider
 from django.contrib import messages
 from .forms import BraiderRegistration, BraiderLogin
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.hashers import check_password, make_password
 
 
@@ -46,41 +46,39 @@ def register_page(request):
 
     context = {'form': form}
     return render(request, 'register.html', context)
-
-
 def login_page(request):
+
+    if request.user.is_authenticated and isinstance(request.user, Braider):
+        # user is logged in and is an instance of MyModel
+        return redirect('profile')
+        # , {'user': request.user}
     if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        remember_me = request.POST.get('remember_me', False)
 
-        form = BraiderLogin(request.POST)
-        if form.is_valid():
-
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            remember_me = form.cleaned_data.get('remember_me')
-
-            user = authenticate(request, username=username, password=password)
-            if user is not None:
-                login(request, user)
-                if remember_me:
-                    request.session.set_expiry(1209600)  # 2 weeks
-                messages.success(request, 'you are logged in.'.title())
-                return redirect('/')
-            else:
-                messages.error(request, 'invalid username or password'.title())
-                return redirect(reverse('login'))
+        user = authenticate(request, username=username, password=password)
+        print(user)
+        if user is not None:
+            login(request, user)
+            # if remember_me:
+            #     request.session.set_expiry(0)  # 2 weeks = 2 weeks' seconds
+            return redirect('/')
         else:
-            print('form is not valid')
-    else:
-        form = BraiderLogin()
+            messages.error(request, 'Wrong username or password')
 
-    context = {'form': form}
-    return render(request, 'login.html', context)
-
-
+    # form = BraiderLogin()
+    # context = {'form': form}
+    return render(request, 'login.html')
+def logout_page(request):
+    messages.success(request, f'you are logged out! goodbye{request.user.first_name}'.title(), )
+    logout(request)
+    return redirect('/')
 def fregister(request):
     return render(request, 'registerfirst.html')
-
-
 def flogin(request):
     return render(request, 'loginfirst.html')
+
+
+
 

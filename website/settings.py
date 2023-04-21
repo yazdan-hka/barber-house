@@ -71,6 +71,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'website.wsgi.application'
+# settings.py
+SESSION_COOKIE_SECURE = False
+
 
 
 # Database
@@ -90,9 +93,13 @@ DATABASES =\
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
+SESSION_COOKIE_MAX_AGE = 3600  # This sets the session cookie age to 1 hour (3600 seconds)
+
+
 AUTHENTICATION_BACKENDS = [
+    'user.backends.BraiderBackend',
+    'user.backends.CustomBackend',
     'django.contrib.auth.backends.ModelBackend',
-    'myapp.backends.BraiderBackend'
 ]
 
 

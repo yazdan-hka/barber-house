@@ -55,27 +55,24 @@
                 {{ form.first_name }}
                 {{ form.last_name }}
 
-                <div class="flex">
-                    {{ form.user_name }}
-                    {{ form.user_type }}
-                    {{ form.insta_id }}
-                </div>
+                {{ form.user_name }}
+                {{ form.insta_id }}
+                {{ form.user_type }}
 
-                <div class="country">
-                    {{ form.country }}
-                    {{ form.city }}
-                </div>
+                {{ form.country }}
+                {{ form.city }}
 
                 {{ form.email }}
                 {{ form.password1 }}
                 {{ form.password2 }}
 
-                {{ form.phone_code }}
-                {{ form.phone_number }}
+                <div class="phone-number">
+                    {{ form.phone_code }}
+                    {{ form.phone_number }}
+                </div>
 
                 <button class="login-button">Sign up</button>
             </form>
-
         </div>
     </section>
 
