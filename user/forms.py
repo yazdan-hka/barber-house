@@ -14,6 +14,7 @@ class BraiderRegistration(forms.ModelForm):
                   'user_name',
                   'user_type',
                   'insta_id',
+                  'website',
                   'email',
                   'password',
                   'phone_number',
@@ -595,6 +596,10 @@ class BraiderRegistration(forms.ModelForm):
         validators=[],
         widget=forms.TextInput(attrs={'class': 'text', 'placeholder': 'Your Instagram ID'})
     )
+    website = forms.URLField(
+        max_length=200,
+        widget=forms.TextInput(attrs={'class': 'email', 'placeholder': 'Your Website'})
+    )
     email = forms.EmailField(
         required=True,
         max_length=254,
@@ -637,14 +642,14 @@ class BraiderRegistration(forms.ModelForm):
         choices=countries,
         label='',
         required=True,
-        widget=forms.Select(attrs={'class': 'form-select email text-1', 'aria-label': 'Default select example'}))
+        widget=forms.Select(attrs={'class': 'form-select text-1', 'aria-label': 'Default select example'}))
     city = forms.CharField(
         max_length=50,
         strip=False,
         label='',
         required=True,
         validators=[],
-        widget=forms.TextInput(attrs={'class': 'text', 'placeholder': 'City'})
+        widget=forms.TextInput(attrs={'class': ' text-1', 'placeholder': 'City'})
     )
 
     def clean(self):

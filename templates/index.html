@@ -29,11 +29,12 @@
                 <h2>Find your braider now!</h2>
                 <p>You can find braider near you<br>by searching one of the following items</p>
                 <p>Your Country / Your City / The Braider name / Their Social meida ID</p>
-                <form action="#">
+                <form method="post">
+                    {% csrf_token %}
                     <div class="search-box">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search..." aria-label="Recipient's username" aria-describedby="button-addon2">
-                            <button class="btn" type="button" id="button-addon2"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <input type="text" name='search' class="form-control" placeholder="Search..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <button class="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </div>
                     </div>
                 </form>
@@ -42,33 +43,48 @@
     </section>
 <!-- search result -->
     <section class="sec-13 overflow-hidden">
-        <div class="container">
-            <div class="r-search">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="title">
-                            <img src="{% static 'img/collection/profile/1.png' %}" alt="Braider profile">
-                            <h2>USER NAME</h2>
+
+        {% if braiders %}
+            {% for braider in braiders %}
+                <div class="container">
+                <div class="r-search ">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="title">
+                                <img src="{% static 'img/collection/profile/1.png' %}" alt="Braider profile">
+                                <h2>*B*{{ braider.user_name }}</h2>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <h4>Country : Iran</h4>
-                        <h4>City : Tehran</h4>
-                        <h4>Phone : +9812345678</h4>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
+                        <div class="col-md-4">
+                            <h4>Name: <b>{{ braider.get_full_name|title }}</b></h4>
+                            <h4>Country: <b>{{ braider.country }}</b></h4>
+                            <h4>City: <b>{{ braider.city|title }}</b></h4>
+                            {% if braider.website %}
+                                <h4>
+                                    Website:
+                                    <b>
+                                        <a href="{{braider.website}}">
+                                            {{braider.website}}
+                                        </a>
+                                    </b>
+                                </h4>
+                            {% endif %}
                         </div>
-                        <button class="v-profile"><a href="#">View Profile</a></button>
+                        <div class="col-md-4">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <button class="v-profile"><a href="#">View Profile</a></button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+            {% endfor %}
+        {% endif %}
     </section>
 
     <section class="sec-2 overflow-hidden">
