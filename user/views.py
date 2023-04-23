@@ -56,8 +56,8 @@ def login_page(request):
         print(user)
         if user is not None:
             login(request, user)
-            # if remember_me:
-            #     request.session.set_expiry(0)  # 2 weeks = 2 weeks' seconds
+            if remember_me:
+                request.session.set_expiry(60 * 60 * 24 * 14)  # 2 weeks = 2 weeks' seconds
             return redirect('/')
         else:
             messages.error(request, 'Wrong username or password')
@@ -67,7 +67,7 @@ def login_page(request):
     return render(request, 'login.html')
 def logout_page(request):
     try:
-        messages.success(request, f'you are logged out! goodbye{request.user.first_name}'.title())
+        messages.success(request, f'you are logged out! comeback soon {request.user.first_name}'.title())
     except:
         messages.success(request, f'you are logged out! goodbye..'.title(), )
     logout(request)

@@ -66,16 +66,19 @@ class Braider(models.Model):
     last_name = models.CharField(max_length=30, null=False)
     user_name = models.CharField(max_length=70, null=False, unique=True)
     user_type = models.CharField(max_length=8, choices=types, default='customer', null=False)
-    insta_id = models.CharField(max_length=40, default='braidstarz', null=True, unique=True)
+    insta_id = models.CharField(max_length=40, default='braidstarz', unique=True)
     website = models.URLField(max_length=200, null=True)
     email = models.EmailField(max_length=256, null=False, unique=True)
+    token = models.
     password = models.CharField(max_length=120, validators=[], null=False)
-    phone_number = PhoneNumberField(default='No Number.', null=False, unique=True)
+    phone_number = PhoneNumberField(default='No Number.', null=True , unique=True)
     country = models.CharField(max_length=50, default='none', null=False)
     city = models.CharField(max_length=50, default='none', null=False)
     last_login = models.DateTimeField(null=True, blank=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
+    is_email_verified = models.BooleanField(default=False)
+    asdf = models.
 
     def __str__(self):
         value = self.country + '/' + self.city + ' ID: ' +self.user_name
@@ -86,7 +89,7 @@ class Braider(models.Model):
 
         self.password = make_password(self.password)
         if self.insta_id == '' or ' ' or '  ':
-            self.insta_id = None
+            self.insta_id = 'braidstarz'
         print(update_fields)
         super().save()
 
