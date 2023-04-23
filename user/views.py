@@ -27,14 +27,15 @@ def register_page(request):
             saved = False
 
             try:
+                braider.full_clean()
                 braider.save()
                 if braider.id:
                     saved = True
-            except:
-                for field_name, errors in form.errors.items():
-                    for error in errors:
-                        messages.error(request, f"\n{str(field_name).replace('_', ' ').title()}\n: {error}")
-                return redirect('register')
+            except ValidationError as e:
+                errors = e.message_dict
+                for e in errors:
+                    messages.warning(request, f'{e}')
+
 
             if saved:
                 saved = False
@@ -45,13 +46,16 @@ def register_page(request):
                     rel=braider
                 )
                 try:
+                    pub.full_clean()
                     pub.save()
                     if pub.id:
                         saved = True
-                except:
-                    messages.warning(request, 'error. something went wrong'.title())
+                except ValidationError as e:
+                    errors = e.message_dict
                     braider.delete()
-                    return redirect('register')
+                    for e in errors:
+                        messages.warning(request, f'{e}')
+
                 if saved:
                     saved = False
                     loc = LocationInfo(
@@ -60,29 +64,33 @@ def register_page(request):
                         rel=braider
                     )
                     try:
+                        loc.full_clean()
                         loc.save()
                         if loc.id:
                             saved = True
-                    except:
-                        messages.warning(request, 'error. something went wrong'.title())
+                    except ValidationError as e:
+                        errors = e.messages
                         braider.delete()
-                        return redirect('register')
+                        for e in errors:
+                            messages.warning(request, f'{e}')
                     if saved:
                         soc = SocialMedia(
                             insta=cd['insta_id'],
                             rel=braider
                         )
                         try:
+                            soc.full_clean()
                             soc.save()
                             if soc.id:
-                                pass
-                        except:
-                            messages.warning(request, 'error. something went wrong'.title())
+                                saved = True
+                        except ValidationError as e:
+                            errors = e.messages
                             braider.delete()
-                            return redirect('register')
-
-            messages.success(request, 'you account have been created. wellcome to braidstarz!'.title())
-            return redirect('login')
+                            for e in errors:
+                                messages.warning(request, f'{e}')
+            if saved:
+                messages.success(request, 'you account have been created. wellcome to braidstarz!'.title())
+                return redirect('login')
         else:
             for field_name, errors in form.errors.items():
                 for error in errors:

@@ -2,6 +2,7 @@ from django import forms
 from django.core.exceptions import ValidationError
 # from django.contrib.auth.hashers import make_password
 # from django.contrib.auth.forms import AuthenticationForm
+from main.models import Braider
 
 class BraiderRegistration(forms.Form):
 

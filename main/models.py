@@ -68,6 +68,9 @@ class Braider(models.Model):
     # is_active = models.BooleanField(default=True)
     # is_staff = models.BooleanField(default=False)
 
+
+    # def clean(self):
+
     def check_password(self, raw_password):
         return check_password(raw_password, self.password)
     def update_last_login(self):
