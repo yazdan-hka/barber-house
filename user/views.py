@@ -30,8 +30,11 @@ def register_page(request):
                 braider.save()
                 if braider.id:
                     saved = True
-            except ValidationError.message_dict as error:
-                messages.warning(request, error)
+            except:
+                for field_name, errors in form.errors.items():
+                    for error in errors:
+                        messages.error(request, f"\n{str(field_name).replace('_', ' ').title()}\n: {error}")
+                return redirect('register')
 
             if saved:
                 saved = False
