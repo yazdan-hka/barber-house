@@ -218,6 +218,11 @@ header #login p {
     padding: 10px 0 10px 0;
     border: 2px solid #1b1c1e;
     border-radius: 30px;
+    transition: 0.4s ease-out;
+}
+.sec-13 .r-search:hover {
+    transition: 0.4s ease-in;
+    background-color:#000000;
 }
 
 .sec-13 .title {

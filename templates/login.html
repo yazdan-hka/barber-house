@@ -22,7 +22,7 @@
         {% if messages %}
         <ul class="messages">
             {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+              <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
             {% endfor %}
         </ul>
         {% endif %}
@@ -33,17 +33,17 @@
             </div>
             <form method="post">
                 {% csrf_token %}
-                <input type="text" placeholder="Email ID,Username" name="user_name" class="text" required>
+                <input type="text" placeholder="Email ID,Username" name="username" class="text" required>
                 <br>
                 <input type="password" placeholder="Password" class="pass" name="password" required>
                 <div class="details">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" value="" name='remember_me'id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">
                           Remember me
                         </label>
                     </div>
-                    <a href="#"></a>
+                    <a href="#">
                     <p>Forget Password?</p>
                 </div>
                 <button class="login-button">Login</button>

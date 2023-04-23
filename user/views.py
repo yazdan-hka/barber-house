@@ -2,16 +2,17 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from main.models import Braider
 from django.contrib import messages
-from .forms import Registration
+from .forms import BraiderRegistration, BraiderLogin
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.hashers import check_password, make_password
 
-from django.contrib.auth import authenticate, login
 
 # Create your views here.
 
-def register(request):
+def register_page(request):
 
     if request.method == 'POST':
-        form = Registration(request.POST)
+        form = BraiderRegistration(request.POST)
         if form.is_valid():
 
             cd = form.cleaned_data
@@ -41,32 +42,41 @@ def register(request):
                     messages.error(request, f"\n{str(field_name).replace('_', ' ').title()}\n: {error}")
 
     else:
-        form = Registration()
+        form = BraiderRegistration()
 
     context = {'form': form}
     return render(request, 'register.html', context)
-
-
-def login(request):
+def login_page(request):
     if request.method == 'POST':
-        user_name = request.POST['user_name']
+        username = request.POST['username']
         password = request.POST['password']
-        Braider = authenticate(request, user_name=user_name, password=password)
-        if Braider is not None:
+        remember_me = request.POST.get('remember_me', False)
+
+        user = authenticate(request, username=username, password=password)
+        print(user)
+        if user is not None:
             login(request, user)
-            return redirect('home')
+            if remember_me:
+                request.session.set_expiry(60 * 60 * 24 * 14)  # 2 weeks = 2 weeks' seconds
+            return redirect('/')
         else:
-            # handle invalid login
-            pass
-    else:
-        return render(request, 'login.html')
+            messages.error(request, 'Wrong username or password')
+
+    # form = BraiderLogin()
+    # context = {'form': form}
     return render(request, 'login.html')
-
-
+def logout_page(request):
+    try:
+        messages.success(request, f'you are logged out! comeback soon {request.user.first_name}'.title())
+    except:
+        messages.success(request, f'you are logged out! goodbye..'.title(), )
+    logout(request)
+    return redirect('/')
 def fregister(request):
     return render(request, 'registerfirst.html')
-
-
 def flogin(request):
     return render(request, 'loginfirst.html')
+
+
+
 

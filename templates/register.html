@@ -14,34 +14,21 @@
     <link rel="stylesheet" href="{% static 'styles/responsive.css' %}">
     <script src="{% static 'scripts/all.min.js' %}"></script>
     <title>Hairstyles</title>
-    <style>
-.error {
-  background-color: #f8d7da;
-  color: #721c24;
-  padding: 10px;
-  border-radius: 5px;
-  font-weight: normal;
-}
-
-
-    </style>
 </head>
 
 <body>
 
     <section class="sec-17 overflow-hidden">
 
-        <div id="message-box" class="fade-out">
-            {% if messages %}
-
+        {% if messages %}
+            <div class="messages">
                 {% for message in messages %}
-
-                    <h6 {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</h6>
-
+                    <div class="alert {% if message.tags %} alert-{{ message.tags }}"{% endif %}>
+                        {{ message }}
+                    </div>
                 {% endfor %}
-
-            {% endif %}
-        </div>
+            </div>
+        {% endif %}
 
         <div class="register">
             <div class="user-login">
@@ -55,27 +42,26 @@
                 {{ form.first_name }}
                 {{ form.last_name }}
 
-                <div class="flex">
-                    {{ form.user_name }}
-                    {{ form.user_type }}
-                    {{ form.insta_id }}
-                </div>
+                {{ form.user_name }}
+                {{ form.insta_id }}
+                {{ form.user_type }}
 
-                <div class="country">
+                <div class="country-city">
                     {{ form.country }}
                     {{ form.city }}
                 </div>
-
+                {{ form.website }}
                 {{ form.email }}
                 {{ form.password1 }}
                 {{ form.password2 }}
 
-                {{ form.phone_code }}
-                {{ form.phone_number }}
+                <div class="phone-number">
+                    {{ form.phone_code }}
+                    {{ form.phone_number }}
+                </div>
 
                 <button class="login-button">Sign up</button>
             </form>
-
         </div>
     </section>
 

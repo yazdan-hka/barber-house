@@ -30,10 +30,16 @@ body {
 
 .sec-17 {
     width: 100%;
-    height:750px;
+    height:1000px;
     background-image: url("../img/section/sec17/sec17.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
+}
+
+.sec-17 .alert{
+    margin: 5px 20px !important;
+    padding: 10px !important;
+    border-radius: 15px !important;
 }
 
 .sec-17 .register {
@@ -73,12 +79,18 @@ body {
     transition: 0.3s;
 }
 
-.sec-17 .register .flex {
-    display: flex;
+.sec-17 .register .text-1{
+    margin: 5px 2px;
+    padding: 8px;
+    border: 0px solid;
+    border-radius: 10px;
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s;
 }
 
-.sec-17 .register .text-1 {
-    margin-left: 5px;
+.sec-17 .register .country-city {
+    display: flex;
 }
 
 .sec-17 .register .email {
@@ -103,12 +115,28 @@ body {
     transition: 0.3s;
 }
 
+.sec-17 .register .phone-number{
+    display: flex;
+}
+
 .sec-17 .register .number {
-    width: 100%;
-    margin: 5px 0;
+    width: 66%;
+    margin: 5px 1px;
     padding: 8px;
     border: 0px solid;
-    border-radius: 10px;
+    border-radius: 0 10px 10px 0;
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.sec-17 .register .code {
+    width:33%;
+    margin: 5px 1px;
+    padding: 8px;
+    border: 0px solid;
+    border-radius: 10px 0 0 10px;
+    text-align: center;
     outline: none;
     font-size: 16px;
     transition: 0.3s;

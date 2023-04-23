@@ -2,8 +2,9 @@ from django import forms
 from main.models import Braider
 from django.core.exceptions import ValidationError
 from django.contrib.auth.hashers import make_password
+# from django.contrib.auth.forms import AuthenticationForm
 
-class Registration(forms.ModelForm):
+class BraiderRegistration(forms.ModelForm):
 
     class Meta:
         model = Braider
@@ -13,6 +14,7 @@ class Registration(forms.ModelForm):
                   'user_name',
                   'user_type',
                   'insta_id',
+                  'website',
                   'email',
                   'password',
                   'phone_number',
@@ -26,7 +28,6 @@ class Registration(forms.ModelForm):
         for i in chars:
             if i in value:
                 raise ValidationError('Invalid Instagram ID. please enter a valid instgarm ID.'.title())
-
     def validate_password(value):
 
         number = '0123456789'
@@ -72,7 +73,6 @@ class Registration(forms.ModelForm):
             raise ValidationError('your password is week. are you sure you used capital and small letters, numbers, '
                                   'and special characters in the length of 8 or more? '.title(),
                                   params={'value': value})
-
     def validate_username(value):
         chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456_789'
         for i in value:
@@ -81,6 +81,11 @@ class Registration(forms.ModelForm):
                 raise ValidationError(
                     f'Invalid Username "{value}". be sure that your username includes only capital and small '
                     'letters, numbers, and underscores(_).'.title(),
+                    params={'value': value})
+
+        if len(value) < 4:
+            raise ValidationError(
+                    f'Invalid Username "{value}". too shot user name. minimum length is 3 character.'.title(),
                     params={'value': value})
 
     acc_types = (('c', 'Customer'), ('b', 'Braider'))
@@ -563,7 +568,6 @@ class Registration(forms.ModelForm):
         widget=forms.TextInput(attrs={'class': 'text', 'placeholder': 'Firstname'})
     )
     last_name = forms.CharField(
-        max_length=30,
         strip=False,
         label='',
         required=True,
@@ -574,7 +578,7 @@ class Registration(forms.ModelForm):
         choices=acc_types,
         required=True,
         label='',
-        widget=forms.Select(attrs={'class': 'form-select text text-1', 'aria-label': 'Default select example'})
+        widget=forms.Select(attrs={'class': 'form-select email text-1', 'aria-label': 'Default select example'})
     )
     user_name = forms.CharField(
         max_length=30,
@@ -592,21 +596,25 @@ class Registration(forms.ModelForm):
         validators=[],
         widget=forms.TextInput(attrs={'class': 'text', 'placeholder': 'Your Instagram ID'})
     )
+    website = forms.URLField(
+        max_length=200,
+        widget=forms.TextInput(attrs={'class': 'email', 'placeholder': 'Your Website'})
+    )
     email = forms.EmailField(
         required=True,
         max_length=254,
         label='',
-        widget=forms.TextInput(attrs={'class': 'text', 'placeholder': 'Email Address'})
+        widget=forms.TextInput(attrs={'class': 'email', 'placeholder': 'Email Address'})
     )
     password1 = forms.CharField(
-        widget=forms.PasswordInput(attrs={'class': 'text', 'placeholder': 'Password'}),
+        widget=forms.PasswordInput(attrs={'class': 'pass', 'placeholder': 'Password'}),
         required=True,
         max_length=120,
         min_length=8,
-        validators=['''validate_password''']
+        validators=[validate_password]
     )
     password2 = forms.CharField(
-        widget=forms.PasswordInput(attrs={'class': 'text', 'placeholder': 'Repeat Password'}),
+        widget=forms.PasswordInput(attrs={'class': 'pass', 'placeholder': 'Repeat Password'}),
         required=True,
         max_length=120,
         min_length=8,
@@ -621,27 +629,27 @@ class Registration(forms.ModelForm):
         choices=phone_codes,
         label='',
         required=True,
-        widget=forms.Select(attrs={'class': 'form-select text text-1', 'aria-label': 'Default select example'})
+        widget=forms.Select(attrs={'class': 'code', 'aria-label': 'Default select example'})
     )
     phone_number = forms.CharField(
         min_length=5,
         max_length=15,
         label='',
         required=True,
-        widget=forms.TextInput(attrs={'class': 'text', 'placeholder': 'Phone Number'})
+        widget=forms.TextInput(attrs={'class': 'number', 'placeholder': 'Phone Number'})
     )
     country = forms.ChoiceField(
         choices=countries,
         label='',
         required=True,
-        widget=forms.Select(attrs={'class': 'form-select text text-1', 'aria-label': 'Default select example'}))
+        widget=forms.Select(attrs={'class': 'form-select text-1', 'aria-label': 'Default select example'}))
     city = forms.CharField(
         max_length=50,
         strip=False,
         label='',
         required=True,
         validators=[],
-        widget=forms.TextInput(attrs={'class': 'text', 'placeholder': 'City'})
+        widget=forms.TextInput(attrs={'class': ' text-1', 'placeholder': 'City'})
     )
 
     def clean(self):
@@ -667,9 +675,25 @@ class Registration(forms.ModelForm):
             raise ValidationError('Error. passwords are not the same. Try again.'.title())
         return cleaned_data
 
-class Login(forms.ModelForm):
-    def shit(self):
-        pass
+class BraiderLogin(forms.Form):
+
+    username = forms.CharField(
+        max_length=70,
+        strip=False,
+        label='',
+        required=True,
+        validators=[],
+        widget=forms.TextInput(attrs={'autofocus': True, 'placeholder': 'Username or Email', 'class': 'text'})
+    )
+    password = forms.CharField(
+        strip=False,
+        required=True,
+        widget=forms.PasswordInput(attrs={'autocomplete': 'current-password', 'class': 'pass', 'placeholder': 'Password'}),
+    )
+    remember_me = forms.BooleanField(
+        widget=forms.CheckboxInput(attrs={'class': 'form-check-input', 'id': 'flexCheckDefault'}),
+        required=False
+    )
 
 
 

@@ -1,0 +1,3476 @@
+/* Start Home */
+
+@media only screen and (max-width:1200px) {
+    /* Start Sec1 */
+    .sec-1 {
+        background-image: url("../img/section/sec1/sec1res2.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .title h1 {
+        font-size: 95px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .title p {
+        font-size: 19px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search h2 {
+        font-size: 45px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search p {
+        font-size: 18px;
+        transition: .5s all ease-in-out;
+    }
+    /* End Sec1 */
+    /* Start Sec2 */
+    .sec-2 {
+        height: 500px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .title h2 {
+        font-size: 65px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 img {
+        width: 280px;
+        height: 260px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .img-title {
+        width: 280px;
+        height: 260px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .img-title h5 {
+        font-size: 19px !important;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .img-title p {
+        font-size: 16px !important;
+        transition: .5s all ease-in-out;
+    }
+    .carousel-indicators {
+        bottom: -50px !important;
+    }
+    .carousel-indicators [data-bs-target] {
+        width: 9px !important;
+        height: 9px !important;
+        border: none;
+        border-radius: 9px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .more {
+        margin: 65px 0;
+    }
+    .sec-2 span a {
+        font-size: 17px;
+        transition: .5s all ease-in-out;
+    }
+    /* End Sec2 */
+    /* Start Sec3 */
+    .sec-3 {
+        background-image: url("../img/section/sec3/sec3res2.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts {
+        padding: 75px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .nfts-img {
+        padding: 75px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .nfts-img img {
+        width: 330px;
+        height: 273px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts h2 {
+        font-size: 60px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts p {
+        font-size: 17px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts button {
+        width: 90px;
+        height: 35px;
+        font-size: 13px;
+    }
+    /* End Sec3 */
+    /* Start Sce4 */
+    .sec-4 .title h3 {
+        font-size: 40px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-4 p {
+        font-size: 17px;
+        transition: .5s all ease-in-out;
+    }
+    /* End Sec4 */
+}
+
+@media only screen and (max-width:992px) {
+    /* Start Navbar */
+    header .navbars li {
+        padding: 0 3px !important;
+        transition: .5s all ease-in-out;
+    }
+    /* End Navbar */
+    /* Start Sec1 */
+    .sec-1 {
+        background-image: url("../img/section/sec1/sec1res3.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .title h1 {
+        font-size: 85px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .title p {
+        font-size: 18px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search {
+        height: 400px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search h2 {
+        font-size: 40px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search p {
+        font-size: 17px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search .search-box {
+        margin-top: 55px;
+    }
+    .sec-1 .search .form-control {
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+    /* End Sec1 */
+    /* Start Sec2 */
+    .sec-2 {
+        height: 445px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .title h2 {
+        font-size: 55px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 img {
+        width: 240px;
+        height: 220px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .img-title {
+        width: 240px;
+        height: 220px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .img-title h5 {
+        font-size: 18px !important;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .img-title p {
+        font-size: 15px !important;
+        transition: .5s all ease-in-out;
+    }
+    .carousel-indicators {
+        bottom: -48px !important;
+    }
+    .carousel-indicators [data-bs-target] {
+        width: 8px !important;
+        height: 8px !important;
+        border: none;
+        border-radius: 8px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .more {
+        margin: 63px 0;
+    }
+    .sec-2 span a {
+        font-size: 16px;
+        transition: .5s all ease-in-out;
+    }
+    /* End Sec2 */
+    /* Start Sec3 */
+    .sec-3 {
+        background-image: url("../img/section/sec3/sec3res3.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts {
+        padding: 60px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .nfts-img {
+        padding: 60px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .nfts-img img {
+        width: 310px;
+        height: 253px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts h2 {
+        font-size: 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts p {
+        font-size: 16px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts button {
+        width: 88px;
+        height: 33px;
+        font-size: 12px;
+    }
+    /* End Sec3 */
+    /* Start Sce4 */
+    .sec-4 .title h3 {
+        font-size: 35px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-4 p {
+        font-size: 16px;
+        transition: .5s all ease-in-out;
+    }
+    /* End Sec4 */
+}
+
+@media only screen and (max-width:850px) {
+    /* Start Navbar */
+    header .navbars h1 {
+        font-size: 23px;
+        transition: .5s all ease-in-out;
+    }
+    header .navbars img {
+        width: 29px;
+        height: 29px;
+        transition: .5s all ease-in-out;
+    }
+    header .navbars li {
+        padding: 0 0 !important;
+        transition: .5s all ease-in-out;
+    }
+    header .navbars a {
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+    header #login p {
+        font-size: 13px;
+        transition: .5s all ease-in-out;
+    }
+    /* End Navbar */
+    /* Start Sec2 */
+    .sec-2 {
+        height: 420px;
+    }
+    .sec-2 img {
+        width: 220px;
+        height: 200px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .img-title {
+        width: 220px;
+        height: 200px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .img-title h5 {
+        font-size: 17px !important;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .img-title p {
+        font-size: 14px !important;
+        transition: .5s all ease-in-out;
+    }
+    .carousel-indicators {
+        bottom: -46px !important;
+    }
+    .carousel-indicators [data-bs-target] {
+        width: 7px !important;
+        height: 7px !important;
+        border: none;
+        border-radius: 7px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .more {
+        margin: 61px 0;
+    }
+    /* End Sec2 */
+    /* Start Sec4 */
+    .sec-4 .title h3 {
+        font-size: 32px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-4 p {
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+    /* End Sec4 */
+}
+
+@media only screen and (max-width:768px) {
+    /* Start Navbar */
+    header .navbars {
+        direction: ltr;
+    }
+    header .navbars .navbar-toggler {
+        width: 50px;
+        height: 30px;
+    }
+    header .navbars .navbar-toggler {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    header .navbars h1 {
+        direction: ltr;
+        font-size: 24px;
+    }
+    header .navbars img {
+        width: 30px;
+        height: 30px;
+        transition: .5s all ease-in-out;
+    }
+    header .navbars ul {
+        direction: ltr;
+    }
+    header .navbars li {
+        padding: 0px 2px !important;
+    }
+    header .navbars a {
+        font-size: 15px;
+    }
+    header .navbars #login {
+        direction: ltr;
+        margin-top: 10px;
+    }
+    header #login p {
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+    /* End Navbar */
+    /* Start Sec1 */
+    .sec-1 {
+        height: 700px;
+        background-image: url("../img/section/sec1/sec1res4.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .title h1 {
+        font-size: 75px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .title p {
+        font-size: 17px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search {
+        width: 75%;
+        height: 370px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search h2 {
+        font-size: 33px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search p {
+        font-size: 16px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search .search-box {
+        margin-top: 50px;
+    }
+    .sec-1 .search .form-control {
+        padding: 14px;
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+    /* End Sec1 */
+    /* Start Sec2 */
+    .sec-2 {
+        height: 1300px;
+        background-image: url("../img/section/sec2/sec2res.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .title h2 {
+        font-size: 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .carousel-item {
+        display: block !important;
+    }
+    .sec-2 img {
+        width: 360px;
+        height: 340px;
+        margin: 0 auto 30px auto;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .img-title {
+        display: none;
+    }
+    .sec-2 .carousel-indicators {
+        bottom: -20px !important;
+    }
+    .sec-2 .carousel-indicators [data-bs-target] {
+        width: 8px !important;
+        height: 8px !important;
+        border: none;
+        border-radius: 8px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .more {
+        margin: 35px 0;
+    }
+    .sec-2 span a {
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+    /* End Sec2 */
+    /* Start Sec3 */
+    .sec-3 {
+        height: 550px;
+        background-image: url("../img/section/sec3/sec3res4.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        text-align: center;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts {
+        height: 250px;
+        padding: 0 60px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .nfts-img {
+        height: 250px;
+        padding: 0 60px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .nfts-img img {
+        width: 290px;
+        height: 233px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts h2 {
+        padding: 20px !important;
+        font-size: 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts p {
+        padding: 0 !important;
+        font-size: 16px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts button {
+        font-size: 12px;
+    }
+    /* End Sec3 */
+    /* Start Sec4 */
+    .sec-4 .braider {
+        background-image: url("../img/section/sec4/sec4res.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width: 100%;
+        height: 560px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-4 .customer {
+        background-image: url("../img/section/sec4/sec4-2res.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width: 100%;
+        height: 560px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-4 .col-md-4 {
+        flex: 0 0 auto !important;
+        width: 50% !important;
+        height: 120px;
+    }
+    .sec-4 .title h3 {
+        font-size: 32px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-4 p {
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+    /* End Sec4 */
+    /* Start Footer */
+    footer .menu ul li h1 {
+        font-size: 16px;
+        transition: .5s all ease-in-out;
+    }
+    footer .menu ul li a {
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+    footer .icon svg {
+        font-size: 23px;
+        transition: .5s all ease-in-out;
+    }
+    /* End Footer */
+}
+
+@media only screen and (max-width:576px) {
+    /* Start Navbar */
+    header .navbars .navbar-toggler {
+        width: 45px;
+        height: 30px;
+        transition: .5s all ease-in-out;
+    }
+    header .navbars h1 {
+        direction: ltr;
+        font-size: 23px;
+    }
+    header .navbars img {
+        width: 29px;
+        height: 29px;
+        transition: .5s all ease-in-out;
+    }
+    header .navbars a {
+        font-size: 14px;
+    }
+    header #login p {
+        font-size: 13px;
+        transition: .5s all ease-in-out;
+    }
+    /* End Navbar */
+    /* Start Sec1 */
+    .sec-1 {
+        height: 650px;
+        background-image: url("../img/section/sec1/sec1res5.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .title {
+        padding: 35px;
+    }
+    .sec-1 .title h1 {
+        font-size: 65px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .title p {
+        font-size: 16px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search {
+        height: 340px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search h2 {
+        font-size: 30px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search p {
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search .search-box {
+        margin-top: 45px;
+    }
+    .sec-1 .search .form-control {
+        padding: 14px;
+        font-size: 13px;
+        transition: .5s all ease-in-out;
+    }
+    /* End Sec1 */
+    /* Start Sec2 */
+    .sec-2 {
+        height: 1155px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .title h2 {
+        font-size: 45px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 img {
+        width: 320px;
+        height: 300px;
+        margin: 0 auto 30px auto;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .carousel-indicators {
+        bottom: -15px !important;
+    }
+    .sec-2 .carousel-indicators [data-bs-target] {
+        width: 7px !important;
+        height: 7px !important;
+        border: none;
+        border-radius: 7px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .more {
+        margin: 20px 0;
+    }
+    .sec-2 span a {
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+    /* End Sec2 */
+    /* Start Sec3 */
+    .sec-3 {
+        height: 550px;
+        background-image: url("../img/section/sec3/sec3res5.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        text-align: center;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts {
+        height: 250px;
+        padding: 0 60px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .nfts-img {
+        height: 250px;
+        padding: 0 60px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .nfts-img img {
+        width: 270px;
+        height: 213px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts h2 {
+        padding: 20px !important;
+        font-size: 45px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts p {
+        padding: 0 !important;
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts button {
+        font-size: 11px;
+    }
+    /* End Sec3 */
+    /* Start Sec4 */
+    .sec-4 .braider {
+        width: 100%;
+        height: 530px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-4 .customer {
+        width: 100%;
+        height: 530px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-4 .col-md-4 {
+        flex: 0 0 auto !important;
+        width: 50% !important;
+        height: 110px;
+    }
+    .sec-4 .title h3 {
+        font-size: 30px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-4 p {
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+    /* End Sec4 */
+    /* Start Footer */
+    footer .menu {
+        height: 480px;
+    }
+    footer .menu ul {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    /* End Footer */
+}
+
+@media only screen and (max-width:555px) {
+    /* Start Sec1 */
+    .sec-1 {
+        height: 600px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .title h1 {
+        font-size: 55px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .title p {
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search {
+        width: 80%;
+        height: 310px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search h2 {
+        font-size: 27px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search p {
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search .search-box {
+        margin-top: 40px;
+    }
+    .sec-1 .search .form-control {
+        padding: 13px;
+        font-size: 12px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search .btn {
+        padding: 0 18px;
+    }
+    /* End Sec1 */
+}
+
+@media only screen and (max-width:492px) {
+    /* Start Navbar */
+    header .navbars .navbar-toggler {
+        width: 40px;
+        height: 30px;
+        transition: .5s all ease-in-out;
+    }
+    header .navbars h1 {
+        direction: ltr;
+        font-size: 22px;
+    }
+    header .navbars img {
+        width: 28px;
+        height: 28px;
+        transition: .5s all ease-in-out;
+    }
+    header .navbars a {
+        font-size: 13px;
+    }
+    header #login p {
+        font-size: 12px;
+        transition: .5s all ease-in-out;
+    }
+    /* End Navbar */
+    /* Start Sec1 */
+    .sec-1 {
+        height: 550px;
+        background-image: url("../img/section/sec1/sec1res6.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .title {
+        padding: 30px;
+    }
+    .sec-1 .title h1 {
+        font-size: 45px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .title p {
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search {
+        height: 280px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search h2 {
+        padding-top: 25px;
+        padding-bottom: 15px;
+        font-size: 24px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search p {
+        font-size: 13px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search .search-box {
+        margin-top: 35px;
+    }
+    .sec-1 .search .form-control {
+        padding: 12px;
+        font-size: 11px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search .btn {
+        padding: 0 16px;
+    }
+    /* End Sec1 */
+    /* Start Sec2 */
+    .sec-2 {
+        height: 1010px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .title h2 {
+        font-size: 40px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 img {
+        width: 280px;
+        height: 260px;
+        margin: 0 auto 30px auto;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .carousel-indicators {
+        bottom: -10px !important;
+    }
+    .sec-2 .more {
+        margin: 5px 0;
+    }
+    .sec-2 span a {
+        font-size: 13px;
+        transition: .5s all ease-in-out;
+    }
+    /* End Sec2 */
+    /* Start Sec3 */
+    .sec-3 {
+        height: 500px;
+        background-image: url("../img/section/sec3/sec3res6.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        text-align: center;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts {
+        height: 230px;
+        padding: 0 60px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .nfts-img {
+        height: 230px;
+        padding: 0 60px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .nfts-img img {
+        width: 250px;
+        height: 193px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts h2 {
+        padding: 20px !important;
+        font-size: 40px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts p {
+        padding: 0 !important;
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts button {
+        width: 86px;
+        height: 31px;
+        font-size: 10px;
+    }
+    /* End Sec3 */
+    /* Start Sec4 */
+    .sec-4 .braider {
+        width: 100%;
+        height: 520px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-4 .customer {
+        width: 100%;
+        height: 520px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-4 .col-md-4 {
+        flex: 0 0 auto !important;
+        width: 50% !important;
+        height: 100px;
+    }
+    .sec-4 .title h3 {
+        font-size: 28px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-4 p {
+        font-size: 13px;
+        transition: .5s all ease-in-out;
+    }
+    /* End Sec4 */
+    /* Start Footer */
+    footer .menu ul li h1 {
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+    footer .menu ul li a {
+        font-size: 13px;
+        transition: .5s all ease-in-out;
+    }
+    footer .icon svg {
+        font-size: 21px;
+        transition: .5s all ease-in-out;
+    }
+    /* End Footer */
+}
+
+@media only screen and (max-width:455px) {
+    /* Start Navbar */
+    header .navbars .navbar-toggler {
+        width: 38px;
+        height: 30px;
+        transition: .5s all ease-in-out;
+    }
+    /* End Navbar */
+    /* Start Sec1 */
+    .sec-1 {
+        height: 500px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .title h1 {
+        font-size: 35px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .title p {
+        font-size: 13px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search {
+        height: 240px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search h2 {
+        padding-top: 20px;
+        padding-bottom: 10px;
+        font-size: 21px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search p {
+        font-size: 12px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search .search-box {
+        margin-top: 25px;
+    }
+    .sec-1 .search .form-control {
+        padding: 11px;
+        font-size: 10px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search .btn {
+        padding: 0 14px;
+    }
+    /* End Sec1 */
+    /* Start Sec2 */
+    .sec-2 {
+        height: 940px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .title h2 {
+        font-size: 35px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 img {
+        width: 260px;
+        height: 240px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .carousel-indicators {
+        bottom: -8px !important;
+    }
+    .sec-2 .more {
+        margin: 2px 0;
+    }
+    .sec-2 span a {
+        font-size: 12px;
+        transition: .5s all ease-in-out;
+    }
+    /* End Sec2 */
+    /* Start Sec3 */
+    .sec-3 {
+        height: 475px;
+        text-align: center;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts {
+        height: 220px;
+        padding: 0 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .nfts-img {
+        height: 220px;
+        padding: 0 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .nfts-img img {
+        width: 230px;
+        height: 173px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts h2 {
+        padding: 20px !important;
+        font-size: 35px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts p {
+        padding: 0 !important;
+        font-size: 13px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts button {
+        width: 86px;
+        height: 31px;
+        font-size: 10px;
+    }
+    /* End Sec3 */
+}
+
+@media only screen and (max-width:395px) {
+    /* Start Navbar */
+    header .navbars h1 {
+        direction: ltr;
+        font-size: 21px;
+    }
+    header .navbars img {
+        width: 27px;
+        height: 27px;
+        transition: .5s all ease-in-out;
+    }
+    header .navbars a {
+        font-size: 12px;
+    }
+    header #login p {
+        font-size: 11px;
+        transition: .5s all ease-in-out;
+    }
+    /* End Navbar */
+    /* Start Sec1 */
+    .sec-1 {
+        height: 460px;
+        background-image: url("../img/section/sec1/sec1res7.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .title {
+        padding: 25px;
+    }
+    .sec-1 .title p {
+        font-size: 12px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search {
+        height: 220px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search h2 {
+        font-size: 18px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search p {
+        font-size: 11px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-1 .search .search-box {
+        margin-top: 20px;
+    }
+    .sec-1 .search .form-control {
+        padding: 10px;
+        font-size: 9px;
+        transition: .5s all ease-in-out;
+    }
+    /* End Sec1 */
+    /* Start Sec2 */
+    .sec-2 {
+        height: 870px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .title h2 {
+        font-size: 30px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 span a {
+        font-size: 11px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 img {
+        width: 240px;
+        height: 220px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .carousel-indicators {
+        bottom: -6px !important;
+    }
+    .sec-2 .carousel-indicators [data-bs-target] {
+        width: 6px !important;
+        height: 6px !important;
+        border: none;
+        border-radius: 6px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-2 .more {
+        margin: -1px 0;
+    }
+    /* End Sec2 */
+    /* Start Sec3 */
+    .sec-3 {
+        height: 450px;
+        background-image: url("../img/section/sec3/sec3res7.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        text-align: center;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts {
+        height: 210px;
+        padding: 0 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .nfts-img {
+        height: 210px;
+        padding: 0 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .nfts-img img {
+        width: 210px;
+        height: 153px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts h2 {
+        padding: 20px !important;
+        font-size: 30px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts p {
+        padding: 0 !important;
+        font-size: 12px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-3 .intro-nfts button {
+        width: 84px;
+        height: 29px;
+        font-size: 9px;
+    }
+    /* End Sec3 */
+    /* Start Sec4 */
+    .sec-4 .braider {
+        width: 100%;
+        height: 490px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-4 .customer {
+        width: 100%;
+        height: 490px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-4 .col-md-4 {
+        flex: 0 0 auto !important;
+        width: 50% !important;
+        height: 90px;
+    }
+    .sec-4 .title h3 {
+        font-size: 26px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-4 p {
+        font-size: 12px;
+        transition: .5s all ease-in-out;
+    }
+    /* End Sec4 */
+    /* Start Footer */
+    footer .menu ul li h1 {
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+    footer .menu ul li a {
+        font-size: 12px;
+        transition: .5s all ease-in-out;
+    }
+    footer .icon svg {
+        font-size: 19px;
+        transition: .5s all ease-in-out;
+    }
+    /* End Footer */
+}
+
+
+/* End Home */
+
+
+/* Start Search */
+
+@media only screen and (max-width:1200px) {
+    .sec-13 .title img {
+        width: 55px;
+        height: 55px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-13 .title h2 {
+        font-size: 28px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-13 h4 {
+        font-size: 18px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:992px) {
+    .sec-13 .title img {
+        width: 50px;
+        height: 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-13 .title h2 {
+        font-size: 26px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-13 h4 {
+        font-size: 16px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-13 .stars svg {
+        width: 23px;
+        height: 23px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-13 .v-profile {
+        width: 90px;
+        height: 30px;
+        font-size: 13px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .sec-13 .r-search {
+        border-radius: 20px;
+    }
+    .sec-13 .title img {
+        width: 55px;
+        height: 55px;
+        margin-bottom: 10px;
+        padding-bottom: 0 !important;
+        transition: .5s all ease-in-out;
+    }
+    .sec-13 .title h2 {
+        font-size: 28px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-13 h4 {
+        font-size: 18px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-13 .stars svg {
+        width: 25px;
+        height: 25px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-13 .v-profile {
+        width: 95px;
+        height: 35px;
+        margin-bottom: 5px;
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:576px) {
+    .sec-13 .title img {
+        width: 50px;
+        height: 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-13 .title h2 {
+        font-size: 26px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-13 h4 {
+        font-size: 16px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-13 .stars svg {
+        width: 23px;
+        height: 23px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-13 .v-profile {
+        width: 90px;
+        height: 30px;
+        font-size: 13px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:395px) {
+    .sec-13 .title img {
+        width: 48px;
+        height: 48px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-13 .title h2 {
+        font-size: 24px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-13 h4 {
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-13 .stars svg {
+        width: 21px;
+        height: 21px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-13 .v-profile {
+        width: 88px;
+        height: 28px;
+        font-size: 12px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+
+/* Start Collection */
+
+@media only screen and (max-width:1200px) {
+    .sec-5 .title h1 {
+        font-size: 95px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .details .description p {
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .details .profile img {
+        width: 50px;
+        height: 50px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:992px) {
+    .sec-5 .title h1 {
+        font-size: 85px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .details .description p {
+        font-size: 12px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .details .profile img {
+        width: 40px;
+        height: 40px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .collection .search .form-control {
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:850px) {
+    .sec-5 .details .description p {
+        font-size: 10px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .details .profile img {
+        width: 35px;
+        height: 35px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .sec-5 .collection {
+        height: 270px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .title h1 {
+        font-size: 75px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .img-collection {
+        text-align: center;
+    }
+    .sec-5 .img-collection img {
+        width: 70%;
+        height: 70%;
+    }
+    .sec-5 .details {
+        width: 70%;
+        margin: 8px auto 20px auto;
+    }
+    .sec-5 .details .description p {
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .details .profile img {
+        width: 50px;
+        height: 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .collection .search .form-control {
+        padding: 14px !important;
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:576px) {
+    .sec-5 .collection {
+        height: 240px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .title {
+        padding: 35px 35px 15px 35px;
+    }
+    .sec-5 .title h1 {
+        font-size: 65px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .img-collection img {
+        width: 75%;
+        height: 75%;
+    }
+    .sec-5 .details {
+        width: 75%;
+        margin: 8px auto 20px auto;
+    }
+    .sec-5 .details .description p {
+        font-size: 13px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .details .profile img {
+        width: 45px;
+        height: 45px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .collection .search .form-control {
+        padding: 13px !important;
+        font-size: 13px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:555px) {
+    .sec-5 .collection {
+        height: 230px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .title h1 {
+        font-size: 55px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .collection .search .form-control {
+        padding: 12px !important;
+        font-size: 12px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .search .btn {
+        padding: 0 18px !important;
+    }
+}
+
+@media only screen and (max-width:492px) {
+    .sec-5 .collection {
+        height: 200px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .title {
+        padding: 30px 30px 10px 30px;
+    }
+    .sec-5 .title h1 {
+        font-size: 45px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .details .description p {
+        font-size: 12px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .details .profile img {
+        width: 40px;
+        height: 40px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .collection .search .form-control {
+        padding: 11px !important;
+        font-size: 11px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .search .btn {
+        padding: 0 16px !important;
+    }
+}
+
+@media only screen and (max-width:455px) {
+    .sec-5 .collection {
+        height: 170px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .title h1 {
+        font-size: 35px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .collection .form-control {
+        padding: 10px !important;
+        font-size: 10px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .search .btn {
+        padding: 0 14px !important;
+    }
+}
+
+@media only screen and (max-width:395px) {
+    .sec-5 .collection {
+        height: 140px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .title {
+        padding: 20px 20px 5px 20px;
+    }
+    .sec-5 .img-collection img {
+        width: 80%;
+        height: 80%;
+    }
+    .sec-5 .details {
+        width: 80%;
+        margin: 8px auto 20px auto;
+    }
+    .sec-5 .details .description p {
+        font-size: 11px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .details .profile img {
+        width: 35px;
+        height: 35px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-5 .collection .search .form-control {
+        padding: 9px !important;
+        font-size: 9px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+
+/* End Collection */
+
+
+/* Start Collection-1 */
+
+@media only screen and (max-width:992px) {
+    .sec-6 .profile img {
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+        border-radius: 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .name h1 {
+        font-size: 32px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .description p {
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .comment-title h2 {
+        padding: 50px 10px 0 10px;
+        font-size: 26px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .profile-1 img {
+        width: 44px;
+        height: 44px;
+        padding: 5px;
+        border-radius: 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .name-1 h3 {
+        font-size: 20px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .comments-1 p {
+        padding: 0 20px 20px 50px;
+        font-size: 13px;
+        border-bottom: 1px solid #1b1c1e;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .icon img {
+        width: 23px;
+        height: 23px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .sec-6 .col-md-8 {
+        width: 80%;
+        margin: auto;
+        padding: 0 !important;
+    }
+    .sec-6 .img-braids img {
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 30px 30px 0 0px;
+    }
+    .sec-6 .col-md-4 {
+        width: 80%;
+        height: 500px;
+        background-color: #ececeb;
+        margin: auto;
+        padding: 0 !important;
+        border-radius: 0 0 20px 20px;
+    }
+    .sec-6 .details {
+        width: 100%;
+        height: 100%;
+        padding: 10px 0 0 0;
+        border: none;
+    }
+    .sec-6 .profile {
+        width: 10%;
+        text-align: center;
+    }
+    .sec-6 .name {
+        width: 90%;
+        margin: 5px 0 0 8px;
+        text-align: center;
+    }
+    .sec-6 .profile img {
+        width: 53px;
+        height: 53px;
+        padding: 5px;
+        border-radius: 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .name h1 {
+        font-size: 34px;
+        font-weight: bold;
+        text-align: left;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .description p {
+        font-size: 16px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .profile-1 {
+        width: 10%;
+        text-align: center;
+    }
+    .sec-6 .name-1 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 90%;
+        margin: 5px 0 0 0;
+        text-align: left;
+    }
+    .sec-6 .comment-title h2 {
+        padding: 50px 10px 0 10px;
+        font-size: 28px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .profile-1 img {
+        width: 45px;
+        height: 45px;
+        padding: 5px;
+        border-radius: 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .name-1 h3 {
+        font-size: 22px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .comments-1 p {
+        padding: 0 20px 20px 50px;
+        font-size: 15px;
+        border-bottom: 1px solid #1b1c1e;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .icon img {
+        width: 25px;
+        height: 25px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:576px) {
+    .sec-6 .col-md-4 {
+        width: 80%;
+        height: 400px;
+        background-color: #ececeb;
+        margin: auto;
+        padding: 0 !important;
+        border-radius: 0 0 20px 20px;
+    }
+    .sec-6 .profile {
+        width: 10%;
+        text-align: center;
+    }
+    .sec-6 .name {
+        width: 90%;
+        margin: 5px 0 0 16px;
+        text-align: center;
+    }
+    .sec-6 .profile img {
+        width: 51px;
+        height: 51px;
+        padding: 5px;
+        border-radius: 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .name h1 {
+        font-size: 32px;
+        font-weight: bold;
+        text-align: left;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .description p {
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .profile-1 {
+        width: 10%;
+        text-align: center;
+    }
+    .sec-6 .name-1 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 90%;
+        margin: 5px 0 0 0;
+        text-align: left;
+    }
+    .sec-6 .comment-title h2 {
+        padding: 50px 10px 0 10px;
+        font-size: 26px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .profile-1 img {
+        width: 44px;
+        height: 44px;
+        padding: 5px;
+        border-radius: 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .name-1 h3 {
+        margin-left: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .comments-1 p {
+        padding: 0 20px 20px 50px;
+        font-size: 13px;
+        border-bottom: 1px solid #1b1c1e;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .icon img {
+        width: 23px;
+        height: 23px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:395px) {
+    .sec-6 .col-md-4 {
+        width: 80%;
+        height: 300px;
+        background-color: #ececeb;
+        margin: auto;
+        padding: 0 !important;
+        border-radius: 0 0 20px 20px;
+    }
+    .sec-6 .profile {
+        width: 10%;
+        text-align: center;
+    }
+    .sec-6 .name {
+        width: 90%;
+        margin: 5px 0 0 16px;
+        text-align: center;
+    }
+    .sec-6 .profile img {
+        width: 49px;
+        height: 49px;
+        padding: 5px;
+        border-radius: 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .name h1 {
+        font-size: 30px;
+        font-weight: bold;
+        text-align: left;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .description p {
+        font-size: 12px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .profile-1 {
+        width: 10%;
+        text-align: center;
+    }
+    .sec-6 .name-1 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 90%;
+        margin: 5px 0 0 0;
+        text-align: left;
+    }
+    .sec-6 .comment-title h2 {
+        padding: 50px 10px 0 10px;
+        font-size: 24px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .profile-1 img {
+        width: 43px;
+        height: 43px;
+        padding: 5px;
+        border-radius: 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .name-1 h3 {
+        margin-left: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .comments-1 p {
+        padding: 0 20px 20px 50px;
+        font-size: 11px;
+        border-bottom: 1px solid #1b1c1e;
+        transition: .5s all ease-in-out;
+    }
+    .sec-6 .icon img {
+        width: 21px;
+        height: 21px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+
+/* End Collection-1 */
+
+
+/* Start NFTs */
+
+@media only screen and (max-width:1200px) {
+    .sec-7 {
+        width: 100%;
+        height: 400px;
+        background-image: url("../img/section/Sec7/sec7res2.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transition: .5s all ease-in-out;
+    }
+    .sec-7 .nfts-img {
+        width: 300px;
+        height: 250px;
+        float: right;
+        margin: 70px 100px 0 0;
+        transition: .5s all ease-in-out;
+    }
+    .sec-8 .nfts .nfts-collection h3,
+    .sec-9 .nfts .nfts-collection h3,
+    .sec-10 .nfts .nfts-collection h3 {
+        color: #ececeb;
+        padding: 10px 0 0 10px;
+        font-size: 26px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-8 .nfts .nfts-collection p,
+    .sec-9 .nfts .nfts-collection p,
+    .sec-10 .nfts .nfts-collection p {
+        color: #ececeb;
+        font-size: 18px;
+        padding-left: 10px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:992px) {
+    .sec-7 {
+        width: 100%;
+        height: 400px;
+        background-image: url("../img/section/Sec7/sec7res3.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transition: .5s all ease-in-out;
+    }
+    .sec-7 .nfts-img {
+        width: 270px;
+        height: 220px;
+        float: right;
+        margin: 80px 50px 0 0;
+        transition: .5s all ease-in-out;
+    }
+    .sec-8 .nfts,
+    .sec-9 .nfts,
+    .sec-10 .nfts {
+        width: 100%;
+        height: 94%;
+        background-color: #1b1c1e;
+        border-radius: 20px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-8 .nfts .nfts-collection h3,
+    .sec-9 .nfts .nfts-collection h3,
+    .sec-10 .nfts .nfts-collection h3 {
+        color: #ececeb;
+        padding: 10px 0 0 10px;
+        font-size: 22px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-8 .nfts .nfts-collection p,
+    .sec-9 .nfts .nfts-collection p,
+    .sec-10 .nfts .nfts-collection p {
+        color: #ececeb;
+        font-size: 16px;
+        padding-left: 10px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .sec-7 {
+        width: 100%;
+        height: 400px;
+        background-image: url("../img/section/Sec7/sec7res4.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transition: .5s all ease-in-out;
+    }
+    .sec-7 .nfts-img {
+        width: 240px;
+        height: 190px;
+        float: right;
+        margin: 90px 20px 0 0;
+        transition: .5s all ease-in-out;
+    }
+    .sec-8 h2,
+    .sec-9 h2,
+    .sec-10 h2 {
+        text-align: left;
+    }
+    .sec-8,
+    .sec-9,
+    .sec-10 {
+        text-align: left;
+        transition: .5s all ease-in-out;
+    }
+    .sec-8 .nfts,
+    .sec-9 .nfts,
+    .sec-10 .nfts {
+        width: 80%;
+        height: 97%;
+        background-color: #1b1c1e;
+        margin: auto;
+        border-radius: 20px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-8 .nfts .nfts-collection h3,
+    .sec-9 .nfts .nfts-collection h3,
+    .sec-10 .nfts .nfts-collection h3 {
+        color: #ececeb;
+        padding: 10px 0 0 10px;
+        font-size: 24px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-8 .nfts .nfts-collection p,
+    .sec-9 .nfts .nfts-collection p,
+    .sec-10 .nfts .nfts-collection p {
+        color: #ececeb;
+        font-size: 18px;
+        padding-left: 0;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:576px) {
+    .sec-7 {
+        width: 100%;
+        height: 400px;
+        background-image: url("../img/section/Sec7/sec7res5.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transition: .5s all ease-in-out;
+    }
+    .sec-7 .nfts-img {
+        width: 210px;
+        height: 160px;
+        float: right;
+        margin: 180px 20px 0 0;
+        transition: .5s all ease-in-out;
+    }
+    .sec-8 h2,
+    .sec-9 h2,
+    .sec-10 h2 {
+        padding: 10px 0 5px 20px;
+        font-size: 28px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-8 .nfts,
+    .sec-9 .nfts,
+    .sec-10 .nfts {
+        width: 80%;
+        height: 96%;
+        background-color: #1b1c1e;
+        margin: auto;
+        border-radius: 20px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-8 .nfts .nfts-collection h3,
+    .sec-9 .nfts .nfts-collection h3,
+    .sec-10 .nfts .nfts-collection h3 {
+        color: #ececeb;
+        padding: 10px 0 0 10px;
+        font-size: 22px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-8 .nfts .nfts-collection p,
+    .sec-9 .nfts .nfts-collection p,
+    .sec-10 .nfts .nfts-collection p {
+        color: #ececeb;
+        font-size: 16px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:455px) {
+    .sec-7 {
+        width: 100%;
+        height: 400px;
+        background-image: url("../img/section/Sec7/sec7res6.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transition: .5s all ease-in-out;
+    }
+    .sec-7 .nfts-img {
+        width: 200px;
+        height: 150px;
+        float: right;
+        margin: 190px 20px 0 0;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:395px) {
+    .sec-7 {
+        width: 100%;
+        height: 400px;
+        background-image: url("../img/section/Sec7/sec7res6.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transition: .5s all ease-in-out;
+    }
+    .sec-7 .nfts-img {
+        width: 190px;
+        height: 140px;
+        float: right;
+        margin: 200px 20px 0 0;
+        transition: .5s all ease-in-out;
+    }
+    .sec-8 h2,
+    .sec-9 h2,
+    .sec-10 h2 {
+        padding: 10px 0 5px 20px;
+        font-size: 26px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-8 .nfts,
+    .sec-9 .nfts,
+    .sec-10 .nfts {
+        width: 80%;
+        height: 94%;
+        background-color: #1b1c1e;
+        margin: auto;
+        border-radius: 20px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-8 .nfts .nfts-collection h3,
+    .sec-9 .nfts .nfts-collection h3,
+    .sec-10 .nfts .nfts-collection h3 {
+        color: #ececeb;
+        padding: 10px 0 0 10px;
+        font-size: 20px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-8 .nfts .nfts-collection p,
+    .sec-9 .nfts .nfts-collection p,
+    .sec-10 .nfts .nfts-collection p {
+        color: #ececeb;
+        font-size: 14px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+}
+
+
+/* End Nfts */
+
+
+/* Start About */
+
+@media only screen and (max-width:1200px) {
+    .sec-11 .about .title h1 {
+        text-align: center;
+        font-size: 90px;
+        font-family: Open Sans bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-11 .about .description p {
+        padding: 20px;
+        font-size: 19px;
+        text-align: justify;
+        line-height: 30px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-12 .feedback label {
+        font-size: 17px;
+    }
+    .sec-12 .feedback input {
+        padding: 4px 7px;
+        margin-bottom: 10px;
+        border: 1px solid #1b1c1e;
+        border-radius: 10px;
+        font-size: 17px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-12 .feedback textarea {
+        font-size: 17px;
+    }
+    .sec-12 .socialmedia h2 {
+        padding: 50px 20px 20px 20px;
+        font-family: open sans bold;
+        font-size: 38px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-12 .socialmedia svg {
+        padding: 0 5px;
+        font-size: 45px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-12 .socialmedia h3 {
+        padding: 40px 20px 20px 20px;
+        font-size: 28px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:992px) {
+    .sec-12 .feedback {
+        height: 330px;
+        background-color: #1b1c1e;
+        color: #ececeb;
+        border-radius: 30px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-11 .about .title h1 {
+        text-align: center;
+        font-size: 80px;
+        font-family: Open Sans bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-11 .about .description p {
+        padding: 20px;
+        font-size: 18px;
+        text-align: justify;
+        line-height: 30px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-12 .socialmedia {
+        height: 330px;
+        background-color: #1b1c1e;
+        color: #ececeb;
+        margin-bottom: 20px;
+        text-align: center;
+        border-radius: 30px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-12 .feedback label {
+        font-size: 16px;
+    }
+    .sec-12 .feedback input {
+        padding: 3px 6px;
+        margin-bottom: 10px;
+        border: 1px solid #1b1c1e;
+        border-radius: 10px;
+        font-size: 16px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-12 .feedback textarea {
+        font-size: 16px;
+    }
+    .sec-12 .socialmedia h2 {
+        padding: 50px 20px 20px 20px;
+        font-family: open sans bold;
+        font-size: 36px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-12 .socialmedia svg {
+        padding: 0 5px;
+        font-size: 40px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-12 .socialmedia h3 {
+        padding: 40px 20px 20px 20px;
+        font-size: 26px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:572px) {
+    .sec-12 .feedback {
+        height: 330px;
+        background-color: #1b1c1e;
+        color: #ececeb;
+        margin-bottom: 20px;
+        border-radius: 30px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-11 .about .title h1 {
+        text-align: center;
+        font-size: 70px;
+        font-family: Open Sans bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-11 .about .description p {
+        padding: 20px;
+        font-size: 16px;
+        text-align: justify;
+        line-height: 30px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-12 .socialmedia {
+        height: 330px;
+        background-color: #1b1c1e;
+        color: #ececeb;
+        margin-bottom: 20px;
+        text-align: center;
+        border-radius: 30px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-12 .feedback label {
+        font-size: 14px;
+    }
+    .sec-12 .feedback input {
+        padding: 2px 5px;
+        margin-bottom: 10px;
+        border: 1px solid #1b1c1e;
+        border-radius: 10px;
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-12 .feedback textarea {
+        font-size: 14px;
+    }
+    .sec-12 .socialmedia h2 {
+        padding: 50px 20px 20px 20px;
+        font-family: open sans bold;
+        font-size: 34px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-12 .socialmedia svg {
+        padding: 0 5px;
+        font-size: 35px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-12 .socialmedia h3 {
+        padding: 40px 20px 20px 20px;
+        font-size: 24px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:450px) {
+    .sec-12 .feedback {
+        height: 330px;
+        background-color: #1b1c1e;
+        color: #ececeb;
+        margin-bottom: 20px;
+        border-radius: 30px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-11 .about .title h1 {
+        text-align: center;
+        font-size: 60px;
+        font-family: Open Sans bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-11 .about .description p {
+        padding: 20px;
+        font-size: 14px;
+        text-align: justify;
+        line-height: 30px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-12 .socialmedia {
+        height: 330px;
+        background-color: #1b1c1e;
+        color: #ececeb;
+        margin-bottom: 20px;
+        text-align: center;
+        border-radius: 30px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-12 .feedback label {
+        font-size: 12px;
+    }
+    .sec-12 .feedback input {
+        padding: 2px 5px;
+        margin-bottom: 10px;
+        border: 1px solid #1b1c1e;
+        border-radius: 10px;
+        font-size: 12px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-12 .feedback textarea {
+        font-size: 12px;
+    }
+    .sec-12 .socialmedia h2 {
+        padding: 50px 20px 20px 20px;
+        font-family: open sans bold;
+        font-size: 32px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-12 .socialmedia svg {
+        padding: 0 5px;
+        font-size: 30px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-12 .socialmedia h3 {
+        padding: 40px 20px 20px 20px;
+        font-size: 22px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:395px) {
+    .sec-12 .feedback {
+        height: 330px;
+        background-color: #1b1c1e;
+        color: #ececeb;
+        margin-bottom: 20px;
+        border-radius: 30px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-11 .about .title h1 {
+        text-align: center;
+        font-size: 50px;
+        font-family: Open Sans bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-11 .about .description p {
+        padding: 20px;
+        font-size: 12px;
+        text-align: justify;
+        line-height: 30px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-12 .socialmedia {
+        height: 330px;
+        background-color: #1b1c1e;
+        color: #ececeb;
+        margin-bottom: 20px;
+        text-align: center;
+        border-radius: 30px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-12 .feedback label {
+        font-size: 11px;
+    }
+    .sec-12 .feedback input {
+        padding: 2px 5px;
+        margin-bottom: 10px;
+        border: 1px solid #1b1c1e;
+        border-radius: 10px;
+        font-size: 11px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-12 .feedback textarea {
+        font-size: 11px;
+    }
+    .sec-12 .socialmedia h2 {
+        padding: 50px 20px 20px 20px;
+        font-family: open sans bold;
+        font-size: 30px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-12 .socialmedia svg {
+        padding: 0 5px;
+        font-size: 25px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-12 .socialmedia h3 {
+        padding: 40px 20px 20px 20px;
+        font-size: 20px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+
+/* End About */
+
+
+/* Start Login */
+
+@media only screen and (max-width:992px) {
+    .sec-16 {
+        width: 100%;
+        height: 700px;
+        background-image: url("../img/section/sec16/sec16-3.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transition: .5s all ease-in-out;
+    }
+    .sec-16 .login {
+        width: 350px;
+        margin: auto;
+        padding-top: 140px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-16 .login .user-login h1 {
+        color: #ececeb;
+        font-family: Open Sans bold;
+        font-size: 55px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-16 .login .user-login svg {
+        width: 65px;
+        height: 65px;
+        font-size: 18px;
+        background-color: #5d0088;
+        color: #ececeb;
+        padding: 25px;
+        border-radius: 100px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-16 .login .text {
+        width: 100%;
+        margin: 5px 0;
+        padding: 8px;
+        border: 0px solid;
+        border-radius: 10px;
+        outline: none;
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-16 .login .pass {
+        width: 100%;
+        margin: 5px 0;
+        padding: 8px;
+        border: 0px solid;
+        border-radius: 10px;
+        outline: none;
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-16 .login .details {
+        display: flex;
+        justify-content: space-between;
+        color: #ececeb;
+        margin-top: 10px;
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-16 .login .login-button {
+        width: 100%;
+        background-color: #5d0088;
+        color: #ececeb;
+        padding: 8px;
+        border: 0px solid;
+        font-family: Open Sans bold;
+        font-size: 18px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:572px) {
+    .sec-16 {
+        width: 100%;
+        height: 700px;
+        background-image: url("../img/section/sec16/sec16-5.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transition: .5s all ease-in-out;
+    }
+    .sec-16 .login {
+        width: 300px;
+        margin: auto;
+        padding-top: 130px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-16 .login .user-login h1 {
+        color: #ececeb;
+        font-family: Open Sans bold;
+        font-size: 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-16 .login .user-login svg {
+        width: 60px;
+        height: 60px;
+        font-size: 16px;
+        background-color: #5d0088;
+        color: #ececeb;
+        padding: 25px;
+        border-radius: 100px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-16 .login .text {
+        width: 100%;
+        margin: 5px 0;
+        padding: 8px;
+        border: 0px solid;
+        border-radius: 10px;
+        outline: none;
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-16 .login .pass {
+        width: 100%;
+        margin: 5px 0;
+        padding: 8px;
+        border: 0px solid;
+        border-radius: 10px;
+        outline: none;
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-16 .login .details {
+        display: flex;
+        justify-content: space-between;
+        color: #ececeb;
+        margin-top: 10px;
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-16 .login .login-button {
+        width: 100%;
+        background-color: #5d0088;
+        color: #ececeb;
+        padding: 8px;
+        border: 0px solid;
+        font-family: Open Sans bold;
+        font-size: 16px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:395px) {
+    .sec-16 {
+        width: 100%;
+        height: 700px;
+        background-image: url("../img/section/sec16/sec16-6.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transition: .5s all ease-in-out;
+    }
+    .sec-16 .login {
+        width: 280px;
+        margin: auto;
+        padding-top: 120px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-16 .login .user-login h1 {
+        color: #ececeb;
+        font-family: Open Sans bold;
+        font-size: 45px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-16 .login .user-login svg {
+        width: 55px;
+        height: 55px;
+        font-size: 14px;
+        background-color: #5d0088;
+        color: #ececeb;
+        padding: 25px;
+        border-radius: 100px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-16 .login .text {
+        width: 100%;
+        margin: 5px 0;
+        padding: 8px;
+        border: 0px solid;
+        border-radius: 10px;
+        outline: none;
+        font-size: 13px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-16 .login .pass {
+        width: 100%;
+        margin: 5px 0;
+        padding: 8px;
+        border: 0px solid;
+        border-radius: 10px;
+        outline: none;
+        font-size: 13px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-16 .login .details {
+        display: flex;
+        justify-content: space-between;
+        color: #ececeb;
+        margin-top: 10px;
+        font-size: 13px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-16 .login .login-button {
+        width: 100%;
+        background-color: #5d0088;
+        color: #ececeb;
+        padding: 8px;
+        border: 0px solid;
+        font-family: Open Sans bold;
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+
+/* End Login */
+
+
+/* Start Register */
+
+@media only screen and (max-width:992px) {
+    .sec-17 {
+        width: 100%;
+        height: 800px;
+        background-image: url("../img/section/sec17/sec17-3.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transition: .5s all ease-in-out;
+    }
+    .sec-17 .register {
+        width: 350px;
+        margin: auto;
+        padding-top: 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-17 .register .user-login h1 {
+        color: #ececeb;
+        font-family: Open Sans bold;
+        font-size: 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-17 .register .user-login svg {
+        width: 65px;
+        height: 65px;
+        font-size: 18px;
+        background-color: #003380;
+        color: #ececeb;
+        padding: 25px;
+        border-radius: 100px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-17 .register .text {
+        width: 100%;
+        margin: 5px 0;
+        padding: 8px;
+        border: 0px solid;
+        border-radius: 10px;
+        outline: none;
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-17 .register .flex {
+        display: block;
+    }
+    .sec-17 .register .email {
+        width: 100%;
+        margin: 5px 0;
+        padding: 8px;
+        border: 0px solid;
+        border-radius: 10px;
+        outline: none;
+        font-size: 15px;
+        transition: 0.3s;
+    }
+    .sec-17 .register .pass {
+        width: 100%;
+        margin: 5px 0;
+        padding: 8px;
+        border: 0px solid;
+        border-radius: 10px;
+        outline: none;
+        font-size: 15px;
+        transition: 0.3s;
+    }
+    .sec-17 .register .number {
+        width: 100%;
+        margin: 5px 0;
+        padding: 8px;
+        border: 0px solid;
+        border-radius: 10px;
+        outline: none;
+        font-size: 15px;
+        transition: 0.3s;
+    }
+    .sec-17 .register .details {
+        display: flex;
+        justify-content: space-between;
+        color: #ececeb;
+        margin-top: 10px;
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-17 .register .login-button {
+        width: 100%;
+        background-color: #003380;
+        color: #ececeb;
+        padding: 8px;
+        border: 0px solid;
+        font-family: Open Sans bold;
+        font-size: 18px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:572px) {
+    .sec-17 {
+        width: 100%;
+        height: 750px;
+        background-image: url("../img/section/sec17/sec17-5.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transition: .5s all ease-in-out;
+    }
+    .sec-17 .register {
+        width: 300px;
+        margin: auto;
+        padding-top: 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-17 .register .user-login h1 {
+        color: #ececeb;
+        font-family: Open Sans bold;
+        font-size: 45px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-17 .register .user-login svg {
+        width: 60px;
+        height: 60px;
+        font-size: 16px;
+        background-color: #003380;
+        color: #ececeb;
+        padding: 25px;
+        border-radius: 100px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-17 .register .text {
+        width: 100%;
+        margin: 5px 0;
+        padding: 8px;
+        border: 0px solid;
+        border-radius: 10px;
+        outline: none;
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-17 .register .email {
+        width: 100%;
+        margin: 5px 0;
+        padding: 8px;
+        border: 0px solid;
+        border-radius: 10px;
+        outline: none;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+    .sec-17 .register .pass {
+        width: 100%;
+        margin: 5px 0;
+        padding: 8px;
+        border: 0px solid;
+        border-radius: 10px;
+        outline: none;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+    .sec-17 .register .number {
+        width: 100%;
+        margin: 5px 0;
+        padding: 8px;
+        border: 0px solid;
+        border-radius: 10px;
+        outline: none;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+    .sec-17 .register .details {
+        display: flex;
+        justify-content: space-between;
+        color: #ececeb;
+        margin-top: 10px;
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-17 .register .login-button {
+        width: 100%;
+        background-color: #003380;
+        color: #ececeb;
+        padding: 8px;
+        border: 0px solid;
+        font-family: Open Sans bold;
+        font-size: 16px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:395px) {
+    .sec-17 {
+        width: 100%;
+        height: 700px;
+        background-image: url("../img/section/sec17/sec17-6.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transition: .5s all ease-in-out;
+    }
+    .sec-17 .register {
+        width: 280px;
+        margin: auto;
+        padding-top: 40px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-17 .register .user-login h1 {
+        color: #ececeb;
+        font-family: Open Sans bold;
+        font-size: 40px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-17 .register .user-login svg {
+        width: 55px;
+        height: 55px;
+        font-size: 14px;
+        background-color: #003380;
+        color: #ececeb;
+        padding: 25px;
+        border-radius: 100px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-17 .register .text {
+        width: 100%;
+        margin: 5px 0;
+        padding: 8px;
+        border: 0px solid;
+        border-radius: 10px;
+        outline: none;
+        font-size: 13px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-17 .register .email {
+        width: 100%;
+        margin: 5px 0;
+        padding: 8px;
+        border: 0px solid;
+        border-radius: 10px;
+        outline: none;
+        font-size: 13px;
+        transition: 0.3s;
+    }
+    .sec-17 .register .pass {
+        width: 100%;
+        margin: 5px 0;
+        padding: 8px;
+        border: 0px solid;
+        border-radius: 10px;
+        outline: none;
+        font-size: 13px;
+        transition: 0.3s;
+    }
+    .sec-17 .register .number {
+        width: 100%;
+        margin: 5px 0;
+        padding: 8px;
+        border: 0px solid;
+        border-radius: 10px;
+        outline: none;
+        font-size: 13px;
+        transition: 0.3s;
+    }
+    .sec-17 .register .details {
+        display: flex;
+        justify-content: space-between;
+        color: #ececeb;
+        margin-top: 10px;
+        font-size: 13px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-17 .register .login-button {
+        width: 100%;
+        background-color: #003380;
+        color: #ececeb;
+        padding: 8px;
+        border: 0px solid;
+        font-family: Open Sans bold;
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+
+/* End Register */
+
+
+/* Start Loginfirst */
+
+@media only screen and (max-width:1200px) {
+    .sec-18 .col-md-7 .background {
+        width: 100%;
+        height: 700px;
+        background-image: url("../img/section/Sec18/sec18-2.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    .sec-18 .col-md-5 .title img {
+        width: 45px;
+        margin-top: -10px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 .title h1 {
+        margin-top: -80px;
+        padding: 0 10px;
+        font-family: open sans bold;
+        font-weight: bold;
+        font-size: 40px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 h3 {
+        padding-bottom: 30px;
+        font-family: open sans bold;
+        font-size: 35px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:992px) {
+    .sec-18 .col-md-7 .background {
+        width: 100%;
+        height: 700px;
+        background-image: url("../img/section/Sec18/sec18-3.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    .sec-18 .col-md-5 .title img {
+        width: 40px;
+        margin-top: -10px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 .title h1 {
+        margin-top: -80px;
+        padding: 0 10px;
+        font-family: open sans bold;
+        font-weight: bold;
+        font-size: 35px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 h3 {
+        padding-bottom: 30px;
+        font-family: open sans bold;
+        font-size: 30px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 280px;
+        margin: 10px 0;
+        padding: 8px;
+        border: 2px solid #bfbfbf;
+        border-radius: 10px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 svg {
+        color: #1b1c1e;
+        padding: 0 5px;
+        font-size: 30px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 a {
+        color: #1b1c1e;
+        text-decoration: none;
+        font-family: open sans bold;
+        font-size: 17px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 p {
+        margin-top: 30px;
+        font-size: 17px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .sec-18 .col-md-7 {
+        display: none;
+    }
+    .sec-18 .col-md-5 .title img {
+        width: 50px;
+        margin-top: -10px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 .title h1 {
+        margin-top: 50px;
+        padding: 0 10px;
+        font-family: open sans bold;
+        font-weight: bold;
+        font-size: 45px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 h3 {
+        padding-bottom: 30px;
+        font-family: open sans bold;
+        font-size: 40px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 280px;
+        margin: 10px 0;
+        padding: 10px;
+        border: 2px solid #bfbfbf;
+        border-radius: 10px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 svg {
+        color: #1b1c1e;
+        padding: 0 5px;
+        font-size: 30px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 a {
+        color: #1b1c1e;
+        text-decoration: none;
+        font-family: open sans bold;
+        font-size: 18px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 p {
+        margin-top: 20px;
+        font-size: 18px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:572px) {
+    .sec-18 .col-md-7 {
+        display: none;
+    }
+    .sec-18 .col-md-5 .title img {
+        width: 45px;
+        margin-top: -10px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 .title h1 {
+        margin-top: 50px;
+        padding: 0 10px;
+        font-family: open sans bold;
+        font-weight: bold;
+        font-size: 40px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 h3 {
+        padding-bottom: 25px;
+        font-family: open sans bold;
+        font-size: 35px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 270px;
+        margin: 10px 0;
+        padding: 8px;
+        border: 2px solid #bfbfbf;
+        border-radius: 10px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 img {
+        width: 28px;
+        margin: 0 5px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 svg {
+        color: #1b1c1e;
+        padding: 0 5px;
+        font-size: 28px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 a {
+        color: #1b1c1e;
+        text-decoration: none;
+        font-family: open sans bold;
+        font-size: 17px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 p {
+        margin-top: 15px;
+        font-size: 17px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:395px) {
+    .sec-18 .col-md-7 {
+        display: none;
+    }
+    .sec-18 .col-md-5 .title img {
+        width: 40px;
+        margin-top: -10px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 .title h1 {
+        margin-top: 40px;
+        padding: 0 10px;
+        font-family: open sans bold;
+        font-weight: bold;
+        font-size: 35px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 h3 {
+        padding-bottom: 20px;
+        font-family: open sans bold;
+        font-size: 30px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 260px;
+        margin: 10px 0;
+        padding: 8px;
+        border: 2px solid #bfbfbf;
+        border-radius: 10px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 img {
+        width: 26px;
+        margin: 0 5px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 svg {
+        color: #1b1c1e;
+        padding: 0 5px;
+        font-size: 26px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 a {
+        color: #1b1c1e;
+        text-decoration: none;
+        font-family: open sans bold;
+        font-size: 16px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 p {
+        margin-top: 15px;
+        font-size: 16px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+
+/* End Loginfirst */
+
+
+/* Start Registerfirst */
+
+@media only screen and (max-width:1200px) {
+    .sec-19 .col-md-7 .background {
+        width: 100%;
+        height: 700px;
+        background-image: url("../img/section/Sec19/sec19-2.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    .sec-19 .col-md-5 .title img {
+        width: 45px;
+        margin-top: -10px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-19 .col-md-5 .title h1 {
+        margin-top: -80px;
+        padding: 0 10px;
+        font-family: open sans bold;
+        font-weight: bold;
+        font-size: 40px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-19 .col-md-5 h3 {
+        padding-bottom: 30px;
+        font-family: open sans bold;
+        font-size: 35px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:992px) {
+    .sec-19 .col-md-7 .background {
+        width: 100%;
+        height: 700px;
+        background-image: url("../img/section/Sec19/sec19-3.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    .sec-18 .col-md-5 .title img {
+        width: 40px;
+        margin-top: -10px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-18 .col-md-5 .title h1 {
+        margin-top: -80px;
+        padding: 0 10px;
+        font-family: open sans bold;
+        font-weight: bold;
+        font-size: 35px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-19 .col-md-5 h3 {
+        padding-bottom: 30px;
+        font-family: open sans bold;
+        font-size: 30px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-19 .col-md-5 span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 280px;
+        margin: 10px 0;
+        padding: 8px;
+        border: 2px solid #bfbfbf;
+        border-radius: 10px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-19 .col-md-5 svg {
+        color: #1b1c1e;
+        padding: 0 5px;
+        font-size: 30px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-19 .col-md-5 a {
+        color: #1b1c1e;
+        text-decoration: none;
+        font-family: open sans bold;
+        font-size: 17px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-19 .col-md-5 p {
+        margin-top: 30px;
+        font-size: 17px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .sec-19 .col-md-7 {
+        display: none;
+    }
+    .sec-19 .col-md-5 .title img {
+        width: 50px;
+        margin-top: -10px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-19 .col-md-5 .title h1 {
+        margin-top: 50px;
+        padding: 0 10px;
+        font-family: open sans bold;
+        font-weight: bold;
+        font-size: 45px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-19 .col-md-5 h3 {
+        padding-bottom: 30px;
+        font-family: open sans bold;
+        font-size: 40px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-19 .col-md-5 span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 280px;
+        margin: 10px 0;
+        padding: 10px;
+        border: 2px solid #bfbfbf;
+        border-radius: 10px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-19 .col-md-5 svg {
+        color: #1b1c1e;
+        padding: 0 5px;
+        font-size: 30px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-19 .col-md-5 a {
+        color: #1b1c1e;
+        text-decoration: none;
+        font-family: open sans bold;
+        font-size: 18px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-19 .col-md-5 p {
+        margin-top: 20px;
+        font-size: 18px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:572px) {
+    .sec-18 .col-md-7 {
+        display: none;
+    }
+    .sec-19 .col-md-5 .title img {
+        width: 45px;
+        margin-top: -10px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-19 .col-md-5 .title h1 {
+        margin-top: 50px;
+        padding: 0 10px;
+        font-family: open sans bold;
+        font-weight: bold;
+        font-size: 40px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-19 .col-md-5 h3 {
+        padding-bottom: 25px;
+        font-family: open sans bold;
+        font-size: 35px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-19 .col-md-5 span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 270px;
+        margin: 10px 0;
+        padding: 8px;
+        border: 2px solid #bfbfbf;
+        border-radius: 10px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-19 .col-md-5 img {
+        width: 28px;
+        margin: 0 5px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-19 .col-md-5 svg {
+        color: #1b1c1e;
+        padding: 0 5px;
+        font-size: 28px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-19 .col-md-5 a {
+        color: #1b1c1e;
+        text-decoration: none;
+        font-family: open sans bold;
+        font-size: 17px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-19 .col-md-5 p {
+        margin-top: 15px;
+        font-size: 17px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:395px) {
+    .sec-19 .col-md-7 {
+        display: none;
+    }
+    .sec-19 .col-md-5 .title img {
+        width: 40px;
+        margin-top: -10px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-19 .col-md-5 .title h1 {
+        margin-top: 40px;
+        padding: 0 10px;
+        font-family: open sans bold;
+        font-weight: bold;
+        font-size: 35px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-19 .col-md-5 h3 {
+        padding-bottom: 20px;
+        font-family: open sans bold;
+        font-size: 30px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-19 .col-md-5 span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 260px;
+        margin: 10px 0;
+        padding: 8px;
+        border: 2px solid #bfbfbf;
+        border-radius: 10px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-19 .col-md-5 img {
+        width: 26px;
+        margin: 0 5px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-19 .col-md-5 svg {
+        color: #1b1c1e;
+        padding: 0 5px;
+        font-size: 26px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-19 .col-md-5 a {
+        color: #1b1c1e;
+        text-decoration: none;
+        font-family: open sans bold;
+        font-size: 16px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-19 .col-md-5 p {
+        margin-top: 15px;
+        font-size: 16px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+
+/* End Registerfirst */
