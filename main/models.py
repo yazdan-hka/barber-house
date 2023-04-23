@@ -4,16 +4,15 @@ from django.core.exceptions import ValidationError
 # from django.urls import reverse
 # from django.contrib.auth.models import auth
 from django.contrib.auth.hashers import make_password, check_password
-
-
+from django.contrib.auth.tokens import PasswordResetTokenGenerator
+from datetime import timedelta, datetime
+import secrets
 # Create your models here.
 
 types = (
     ('c', 'braider'),
     ('b', 'customer')
 )
-
-
 def validate_password(value):
     number = '0123456789'
     chars = 'abcdefghijklmnopqrstuvwxyz'
@@ -61,58 +60,99 @@ def validate_password(value):
 
 
 class Braider(models.Model):
-
-    first_name = models.CharField(max_length=30, null=False)
-    last_name = models.CharField(max_length=30, null=False)
-    user_name = models.CharField(max_length=70, null=False, unique=True)
-    user_type = models.CharField(max_length=8, choices=types, default='customer', null=False)
-    insta_id = models.CharField(max_length=40, default='braidstarz', unique=True)
-    website = models.URLField(max_length=200, null=True)
-    email = models.EmailField(max_length=256, null=False, unique=True)
-    token = models.
-    password = models.CharField(max_length=120, validators=[], null=False)
-    phone_number = PhoneNumberField(default='No Number.', null=True , unique=True)
-    country = models.CharField(max_length=50, default='none', null=False)
-    city = models.CharField(max_length=50, default='none', null=False)
+    user_name = models.CharField(max_length=27, null=False, unique=True)
+    email = models.EmailField(max_length=252, null=False, unique=True)
+    password = models.CharField(max_length=126, validators=[], null=False)
+    phone_number = PhoneNumberField(default='No Number.', null=True, unique=True)
     last_login = models.DateTimeField(null=True, blank=True)
-    is_active = models.BooleanField(default=True)
-    is_staff = models.BooleanField(default=False)
-    is_email_verified = models.BooleanField(default=False)
-    asdf = models.
-
-    def __str__(self):
-        value = self.country + '/' + self.city + ' ID: ' +self.user_name
-        return value
-
-    def save(self, update_fields=None):
-        # Hash the password before saving the model
-
-        self.password = make_password(self.password)
-        if self.insta_id == '' or ' ' or '  ':
-            self.insta_id = 'braidstarz'
-        print(update_fields)
-        super().save()
+    # is_active = models.BooleanField(default=True)
+    # is_staff = models.BooleanField(default=False)
 
     def check_password(self, raw_password):
         return check_password(raw_password, self.password)
-
     def update_last_login(self):
-        self.last_login = timezone.now()
+        self.last_login = datetime.now()
+    def save(self):
+        # Inserting value to last login
 
-        self.save()
+        self.update_last_login()
+        # generate a token for a given user
 
-    def is_authenticated(self):
-        """
-        Return True if the user is authenticated, else False.
-        """
-        return True if self.pk else False
+        token = secrets.token_urlsafe(32)
+        verification = Verification(token=token, rel=self)
+        # Hash the password before saving the model
+
+        self.password = make_password(self.password)
+        super().save()
+        # saving the generated token
+        verification.save()
+
+
+class Verification(models.Model):
+    rel = models.ForeignKey(Braider, on_delete=models.CASCADE)
+    token = models.CharField(max_length=64, unique=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    expires_at = models.DateTimeField(default=datetime.now()+timedelta(days=1))
+    is_valid = models.BooleanField(default=True)
+    # is_email_verified = models.BooleanField(default=False)
+    # is_number_verified = models.BooleanField(dafault=False)
+
+    def is_expired(self):
+        return datetime.now() >= self.expires_at
+
+    def save(self, *args, **kwargs):
+        if self.is_expired():
+            self.is_valid = False
+        super(Verification, self).save(*args, **kwargs)
+
+
+class PublicInfo(models.Model):
+    rel = models.ForeignKey(Braider, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=23, null=False)
+    last_name = models.CharField(max_length=22, null=False)
+    user_type = models.CharField(max_length=8, choices=types, default='customer', null=False)
+    biography = models.CharField(max_length=1024)
+
+class SocialMedia(models.Model):
+    # validation for each must be provided.
+    rel = models.ForeignKey(Braider, on_delete=models.CASCADE)
+    insta = models.CharField(max_length=30, default='braidstarz', unique=True)  # letter, number, underscore, period
+    twitter = models.CharField(max_length=15, default='braidstarz', unique=True)  # letter, number, underscore
+    youtube = models.CharField(max_length=20, default='braidstarz', unique=True)  # letter, number, space
+    tiktok = models.CharField(max_length=24, default='braidstarz', unique=True)  # letter, number, underscore, period
+class LocationInfo(models.Model):
+    rel = models.ForeignKey(Braider, on_delete=models.CASCADE)
+    country = models.CharField(max_length=27, default='none', null=False)
+    city = models.CharField(max_length=81, default='none', null=False)
+    # location
+class BusinessInfo(models.Model):
+    rel = models.ForeignKey(Braider, on_delete=models.CASCADE)
+    name = models.CharField(max_length=36)
+    address = models.CharField(max_length=252)
+    website = models.URLField(max_length=200, null=True)
+
+
+
+
+
 
     #
-    def get_full_name(self):
-        """
-        Return the full name of the Braider
-        """
-        return f'{self.first_name} {self.last_name}'
+    # def __str__(self):
+    #     value = self.country + '/' + self.city + ' ID: ' +self.user_name
+    #     return value
+    #
+
+    #     self.save()
+    # def is_authenticated(self):
+    #     """
+    #     Return True if the user is authenticated, else False.
+    #     """
+    #     return True if self.pk else False
+    # def get_full_name(self):
+    #     """
+    #     Return the full name of the Braider
+    #     """
+    #     return f'{self.first_name} {self.last_name}'
     #
     # def get_short_name(self):
     #     """

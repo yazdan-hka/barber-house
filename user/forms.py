@@ -1,26 +1,9 @@
 from django import forms
-from main.models import Braider
 from django.core.exceptions import ValidationError
-from django.contrib.auth.hashers import make_password
+# from django.contrib.auth.hashers import make_password
 # from django.contrib.auth.forms import AuthenticationForm
 
-class BraiderRegistration(forms.ModelForm):
-
-    class Meta:
-        model = Braider
-        fields = ['id',
-                  'first_name',
-                  'last_name',
-                  'user_name',
-                  'user_type',
-                  'insta_id',
-                  'website',
-                  'email',
-                  'password',
-                  'phone_number',
-                  'country',
-                  'city',
-                  ]
+class BraiderRegistration(forms.Form):
 
     def validate_insta_id(value):
         chars = '-=+][}{()!@#$%^&*|\?/\'<> ~`"'

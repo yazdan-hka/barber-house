@@ -82,11 +82,11 @@ SESSION_COOKIE_SECURE = False
 DATABASES =\
     {'default':
         {
-            'ENGINE':'django.db.backends.postgresql',
-            'NAME': 'braidstarz',
-            'USER':'postgres',
-            'PASSWORD':'password',
-            'HOST':'localhost', # or localhost
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'bs',
+            'USER': 'postgres',
+            'PASSWORD': 'password',
+            'HOST': 'localhost' # or post
         }
     }
 
