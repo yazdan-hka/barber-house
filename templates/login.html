@@ -33,12 +33,15 @@
             </div>
             <form method="post">
                 {% csrf_token %}
-                <input type="text" placeholder="Email ID,Username" name="username" class="text" required>
+<!--                <input type="text" placeholder="Email ID,Username" name="username" class="text" required>-->
+                {{ form.username }}
                 <br>
-                <input type="password" placeholder="Password" class="pass" name="password" required>
+<!--                <input type="password" placeholder="Password" class="pass" name="password" required>-->
+                {{ form.password }}
                 <div class="details">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" name='remember_me'id="flexCheckDefault">
+<!--                        <input class="form-check-input" type="checkbox" value="" name='remember_me'id="flexCheckDefault">-->
+                        {{ form.remember_me }}
                         <label class="form-check-label" for="flexCheckDefault">
                           Remember me
                         </label>

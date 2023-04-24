@@ -75,7 +75,7 @@ class Braider(models.Model):
         return check_password(raw_password, self.password)
     def update_last_login(self):
         self.last_login = datetime.now()
-    def save(self):
+    def save(self, update_fields=None):
         # Inserting value to last login
 
         self.update_last_login()

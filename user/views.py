@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 # from django.urls import reverse
 from main.models import Braider, PublicInfo, SocialMedia, LocationInfo
 from django.contrib import messages
-from .forms import BraiderRegistration # BraiderLogin
+from .forms import BraiderRegistration, BraiderLogin
 from django.contrib.auth import authenticate, login, logout
 from django.core.exceptions import ValidationError
 # from django.contrib.auth.hashers import check_password, make_password
@@ -106,24 +106,31 @@ def register_page(request):
     context = {'form': form}
     return render(request, 'register.html', context)
 def login_page(request):
+    form = BraiderLogin()
+
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        remember_me = request.POST.get('remember_me', False)
+        form = BraiderLogin(request.POST)
+
+        username = form['username'].value()
+        password = form['password'].value()
+        remember_me = form['remember_me'].value()
+
+        print(f'\n\n\n{username, password, remember_me}')
 
         user = authenticate(request, username=username, password=password)
-        print(user)
+        print(user, 'user is authenticated')
         if user is not None:
             login(request, user)
             if remember_me:
                 request.session.set_expiry(60 * 60 * 24 * 14)  # 2 weeks = 2 weeks' seconds
+            messages.success(request, f'You are loged in dear {username}'.title())
             return redirect('/')
         else:
             messages.error(request, 'Wrong username or password')
 
-    # form = BraiderLogin()
-    # context = {'form': form}
-    return render(request, 'login.html')
+
+    context = {'form': form}
+    return render(request, 'login.html', context)
 def logout_page(request):
     try:
         messages.success(request, f'you are logged out! comeback soon {request.user.first_name}'.title())

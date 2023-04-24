@@ -69,7 +69,7 @@ class BraiderRegistration(forms.Form):
 
         if len(value) < 4:
             raise ValidationError(
-                    f'Invalid Username "{value}". too shot user name. minimum length is 3 character.'.title(),
+                    f'Invalid Username "{value}". too shot user name. minimum length is 4 character.'.title(),
                     params={'value': value})
 
     acc_types = (('c', 'Customer'), ('b', 'Braider'))
@@ -582,6 +582,7 @@ class BraiderRegistration(forms.Form):
     )
     website = forms.URLField(
         max_length=200,
+        required=False,
         widget=forms.TextInput(attrs={'class': 'email', 'placeholder': 'Your Website'})
     )
     email = forms.EmailField(
@@ -660,24 +661,48 @@ class BraiderRegistration(forms.Form):
         return cleaned_data
 
 class BraiderLogin(forms.Form):
+    def validate_username(value):
+        chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456_789'
+        for i in value:
+            if i not in chars:
+                error_css_class = 'invalid-username'
+                raise ValidationError(
+                    f'Invalid Username "{value}". be sure that your username includes only capital and small '
+                    'letters, numbers, and underscores(_).'.title(),
+                    params={'value': value})
+
+        if len(value) < 4:
+            raise ValidationError(
+                    f'Invalid Username "{value}". too shot user name. minimum length is 4 character.'.title(),
+                    params={'value': value})
+
+    def validate_password(value):
+        if len(value) < 8:
+            raise ValidationError('your password is less than 8 characters. enter again.'.title())
+
 
     username = forms.CharField(
         max_length=70,
         strip=False,
         label='',
         required=True,
-        validators=[],
+        validators=[validate_username],
         widget=forms.TextInput(attrs={'autofocus': True, 'placeholder': 'Username or Email', 'class': 'text'})
     )
     password = forms.CharField(
         strip=False,
         required=True,
+        validators=[],
+        max_length=120,
+        min_length=8,
         widget=forms.PasswordInput(attrs={'autocomplete': 'current-password', 'class': 'pass', 'placeholder': 'Password'}),
     )
     remember_me = forms.BooleanField(
         widget=forms.CheckboxInput(attrs={'class': 'form-check-input', 'id': 'flexCheckDefault'}),
         required=False
     )
+
+
 
 
 
