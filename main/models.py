@@ -114,15 +114,16 @@ class PublicInfo(models.Model):
     first_name = models.CharField(max_length=23, null=False)
     last_name = models.CharField(max_length=22, null=False)
     user_type = models.CharField(max_length=8, choices=types, default='customer', null=False)
-    biography = models.CharField(max_length=1024)
+    biography = models.CharField(max_length=1024, null=True, blank=True)
+    # error_messages = {'blank': ''}
 
 class SocialMedia(models.Model):
     # validation for each must be provided.
     rel = models.ForeignKey(Braider, on_delete=models.CASCADE)
-    insta = models.CharField(max_length=30, default='braidstarz', unique=True)  # letter, number, underscore, period
-    twitter = models.CharField(max_length=15, default='braidstarz', unique=True)  # letter, number, underscore
-    youtube = models.CharField(max_length=20, default='braidstarz', unique=True)  # letter, number, space
-    tiktok = models.CharField(max_length=24, default='braidstarz', unique=True)  # letter, number, underscore, period
+    instagram = models.CharField(max_length=30, unique=True, null=True, blank=True, error_messages={"unique":"Instagram ID already exists."})  # letter, number, underscore, period
+    twitter = models.CharField(max_length=15, unique=True, null=True, blank=True)  # letter, number, underscore
+    youtube = models.CharField(max_length=20, unique=True, null=True, blank=True)  # letter, number, space
+    tiktok = models.CharField(max_length=24, unique=True, null=True, blank=True)  # letter, number, underscore, period
 class LocationInfo(models.Model):
     rel = models.ForeignKey(Braider, on_delete=models.CASCADE)
     country = models.CharField(max_length=27, default='none', null=False)
@@ -130,8 +131,8 @@ class LocationInfo(models.Model):
     # location
 class BusinessInfo(models.Model):
     rel = models.ForeignKey(Braider, on_delete=models.CASCADE)
-    name = models.CharField(max_length=36)
-    address = models.CharField(max_length=252)
+    name = models.CharField(max_length=36, null=True)
+    address = models.CharField(max_length=252, null=True)
     website = models.URLField(max_length=200, null=True)
 
 

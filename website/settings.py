@@ -83,7 +83,7 @@ DATABASES =\
     {'default':
         {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'bs',
+            'NAME': 'braid-starz',
             'USER': 'postgres',
             'PASSWORD': 'password',
             'HOST': 'localhost' # or post

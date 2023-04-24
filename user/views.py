@@ -32,9 +32,9 @@ def register_page(request):
                 if braider.id:
                     saved = True
             except ValidationError as e:
-                errors = e.message_dict
-                for e in errors:
-                    messages.warning(request, f'{e}')
+                errors = e.messages
+                for error in errors:
+                    messages.warning(request, error)
 
 
             if saved:
@@ -51,10 +51,10 @@ def register_page(request):
                     if pub.id:
                         saved = True
                 except ValidationError as e:
-                    errors = e.message_dict
+                    errors = e.messages
+                    for error in errors:
+                        messages.warning(request, error)
                     braider.delete()
-                    for e in errors:
-                        messages.warning(request, f'{e}')
 
                 if saved:
                     saved = False
@@ -74,20 +74,25 @@ def register_page(request):
                         for e in errors:
                             messages.warning(request, f'{e}')
                     if saved:
+                        saved = False
                         soc = SocialMedia(
-                            insta=cd['insta_id'],
+                            instagram=cd['insta_id'],
                             rel=braider
                         )
                         try:
                             soc.full_clean()
+                            print('soc full cleaned')
                             soc.save()
+                            print('soc saved')
                             if soc.id:
                                 saved = True
+                                print('saved is true')
                         except ValidationError as e:
+                            print('validation is made')
                             errors = e.messages
+                            for error in errors:
+                                messages.warning(request, error)
                             braider.delete()
-                            for e in errors:
-                                messages.warning(request, f'{e}')
             if saved:
                 messages.success(request, 'you account have been created. wellcome to braidstarz!'.title())
                 return redirect('login')
