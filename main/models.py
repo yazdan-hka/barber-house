@@ -68,9 +68,16 @@ class Braider(models.Model):
     # is_active = models.BooleanField(default=True)
     # is_staff = models.BooleanField(default=False)
 
-
-    # def clean(self):
-
+    def get_full_name(self):
+        """
+        Return the full name of the Braider
+        """
+        name = PublicInfo.objects.filter(rel=self).first()
+        name = str(name.first_name).title() + ' ' + str(name.last_name).title()
+        return f'{name}'
+    def is_authenticated(self):
+        # Return True if the user is authenticated, else False.
+        return True if self.pk else False
     def check_password(self, raw_password):
         return check_password(raw_password, self.password)
     def update_last_login(self):
@@ -98,7 +105,7 @@ class Verification(models.Model):
     expires_at = models.DateTimeField(default=datetime.now()+timedelta(days=1))
     is_valid = models.BooleanField(default=True)
     # is_email_verified = models.BooleanField(default=False)
-    # is_number_verified = models.BooleanField(dafault=False)
+    # is_number_verified = models.BooleanField(default=False)
 
     def is_expired(self):
         return datetime.now() >= self.expires_at
