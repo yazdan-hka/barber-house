@@ -27,7 +27,7 @@ def index(request):
                 context = {'form': form, 'braiders': braiders}
             else:
                 print('no result is found')
-                messages.warning(request, f'<b>{query}</b>: No braider is found. search something better.'.title())
+                messages.warning(request, f'{query}: No braider is found. search something better.'.title())
                 return redirect('index')
     else:
         form = BraiderFinder()

@@ -94,7 +94,7 @@ def register_page(request):
                                 messages.warning(request, error)
                             braider.delete()
             if saved:
-                messages.success(request, 'you account have been created. wellcome to braidstarz!'.title())
+                messages.success(request, 'your account have been created. wellcome to braidstarz! log in to access your profile'.title())
                 return redirect('login')
         else:
             for field_name, errors in form.errors.items():
@@ -121,14 +121,14 @@ def login_page(request):
         print(user, 'user is authenticated')
         if user is not None:
             login(request, user)
+            print('user is logged in')
+            
             if remember_me:
                 request.session.set_expiry(60 * 60 * 24 * 14)  # 2 weeks = 2 weeks' seconds
-            messages.success(request, f'You are loged in dear {username}'.title())
+            messages.success(request, f'You are logged in dear {username}'.title())
             return redirect('/')
         else:
             messages.error(request, 'Wrong username or password')
-
-
     context = {'form': form}
     return render(request, 'login.html', context)
 def logout_page(request):
