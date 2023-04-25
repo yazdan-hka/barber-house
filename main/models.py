@@ -69,12 +69,24 @@ class Braider(models.Model):
     # is_staff = models.BooleanField(default=False)
 
     def get_full_name(self):
-        """
-        Return the full name of the Braider
-        """
         name = PublicInfo.objects.filter(rel=self).first()
         name = str(name.first_name).title() + ' ' + str(name.last_name).title()
         return f'{name}'
+    def get_country(self):
+        braider = LocationInfo.objects.filter(rel=self).first()
+        country = braider.country
+        return f'{country}'
+    def get_city(self):
+        braider = LocationInfo.objects.filter(rel=self).first()
+        city = braider.city
+        return f'{city}'
+    def get_website(self):
+        braider = BusinessInfo.objects.filter(rel=self).first()
+        if braider:
+            website = braider.website
+            return f'{website}'
+        else:
+            return None
     def is_authenticated(self):
         # Return True if the user is authenticated, else False.
         return True if self.pk else False

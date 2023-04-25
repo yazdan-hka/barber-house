@@ -57,7 +57,7 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <h4>Name: <b>{{ braider.get_full_name|title }}</b></h4>
+                            <h4>Name: <b>{{ braider.name|title }}</b></h4>
                             <h4>Country: <b>{{ braider.country }}</b></h4>
                             <h4>City: <b>{{ braider.city|title }}</b></h4>
                             {% if braider.website %}
@@ -65,7 +65,7 @@
                                     Website:
                                     <b>
                                         <a href="{{braider.website}}">
-                                            {{braider.website}}
+                                            {{ braider.website }}dasdfasdf
                                         </a>
                                     </b>
                                 </h4>
