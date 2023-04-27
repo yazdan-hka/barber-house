@@ -32,11 +32,10 @@ def register_page(request):
                 if braider.id:
                     saved = True
             except ValidationError as e:
-                errors = e.messages
+                errors = e.message_dict
                 for error in errors:
                     messages.warning(request, error)
-
-
+                    print('error 1 is trigerred.')
             if saved:
                 saved = False
                 pub = PublicInfo(
@@ -54,6 +53,8 @@ def register_page(request):
                     errors = e.messages
                     for error in errors:
                         messages.warning(request, error)
+                        print('error 2 is trigerred.')
+
                     braider.delete()
 
                 if saved:
@@ -73,6 +74,8 @@ def register_page(request):
                         braider.delete()
                         for e in errors:
                             messages.warning(request, f'{e}')
+                            print('error 3 is trigerred.')
+
                     if saved:
                         saved = False
                         soc = SocialMedia(
@@ -92,6 +95,8 @@ def register_page(request):
                             errors = e.messages
                             for error in errors:
                                 messages.warning(request, error)
+                                print('error 4 is trigerred.')
+
                             braider.delete()
             if saved:
                 messages.success(request, 'your account have been created. wellcome to braidstarz! log in to access your profile'.title())
