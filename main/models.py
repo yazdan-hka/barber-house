@@ -63,39 +63,17 @@ class Braider(models.Model):
     password = models.CharField(max_length=126, validators=[], null=False)
     phone_number = PhoneNumberField(default='No Number.', null=True, unique=True)
     last_login = models.DateTimeField(null=True, blank=True)
-    posted_pictures = models.ImageField(
-        upload_to='posted-pictures/',
-        default='posted_media.jpg',
-        null=True,
-        validators=[
-            FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png']),
-            MaxValueValidator(512000),
-        ]
-    )
+    # posted_pictures = models.ImageField(
+    #     upload_to='posted-pictures/',
+    #     default='posted_media.jpg',
+    #     null=True,
+    #     validators=[
+    #         FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png']),
+    #         MaxValueValidator(512000),
+    #     ]
+    # )
     # is_active = models.BooleanField(default=True)
     # is_staff = models.BooleanField(default=False)
-
-
-
-    # def get_full_name(self):
-    #     name = PublicInfo.objects.filter(rel=self).first()
-    #     name = str(name.first_name).title() + ' ' + str(name.last_name).title()
-    #     return f'{name}'
-    # def get_country(self):
-    #     braider = LocationInfo.objects.filter(rel=self).first()
-    #     country = braider.country
-    #     return f'{country}'
-    # def get_city(self):
-    #     braider = LocationInfo.objects.filter(rel=self).first()
-    #     city = braider.city
-    #     return f'{city}'
-    # def get_website(self):
-    #     braider = BusinessInfo.objects.filter(rel=self).first()
-    #     if braider:
-    #         website = braider.website
-    #         return f'{website}'
-    #     else:
-    #         return None
     def is_authenticated(self):
         # Return True if the user is authenticated, else False.
         return True if self.pk else False
@@ -117,6 +95,18 @@ class Braider(models.Model):
         super().save()
         # saving the generated token
         verification.save()
+
+
+class Post(models.Model):
+    braider = models.ForeignKey(Braider, on_delete=models.CASCADE, related_name='posts')
+    image = models.ImageField(upload_to='posts/')
+    description = models.CharField(max_length=81)
+    category = models.CharField(max_length=40)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.description} by {self.braider.user.username}'
+
 
 
 class Verification(models.Model):

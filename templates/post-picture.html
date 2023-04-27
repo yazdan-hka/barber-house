@@ -33,7 +33,7 @@ select option {
   transition: 0.4s ease-in;
 }
 
-
+body {color:white;}
 
 
 
@@ -53,7 +53,7 @@ select option {
                 <h3 style="color:white;">
                     Choose a category for your post or select others
                 </h3>
-                <form method="post">
+                <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form.as_p}}
 

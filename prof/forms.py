@@ -1,6 +1,4 @@
 from django import forms
-from .models import PostedMedia
-from main.models import Braider
 
 
 braid_types = (
@@ -25,18 +23,29 @@ braid_types = (
 
 class PictureForm(forms.Form):
 
-    desc = forms.CharField(
+    description = forms.CharField(
         max_length=81,
         label='',
         # required=True,
         validators=[],
         widget=forms.TextInput(attrs={'autofocus': True, 'placeholder': 'Description', 'class': 'text'})
     )
-    catg = forms.ChoiceField(
+    category = forms.ChoiceField(
         choices=braid_types,
         label='',
         # required=True,
         validators=[],
         widget=forms.Select(attrs={'autofocus': True, 'placeholder': 'Category', 'class': 'text'})
     )
-    pict = forms.ImageField()
+    image = forms.ImageField(
+        label='Choose an image',
+        required=True,
+        help_text='Maximum file size is 2 MB',
+        error_messages={
+            'required': 'This field is required',
+            'invalid': 'Please select a valid image file',
+            'max_size': 'Please select a file smaller than 2 MB'
+        },
+        validators=[],
+        widget=forms.ClearableFileInput(attrs={'style': 'color:white;'})
+    )
