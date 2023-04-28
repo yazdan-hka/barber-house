@@ -26,8 +26,17 @@
         display: inline;
         margin-top: 10px;
         padding: 0 15px;
-        float: right;
         font-size: 28px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-13 .profile .details a {
+        position: absolute;
+        top: 40px;
+        right: 33px;
+        padding: 0 15px;
+        float: right;
+        font-size: 14px;
         font-weight: bold;
         transition: .5s all ease-in-out;
     }
@@ -75,10 +84,17 @@
         padding: 0 8px;
         font-size: 50px;
         transition: 0.3s;
+        transition: .5s all ease-in-out;
     }
-    .sec-14 .map p {
-        color: #1b1c1e;
+    .sec-14 .map .location {
         font-size: 70px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-14 .map .details-business p {
+        color: #1b1c1e;
+        font-size: 16px;
+        text-align: center;
+        transition: .5s all ease-in-out;
     }
 }
 
@@ -100,7 +116,6 @@
     .sec-13 .profile img {
         width: 46px;
         height: 46px;
-        float: right;
         border-radius: 50px;
         transition: .5s all ease-in-out;
     }
@@ -108,8 +123,17 @@
         display: inline;
         margin-top: 10px;
         padding: 0 15px;
-        float: right;
         font-size: 26px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-13 .profile .details a {
+        position: absolute;
+        top: 40px;
+        right: 33px;
+        padding: 0 15px;
+        float: right;
+        font-size: 14px;
         font-weight: bold;
         transition: .5s all ease-in-out;
     }
@@ -146,8 +170,14 @@
         height: 160px;
         transition: .5s all ease-in-out;
     }
-    .sec-14 .map {
+    .sec-14 .map .location {
         height: 160px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-14 .map .details-business p {
+        color: #1b1c1e;
+        font-size: 15px;
+        text-align: center;
         transition: .5s all ease-in-out;
     }
 }
@@ -173,7 +203,6 @@
     .sec-13 .profile img {
         width: 48px;
         height: 48px;
-        float: right;
         border-radius: 50px;
         transition: .5s all ease-in-out;
     }
@@ -181,8 +210,17 @@
         display: inline;
         margin-top: 8px;
         padding: 0 10px;
-        float: right;
         font-size: 28px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-13 .profile .details a {
+        position: absolute;
+        top: 40px;
+        right: 36px;
+        padding: 0 15px;
+        float: right;
+        font-size: 13px;
         font-weight: bold;
         transition: .5s all ease-in-out;
     }
@@ -238,6 +276,12 @@
         height: 170px;
         transition: .5s all ease-in-out;
     }
+    .sec-14 .map .details-business p {
+        color: #1b1c1e;
+        font-size: 16px;
+        text-align: center;
+        transition: .5s all ease-in-out;
+    }
 }
 
 @media only screen and (max-width:572px) {
@@ -258,7 +302,6 @@
     .sec-13 .profile img {
         width: 46px;
         height: 46px;
-        float: right;
         border-radius: 50px;
         transition: .5s all ease-in-out;
     }
@@ -266,8 +309,17 @@
         display: inline;
         margin-top: 6px;
         padding: 0 5px;
-        float: right;
         font-size: 26px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-13 .profile .details a {
+        position: absolute;
+        top: 40px;
+        right: 37px;
+        padding: 0 15px;
+        float: right;
+        font-size: 13px;
         font-weight: bold;
         transition: .5s all ease-in-out;
     }
@@ -322,6 +374,12 @@
         height: 160px;
         transition: .5s all ease-in-out;
     }
+    .sec-14 .map .details-business p {
+        color: #1b1c1e;
+        font-size: 15px;
+        text-align: center;
+        transition: .5s all ease-in-out;
+    }
 }
 
 @media only screen and (max-width:395px) {
@@ -342,7 +400,6 @@
     .sec-13 .profile img {
         width: 44px;
         height: 44px;
-        float: right;
         border-radius: 50px;
         transition: .5s all ease-in-out;
     }
@@ -350,8 +407,17 @@
         display: inline;
         margin-top: 4px;
         padding: 0 5px;
-        float: right;
         font-size: 24px;
+        font-weight: bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-13 .profile .details a {
+        position: absolute;
+        top: 40px;
+        right: 42px;
+        padding: 0 15px;
+        float: right;
+        font-size: 12px;
         font-weight: bold;
         transition: .5s all ease-in-out;
     }
@@ -404,6 +470,12 @@
     }
     .sec-14 .socialmedia {
         height: 150px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-14 .map .details-business p {
+        color: #1b1c1e;
+        font-size: 14px;
+        text-align: center;
         transition: .5s all ease-in-out;
     }
 }

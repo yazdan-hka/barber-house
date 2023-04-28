@@ -120,7 +120,7 @@ body {
 }
 
 .sec-17 .register .number {
-    width: 66%;
+    width: 80%;
     margin: 5px 1px;
     padding: 8px;
     border: 0px solid;
@@ -131,7 +131,7 @@ body {
 }
 
 .sec-17 .register .code {
-    width:33%;
+    width: 20%;
     margin: 5px 1px;
     padding: 8px;
     border: 0px solid;

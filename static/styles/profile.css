@@ -116,19 +116,32 @@ header #login p {
     font-weight: bold;
 }
 
-.sec-13 .profile img {
+.sec-13 .profile .details {
+    position: relative;
+    float: right;
+}
+
+.sec-13 .profile .details img {
     width: 50px;
     height: 50px;
-    float: right;
     border-radius: 50px;
 }
 
-.sec-13 .profile h3 {
+.sec-13 .profile .details h3 {
     display: inline;
     margin-top: 10px;
     padding: 0 15px;
-    float: right;
     font-size: 30px;
+    font-weight: bold;
+}
+
+.sec-13 .profile .details a {
+    position: absolute;
+    top: 40px;
+    right: 35px;
+    padding: 0 15px;
+    float: right;
+    font-size: 14px;
     font-weight: bold;
 }
 
@@ -289,6 +302,24 @@ header #login p {
     height: 100%;
     background-color: #ececeb;
     border-radius: 20px;
+}
+
+.sec-14 .map .location {
+    width: 60%;
+    height: 100%;
+    background-color: #1b1c1e;
+    border-radius: 0 20px 20px 0;
+    text-align: center;
+}
+
+.sec-14 .map .details-business {
+    width: 40%;
+}
+
+.sec-14 .map .details-business p {
+    color: #1b1c1e;
+    font-size: 18px;
+    text-align: center;
 }
 
 
