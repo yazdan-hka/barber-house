@@ -62,6 +62,8 @@ class Braider(models.Model):
     email = models.EmailField(max_length=252, null=False, unique=True)
     password = models.CharField(max_length=126, validators=[], null=False)
     phone_number = PhoneNumberField(default='No Number.', null=True, unique=True)
+    show_phone = models.BooleanField(default=False)
+    show_email = models.BooleanField(default=False)
     last_login = models.DateTimeField(null=True, blank=True)
     # posted_pictures = models.ImageField(
     #     upload_to='posted-pictures/',
@@ -143,6 +145,7 @@ class SocialMedia(models.Model):
     rel = models.ForeignKey(Braider, on_delete=models.CASCADE)
     instagram = models.CharField(max_length=30, unique=True, null=True, blank=True, error_messages={"unique":"Instagram ID already exists."})  # letter, number, underscore, period
     twitter = models.CharField(max_length=15, unique=True, null=True, blank=True)  # letter, number, underscore
+    facebook = models.CharField(max_length=30, unique=True, null=True, blank=True)  # letter, number, underscore
     youtube = models.CharField(max_length=20, unique=True, null=True, blank=True)  # letter, number, space
     tiktok = models.CharField(max_length=24, unique=True, null=True, blank=True)  # letter, number, underscore, period
 class LocationInfo(models.Model):

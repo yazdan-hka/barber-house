@@ -65,7 +65,7 @@
                                     Website:
                                     <b>
                                         <a href="{{braider.website}}">
-                                            {{ braider.website }}dasdfasdf
+                                            {{ braider.website }}
                                         </a>
                                     </b>
                                 </h4>
@@ -79,7 +79,7 @@
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                             </div>
-                            <button class="v-profile"><a href="{% url 'profile' braider.user_name %}">View Profile</a></button>
+                            <button class="v-profile"><a href="{% url 'profile' user_name=braider.user_name %}">View Profile</a></button>
                         </div>
                     </div>
                 </div>

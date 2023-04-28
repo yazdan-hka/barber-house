@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Braider, LocationInfo
+from .models import Braider
 from django.urls import reverse
 from django.db.models import Q
 from django.contrib import messages
@@ -62,6 +62,7 @@ def index(request):
                                 'city': location_info.city,
                                 'website': business_info.website,
                                 'name': public_info.first_name + " " + public_info.last_name,
+                                'url': reverse('profile', kwargs={'user_name': braider.user_name})
                             })
                         else:
                             pass
@@ -74,6 +75,7 @@ def index(request):
                                 'country': location_info.country,
                                 'city': location_info.city,
                                 'name': public_info.first_name + " " + public_info.last_name,
+                                'url': reverse('profile', kwargs={'user_name': braider.user_name})
                             })
                         else:
                             pass

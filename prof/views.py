@@ -3,15 +3,50 @@ from django.contrib import messages
 from .forms import PictureForm
 from main.models import Braider
 from main.models import Post, PublicInfo
-from  django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
 
 def profile(request, user_name):
-    
-    braider = Braider.objects.filter(user_name=user_name).first()
-    context = {'braider': braider}
+
+    braider = Braider.objects.filter(user_name=user_name).select_related(
+        'locationinfo', 'businessinfo', 'publicinfo').values(
+                            'locationinfo__country',
+                            'locationinfo__city',
+                            'businessinfo',
+                            'publicinfo__first_name',
+    )
+
+    braider = braider.values(
+        'user_name',
+        # 'profile_picture',
+        # 'saved',
+        # 'post',
+        'publicinfo__first_name',
+        'publicinfo__last_name',
+        'locationinfo__city',
+        'locationinfo__country',
+        'phone_number',
+        'show_phone',
+        'email',
+        'socialmedia__instagram',
+        'socialmedia__twitter',
+        'socialmedia__facebook',
+        'socialmedia__tiktok',
+        'socialmedia__youtube',
+        'businessinfo__name',
+        'businessinfo__website',
+        # 'businessinfo__location'
+        )
+
+    # d['mynewkey'] = 'mynewvalue'
+    #
+    # info = {
+    #     'un':
+    # }
+
+    context = {'braider': braider[0]}
 
     return render(request, 'profile.html', context)
 
