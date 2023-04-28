@@ -20,82 +20,96 @@
 
 {% block content %}
 
-<section class="sec-13 overflow-hidden">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="profile">
-                    <div class="title">
-                        <h1>My profile</h1>
+    <section class="sec-13 overflow-hidden">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="profile">
+                        <div class="title">
+                            <h1>My profile</h1>
+                        </div>
+                        <div class="details">
+                            <h3>Test</h3>
+                            <img src="{% static 'img/profile/profile/6.png' %}" alt="Braider profile">
+                            <a href="{% url 'edit-profile' %}">Edit Profile</a>
+                        </div>
                     </div>
-                    <h3>Test</h3>
-                    <img src="{% static 'img/profile/profile/6.png' %}" alt="Braider profile">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <ul>
+                        <li>
+                            <a href="profile.html">Profile</a>
+                        </li>
+                        <li>
+                            <a href="post.html">Post</a>
+                        </li>
+                        <li>
+                            <a href="saved.html">Saved</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <ul>
-                    <li>
-                        <a href="profile.html">Profile</a>
-                    </li>
-                    <li>
-                        <a href="post.html">Post</a>
-                    </li>
-                    <li>
-                        <a href="saved.html">Saved</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
-<section class="sec-14 overflow-hidden">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="details">
-                    <div class="img-braider">
-                        <img src="{% static 'img/profile/profile/6-1.png' %}.jpg" alt="Braider profile">
-                    </div>
-                    <div class="details-braider">
-                        <p>Name : Test</p>
-                        <p>Number : 0912345678</p>
-                        <p>Country : Iran</p>
-                        <p>City : Tehran</p>
+    <section class="sec-14 overflow-hidden">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="details">
+                        <div class="img-braider">
+                            <img src="{% static 'img/profile/profile/6-1.png.jpg' %}" alt="Braider profile">
+                        </div>
+                        <div class="details-braider">
+                            <p>Name : Test</p>
+                            <p>Number : 0912345678</p>
+                            <p>Country : Iran</p>
+                            <p>City : Tehran</p>
+                        </div>
                     </div>
                 </div>
+                <div class="col-md-8 position-relative">
+                    <a href="#">
+                        <div class="post">
+                            <img src="{% static 'img/profile/post/9.png' %}" alt="Braid" class="img-1">
+                            <img src="{% static 'img/profile/post/11.png' %}" alt="Braid" class="img-2">
+                        </div>
+                        <h4 class="position-absolute top-50 start-50 translate-middle">Post</h4>
+                    </a>
+                </div>
             </div>
-            <div class="col-md-8 position-relative">
-                <a href="#">
-                    <div class="post">
-                        <img src="{% static 'img/profile/post/9.png' %}" alt="Braid" class="img-1">
-                        <img src="{% static 'img/profile/post/11.png' %}" alt="Braid" class="img-2">
-                    </div>
-                    <h4 class="position-absolute top-50 start-50 translate-middle">Post</h4>
-                </a>
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="#">
+                        <div class="socialmedia">
+                            <span><a href="#"><i class="fa-brands fa-instagram instagram"></i></a></span>
+                            <span><a href="#"><i class="fa-brands fa-twitter twitter"></i></a></span>
+                            <span><a href="#"><i class="fa-brands fa-facebook facebook"></i></a></span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a href="#">
+                        <div class="map">
+                            <div class="details-business">
+                                <p>
+                                    Business Name:
+                                    <br> Test
+                                    <br> Web site Adress:
+                                    <br> www.test.com
+                                </p>
+                            </div>
+                            <div class="location">
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <a href="#">
-                    <div class="socialmedia">
-                        <span><a href="#"><i class="fa-brands fa-instagram instagram"></i></a></span>
-                        <span><a href="#"><i class="fa-brands fa-twitter twitter"></i></a></span>
-                        <span><a href="#"><i class="fa-brands fa-facebook facebook"></i></a></span>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6">
-                <a href="#">
-                    <div class="map">
-                        <h4>Map</h4>
-                    </div>
-                </a>
-            </div>
-        </div>
-</section>
+    </section>
+
 {% endblock %}
 
 

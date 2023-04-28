@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block head %}
+        <meta charset="UTF-8">
+        <meta name="description" content="Introducing different hairstyles">
+        <meta name="keywords" content="Hairstyles, New hairstyle, Old hairstyle, Different hairstyles">
+        <meta name="author" content="Arash Ajorlou">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/profile-edits.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/responsive.css' %}">
+        <script src="{% static 'scripts/all.min.js' %}"></script>
+        <title>Hairstyles</title>
+    {% endblock %}
+
+    {% block content %}
+        <section class="sec-22 overflow-hidden">
+            <div class="container">
+    
+                <div class="row">
+    
+                    <div class="col-md-6">
+                        <div class="profile-edit">
+                            <div class="profile-image">
+                                <div class="back-image">
+                                </div>
+                                <img src="{% static 'img/profile/profile/6-1.png.jpg' %}" alt="Profile Image">
+                            </div>
+                            <button>Change Picture</button>
+                            <form action="#">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="#">Name</label>
+                                        <br>
+                                        <input type="text">
+                                        <br>
+                                        <label for="#">Last Name</label>
+                                        <br>
+                                        <input type="text">
+                                        <br>
+                                        <label for="#">Username</label>
+                                        <br>
+                                        <input type="text">
+                                        <br>
+                                        <label for="#">Number</label>
+                                        <br>
+                                        <input type="text">
+                                        <br>
+                                        <input type="checkbox" id="Number" value="Number" class="show-number">
+                                        <label for="Number" class="show">Show on profile</label>
+                                        <br>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="#">Country</label>
+                                        <br>
+                                        <input type="text">
+                                        <br>
+                                        <label for="#">City</label>
+                                        <br>
+                                        <input type="text">
+                                        <br>
+                                        <label for="#">Email</label>
+                                        <br>
+                                        <input type="text">
+                                        <br>
+                                        <input type="checkbox" id="Email" value="Email" class="show-email">
+                                        <label for="Email" class="show">Show on profile</label>
+                                        <br>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+    
+                    <div class="col-md-6">
+                        <div class="location">
+                            <h2>Business info</h2>
+                            <div class="left-form">
+                                <form action="#">
+                                    <label for="#">Business Name</label>
+                                    <br>
+                                    <input type="text">
+                                    <br>
+                                    <label for="#">Website Address</label>
+                                    <br>
+                                    <input type="text">
+                                </form>
+                            </div>
+                            <div class="map">
+    
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="socialmedia">
+                            <h2>Socialmedia</h2>
+                            <form action="#">
+                                <div class="three-element">
+                                    <div class="instagram"><i class="fa-brands fa-instagram"></i>
+                                        <input type="text">
+                                    </div>
+                                    <div class="twitter"><i class="fa-brands fa-twitter"></i>
+                                        <input type="text">
+                                    </div>
+                                    <div class="youtube"><i class="fa-brands fa-youtube"></i>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="two-element">
+                                    <div class="facebook"><i class="fa-brands fa-facebook"></i>
+                                        <input type="text">
+                                    </div>
+                                    <div class="tiktok"><i class="fa-brands fa-tiktok"></i>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </form>
+                            <p>Social media's IDs will be shown on your profile</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="btn">
+                    <button>Cansel</button>
+                    <button>Ok</button>
+                </div>
+    
+            </div>
+    
+        </section>
+    {% endblock %}
+    <script src="{% static 'scripts/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'scripts/script.js' %}"></script>
+
+</body>
+
+</html>

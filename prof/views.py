@@ -1,13 +1,23 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.contrib import messages
 from .forms import PictureForm
+from main.models import Braider
 from main.models import Post, PublicInfo
+from  django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
 
-def profile(request):
-    return render(request, 'profile.html')
+def profile(request, user_name):
+    
+    braider = Braider.objects.filter(user_name=user_name).first()
+    context = {'braider': braider}
+
+    return render(request, 'profile.html', context)
+
+
+def edit_profile(request):
+    return render(request, 'edit-profile.html')
 
 
 def post(request):
