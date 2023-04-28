@@ -1,11 +1,15 @@
 from django.shortcuts import render
 from django.contrib import messages
+from main.models import Post
 # Create your views here.
 
 def collection(request):
-
-    messages.success(request, "Profile details updated.")
-    return render(request, 'collection.html')
+    posts = Post.objects.all()
+    print(posts)
+    for i in posts:
+        print(i.image)
+    context = {'posts': posts}
+    return render(request, 'collection.html', context)
 
 
 def collection_1(request):

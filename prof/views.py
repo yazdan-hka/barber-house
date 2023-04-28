@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import PictureForm
-from main.models import Post
+from main.models import Post, PublicInfo
+
 # Create your views here.
 
 
@@ -22,26 +23,39 @@ def profile_details(request):
 
 
 def post_picture(request):
-    if request.method == 'POST':
-        form = PictureForm(request.POST, request.FILES)
-        if form.is_valid():
+    context = {}
+    if request.user:
+        type = PublicInfo.objects.filter(rel=request.user).first().user_type
+        print(type)
 
-            post = Post()
-            if 'description' in form.cleaned_data and form.cleaned_data['description']:
-                post.description = form.cleaned_data['description']
-            post.category = form.cleaned_data['category']
-            post.image = form.cleaned_data['image']
-            post.braider = request.user
-            post.save()
+        if type == "b":
+            if request.method == 'POST':
+                form = PictureForm(request.POST, request.FILES)
+                if form.is_valid():
 
-            return redirect('index')
+                    post = Post()
+                    if 'description' in form.cleaned_data and form.cleaned_data['description']:
+                        post.description = form.cleaned_data['description']
+                    post.category = form.cleaned_data['category']
+                    post.image = form.cleaned_data['image']
+                    post.braider = request.user
+                    post.save()
+
+                    return redirect('index')
+                else:
+                    for field_name, errors in form.errors.items():
+                        for error in errors:
+                            messages.warning(request, f"\n{str(field_name).replace('_', ' ').title()}\n: {error}")
+                    return redirect('post-picture')
+            else:
+                form = PictureForm()
+                context = {'form': form}
         else:
-            for field_name, errors in form.errors.items():
-                for error in errors:
-                    messages.warning(request, f"\n{str(field_name).replace('_', ' ').title()}\n: {error}")
-            return redirect('post-picture')
+            messages.warning(request, 'sorry you cannot post media'.title())
+            return redirect('index')
     else:
-        form = PictureForm()
-    return render(request, 'post-picture.html', {'form': form})
+        messages.warning(request, 'You must be logged in!')
+        return redirect('login')
+    return render(request, 'post-picture.html', context)
 
 

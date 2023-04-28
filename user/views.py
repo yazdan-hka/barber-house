@@ -36,6 +36,7 @@ def register_page(request):
                 for error in errors:
                     messages.warning(request, error)
                     print('error 1 is trigerred.')
+                    braider.delete()
             if saved:
                 saved = False
                 pub = PublicInfo(

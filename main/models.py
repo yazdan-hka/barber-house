@@ -74,6 +74,9 @@ class Braider(models.Model):
     # )
     # is_active = models.BooleanField(default=True)
     # is_staff = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f'{self.user_name} type: {PublicInfo.objects.filter(rel=self).first().user_type}'
     def is_authenticated(self):
         # Return True if the user is authenticated, else False.
         return True if self.pk else False
@@ -105,7 +108,7 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'{self.description} by {self.braider.user.username}'
+        return f'{self.description}'
 
 
 
