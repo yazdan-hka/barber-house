@@ -1,0 +1,111 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="description" content="Introducing different hairstyles">
+    <meta name="keywords" content="Hairstyles, New hairstyle, Old hairstyle, Different hairstyles">
+    <meta name="author" content="Arash Ajorlou">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/collection-1.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/responsive.css' %}">
+    <script src="{% static 'styles/all.min.js' %}"></script>
+    <title>Hairstyles</title>
+{% endblock %}
+
+
+{% block content %}
+  <section class="sec-6 overflow-hidden">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="img-braids">
+                        <img src="{% static 'img/collection/braids/collection-1.png' %}" alt="Briad">
+                    </div>
+                </div>
+                <div class="col-md-4 overflow-scroll">
+                    <div class="details">
+                        <div class="title">
+                            <div class="profile">
+                                <img src="{% static 'img/collection/profile/1.png' %}" alt="Braider profile">
+                            </div>
+                            <div class="name">
+                                <h1>
+                                    Design braid
+                                </h1>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores, excepturi beatae molestiae at reprehenderit.</p>
+                        </div>
+                        <div class="icon">
+                            <a href="#"><img src="{% static 'img/collection/icons/like.png' %}" alt="Like icon"></a>
+                            <a href="#"><img src="{% static 'img/collection/icons/comment.png' %}" alt="Comment icon"></a>
+                            <a href="#"><img src="{% static 'img/collection/icons/download.png' %}" alt="Download icon"></a>
+                            <a href="#"><img src="{% static 'img/collection/icons/share.png' %}" alt="Share icon"></a>
+                        </div>
+                        <div class="comment-title">
+                            <h2>Comments</h2>
+                        </div>
+                        <div class="comment">
+                            <div class="title-1">
+                                <div class="profile-1">
+                                    <img src="{% static 'img/collection/profile/2.png' %}" alt="Customer Profile">
+                                </div>
+                                <div class="name-1">
+                                    <h3>David</h3>
+                                </div>
+                            </div>
+                            <div class="comments-1">
+                                <p>This is a wonderfull braid i love it! This is a wonderfull braid i love it! This is a wonderfull braid i love it! This is a wonderfull braid i love it!</p>
+                            </div>
+                            <div class="title-1">
+                                <div class="profile-1">
+                                    <img src="{% static 'img/collection/profile/2.png' %}" alt="Customer Profile">
+                                </div>
+                                <div class="name-1">
+                                    <h3>David</h3>
+                                </div>
+                            </div>
+                            <div class="comments-1">
+                                <p>This is a wonderfull braid i love it! This is a wonderfull braid i love it! This is a wonderfull braid i love it! This is a wonderfull braid i love it!</p>
+                            </div>
+                            <div class="title-1">
+                                <div class="profile-1">
+                                    <img src="{% static 'img/collection/profile/2.png' %}" alt="Customer Profile">
+                                </div>
+                                <div class="name-1">
+                                    <h3>David</h3>
+                                </div>
+                            </div>
+                            <div class="comments-1">
+                                <p>This is a wonderfull braid i love it! This is a wonderfull braid i love it! This is a wonderfull braid i love it! This is a wonderfull braid i love it!</p>
+                            </div>
+                            <div class="title-1">
+                                <div class="profile-1">
+                                    <img src="{% static 'img/collection/profile/2.png' %}" alt="Customer Profile">
+                                </div>
+                                <div class="name-1">
+                                    <h3>David</h3>
+                                </div>
+                            </div>
+                            <div class="comments-1">
+                                <p>This is a wonderfull braid i love it! This is a wonderfull braid i love it! This is a wonderfull braid i love it! This is a wonderfull braid i love it!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+{% block script %}
+
+<script src="{% static 'styles/bootstrap.bundle.min.js' %}"></script>
+
+{% endblock %}
