@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 # from django.urls import reverse
-from main.models import Braider, PublicInfo, SocialMedia, LocationInfo
+from main.models import Braider, PublicInfo, SocialMedia, LocationInfo, BusinessInfo
 from django.contrib import messages
 from .forms import BraiderRegistration, BraiderLogin
 from django.contrib.auth import authenticate, login, logout
@@ -24,6 +24,7 @@ def register_page(request):
                 password=cd['password'],
                 phone_number=cd['phone_number'],
             )
+
             saved = False
 
             try:
@@ -32,11 +33,11 @@ def register_page(request):
                 if braider.id:
                     saved = True
             except ValidationError as e:
+                braider.delete()
                 errors = e.message_dict
                 for error in errors:
                     messages.warning(request, error)
                     print('error 1 is trigerred.')
-                    braider.delete()
             if saved:
                 saved = False
                 pub = PublicInfo(
@@ -51,12 +52,11 @@ def register_page(request):
                     if pub.id:
                         saved = True
                 except ValidationError as e:
+                    braider.delete()
                     errors = e.messages
                     for error in errors:
                         messages.warning(request, error)
                         print('error 2 is trigerred.')
-
-                    braider.delete()
 
                 if saved:
                     saved = False
@@ -71,8 +71,8 @@ def register_page(request):
                         if loc.id:
                             saved = True
                     except ValidationError as e:
-                        errors = e.messages
                         braider.delete()
+                        errors = e.messages
                         for e in errors:
                             messages.warning(request, f'{e}')
                             print('error 3 is trigerred.')
@@ -91,14 +91,16 @@ def register_page(request):
                             if soc.id:
                                 saved = True
                                 print('saved is true')
+                                bus = BusinessInfo(rel=braider)
+                                bus.save()
                         except ValidationError as e:
+                            braider.delete()
                             print('validation is made')
                             errors = e.messages
                             for error in errors:
                                 messages.warning(request, error)
                                 print('error 4 is trigerred.')
 
-                            braider.delete()
             if saved:
                 messages.success(request, 'your account have been created. wellcome to braidstarz! log in to access your profile'.title())
                 return redirect('login')

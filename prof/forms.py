@@ -49,3 +49,105 @@ class PictureForm(forms.Form):
         validators=[],
         widget=forms.ClearableFileInput(attrs={'style': 'color:white;'})
     )
+
+class EditProfile(forms.Form):
+    user_name = forms.CharField(
+        max_length=27,
+        label='',
+        required=True,
+        validators=[],
+        # widget=forms.TextInput(attrs={'autofocus': True, 'placeholder': 'Description', 'class': 'text'})
+    )
+
+    first_name = forms.CharField(
+        max_length=23,
+        label='',
+        required=True,
+        validators=[],
+        # widget=forms.TextInput(attrs={'autofocus': True, 'placeholder': 'Description', 'class': 'text'})
+    )
+
+    last_name = forms.CharField(
+        max_length=22,
+        label='',
+        required=True,
+        validators=[],
+        # widget=forms.TextInput(attrs={'autofocus': True, 'placeholder': 'Description', 'class': 'text'})
+    )
+
+    instagram = forms.URLField(
+        max_length=234,
+        label='',
+        required=False,
+        validators=[],
+        # widget=forms.TextInput(attrs={'autofocus': True, 'placeholder': 'Description', 'class': 'text'})
+    )
+
+    twitter = forms.URLField(
+        max_length=234,
+        label='',
+        required=False,
+        validators=[],
+        # widget=forms.TextInput(attrs={'autofocus': True, 'placeholder': 'Description', 'class': 'text'})
+    )
+
+    facebook = forms.URLField(
+        max_length=234,
+        label='',
+        required=False,
+        validators=[],
+        # widget=forms.TextInput(attrs={'autofocus': True, 'placeholder': 'Description', 'class': 'text'})
+    )
+
+    youtube = forms.URLField(
+        max_length=234,
+        label='',
+        required=False,
+        validators=[],
+        # widget=forms.TextInput(attrs={'autofocus': True, 'placeholder': 'Description', 'class': 'text'})
+    )
+
+    tiktok = forms.URLField(
+        max_length=234,
+        label='',
+        required=False,
+        validators=[],
+        # widget=forms.TextInput(attrs={'autofocus': True, 'placeholder': 'Description', 'class': 'text'})
+    )
+
+    country = forms.CharField(
+        max_length=27,
+        label='',
+        required=True,
+        validators=[],
+        # widget=forms.TextInput(attrs={'autofocus': True, 'placeholder': 'Description', 'class': 'text'})
+    )
+
+    city = forms.CharField(
+        max_length=81,
+        label='',
+        required=True,
+        validators=[],
+        # widget=forms.TextInput(attrs={'autofocus': True, 'placeholder': 'Description', 'class': 'text'})
+    )
+
+    website = forms.URLField(
+        max_length=234,
+        label='',
+        required=False,
+        validators=[],
+        # widget=forms.TextInput(attrs={'autofocus': True, 'placeholder': 'Description', 'class': 'text'})
+    )
+
+    business_name = forms.CharField(
+        max_length=81,
+        label='',
+        required=False,
+        validators=[],
+        # widget=forms.TextInput(attrs={'autofocus': True, 'placeholder': 'Description', 'class': 'text'})
+    )
+
+
+
+
+

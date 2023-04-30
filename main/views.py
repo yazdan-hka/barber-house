@@ -39,42 +39,36 @@ def index(request):
                 Q(publicinfo__last_name__icontains=query) |
                 Q(locationinfo__country__icontains=query) |
                 Q(locationinfo__city__icontains=query)
-            ).prefetch_related('publicinfo_set', 'locationinfo_set', 'businessinfo_set')
-            print('braiders are queried')
-
+            )
             braider_info = []
 
             if braiders:
                 print('braiders are found')
                 for braider in braiders:
-                    print('starting iteration braiders')
-                    location_info = braider.locationinfo_set.first()
-                    business_info = braider.businessinfo_set.first()
-                    public_info = braider.publicinfo_set.first()
                     try:
                         print('tryin to save the braider to list')
-                        print(public_info.user_type)
-                        if public_info.user_type == 'b':
+                        print(braider.publicinfo.user_type)
+                        if braider.publicinfo.user_type == 'b':
                             print('braider is braider, saving it.')
                             braider_info.append({
                                 'user_name': braider.user_name,
-                                'country': location_info.country,
-                                'city': location_info.city,
-                                'website': business_info.website,
-                                'name': public_info.first_name + " " + public_info.last_name,
+                                'country': braider.locationinfo.country,
+                                'city': braider.locationinfo.city,
+                                'website': braider.businessinfo.website,
+                                'name': braider.publicinfo.first_name + " " + braider.publicinfo.last_name,
                                 'url': reverse('profile', kwargs={'user_name': braider.user_name})
                             })
                         else:
                             pass
                     except:
                         print('tryin to save the braider to list but in except')
-                        if public_info.user_type == 'b':
+                        if braider.publicinfo.user_type == 'b':
                             print('braider is braider, saving it.')
                             braider_info.append({
                                 'user_name': braider.user_name,
-                                'country': location_info.country,
-                                'city': location_info.city,
-                                'name': public_info.first_name + " " + public_info.last_name,
+                                'country': braider.locationinfo.country,
+                                'city': braider.locationinfo.city,
+                                'name': braider.publicinfo.first_name + " " + braider.publicinfo.last_name,
                                 'url': reverse('profile', kwargs={'user_name': braider.user_name})
                             })
                         else:
