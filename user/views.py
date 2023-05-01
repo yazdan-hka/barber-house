@@ -37,10 +37,7 @@ def register_page(request):
                     braider.delete()
                 except:
                     print('braider was not delete. ')
-                errors = e.message_dict
-                for error in errors:
-                    messages.warning(request, error)
-                    print('error 1 is trigerred.')
+
             if saved:
                 saved = False
                 pub = PublicInfo(
@@ -56,10 +53,9 @@ def register_page(request):
                         saved = True
                 except ValidationError as e:
                     braider.delete()
-                    errors = e.messages
-                    for error in errors:
-                        messages.warning(request, error)
-                        print('error 2 is trigerred.')
+                    for field, errors in e.message_dict.items():
+                        for error in errors:
+                            form.add_error(field, error)
 
                 if saved:
                     saved = False
@@ -75,10 +71,9 @@ def register_page(request):
                             saved = True
                     except ValidationError as e:
                         braider.delete()
-                        errors = e.messages
-                        for e in errors:
-                            messages.warning(request, f'{e}')
-                            print('error 3 is trigerred.')
+                        for field, errors in e.message_dict.items():
+                            for error in errors:
+                                form.add_error(field, error)
 
                     if saved:
                         saved = False
@@ -98,10 +93,9 @@ def register_page(request):
                         except ValidationError as e:
                             braider.delete()
                             print('validation is made')
-                            errors = e.messages
-                            for error in errors:
-                                messages.warning(request, error)
-                                print('error 4 is trigerred.')
+                            for field, errors in e.message_dict.items():
+                                for error in errors:
+                                    form.add_error(field, error)
                         if saved:
                             saved = False
                             bus = BusinessInfo(
@@ -116,10 +110,9 @@ def register_page(request):
                             except ValidationError as e:
                                 braider.delete()
                                 print('validation is made')
-                                errors = e.messages
-                                for error in errors:
-                                    messages.warning(request, error)
-                                    print('error 4 is trigerred.')
+                                for field, errors in e.message_dict.items():
+                                    for error in errors:
+                                        form.add_error(field, error)
 
             if saved:
                 messages.success(request, 'your account have been created. wellcome to braidstarz! log in to access your profile'.title())

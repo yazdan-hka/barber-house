@@ -35,69 +35,25 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-md-3">
+            {% if posts %}
+                {% for post in posts %}
+                 <div class="col-md-3">
                     <a href="#">
                         <div class="img-collection">
-                            <img src="{% static 'img/profile/post/11.png' %}" alt="Braider post">
+                            <img src="{{ post.image.url }}" alt="Braid">
                         </div>
                         <div class="details">
                             <div class="profile">
-                                <img src="{% static 'img/profile/profile/6.png' %}" alt="Braider profile">
+                                <img src="" alt="{{ post.braider.user_name }}">
                             </div>
                             <div class="description">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit elit el...</p>
+                                <p>{{ post.description }}</p>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col-md-3">
-                    <a href="#">
-                        <div class="img-collection">
-                            <img src="{% static 'img/profile/post/11.png' %}" alt="Braider post">
-                        </div>
-                        <div class="details">
-                            <div class="profile">
-                                <img src="{% static 'img/profile/profile/6.png' %}" alt="Braider profile">
-                            </div>
-                            <div class="description">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit elit el...</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="#">
-                        <div class="img-collection">
-                            <img src="{% static 'img/profile/post/11.png' %}" alt="Braider post">
-                        </div>
-                        <div class="details">
-                            <div class="profile">
-                                <img src="{% static 'img/profile/profile/6.png' %}" alt="Braider profile">
-                            </div>
-                            <div class="description">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit elit el...</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="#">
-                        <div class="img-collection">
-                            <img src="{% static 'img/profile/post/11.png' %}" alt="Braider post">
-                        </div>
-                        <div class="details">
-                            <div class="profile">
-                                <img src="{% static 'img/profile/profile/6.png' %}" alt="Braider profile">
-                            </div>
-                            <div class="description">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit elit el...</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <i class="fa-solid fa-circle-plus"></i>
-            </div>
+                {% endfor %}
+            {% endif %}
         </section>
     {% endblock %}
 

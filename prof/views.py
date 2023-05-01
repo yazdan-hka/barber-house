@@ -184,8 +184,11 @@ def edit_profile(request):
     return render(request, 'edit-profile.html', context)
 
 
-def post(request):
-    return render(request, 'post.html')
+def post(request, user_name):
+    braider = Braider.objects.filter(user_name=user_name).first()
+    posts = braider.post_set.all()
+    context = {'posts': posts}
+    return render(request, 'post.html', posts)
 
 
 def saved(request):

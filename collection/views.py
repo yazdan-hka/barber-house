@@ -9,5 +9,5 @@ def collection(request):
     return render(request, 'collection.html', context)
 
 
-def collection_picture(request, id):
+def collection_picture(request):
     return render(request, 'collection-picture.html')
