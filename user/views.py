@@ -5,7 +5,7 @@ from django.contrib import messages
 from .forms import BraiderRegistration, BraiderLogin
 from django.contrib.auth import authenticate, login, logout
 from django.core.exceptions import ValidationError
-# from django.contrib.auth.hashers import check_password, make_password
+from django.contrib.auth.hashers import make_password
 
 
 # Create your views here.
@@ -21,7 +21,7 @@ def register_page(request):
             braider = Braider(
                 user_name=cd['user_name'],
                 email=cd['email'],
-                password=cd['password'],
+                password=make_password(cd['password']),
                 phone_number=cd['phone_number'],
             )
 
@@ -33,7 +33,10 @@ def register_page(request):
                 if braider.id:
                     saved = True
             except ValidationError as e:
-                braider.delete()
+                try:
+                    braider.delete()
+                except:
+                    print('braider was not delete. ')
                 errors = e.message_dict
                 for error in errors:
                     messages.warning(request, error)
@@ -79,20 +82,19 @@ def register_page(request):
 
                     if saved:
                         saved = False
+                        realins = cd['insta_id']
+                        if realins == '':
+                            realins = None
                         soc = SocialMedia(
-                            instagram=cd['insta_id'],
+                            instagram=realins,
                             rel=braider
                         )
                         try:
                             soc.full_clean()
-                            print('soc full cleaned')
                             soc.save()
-                            print('soc saved')
                             if soc.id:
                                 saved = True
-                                print('saved is true')
-                                bus = BusinessInfo(rel=braider)
-                                bus.save()
+
                         except ValidationError as e:
                             braider.delete()
                             print('validation is made')
@@ -100,6 +102,24 @@ def register_page(request):
                             for error in errors:
                                 messages.warning(request, error)
                                 print('error 4 is trigerred.')
+                        if saved:
+                            saved = False
+                            bus = BusinessInfo(
+                                rel=braider,
+                                website=cd['website']
+                            )
+                            try:
+                                bus.full_clean()
+                                bus.save()
+                                if bus.id:
+                                    saved = True
+                            except ValidationError as e:
+                                braider.delete()
+                                print('validation is made')
+                                errors = e.messages
+                                for error in errors:
+                                    messages.warning(request, error)
+                                    print('error 4 is trigerred.')
 
             if saved:
                 messages.success(request, 'your account have been created. wellcome to braidstarz! log in to access your profile'.title())

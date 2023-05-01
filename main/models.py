@@ -82,7 +82,7 @@ class Braider(models.Model):
     def is_authenticated(self):
         # Return True if the user is authenticated, else False.
         return True if self.pk else False
-    def check_password(self, raw_password):
+    def check_pass(self, raw_password):
         return check_password(raw_password, self.password)
     def update_last_login(self):
         self.last_login = datetime.now()
@@ -94,9 +94,7 @@ class Braider(models.Model):
 
         token = secrets.token_urlsafe(32)
         verification = Verification(token=token, rel=self)
-        # Hash the password before saving the model
 
-        self.password = make_password(self.password)
         super().save()
         # saving the generated token
         verification.save()
@@ -154,9 +152,9 @@ class LocationInfo(models.Model):
     # location
 class BusinessInfo(models.Model):
     rel = models.OneToOneField(Braider, on_delete=models.CASCADE)
-    name = models.CharField(max_length=81, null=True)
-    address = models.CharField(max_length=252, null=True)
-    website = models.URLField(max_length=234, null=True)
+    name = models.CharField(max_length=81, null=True, blank=True)
+    address = models.CharField(max_length=252, null=True, blank=True)
+    website = models.URLField(max_length=234, null=True, blank=True)
 
 
 
