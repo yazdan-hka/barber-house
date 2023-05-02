@@ -55,8 +55,6 @@ def validate_password(value):
         raise ValidationError('your password is week. are you sure you used capital and small letters, numbers, '
                               'and special characters in the length of 8 or more? '.title(),
                               params={'value': value})
-
-
 class Braider(models.Model):
     user_name = models.CharField(max_length=27, null=False, unique=True)
     email = models.EmailField(max_length=252, null=False, unique=True)
@@ -98,20 +96,15 @@ class Braider(models.Model):
         super().save()
         # saving the generated token
         verification.save()
-
-
 class Post(models.Model):
     braider = models.OneToOneField(Braider, on_delete=models.CASCADE, related_name='posts')
-    image = models.ImageField(upload_to='posts/', null=False, error_messages={'blank':'fuck'})
+    image = models.ImageField(upload_to='posts/', null=False, error_messages={'blank': 'you cannot post a picture without the picture itself. right?'.title()})
     description = models.CharField(max_length=81, null=True)
     category = models.CharField(max_length=40, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f'{self.description}'
-
-
-
 class Verification(models.Model):
     rel = models.ForeignKey(Braider, on_delete=models.CASCADE)
     token = models.CharField(max_length=64, unique=True)
@@ -128,14 +121,22 @@ class Verification(models.Model):
         if self.is_expired():
             self.is_valid = False
         super(Verification, self).save(*args, **kwargs)
-
-
 class PublicInfo(models.Model):
     rel = models.OneToOneField(Braider, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=23, null=False)
     last_name = models.CharField(max_length=22, null=False)
     user_type = models.CharField(max_length=8, choices=types, default='customer', null=False)
     biography = models.CharField(max_length=1024, null=True, blank=True, error_messages={'blank': 'are you serious?'})
+    profile_picture = models.ImageField(
+        upload_to='profile-pictures/',
+        default='profile_pic.jpg',
+        null=True,
+        blank=True,
+        validators=[
+            FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png']),
+            MaxValueValidator(512000),
+        ]
+    )
 
 class SocialMedia(models.Model):
     # validation for each must be provided.
@@ -155,7 +156,6 @@ class BusinessInfo(models.Model):
     name = models.CharField(max_length=81, null=True, blank=True)
     address = models.CharField(max_length=252, null=True, blank=True)
     website = models.URLField(max_length=234, null=True, blank=True)
-
 
 
 

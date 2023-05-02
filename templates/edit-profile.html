@@ -17,7 +17,7 @@
 
     {% block content %}
         <section class="sec-22 overflow-hidden">
-            <form method="post">{% csrf_token %}
+            <form method="post" enctype="multipart/form-data">{% csrf_token %}
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
@@ -27,7 +27,9 @@
                                     </div>
                                     <img src="{% static 'img/profile/profile/6-1.png.jpg' %}" alt="Profile Image">
                                 </div>
-                                <button>Change Picture</button>
+                                <label for="#">Profile Picture</label>
+
+                                {{ form.profile_picture }}
 
                                 <div class="row">
                                     <div class="col-md-6">

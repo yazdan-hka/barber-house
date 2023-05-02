@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Braider
+from .models import Braider, Post
 from django.urls import reverse
 from django.db.models import Q
 from django.contrib import messages
@@ -8,6 +8,9 @@ from .forms import BraiderFinder
 # Create your views here.
 
 def index(request):
+
+    posts = Post.objects.all()
+
     if request.method == 'POST':
         form = BraiderFinder(request.POST)
 
@@ -43,13 +46,9 @@ def index(request):
             braider_info = []
 
             if braiders:
-                print('braiders are found')
                 for braider in braiders:
                     try:
-                        print('tryin to save the braider to list')
-                        print(braider.publicinfo.user_type)
                         if braider.publicinfo.user_type == 'b':
-                            print('braider is braider, saving it.')
                             braider_info.append({
                                 'user_name': braider.user_name,
                                 'country': braider.locationinfo.country,
@@ -61,9 +60,7 @@ def index(request):
                         else:
                             pass
                     except:
-                        print('tryin to save the braider to list but in except')
                         if braider.publicinfo.user_type == 'b':
-                            print('braider is braider, saving it.')
                             braider_info.append({
                                 'user_name': braider.user_name,
                                 'country': braider.locationinfo.country,
@@ -75,14 +72,13 @@ def index(request):
                             pass
 
                 messages.success(request, f'Wow! {len(braider_info)} Braiders find you.'.title())
-                context = {'form': form, 'braiders': braider_info}
+                context = {'form': form, 'braiders': braider_info, 'posts': posts}
             else:
-                print('no result is found')
                 messages.warning(request, f'{query}: No braider is found. search something better.'.title())
                 return redirect('index')
     else:
         form = BraiderFinder()
-        context = {'form': form}
+        context = {'form': form, 'posts': posts}
 
     return render(request, 'index.html', context)
 

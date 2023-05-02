@@ -9,5 +9,10 @@ def collection(request):
     return render(request, 'collection.html', context)
 
 
-def collection_picture(request):
-    return render(request, 'collection-picture.html')
+def collection_picture(request, id):
+
+    post = Post.objects.get(id=id)
+
+    context = {'post': post}
+
+    return render(request, 'collection-picture.html', context)

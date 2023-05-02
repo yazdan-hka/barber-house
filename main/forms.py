@@ -6,7 +6,7 @@ class BraiderFinder(forms.Form):
         max_length=40,
         min_length=2,
         required=False,
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Firstname', 'aria-label': "Recipient's username", 'aria-describedby':"button-addon2"})
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Search..', 'aria-label': "Recipient's username", 'aria-describedby':"button-addon2"})
     )
 
 

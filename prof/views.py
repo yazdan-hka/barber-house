@@ -49,20 +49,12 @@ def profile(request, user_name):
 
 @login_required
 def edit_profile(request):
-
     user_name = request.user.user_name
-
     braider = Braider.objects.filter(user_name=user_name)
-    # \
-    #     .select_related(
-    #     'publicinfo',
-    #     'businessinfo',
-    #     'locationinfo',
-    # )
 
     values = braider.values(
         'user_name',
-        # 'profile_picture',
+        'publicinfo__profile_picture',
         # 'saved',
         # 'post',
         'publicinfo__first_name',
@@ -85,6 +77,7 @@ def edit_profile(request):
     dt = values[0]
 
     dict_values = {
+    'profile_picture': dt['publicinfo__profile_picture'],
     'user_name': dt['user_name'],
     'first_name': dt['publicinfo__first_name'],
     'last_name': dt['publicinfo__last_name'],
@@ -106,78 +99,83 @@ def edit_profile(request):
     context = {'form': form}
 
     if request.method == 'POST':
-        form_data = EditProfile(request.POST)
+        form_data = EditProfile(request.POST, request.FILES)
+        if form_data.is_valid():
+            user_name = form_data['user_name'].value()
+            try:
+                profile_picture = request.FILES['profile_picture']
+            except:
+                profile_picture = dt['publicinfo__profile_picture']
+            first_name = form_data['first_name'].value()
+            last_name = form_data['last_name'].value()
+            city = form_data['city'].value()
+            country = form_data['country'].value()
+            instagram = form_data['instagram'].value()
+            twitter = form_data['twitter'].value()
+            facebook = form_data['facebook'].value()
+            tiktok = form_data['tiktok'].value()
+            youtube = form_data['youtube'].value()
+            business_name = form_data['business_name'].value()
+            website = form_data['website'].value()
 
-        user_name = form_data['user_name'].value()
-        first_name = form_data['first_name'].value()
-        last_name = form_data['last_name'].value()
-        city = form_data['city'].value()
-        country = form_data['country'].value()
-        instagram = form_data['instagram'].value()
-        twitter = form_data['twitter'].value()
-        facebook = form_data['facebook'].value()
-        tiktok = form_data['tiktok'].value()
-        youtube = form_data['youtube'].value()
-        business_name = form_data['business_name'].value()
-        website = form_data['website'].value()
 
-        braider = Braider.objects.filter(user_name=request.user.user_name).first()
+            braider = Braider.objects.filter(user_name=request.user.user_name).first()
 
-        if dict_values['user_name'] != user_name:
-            print('username is changed')
-            # br = Braider.objects.filter(user_name=request.user.user_name).first()
-            braider.user_name = user_name
-            braider.save()
+            if dict_values['user_name'] != user_name:
+                print('username is changed')
+                # br = Braider.objects.filter(user_name=request.user.user_name).first()
+                braider.user_name = user_name
+                braider.save()
+            else:
+                pass
+
+            if dict_values['first_name'] != first_name or dict_values['last_name'] != last_name or dict_values['profile_picture'] != profile_picture:
+                print('pub info is fucking changed.')
+                braider.publicinfo.first_name = first_name
+                braider.publicinfo.last_name = last_name
+                braider.publicinfo.profile_picture = profile_picture
+                braider.publicinfo.save()
+            else:
+                pass
+
+            if dict_values['city'] != city or dict_values['country'] != country:
+                print('location info has been changed')
+                braider.locationinfo.city = city
+                braider.locationinfo.country = country
+                braider.locationinfo.save()
+            else:
+                pass
+
+            if dict_values['instagram'] != instagram or dict_values['twitter'] != twitter or dict_values['youtube'] != youtube or dict_values['facebook'] != facebook or dict_values['tiktok'] != tiktok:
+                print('social info is changed')
+                braider.socialmedia.instagram = instagram
+                braider.socialmedia.twitter = twitter
+                braider.socialmedia.facebook = facebook
+                braider.socialmedia.youtube = youtube
+                braider.socialmedia.tiktok = tiktok
+                braider.socialmedia.save()
+            else:
+                pass
+
+            old_business_name = dict_values['business_name']
+
+            if old_business_name is None:
+                old_business_name = ''
+
+            if dict_values['website'] != website or old_business_name != business_name:
+                print('business info is changed so i will print the old bussiness name and the new one for fun:\n')
+                print(f'old is <{old_business_name}>')
+                print(f'new is <{business_name}>')
+
+                braider.businessinfo.name = business_name
+                braider.businessinfo.website = website
+                braider.businessinfo.save()
+            else:
+                pass
         else:
-            pass
-
-        if dict_values['first_name'] != first_name or dict_values['last_name'] != last_name:
-            print('pub info is fucking changed.')
-            braider.publicinfo.first_name = first_name
-            braider.publicinfo.last_name = last_name
-            braider.publicinfo.save()
-            # braider.save()
-        else:
-            pass
-
-        if dict_values['city'] != city or dict_values['country'] != country:
-            print('location info has been changed')
-            braider.locationinfo.city = city
-            braider.locationinfo.country = country
-            braider.locationinfo.save()
-        else:
-            pass
-
-        if dict_values['instagram'] != instagram or dict_values['twitter'] != twitter or dict_values['youtube'] != youtube or dict_values['facebook'] != facebook or dict_values['tiktok'] != tiktok:
-            print('social info is changed')
-            braider.socialmedia.instagram = instagram
-            braider.socialmedia.twitter = twitter
-            braider.socialmedia.facebook = facebook
-            braider.socialmedia.youtube = youtube
-            braider.socialmedia.tiktok = tiktok
-            braider.socialmedia.save()
-        else:
-            pass
-
-        old_business_name = dict_values['business_name']
-
-        if old_business_name is None:
-            old_business_name = ''
-
-        if dict_values['website'] != website or old_business_name != business_name:
-            print('business info is changed so i will print the old bussiness name and the new one for fun:\n')
-            print(f'old is <{old_business_name}>')
-            print(f'new is <{business_name}>')
-
-            braider.businessinfo.name = business_name
-            braider.businessinfo.website = website
-            braider.businessinfo.save()
-        else:
-            pass
-
-        for field_name, errors in form.errors.items():
-            for error in errors:
-                messages.error(request, f"\n{str(field_name).replace('_', ' ').title()}\n: {error}")
+            for field_name, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f"\n{str(field_name).replace('_', ' ').title()}\n: {error}")
 
         return redirect('edit-profile')
 
