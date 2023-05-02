@@ -32,11 +32,18 @@ def register_page(request):
                 braider.save()
                 if braider.id:
                     saved = True
+
             except ValidationError as e:
+                print('it may be 37')
+                for field, errors in e.message_dict.items():
+                    for error in errors:
+                        messages.error(request, error)
                 try:
                     braider.delete()
                 except:
                     print('braider was not delete. ')
+
+
 
             if saved:
                 saved = False
@@ -52,6 +59,8 @@ def register_page(request):
                     if pub.id:
                         saved = True
                 except ValidationError as e:
+                    print('it may be 62')
+
                     braider.delete()
                     for field, errors in e.message_dict.items():
                         for error in errors:
@@ -71,6 +80,8 @@ def register_page(request):
                             saved = True
                     except ValidationError as e:
                         braider.delete()
+                        print('it may be 83')
+
                         for field, errors in e.message_dict.items():
                             for error in errors:
                                 form.add_error(field, error)
@@ -92,6 +103,8 @@ def register_page(request):
 
                         except ValidationError as e:
                             braider.delete()
+                            print('it may be 106')
+
                             print('validation is made')
                             for field, errors in e.message_dict.items():
                                 for error in errors:
@@ -108,6 +121,8 @@ def register_page(request):
                                 if bus.id:
                                     saved = True
                             except ValidationError as e:
+                                print('it may be 124')
+
                                 braider.delete()
                                 print('validation is made')
                                 for field, errors in e.message_dict.items():

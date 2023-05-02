@@ -31,7 +31,11 @@
                     <div class="details">
                         <div class="title">
                             <div class="profile">
-                                <img src="/media/{{ post.braider.publicinfo.profile_picture }}" alt="{{ post.braider.user_name }} profile">
+                                {% if braider.publicinfo__profile_picture != 'profile_pic.jpg' %}
+                                    <img src="/media/{{ post.braider.publicinfo.profile_picture  }}" alt="braider {{ post.braider.user_name }} profile picture from {{ post.braider.locationinfo.country }}, {{ post.braider.locationinfo.city }}">
+                                {% else %}
+                                    <img src="{% static 'img/logo.PNG' %}" alt="braid starz logo">
+                                {% endif %}
                             </div>
                             <div class="name">
                                 <h1>

@@ -27,7 +27,11 @@
                                     <div class="back-image">
                                     </div>
 
-                                    <img src="/media/{{ pp }}" alt="Profile Image">
+                              {% if pp != 'profile_pic.jpg' %}
+                                <img src="/media/{{ pp }}" alt="braider {{ braider.user_name }} profile picture from {{ braider.locationinfo__country }}, {{ braider.locationinfo__country }}">
+                            {% else %}
+                                <img src="{% static 'img/logo.PNG' %}" alt="braid starz logo">
+                            {% endif %}
                                 </div>
                                 <label for="#">Profile Picture</label>
 
