@@ -53,6 +53,7 @@ def index(request):
                                 'user_name': braider.user_name,
                                 'country': braider.locationinfo.country,
                                 'city': braider.locationinfo.city,
+                                'profile_picture': braider.publicinfo.profile_picture,
                                 'website': braider.businessinfo.website,
                                 'name': braider.publicinfo.first_name + " " + braider.publicinfo.last_name,
                                 'url': reverse('profile', kwargs={'user_name': braider.user_name})
@@ -65,6 +66,7 @@ def index(request):
                                 'user_name': braider.user_name,
                                 'country': braider.locationinfo.country,
                                 'city': braider.locationinfo.city,
+                                'profile_picture': braider.publicinfo.profile_picture,
                                 'name': braider.publicinfo.first_name + " " + braider.publicinfo.last_name,
                                 'url': reverse('profile', kwargs={'user_name': braider.user_name})
                             })

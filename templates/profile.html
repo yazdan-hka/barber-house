@@ -30,7 +30,12 @@
                         </div>
                         <div class="details">
                             <h3>{{ braider.user_name }}</h3>
-                            <img src="{% static 'img/profile/profile/6.png' %}" alt="Braider profile">
+                            {% if braider.publicinfo__profile_picture %}
+                                <img src="/media/{{ braider.publicinfo__profile_picture }}" alt="Profile Picture">
+                            {% else %}
+                                <img src="{% static 'path/to/default/profile/picture.jpg' %}" alt="Default Profile Picture">
+                            {% endif %}
+
                             <a href="{% url 'edit-profile' %}">Edit Profile</a>
                         </div>
                     </div>
@@ -60,7 +65,7 @@
                 <div class="col-md-4">
                     <div class="details">
                         <div class="img-braider">
-                            <img src="{% static 'img/profile/profile/6-1.png.jpg' %}" alt="Braider profile">
+                            <img src="/media/{{ braider.publicinfo__profile_picture }}" alt="Braider profile">
                         </div>
                         <div class="details-braider">
                             <p>Name:

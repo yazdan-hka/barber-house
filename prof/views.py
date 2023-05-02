@@ -23,7 +23,7 @@ def profile(request, user_name):
 
     braider = braider.values(
         'user_name',
-        # 'profile_picture',
+        'publicinfo__profile_picture',
         # 'saved',
         # 'post',
         'publicinfo__first_name',
@@ -96,7 +96,7 @@ def edit_profile(request):
     }
 
     form = EditProfile(initial=dict_values)
-    context = {'form': form}
+    context = {'form': form, 'pp': dt['publicinfo__profile_picture']}
 
     if request.method == 'POST':
         form_data = EditProfile(request.POST, request.FILES)
@@ -117,7 +117,6 @@ def edit_profile(request):
             youtube = form_data['youtube'].value()
             business_name = form_data['business_name'].value()
             website = form_data['website'].value()
-
 
             braider = Braider.objects.filter(user_name=request.user.user_name).first()
 
