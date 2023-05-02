@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
     <link rel="stylesheet" href="{% static 'styles/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/messages.css' %}">
     <link rel="stylesheet" href="{% static 'styles/search.css'%} ">
     <script src="{% static 'scripts/all.min.js' %}"></script>
     <title>Hairstyles</title>
@@ -95,16 +96,16 @@
             </h2>
         </div>
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="3" aria-label="Slide 4"></button>
-            </div>
+<!--            <div class="carousel-indicators">-->
+<!--                <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>-->
+<!--                <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="1" aria-label="Slide 2"></button>-->
+<!--                <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="2" aria-label="Slide 3"></button>-->
+<!--                <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="3" aria-label="Slide 4"></button>-->
+<!--            </div>-->
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     {% for post in posts %}
-                        <a href="this shall be chanaged probebly.">
+                        <a href="{% url 'collection-picture' id=post.id %}">
                             <div class="position-relative">
                                 <img src="{{ post.image.url}}" class="d-block" alt="Braid">
                                 <div class="img-title position-absolute top-50 start-50 translate-middle">

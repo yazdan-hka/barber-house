@@ -7,7 +7,6 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-
 def profile(request, user_name):
 
     braider = Braider.objects.filter(user_name=user_name)
@@ -46,7 +45,6 @@ def profile(request, user_name):
     context = {'braider': braider[0]}
 
     return render(request, 'profile.html', context)
-
 @login_required
 def edit_profile(request):
     user_name = request.user.user_name
@@ -118,6 +116,21 @@ def edit_profile(request):
             business_name = form_data['business_name'].value()
             website = form_data['website'].value()
 
+            if instagram == '':
+                instagram = None
+
+            if facebook == '':
+                facebook = None
+
+            if twitter == '':
+                twitter = None
+
+            if youtube == '':
+                youtube = None
+
+            if tiktok == '':
+                tiktok = None
+
             braider = Braider.objects.filter(user_name=request.user.user_name).first()
 
             if dict_values['user_name'] != user_name:
@@ -179,23 +192,17 @@ def edit_profile(request):
         return redirect('edit-profile')
 
     return render(request, 'edit-profile.html', context)
-
-
-def post(request, user_name):
+def posts(request, user_name):
     braider = Braider.objects.filter(user_name=user_name).first()
-    posts = braider.post_set.all()
-    context = {'posts': posts}
-    return render(request, 'post.html', posts)
+    posts = Post.objects.filter(braider=braider)
 
+    context = {'posts': posts, 'pp': braider.publicinfo.profile_picture}
 
+    return render(request, 'post.html', context)
 def saved(request):
     return render(request, 'saved.html')
-
-
 def profile_details(request):
     return render(request, 'profile-details.html')
-
-
 def post_picture(request):
     context = {}
     if request.user:

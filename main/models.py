@@ -93,11 +93,13 @@ class Braider(models.Model):
         token = secrets.token_urlsafe(32)
         verification = Verification(token=token, rel=self)
 
+        print(self.check_pass(self.password))
+
         super().save()
         # saving the generated token
         verification.save()
 class Post(models.Model):
-    braider = models.OneToOneField(Braider, on_delete=models.CASCADE, related_name='posts')
+    braider = models.ForeignKey(Braider, on_delete=models.CASCADE, related_name='posts')
     image = models.ImageField(upload_to='posts/', null=False, error_messages={'blank': 'you cannot post a picture without the picture itself. right?'.title()})
     description = models.CharField(max_length=81, null=True)
     category = models.CharField(max_length=40, null=False)
@@ -133,8 +135,8 @@ class PublicInfo(models.Model):
         null=True,
         blank=True,
         validators=[
-            FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png']),
-            MaxValueValidator(512000),
+            # FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png']),
+            # MaxValueValidator(512000),
         ]
     )
 

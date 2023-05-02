@@ -5,6 +5,10 @@ from main.models import Post
 
 def collection(request):
     posts = Post.objects.all()
+
+    for post in posts:
+        print(post.braider.publicinfo.profile_picture)
+
     context = {'posts': posts}
     return render(request, 'collection.html', context)
 

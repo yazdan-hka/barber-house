@@ -10,6 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/messages.css' %}">
     <link rel="stylesheet" href="{% static 'styles/collection-1.css' %}">
     <link rel="stylesheet" href="{% static 'styles/responsive.css' %}">
     <script src="{% static 'styles/all.min.js' %}"></script>
@@ -30,7 +31,7 @@
                     <div class="details">
                         <div class="title">
                             <div class="profile">
-                                <img src="" alt="Braider profile">
+                                <img src="/media/{{ post.braider.publicinfo.profile_picture }}" alt="{{ post.braider.user_name }} profile">
                             </div>
                             <div class="name">
                                 <h1>
