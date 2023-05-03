@@ -39,7 +39,7 @@
 
                     {% if user.is_authenticated %}
                         <div id="login">
-                            <a class="profile-img" href="{% url 'profile' %}">
+                            <a class="profile-img" href="{% url 'profile' user_name=user.user_name %}">
 <!--                            <img src="img/profile/profile/6-1.png.jpg" alt="Profile Image">-->
                                 {{ user.user_name }}
                             </a>

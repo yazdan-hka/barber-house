@@ -1,16 +1,22 @@
-from django.shortcuts import render
+from django.shortcuts import render, reverse
 from django.contrib import messages
 from main.models import Post
 # Create your views here.
 
 def collection(request):
     posts = Post.objects.all()
-    print(posts)
-    for i in posts:
-        print(i.image)
+
+    for post in posts:
+        print(post.braider.publicinfo.profile_picture)
+
     context = {'posts': posts}
     return render(request, 'collection.html', context)
 
 
-def collection_1(request):
-    return render(request, 'collection-1.html')
+def collection_picture(request, id):
+
+    post = Post.objects.get(id=id)
+
+    context = {'post': post}
+
+    return render(request, 'collection-picture.html', context)

@@ -1,3 +1,33 @@
-1 - in collection-1 page, under the 'title div', line
+1 - post.html & saved.html:
+as in profile.html, there is a div, which it have a div which includes: My Profile, edit profile and profile picture.
+add the same div with My Profile and edit profile and profile picture to saved.html and post.html
+*after you done the above things, add a button for posting a new picture.
 
-css classes, for messages to be shown in different times: error, success, warning, info
+2 - new privacy-and-policy.html
+https://curlee.me/privacy-policy/
+the above link is an example of privacy and policy. its just text, paragraphs, headings and lists. design a page like
+this with lorem content for three kind of tags: <h1>, <p>, <ul>.
+
+3 - add a small section for privacy and policy in the footer, below the social media links.
+
+4 - new terms-of-condition.html
+just like the privacy and policy. this is an example
+https://curlee.me/terms-conditions/
+
+5 - post-details.html
+replace the image with a div which, in it we explain how should the uploaded picture be
+the post-details.html should have these fields:
+
+button/upload the picture
+textbox/description
+select/category
+button/post
+
+6 - collection-1.html
+above the user_name and profile picture, add a place to show the category
+of the post. like:
+category: goddess braid
+make the description font a little bigger
+
+7 - index.html
+make the header to be on the top of the page even if the user scrolls down

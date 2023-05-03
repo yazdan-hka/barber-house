@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'styles/login.css' %}">
     <link rel="stylesheet" href="{% static 'styles/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/messages.css' %}">
     <script src="{% static 'scripts/all.min.js' %}"></script>
     <title>Hairstyles</title>
 </head>
@@ -20,11 +21,13 @@
 
     <section class="sec-16 overflow-hidden">
         {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-              <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-            {% endfor %}
-        </ul>
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="alert {% if message.tags %} alert-{{ message.tags }}"{% endif %}>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
         {% endif %}
         <div class="login">
             <div class="user-login">

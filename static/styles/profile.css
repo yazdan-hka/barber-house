@@ -149,6 +149,7 @@ header #login p {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0;
 }
 
 .sec-13 ul li {
@@ -288,6 +289,14 @@ header #login p {
 
 .sec-14 .socialmedia .facebook {
     color: #3b5998;
+}
+
+.sec-14 .socialmedia .youtube {
+    color: #c4302b;
+}
+
+.sec-14 .socialmedia .tiktok {
+    color: #010101;
 }
 
 .sec-14 .socialmedia svg:hover {

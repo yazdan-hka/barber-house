@@ -55,13 +55,13 @@ def validate_password(value):
         raise ValidationError('your password is week. are you sure you used capital and small letters, numbers, '
                               'and special characters in the length of 8 or more? '.title(),
                               params={'value': value})
-
-
 class Braider(models.Model):
     user_name = models.CharField(max_length=27, null=False, unique=True)
     email = models.EmailField(max_length=252, null=False, unique=True)
     password = models.CharField(max_length=126, validators=[], null=False)
     phone_number = PhoneNumberField(default='No Number.', null=True, unique=True)
+    show_phone = models.BooleanField(default=False)
+    show_email = models.BooleanField(default=False)
     last_login = models.DateTimeField(null=True, blank=True)
     # posted_pictures = models.ImageField(
     #     upload_to='posted-pictures/',
@@ -80,7 +80,7 @@ class Braider(models.Model):
     def is_authenticated(self):
         # Return True if the user is authenticated, else False.
         return True if self.pk else False
-    def check_password(self, raw_password):
+    def check_pass(self, raw_password):
         return check_password(raw_password, self.password)
     def update_last_login(self):
         self.last_login = datetime.now()
@@ -92,26 +92,21 @@ class Braider(models.Model):
 
         token = secrets.token_urlsafe(32)
         verification = Verification(token=token, rel=self)
-        # Hash the password before saving the model
 
-        self.password = make_password(self.password)
+        print(self.check_pass(self.password))
+
         super().save()
         # saving the generated token
         verification.save()
-
-
 class Post(models.Model):
     braider = models.ForeignKey(Braider, on_delete=models.CASCADE, related_name='posts')
-    image = models.ImageField(upload_to='posts/')
-    description = models.CharField(max_length=81)
-    category = models.CharField(max_length=40)
+    image = models.ImageField(upload_to='posts/', null=False, error_messages={'blank': 'you cannot post a picture without the picture itself. right?'.title()})
+    description = models.CharField(max_length=81, null=True)
+    category = models.CharField(max_length=40, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f'{self.description}'
-
-
-
 class Verification(models.Model):
     rel = models.ForeignKey(Braider, on_delete=models.CASCADE)
     token = models.CharField(max_length=64, unique=True)
@@ -128,34 +123,41 @@ class Verification(models.Model):
         if self.is_expired():
             self.is_valid = False
         super(Verification, self).save(*args, **kwargs)
-
-
 class PublicInfo(models.Model):
-    rel = models.ForeignKey(Braider, on_delete=models.CASCADE)
+    rel = models.OneToOneField(Braider, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=23, null=False)
     last_name = models.CharField(max_length=22, null=False)
     user_type = models.CharField(max_length=8, choices=types, default='customer', null=False)
-    biography = models.CharField(max_length=1024, null=True, blank=True)
-    # error_messages = {'blank': ''}
+    biography = models.CharField(max_length=1024, null=True, blank=True, error_messages={'blank': 'are you serious?'})
+    profile_picture = models.ImageField(
+        upload_to='profile-pictures/',
+        default='profile_pic.jpg',
+        null=True,
+        blank=True,
+        validators=[
+            # FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png']),
+            # MaxValueValidator(512000),
+        ]
+    )
 
 class SocialMedia(models.Model):
     # validation for each must be provided.
-    rel = models.ForeignKey(Braider, on_delete=models.CASCADE)
-    instagram = models.CharField(max_length=30, unique=True, null=True, blank=True, error_messages={"unique":"Instagram ID already exists."})  # letter, number, underscore, period
-    twitter = models.CharField(max_length=15, unique=True, null=True, blank=True)  # letter, number, underscore
-    youtube = models.CharField(max_length=20, unique=True, null=True, blank=True)  # letter, number, space
-    tiktok = models.CharField(max_length=24, unique=True, null=True, blank=True)  # letter, number, underscore, period
+    rel = models.OneToOneField(Braider, on_delete=models.CASCADE)
+    instagram = models.CharField(max_length=234, unique=True, null=True, blank=True, error_messages={"unique":"Instagram ID already exists."})  # letter, number, underscore, period
+    twitter = models.CharField(max_length=234, unique=True, null=True, blank=True, error_messages={"unique":"Twitter ID already exists."})  # letter, number, underscore
+    facebook = models.CharField(max_length=234, unique=True, null=True, blank=True, error_messages={"unique":"Facebook ID already exists."})  # letter, number, underscore
+    youtube = models.CharField(max_length=234, unique=True, null=True, blank=True, error_messages={"unique":"Youtube ID already exists."})  # letter, number, space
+    tiktok = models.CharField(max_length=234, unique=True, null=True, blank=True, error_messages={"unique":"Tiktok ID already exists."})  # letter, number, underscore, period
 class LocationInfo(models.Model):
-    rel = models.ForeignKey(Braider, on_delete=models.CASCADE)
+    rel = models.OneToOneField(Braider, on_delete=models.CASCADE)
     country = models.CharField(max_length=27, default='none', null=False)
     city = models.CharField(max_length=81, default='none', null=False)
     # location
 class BusinessInfo(models.Model):
-    rel = models.ForeignKey(Braider, on_delete=models.CASCADE)
-    name = models.CharField(max_length=36, null=True)
-    address = models.CharField(max_length=252, null=True)
-    website = models.URLField(max_length=200, null=True)
-
+    rel = models.OneToOneField(Braider, on_delete=models.CASCADE)
+    name = models.CharField(max_length=81, null=True, blank=True)
+    address = models.CharField(max_length=252, null=True, blank=True)
+    website = models.URLField(max_length=234, null=True, blank=True)
 
 
 

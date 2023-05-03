@@ -155,6 +155,24 @@ header #login p {
     font-size: 15px;
 }
 
+.sec-15 .menu ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.sec-15 .menu ul li {
+    list-style-type: none;
+}
+
+.sec-15 .menu a {
+    color: #ececeb;
+    padding: 0 10px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
 
 /* End Sec15 */
 

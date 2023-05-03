@@ -10,8 +10,7 @@ class BraiderBackend(BaseBackend):
         except Braider.DoesNotExist:
             return None
 
-        if braider.check_password(password):
-            braider.password = password
+        if braider.check_pass(password):
             return braider
 
         return None

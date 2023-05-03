@@ -1,85 +1,73 @@
- {% extends 'base.html' %} {% load static %} {% block head %}
-<meta charset="UTF-8">
-<meta name="description" content="Introducing different hairstyles">
-<meta name="keywords" content="Hairstyles, New hairstyle, Old hairstyle, Different hairstyles">
-<meta name="author" content="Arash Ajorlou">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
-<link rel="stylesheet" href="{% static 'styles/post.css' %}">
-<link rel="stylesheet" href="{% static 'styles/responsive.css' %}">
-<link rel="stylesheet" href="{% static 'styles/responsiveprofile.css' %}">
-<script src="{% static 'scripts/all.min.js' %}"></script>
-<title>Hairstyles</title>
-{% endblock %} {% block content %}
-<section class="sec-15 overflow-hidden">
-    <div class="row">
-        <div class="col-md-3">
-            <a href="#">
-                <div class="img-collection">
-                    <img src="{% static 'img/profile/post/11.png' %}" alt="Braider post">
-                </div>
-                <div class="details">
-                    <div class="profile">
-                        <img src="{% static 'img/profile/profile/6.png' %}" alt="Braider profile">
-                    </div>
-                    <div class="description">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit elit el...</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-3">
-            <a href="#">
-                <div class="img-collection">
-                    <img src="{% static 'img/profile/post/11.png' %}" alt="Braider post">
-                </div>
-                <div class="details">
-                    <div class="profile">
-                        <img src="{% static 'img/profile/profile/6.png' %}" alt="Braider profile">
-                    </div>
-                    <div class="description">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit elit el...</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-3">
-            <a href="#">
-                <div class="img-collection">
-                    <img src="{% static 'img/profile/post/11.png' %}" alt="Braider post">
-                </div>
-                <div class="details">
-                    <div class="profile">
-                        <img src="{% static 'img/profile/profile/6.png' %}" alt="Braider profile">
-                    </div>
-                    <div class="description">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit elit el...</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-3">
-            <a href="#">
-                <div class="img-collection">
-                    <img src="{% static 'img/profile/post/11.png' %}" alt="Braider post">
-                </div>
-                <div class="details">
-                    <div class="profile">
-                        <img src="{% static 'img/profile/profile/6.png' %}" alt="Braider profile">
-                    </div>
-                    <div class="description">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit elit el...</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <i class="fa-solid fa-circle-plus"></i>
-    </div>
-</section>
-{% endblock %} {% block script %}
+ {% extends 'base.html' %}
+ {% load static %}
 
-<script src="{% static 'scripts/bootstrap.bundle.min.js' %}"></script>
-<script src="{% static 'scripts/script.js' %}"></script>
+    {% block head %}
+        <meta charset="UTF-8">
+        <meta name="description" content="Introducing different hairstyles">
+        <meta name="keywords" content="Hairstyles, New hairstyle, Old hairstyle, Different hairstyles">
+        <meta name="author" content="Arash Ajorlou">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/post.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/messages.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/responsive.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/responsiveprofile.css' %}">
+        <script src="{% static 'scripts/all.min.js' %}"></script>
+        <title>Hairstyles</title>
+    {% endblock %}
+    {% block content %}
+        <section class="sec-15 overflow-hidden">
+            <div class="menu">
+                <div class="row">
+                    <div class="col">
+                        <ul>
+                        <li>
+                            <a href="{% url 'profile' user_name=un %}">Profile</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'posts' user_name=un %}" style="text-shadow:purple 3px 3px 5px;">Post</a>
+                        </li>
+<!--                            <li>-->
+<!--                                <a href="saved.html">Saved</a>-->
+<!--                            </li>-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-{% endblock %}
+            {% if posts %}
+                <div class="row">
+                {% for post in posts %}
+                     <div class="col-md-3">
+                        <a href="{% url 'collection-picture' id=post.id %}">
+                            <div class="img-collection">
+                                <img src="{{ post.image.url }}" alt="Braid">
+                            </div>
+                            <div class="details">
+                                <div class="profile">
+                                    <img src="/media/{{ pp}}" alt="{{ post.braider.user_name }}">
+                                </div>
+                                <div class="description">
+                                    <p>{{ post.description }}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+                </div>
+
+            {% else %}
+
+            <center><br><br><br><br><br><br>
+                <h2 style="color:white;">{{ un }} Uploaded no posts yet. </h2>
+            </center><br><br><br><br><br><br>
+
+            {% endif %}
+        </section>
+    {% endblock %}
+
+    {% block script %}
+        <script src="{% static 'scripts/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'scripts/script.js' %}"></script>
+    {% endblock %}

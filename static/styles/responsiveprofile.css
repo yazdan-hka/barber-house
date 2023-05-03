@@ -323,10 +323,6 @@
         font-weight: bold;
         transition: .5s all ease-in-out;
     }
-    .sec-13 ul {
-        margin-top: 25px;
-        transition: .5s all ease-in-out;
-    }
     .sec-13 a {
         color: #ececeb;
         text-decoration: none;
@@ -478,6 +474,13 @@
         text-align: center;
         transition: .5s all ease-in-out;
     }
+    .sec-14 .socialmedia svg {
+        color: #1b1c1e;
+        padding: 0 8px;
+        font-size: 45px;
+        transition: 0.3s;
+        transition: .5s all ease-in-out;
+    }
 }
 
 
@@ -508,6 +511,13 @@
         height: 50px;
         transition: .5s all ease-in-out;
     }
+    .sec-15 .menu a {
+        color: #ececeb;
+        padding: 0 10px;
+        text-decoration: none;
+        font-size: 17px;
+        transition: .5s all ease-in-out;
+    }
 }
 
 @media only screen and (max-width:992px) {
@@ -534,6 +544,13 @@
     }
     .sec-15 .collection .search .form-control {
         font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-15 .menu a {
+        color: #ececeb;
+        padding: 0 10px;
+        text-decoration: none;
+        font-size: 16px;
         transition: .5s all ease-in-out;
     }
 }
@@ -592,6 +609,13 @@
         font-size: 14px;
         transition: .5s all ease-in-out;
     }
+    .sec-15 .menu a {
+        color: #ececeb;
+        padding: 0 8px;
+        text-decoration: none;
+        font-size: 17px;
+        transition: .5s all ease-in-out;
+    }
 }
 
 @media only screen and (max-width:576px) {
@@ -634,6 +658,12 @@
     .sec-15 .collection .search .form-control {
         padding: 13px !important;
         font-size: 13px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-15 .menu a {
+        color: #ececeb;
+        text-decoration: none;
+        font-size: 16px;
         transition: .5s all ease-in-out;
     }
 }
@@ -743,6 +773,12 @@
     .sec-15 .collection .search .form-control {
         padding: 9px !important;
         font-size: 9px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-15 .menu a {
+        color: #ececeb;
+        text-decoration: none;
+        font-size: 15px;
         transition: .5s all ease-in-out;
     }
 }
