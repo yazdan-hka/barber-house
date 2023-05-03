@@ -168,6 +168,9 @@ def edit_profile(request):
                 if braider.publicinfo.profile_picture != profile_picture:
                     braider.publicinfo.profile_picture.delete()
                     picture = crop_to_square(profile_picture)
+                else:
+                    picture = profile_picture
+                print(picture)
                 braider.publicinfo.profile_picture = picture
                 braider.publicinfo.save()
             else:
@@ -212,7 +215,7 @@ def edit_profile(request):
                 for error in errors:
                     messages.error(request, f"\n{str(field_name).replace('_', ' ').title()}\n: {error}")
 
-        return redirect('edit-profile')
+        return redirect('profile', user_name=braider.user_name)
 
     return render(request, 'edit-profile.html', context)
 def posts(request, user_name):
