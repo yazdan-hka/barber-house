@@ -4,8 +4,27 @@ from .forms import PictureForm, EditProfile
 from main.models import Braider
 from main.models import Post, PublicInfo, SocialMedia, LocationInfo, BusinessInfo
 from django.contrib.auth.decorators import login_required
+from PIL import Image
+import io
+from io import BytesIO
+from django.core.files.uploadedfile import InMemoryUploadedFile
 
 # Create your views here.
+
+def crop_to_square(image):
+    img = Image.open(image)
+    width, height = img.size
+    if width > height:
+        extra = (width - height) / 2
+        img = img.crop((extra, 0, width - extra, height))
+    else:
+        extra = (height - width) / 2
+        img = img.crop((0, extra, width, height - extra))
+    img = img.resize((300, 300))
+    buffer = BytesIO()
+    img.save(buffer, format='JPEG')
+    image_file = InMemoryUploadedFile(buffer, None, 'temp.jpg', 'image/jpeg', buffer.getbuffer().nbytes, None)
+    return image_file
 
 def profile(request, user_name):
 
@@ -32,6 +51,7 @@ def profile(request, user_name):
         'phone_number',
         'show_phone',
         'email',
+        'posts__image',
         'socialmedia__instagram',
         'socialmedia__twitter',
         'socialmedia__facebook',
@@ -145,7 +165,10 @@ def edit_profile(request):
                 print('pub info is fucking changed.')
                 braider.publicinfo.first_name = first_name
                 braider.publicinfo.last_name = last_name
-                braider.publicinfo.profile_picture = profile_picture
+                if braider.publicinfo.profile_picture != profile_picture:
+                    braider.publicinfo.profile_picture.delete()
+                    picture = crop_to_square(profile_picture)
+                braider.publicinfo.profile_picture = picture
                 braider.publicinfo.save()
             else:
                 pass
@@ -195,8 +218,9 @@ def edit_profile(request):
 def posts(request, user_name):
     braider = Braider.objects.filter(user_name=user_name).first()
     posts = Post.objects.filter(braider=braider)
+    un = braider.user_name
 
-    context = {'posts': posts, 'pp': braider.publicinfo.profile_picture}
+    context = {'posts': posts, 'pp': braider.publicinfo.profile_picture, 'un': un}
 
     return render(request, 'post.html', context)
 def saved(request):

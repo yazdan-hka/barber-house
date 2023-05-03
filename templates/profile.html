@@ -26,7 +26,11 @@
                 <div class="col">
                     <div class="profile">
                         <div class="title">
+                            {% if user.is_authenticated %}
                             <h1>My profile</h1>
+                            {% else %}
+                            <h1>{{ braider.user_name }}'s Profile</h1>
+                            {% endif %}
                         </div>
                         <div class="details">
                             <h3>{{ braider.user_name }}</h3>
@@ -35,8 +39,9 @@
                             {% else %}
                                 <img src="{% static 'img/logo.PNG' %}" alt="braid starz logo">
                             {% endif %}
-
+                            {% if user.is_authenticated %}
                             <a href="{% url 'edit-profile' %}">Edit Profile</a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -45,14 +50,14 @@
                 <div class="col">
                     <ul>
                         <li>
-                            <a href="profile.html">Profile</a>
+                            <a href="{% url 'profile' user_name=braider.user_name %}" style="text-shadow:purple 3px 3px 5px;">Profile</a>
                         </li>
                         <li>
                             <a href="{% url 'posts' user_name=braider.user_name %}">Post</a>
                         </li>
-                        <li>
-                            <a href="saved.html">Saved</a>
-                        </li>
+<!--                        <li>-->
+<!--                            <a href="saved.html">Saved</a>-->
+<!--                        </li>-->
                     </ul>
                 </div>
             </div>
@@ -102,10 +107,15 @@
                     </div>
                 </div>
                 <div class="col-md-8 position-relative">
-                    <a href="#">
+                    <a href="{% url 'posts' user_name=braider.user_name %}">
                         <div class="post">
-                            <img src="{% static 'img/profile/post/9.png' %}" alt="Braid" class="img-1">
-                            <img src="{% static 'img/profile/post/11.png' %}" alt="Braid" class="img-2">
+
+                            {% if braider.posts__image %}
+                                <img src="/media/{{ braider.posts__image }}" class="img-1" alt="braider {{ braider.user_name }} braid post from {{ braider.locationinfo__country }}, {{ braider.locationinfo__city }}">
+                            {% else %}
+
+                            {% endif %}
+                                <img src="{% static 'img/logo.PNG' %}" alt="braid starz logo">
                         </div>
                         <h4 class="position-absolute top-50 start-50 translate-middle">Post</h4>
                     </a>

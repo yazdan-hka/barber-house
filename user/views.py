@@ -42,9 +42,6 @@ def register_page(request):
                     braider.delete()
                 except:
                     print('braider was not delete. ')
-
-
-
             if saved:
                 saved = False
                 pub = PublicInfo(
