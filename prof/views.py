@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.contrib import messages
+from django.core.exceptions import ValidationError
 from .forms import PictureForm, EditProfile
 from main.models import Braider
 from main.models import Post, PublicInfo, SocialMedia, LocationInfo, BusinessInfo
 from django.contrib.auth.decorators import login_required
 from PIL import Image
-import io
 from io import BytesIO
 from django.core.files.uploadedfile import InMemoryUploadedFile
 
@@ -151,28 +151,36 @@ def edit_profile(request):
             if tiktok == '':
                 tiktok = None
 
-            braider = Braider.objects.filter(user_name=request.user.user_name).first()
+            braider = Braider.objects.get(user_name=dt['user_name'])
+            print('\n', type(braider), '\n')
 
+            print(user_name)
             if dict_values['user_name'] != user_name:
-                print('username is changed')
-                # br = Braider.objects.filter(user_name=request.user.user_name).first()
-                braider.user_name = user_name
-                braider.save()
+                if Braider.objects.filter(user_name=user_name).first():
+                    messages.error(request, 'Your Username was not changed because it was already taken by another user.')
+                else:
+                    braider.user_name = user_name
+                    braider.save()
             else:
                 pass
 
             if dict_values['first_name'] != first_name or dict_values['last_name'] != last_name or dict_values['profile_picture'] != profile_picture:
                 print('pub info is fucking changed.')
-                braider.publicinfo.first_name = first_name
-                braider.publicinfo.last_name = last_name
-                if braider.publicinfo.profile_picture != profile_picture:
-                    braider.publicinfo.profile_picture.delete()
-                    picture = crop_to_square(profile_picture)
-                else:
-                    picture = profile_picture
-                print(picture)
-                braider.publicinfo.profile_picture = picture
-                braider.publicinfo.save()
+                try:
+                    braider.publicinfo.first_name = first_name
+                    braider.publicinfo.last_name = last_name
+                    if braider.publicinfo.profile_picture != profile_picture:
+                        braider.publicinfo.profile_picture.delete()
+                        picture = crop_to_square(profile_picture)
+                    else:
+                        picture = profile_picture
+                    print(picture)
+                    braider.publicinfo.profile_picture = picture
+                    braider.publicinfo.save()
+                except ValidationError as e:
+                    for field, errors in e.message_dict.items():
+                        for error in errors:
+                            form.add_error(field, error)
             else:
                 pass
 
@@ -210,12 +218,13 @@ def edit_profile(request):
                 braider.businessinfo.save()
             else:
                 pass
+            messages.success(request, 'Your profile now is more compelete :)')
+            return redirect('profile', user_name=braider.user_name)
         else:
-            for field_name, errors in form.errors.items():
+            for field_name, errors in form_data.errors.items():
                 for error in errors:
                     messages.error(request, f"\n{str(field_name).replace('_', ' ').title()}\n: {error}")
-
-        return redirect('profile', user_name=braider.user_name)
+        return redirect('edit-profile')
 
     return render(request, 'edit-profile.html', context)
 def posts(request, user_name):

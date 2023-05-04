@@ -85,18 +85,13 @@ class Braider(models.Model):
     def update_last_login(self):
         self.last_login = datetime.now()
     def save(self, update_fields=None):
-        # Inserting value to last login
 
         self.update_last_login()
-        # generate a token for a given user
 
         token = secrets.token_urlsafe(32)
         verification = Verification(token=token, rel=self)
 
-        print(self.check_pass(self.password))
-
         super().save()
-        # saving the generated token
         verification.save()
 class Post(models.Model):
     braider = models.ForeignKey(Braider, on_delete=models.CASCADE, related_name='posts')

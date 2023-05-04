@@ -14,7 +14,7 @@ this with lorem content for three kind of tags: <h1>, <p>, <ul>.
 just like the privacy and policy. this is an example
 https://curlee.me/terms-conditions/
 
-5 - post-details.html
+5 - post-picture.html
 replace the image with a div which, in it we explain how should the uploaded picture be
 the post-details.html should have these fields:
 
@@ -31,3 +31,59 @@ make the description font a little bigger
 
 7 - index.html
 make the header to be on the top of the page even if the user scrolls down
+
+8 - profile.html
+in social media div, above the social medias' icons, add a text:
+Get in touch with 'user_name' by his/her Social media
+
+9 - edit-profile.html
+in social media div, above the inputs, put a text:
+Please Upload the URL of your social media account.
+
+10 - edit-profile.html
+change the country input type from text to select.
+define a css for <option> of the select field if possible.
+
+11 - edit-profile.html
+add a textbox input for biography
+
+12 - profile.html
+add a place to show biography of the user.
+* note that the priority of design is for mobile users.
+
+13 - 3 new html pages.
+
+1 - reset-password.html:
+a page, with a <h1>Reset Your Password</h1>
+and under it, a paragraph <p>looks like you forogt you password. enter your username or email address to
+reset the password of your account</p>
+and under it, an text/input: Username or Email
+and under it, a button: reset password.
+
+2 - reset-password-link-sent.html
+this page is for telling to user what to do.
+first, we have a <h1>Compelete reseting you password</h1>
+then we have a paragraph, better to bein a div with border for prettier design<p> the password
+reset link has been send to the email yazdan@gmail.com. go to your email and click on that link to
+compelete resetting you password.
+
+3 - create-new-password.html
+in this page, we will let the user create a new password
+first, we have a <h1>Create new password</h1>
+then, we have instruction <p> create new password. be sure to use small & capital letters, numbers and special characters
+to improve the security of your account. also be sure to save your password in your browser or somewhere to don't forget
+it again. </p>
+then, we have two password input fields:
+input/password: enter new password
+input/password: repeat your password.
+
+14 - profile.html
+above the post div, add a <h2>:
+see this braiders' posts
+
+
+
+
+
+
+

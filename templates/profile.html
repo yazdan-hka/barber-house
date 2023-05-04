@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'styles/profile.css' %}">
     <link rel="stylesheet" href="{% static 'styles/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/messages.css' %}">
     <link rel="stylesheet" href="{% static 'styles/responsiveprofile.css' %}">
     <script src="{% static 'scripts/all.min.js' %}"></script>
     <title>Hairstyles</title>
@@ -19,14 +20,22 @@
 
 
 {% block content %}
-
+<!--    {% if messages %}-->
+<!--        <div class="messages">-->
+<!--            {% for message in messages %}-->
+<!--                <div class="alert {% if message.tags %}alert-{{ message.tags }}"{% endif %}>-->
+<!--                    {{ message }}-->
+<!--                </div>-->
+<!--            {% endfor %}-->
+<!--        </div>-->
+<!--    {% endif %}-->
     <section class="sec-13 overflow-hidden">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <div class="profile">
                         <div class="title">
-                            {% if user.is_authenticated %}
+                            {% if user.is_authenticated and user.user_name == braider.user_name%}
                             <h1>My profile</h1>
                             {% else %}
                             <h1>{{ braider.user_name }}'s Profile</h1>
@@ -34,13 +43,15 @@
                         </div>
                         <div class="details">
                             <h3>{{ braider.user_name }}</h3>
+
                             {% if braider.publicinfo__profile_picture != 'profile_pic.jpg' %}
                                 <img src="/media/{{ braider.publicinfo__profile_picture }}" alt="braider {{ braider.user_name }} profile picture from {{ braider.locationinfo__country }}, {{ braider.locationinfo__country }}">
                             {% else %}
                                 <img src="{% static 'img/logo.PNG' %}" alt="braid starz logo">
                             {% endif %}
-                            {% if user.is_authenticated %}
-                            <a href="{% url 'edit-profile' %}">Edit Profile</a>
+
+                            {% if user.is_authenticated and user.user_name == braider.user_name%}
+                              <a href="{% url 'edit-profile' %}">Edit Profile</a>
                             {% endif %}
                         </div>
                     </div>

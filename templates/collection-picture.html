@@ -30,45 +30,50 @@
                 <div class="col-md-4 overflow-scroll">
                     <div class="details">
                         <div class="title">
-                            <div class="profile">
-                                {% if braider.publicinfo__profile_picture != 'profile_pic.jpg' %}
-                                    <img src="/media/{{ post.braider.publicinfo.profile_picture  }}" alt="braider {{ post.braider.user_name }} profile picture from {{ post.braider.locationinfo.country }}, {{ post.braider.locationinfo.city }}">
-                                {% else %}
-                                    <img src="{% static 'img/logo.PNG' %}" alt="braid starz logo">
-                                {% endif %}
-                            </div>
+<!--                            <a href="{% url 'profile' user_name=post.braider.user_name %}" style='color:black'>-->
+                            <a href="{% url 'profile' user_name=post.braider.user_name %}" style='color:black; text-decoration:none;'>
+                                <div class="profile">
+                                    {% if braider.publicinfo__profile_picture != 'profile_pic.jpg' %}
+                                        <img src="/media/{{ post.braider.publicinfo.profile_picture  }}" alt="braider {{ post.braider.user_name }} profile picture from {{ post.braider.locationinfo.country }}, {{ post.braider.locationinfo.city }}">
+                                    {% else %}
+                                        <img src="{% static 'img/logo.PNG' %}" alt="braid starz logo">
+                                    {% endif %}
+                                </div>
+                            </a>
                             <div class="name">
                                 <h1>
+                                    <a href="{% url 'profile' user_name=post.braider.user_name %}" style='color:black; text-decoration:none;'>
                                      *B*{{ post.braider.user_name }}
+                                    </a>
                                 </h1>
                             </div>
                         </div>
                         <div class="description">
                             <p>{{ post.description }}</p>
                         </div>
-<!--                        <div class="icon">-->
-<!--                            <a href="#"><img src="{% static 'img/collection/icons/like.png' %}" alt="Like icon"></a>-->
-<!--                            <a href="#"><img src="{% static 'img/collection/icons/comment.png' %}" alt="Comment icon"></a>-->
-<!--                            <a href="#"><img src="{% static 'img/collection/icons/download.png' %}" alt="Download icon"></a>-->
-<!--                            <a href="#"><img src="{% static 'img/collection/icons/share.png' %}" alt="Share icon"></a>-->
-<!--                        </div>-->
-<!--                        <div class="comment-title">-->
-<!--                            <h2>Comments</h2>-->
-<!--                        </div>-->
-<!--                        <div class="comment">-->
-<!--                            <div class="title-1">-->
-<!--                                <div class="profile-1">-->
-<!--                                    <img src="{% static 'img/collection/profile/2.png' %}" alt="Customer Profile">-->
-<!--                                </div>-->
-<!--                                <div class="name-1">-->
-<!--                                    <h3>David</h3>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="comments-1">-->
-<!--                                <p>This is a wonderfull braid i love it! This is a wonderfull braid i love it! This is a wonderfull braid i love it! This is a wonderfull braid i love it!</p>-->
-<!--                            </div>-->
+                        <div class="icon">
+                            <a href="#"><img src="{% static 'img/collection/icons/like.png' %}" alt="Like icon"></a>
+                            <a href="#"><img src="{% static 'img/collection/icons/comment.png' %}" alt="Comment icon"></a>
+                            <a href="#"><img src="{% static 'img/collection/icons/download.png' %}" alt="Download icon"></a>
+                            <a href="#"><img src="{% static 'img/collection/icons/share.png' %}" alt="Share icon"></a>
+                        </div>
+                        <div class="comment-title">
+                            <h2>Comments</h2>
+                        </div>
+                        <div class="comment">
+                            <div class="title-1">
+                                <div class="profile-1">
+                                    <img src="{% static 'img/collection/profile/2.png' %}" alt="Customer Profile">
+                                </div>
+                                <div class="name-1">
+                                    <h3>David</h3>
+                                </div>
+                            </div>
+                            <div class="comments-1">
+                                <p>This is a wonderfull braid i love it! This is a wonderfull braid i love it! This is a wonderfull braid i love it! This is a wonderfull braid i love it!</p>
+                            </div>
 
-<!--                        </div>-->
+                        </div>
                     </div>
                 </div>
             </div>

@@ -565,7 +565,7 @@ class BraiderRegistration(forms.Form):
         widget=forms.Select(attrs={'class': 'form-select email text-1', 'aria-label': 'Default select example'})
     )
     user_name = forms.CharField(
-        max_length=30,
+        max_length=27,
         strip=True,
         label='',
         required=True,
@@ -682,7 +682,7 @@ class BraiderLogin(forms.Form):
 
 
     username = forms.CharField(
-        max_length=70,
+        max_length=27,
         strip=False,
         label='',
         required=True,
