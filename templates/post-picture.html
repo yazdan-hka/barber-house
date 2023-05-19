@@ -15,55 +15,73 @@
     <link rel="stylesheet" href="{% static 'styles/messages.css' %}">
     <script src="{% static 'scripts/all.min.js' %}"></script>
     <title>Hairstyles</title>
-<style>
-select {
-  background-color: black;
-  color: white;
-  border: 1px solid purple;
-  padding: 5px;
-  transition: 0.4s ease-in;
-  width:70%;
-}
 
-select option {
-
-  background-color: black;
-  color: white;
-  border: 1px solid purple;
-  margin: 80px;
-  transition: 0.4s ease-in;
-}
-
-body {color:white;}
-
-
-
-
-</style>
 {% endblock %}
 
 {% block content %}
 
+<!--    <section class="sec-20 overflow-hidden">-->
+<!--        <div class="post-details">-->
+<!--            <div class="post">-->
+<!--                <img src="{% static 'img/profile/post/9.png' %}" alt="Post">-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <br>-->
+<!--                <h3 style="color:white;">-->
+<!--                    Choose a category for your post or select others-->
+<!--                </h3>-->
+<!--                <form method="post" enctype="multipart/form-data">-->
+<!--                    {% csrf_token %}-->
+<!--                    {{ form.as_p}}-->
+
+
+<!--                </div><br>-->
+<!--                <button>Post</button>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </section>-->
+
+
+
+
+
+
+
+
+
     <section class="sec-20 overflow-hidden">
-        <div class="post-details">
-            <div class="post">
-                <img src="{% static 'img/profile/post/9.png' %}" alt="Post">
-            </div>
-            <div>
-                <br>
-                <h3 style="color:white;">
-                    Choose a category for your post or select others
-                </h3>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="upload">
+                        <img src="../img/profile/post/11.png" alt="Braide Post ">
+                        <h3>Upload post</h3>
+                    </div>
+                </div>
                 <form method="post" enctype="multipart/form-data">
+                        {{ form.image }}
                     {% csrf_token %}
-                    {{ form.as_p}}
-
-
-                </div><br>
+                    <div class="col-md-6">
+                        <div class="details">
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                                {{ form.description }}
+                            </div>
+                            <label for="category">Choose category</label>
+                                {{ form.category }}
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="btn">
+                <button>Cansel</button>
                 <button>Post</button>
-            </form>
+            </div>
         </div>
     </section>
+
+
+
 
 {% endblock %}
 

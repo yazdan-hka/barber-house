@@ -10,6 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
         <link rel="stylesheet" href="{% static 'styles/post.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/profile.css' %}">
         <link rel="stylesheet" href="{% static 'styles/messages.css' %}">
         <link rel="stylesheet" href="{% static 'styles/responsive.css' %}">
         <link rel="stylesheet" href="{% static 'styles/responsiveprofile.css' %}">
@@ -17,10 +18,32 @@
         <title>Hairstyles</title>
     {% endblock %}
     {% block content %}
-        <section class="sec-15 overflow-hidden">
-            <div class="menu">
-                <div class="row">
-                    <div class="col">
+
+     <section class="sec-13 overflow-hidden">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="profile">
+                        <div class="title">
+                            {% if user.is_authenticated and user.user_name == un %}
+                            <h1>My profile</h1>
+                            {% else %}
+                            <h1>{{ un }}'s Profile</h1>
+                            {% endif %}
+                        </div>
+                        <div class="details">
+                            <h3>{{ un }}</h3>
+                            {% if pp != 'profile_pic.jpg' %}
+                                <img src="/media/{{ pp }}" alt="braider {{ braider.user_name }} profile picture from {{ braider.locationinfo__country }}, {{ braider.locationinfo__country }}">
+                            {% else %}
+                                <img src="{% static 'img/logo.PNG' %}" alt="braid starz logo">
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
                         <ul>
                         <li>
                             <a href="{% url 'profile' user_name=un %}">Profile</a>
@@ -32,11 +55,19 @@
 <!--                                <a href="saved.html">Saved</a>-->
 <!--                            </li>-->
                         </ul>
-                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            {% if posts %}
+    <section class="sec-15 overflow-hidden">
+        <a href="{% url 'post-picture' %}" style="text-decoration:none;">
+            <div class="icon">
+                <img src="{% static '/img/profile/icon/plus.png' %}" alt="Add Post">
+                <h3 >Add post</h3>
+            </div>
+        </a>
+             {% if posts %}
                 <div class="row">
                 {% for post in posts %}
                      <div class="col-md-3">
@@ -64,7 +95,63 @@
             </center><br><br><br><br><br><br>
 
             {% endif %}
-        </section>
+    </section>
+
+
+
+
+
+
+
+
+<!--        <section class="sec-15 overflow-hidden">-->
+<!--            <div class="menu">-->
+<!--                <div class="row">-->
+<!--                    <div class="col">-->
+<!--                        <ul>-->
+<!--                        <li>-->
+<!--                            <a href="{% url 'profile' user_name=un %}">Profile</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="{% url 'posts' user_name=un %}" style="text-shadow:purple 3px 3px 5px;">Post</a>-->
+<!--                        </li>-->
+<!--&lt;!&ndash;                            <li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <a href="saved.html">Saved</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </li>&ndash;&gt;-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            {% if posts %}-->
+<!--                <div class="row">-->
+<!--                {% for post in posts %}-->
+<!--                     <div class="col-md-3">-->
+<!--                        <a href="{% url 'collection-picture' id=post.id %}">-->
+<!--                            <div class="img-collection">-->
+<!--                                <img src="{{ post.image.url }}" alt="Braid">-->
+<!--                            </div>-->
+<!--                            <div class="details">-->
+<!--                                <div class="profile">-->
+<!--                                    <img src="/media/{{ pp}}" alt="{{ post.braider.user_name }}">-->
+<!--                                </div>-->
+<!--                                <div class="description">-->
+<!--                                    <p>{{ post.description }}</p>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                {% endfor %}-->
+<!--                </div>-->
+
+<!--            {% else %}-->
+
+<!--            <center><br><br><br><br><br><br>-->
+<!--                <h2 style="color:white;">{{ un }} Uploaded no posts yet. </h2>-->
+<!--            </center><br><br><br><br><br><br>-->
+
+<!--            {% endif %}-->
+<!--        </section>-->
     {% endblock %}
 
     {% block script %}

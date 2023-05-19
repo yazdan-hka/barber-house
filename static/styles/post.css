@@ -98,11 +98,22 @@ header #login p {
 /* Sec15 */
 
 .sec-15 {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .sec-15 .row {
     margin: 0 10px 20px 10px !important;
+}
+
+.sec-15 .icon {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sec-15 .icon h3 {
+    color: #ececeb;
+    font-family: open sans bold;
+    font-size: 26px;
 }
 
 .sec-15 .col-md-3 a {

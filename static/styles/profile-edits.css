@@ -102,7 +102,7 @@ header #login p {
 }
 
 .sec-22 .profile-edit {
-    height: 640px;
+    height: 655px;
     background-color: rgba(236, 236, 235, 0.1);
     margin: 30px auto 0 auto;
     border-radius: 20px;
@@ -142,7 +142,7 @@ header #login p {
 }
 
 .sec-22 .location {
-    height: 640px;
+    height: 655px;
     background-color: rgba(236, 236, 235, 0.1);
     margin: 30px auto 0 auto;
     padding: 20px 50px;
@@ -159,7 +159,7 @@ header #login p {
 
 .sec-22 form label {
     color: #ececeb;
-    font-size: 25px;
+    font-size: 22px;
 }
 
 .sec-22 form input {
@@ -167,11 +167,31 @@ header #login p {
     color: #ececeb;
     border: none;
     padding: 10px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+    font-size: 17px;
+    transition: 0.3s;
 }
 
 .sec-22 form input:focus {
     outline: none;
     border-bottom: 2px solid #5d0088;
+    transition: 0.3s;
+}
+
+.sec-22 form select {
+    width: 220px;
+    background-color: #1b1c1e;
+    color: #ececeb;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+    transition: 0.3s;
+}
+
+.sec-22 form select:focus {
+    outline: none;
+    border-bottom: 2px solid #5d0088;
+    transition: 0.3s;
 }
 
 .sec-22 .show {
@@ -188,7 +208,7 @@ header #login p {
 
 .sec-22 .socialmedia {
     width: 100%;
-    height: 500px;
+    height: 480px;
     background-color: rgba(236, 236, 235, 0.1);
     margin: 20px auto 30px auto;
     border-radius: 20px;
@@ -243,7 +263,7 @@ header #login p {
     padding: 0 10px;
     color: #ececeb;
     text-align: center;
-    font-size: 25px;
+    font-size: 24px;
 }
 
 .sec-22 .btn {
@@ -255,7 +275,7 @@ header #login p {
     background-color: #ececeb;
     color: #1b1c1e;
     width: 70px;
-    padding: 10px;
+    padding: 6px 8px;
     border: none;
     border-radius: 10px;
     font-size: 15px;
@@ -264,6 +284,23 @@ header #login p {
 
 .sec-22 .btn button:hover {
     background-color: #bfbfbf;
+}
+
+.sec-22 form textarea {
+    resize: none;
+    width: 95%;
+    height: 80px;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    font-size: 15px;
+}
+
+.sec-22 form textarea:focus {
+    border: none;
+    box-shadow: none;
 }
 
 

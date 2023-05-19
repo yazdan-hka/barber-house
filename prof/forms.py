@@ -28,14 +28,14 @@ class PictureForm(forms.Form):
         label='',
         # required=True,
         validators=[],
-        widget=forms.TextInput(attrs={'autofocus': True, 'placeholder': 'Description', 'class': 'text'})
+        widget=forms.Textarea(attrs={ 'id': 'exampleFormControlTextarea1', 'class': 'form-control'})
     )
     category = forms.ChoiceField(
         choices=braid_types,
         label='',
         # required=True,
         validators=[],
-        widget=forms.Select(attrs={'autofocus': True, 'placeholder': 'Category', 'class': 'text'})
+        widget=forms.Select(attrs={'id': 'category', 'class': 'form-select'})
     )
     image = forms.ImageField(
         label='Choose an image',

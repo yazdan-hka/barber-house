@@ -71,8 +71,8 @@
         transition: .5s all ease-in-out;
     }
     .sec-14 h4 {
-        color: rgb(27, 28, 30, 0);
-        font-size: 90px;
+        color: #ececeb;
+        font-size: 35px;
         transition: .5s all ease-in-out;
     }
     .sec-14 .socialmedia {
@@ -162,8 +162,7 @@
         transition: .5s all ease-in-out;
     }
     .sec-14 h4 {
-        color: rgb(27, 28, 30, 0);
-        font-size: 80px;
+        font-size: 30px;
         transition: .5s all ease-in-out;
     }
     .sec-14 .socialmedia {
@@ -171,13 +170,17 @@
         transition: .5s all ease-in-out;
     }
     .sec-14 .map .location {
-        height: 160px;
+        height: 100%;
         transition: .5s all ease-in-out;
     }
     .sec-14 .map .details-business p {
         color: #1b1c1e;
         font-size: 15px;
         text-align: center;
+        transition: .5s all ease-in-out;
+    }
+    .sec-14 .bio p {
+        font-size: 15px;
         transition: .5s all ease-in-out;
     }
 }
@@ -238,6 +241,10 @@
     .sec-14 .col-md-6 {
         padding: 0 10px !important;
     }
+    .sec-14 .col-12 {
+        margin-top: -10px !important;
+        padding: 0 !important;
+    }
     .sec-14 .details {
         margin-bottom: 20px;
     }
@@ -268,8 +275,7 @@
         transition: .5s all ease-in-out;
     }
     .sec-14 h4 {
-        color: rgb(27, 28, 30, 0);
-        font-size: 90px;
+        font-size: 30px;
         transition: .5s all ease-in-out;
     }
     .sec-14 .socialmedia {
@@ -280,6 +286,20 @@
         color: #1b1c1e;
         font-size: 16px;
         text-align: center;
+        transition: .5s all ease-in-out;
+    }
+    .sec-14 .map {
+        width: 100%;
+        height: 170px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-14 .bio {
+        width: 100%;
+        height: 170px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-14 .bio p {
+        font-size: 16px;
         transition: .5s all ease-in-out;
     }
 }
@@ -362,8 +382,7 @@
         transition: .5s all ease-in-out;
     }
     .sec-14 h4 {
-        color: rgb(27, 28, 30, 0);
-        font-size: 70px;
+        font-size: 25px;
         transition: .5s all ease-in-out;
     }
     .sec-14 .socialmedia {
@@ -374,6 +393,20 @@
         color: #1b1c1e;
         font-size: 15px;
         text-align: center;
+        transition: .5s all ease-in-out;
+    }
+    .sec-14 .map {
+        width: 100%;
+        height: 160px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-14 .bio {
+        width: 100%;
+        height: 160px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-14 .bio p {
+        font-size: 15px;
         transition: .5s all ease-in-out;
     }
 }
@@ -460,8 +493,7 @@
         transition: .5s all ease-in-out;
     }
     .sec-14 h4 {
-        color: rgb(27, 28, 30, 0);
-        font-size: 50px;
+        font-size: 20px;
         transition: .5s all ease-in-out;
     }
     .sec-14 .socialmedia {
@@ -481,6 +513,20 @@
         transition: 0.3s;
         transition: .5s all ease-in-out;
     }
+    .sec-14 .map {
+        width: 100%;
+        height: 150px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-14 .bio {
+        width: 100%;
+        height: 150px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-14 .bio p {
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
 }
 
 
@@ -496,6 +542,14 @@
         background-image: url("../img/section/profile/bg-1.png");
         background-repeat: no-repeat;
         background-size: 100% 100%;
+        transition: .5s all ease-in-out;
+    }
+    .sec-15 .icon img {
+        width: 110px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-15 .icon h3 {
+        font-size: 24px;
         transition: .5s all ease-in-out;
     }
     .sec-15 .title h1 {
@@ -527,6 +581,14 @@
         background-image: url("../img/section/profile/bg-2.png");
         background-repeat: no-repeat;
         background-size: 100% 100%;
+        transition: .5s all ease-in-out;
+    }
+    .sec-15 .icon img {
+        width: 100px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-15 .icon h3 {
+        font-size: 22px;
         transition: .5s all ease-in-out;
     }
     .sec-15 .title h1 {
@@ -574,6 +636,14 @@
         background-image: url("../img/section/profile/bg-3.png");
         background-repeat: no-repeat;
         background-size: 100% 100%;
+        transition: .5s all ease-in-out;
+    }
+    .sec-15 .icon img {
+        width: 110px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-15 .icon h3 {
+        font-size: 23px;
         transition: .5s all ease-in-out;
     }
     .sec-15 .collection {
@@ -625,6 +695,17 @@
         background-image: url("../img/section/profile/bg-4.png");
         background-repeat: no-repeat;
         background-size: 100% 100%;
+        transition: .5s all ease-in-out;
+    }
+    .sec-15 {
+        margin-top: 15px !important;
+    }
+    .sec-15 .icon img {
+        width: 100px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-15 .icon h3 {
+        font-size: 21px;
         transition: .5s all ease-in-out;
     }
     .sec-15 .collection {
@@ -688,6 +769,14 @@
 }
 
 @media only screen and (max-width:492px) {
+    .sec-15 .icon img {
+        width: 90px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-15 .icon h3 {
+        font-size: 19px;
+        transition: .5s all ease-in-out;
+    }
     .sec-15 .collection {
         height: 200px;
         transition: .5s all ease-in-out;
@@ -746,6 +835,17 @@
         background-size: 100% 100%;
         transition: .5s all ease-in-out;
     }
+    .sec-15 {
+        margin-top: 10px !important;
+    }
+    .sec-15 .icon img {
+        width: 80px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-15 .icon h3 {
+        font-size: 17px;
+        transition: .5s all ease-in-out;
+    }
     .sec-15 .collection {
         height: 140px;
         transition: .5s all ease-in-out;
@@ -785,3 +885,681 @@
 
 
 /* End Post & Saved */
+
+
+/* Start Customer profile */
+
+@media only screen and (max-width:992px) {
+    .sec-24 .container {
+        max-width: 420px;
+        margin: 50px auto;
+        transition: .5s all ease-in-out;
+    }
+    .sec-24 .details .details-braider p {
+        margin: 0 !important;
+        padding: 8px 15px !important;
+        font-size: 17px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:572px) {
+    .sec-24 .container {
+        max-width: 390px;
+        margin: 50px auto;
+        transition: .5s all ease-in-out;
+    }
+    .sec-24 .details .img-braider img {
+        width: 130px;
+        height: 130px;
+        border-radius: 100px;
+    }
+    .sec-24 .details .details-braider p {
+        margin: 0 !important;
+        padding: 8px 15px !important;
+        font-size: 16px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:492px) {
+    .sec-24 .container {
+        max-width: 370px;
+        margin: 45px auto;
+        transition: .5s all ease-in-out;
+    }
+    .sec-24 .details .img-braider img {
+        width: 125px;
+        height: 125px;
+        border-radius: 100px;
+    }
+    .sec-24 .details .details-braider p {
+        margin: 0 !important;
+        padding: 8px 15px !important;
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:395px) {
+    .sec-24 .container {
+        max-width: 350px;
+        margin: 40px auto;
+        transition: .5s all ease-in-out;
+    }
+    .sec-24 .details .img-braider img {
+        width: 120px;
+        height: 120px;
+        border-radius: 100px;
+    }
+    .sec-24 .details .details-braider p {
+        margin: 0 !important;
+        padding: 8px 15px !important;
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+
+/* End Customer profile */
+
+
+/* Start Post details */
+
+@media only screen and (max-width:992px) {
+    .sec-20 .upload h3 {
+        margin-top: 10px;
+        font-size: 24px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-20 label {
+        font-size: 19px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-20 .details select {
+        font-size: 16px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .sec-20 .upload h3 {
+        margin-top: 10px;
+        font-size: 25px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-20 label {
+        font-size: 20px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-20 .btn button {
+        font-size: 14px;
+        width: 65px;
+    }
+    .sec-20 .details select {
+        font-size: 17px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:572px) {
+    .sec-20 .upload img {
+        width: 300px;
+        height: 300px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-20 .upload h3 {
+        margin-top: 10px;
+        font-size: 23px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-20 label {
+        font-size: 18px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-20 .details textarea {
+        height: 150px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-20 .details select {
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:492px) {
+    .sec-20 .upload h3 {
+        margin-top: 10px;
+        font-size: 21px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-20 label {
+        font-size: 16px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-20 .details select {
+        font-size: 13px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-20 .btn button {
+        font-size: 13px;
+        width: 55px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:395px) {
+    .sec-20 .upload img {
+        width: 290px;
+        height: 290px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-20 .upload h3 {
+        margin-top: 10px;
+        font-size: 20px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-20 label {
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-20 .details select {
+        font-size: 12px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-20 .details textarea {
+        height: 140px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+
+/* End Post details */
+
+
+/*Start Profile-edits */
+
+@media only screen and (max-width:1200px) {
+    .sec-22 .profile-edit {
+        height: 660px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .profile-edit .back-image {
+        width: 100%;
+        height: 140px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .profile-edit .profile-image img {
+        height: 180px;
+        margin: -90px 0 0 0;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 form label {
+        font-size: 21px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 form input {
+        width: 95%;
+        padding: 8px;
+        font-size: 16px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 form select {
+        width: 95%;
+        background-color: #1b1c1e;
+        color: #ececeb;
+        padding: 10px;
+        border: none;
+        border-bottom: 2px solid rgba(0, 0, 0, 0);
+        transition: 0.3s;
+    }
+    .sec-22 .location {
+        height: 660px;
+        margin: 30px auto 0 auto;
+        padding: 20px 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .location h2 {
+        font-size: 55px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .location .map {
+        width: 90%;
+        height: 45%;
+        margin: 30px auto;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .socialmedia {
+        width: 100%;
+        height: 465px;
+        margin: 20px auto 30px auto;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .socialmedia h2 {
+        color: #ececeb;
+        padding: 20px 0 0 0;
+        font-size: 55px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .socialmedia svg {
+        margin: 0 5px 0 0;
+        font-size: 45px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .socialmedia p {
+        color: #ececeb;
+        text-align: center;
+        font-size: 22px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:992px) {
+    .sec-22 .profile-edit {
+        height: 610px;
+    }
+    .sec-22 .profile-edit .back-image {
+        width: 100%;
+        height: 120px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .profile-edit .profile-image img {
+        height: 160px;
+        margin: -90px 0 0 0;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 form label {
+        font-size: 20px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 form input {
+        width: 95%;
+        padding: 8px;
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .show {
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .location {
+        height: 610px;
+        margin: 30px auto 0 auto;
+        padding: 20px 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .location h2 {
+        font-size: 40px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .location .map {
+        width: 90%;
+        height: 45%;
+        margin: 20px auto;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .socialmedia {
+        width: 100%;
+        height: 410px;
+        margin: 20px auto 30px auto;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .socialmedia h2 {
+        color: #ececeb;
+        padding: 20px 0 0 0;
+        font-size: 40px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .socialmedia svg {
+        margin: 0 5px 0 0;
+        font-size: 45px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .socialmedia div {
+        margin: 15px;
+    }
+    .sec-22 .socialmedia p {
+        color: #ececeb;
+        text-align: center;
+        font-size: 20px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 form textarea {
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .sec-22 .profile-edit {
+        height: 940px;
+    }
+    .sec-22 .profile-edit .back-image {
+        width: 100%;
+        height: 120px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .profile-edit .profile-image img {
+        height: 170px;
+        margin: -90px 0 0 0;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .profile-edit button {
+        background-color: #ececeb;
+        margin: 10px 0;
+        padding: 5px;
+        border: none;
+        border-radius: 10px;
+        font-size: 15px;
+        transition: 0.3s;
+    }
+    .sec-22 form label {
+        font-size: 21px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 form input {
+        width: 80%;
+        padding: 8px;
+        font-size: 16px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 form select {
+        width: 80%;
+        background-color: #1b1c1e;
+        color: #ececeb;
+        padding: 10px;
+        border: none;
+        border-bottom: 2px solid rgba(0, 0, 0, 0);
+        transition: 0.3s;
+    }
+    .sec-22 form .show-number {
+        width: 3%;
+    }
+    .sec-22 form .show-email {
+        width: 3%;
+    }
+    .sec-22 .show {
+        font-size: 15px;
+        text-align: center;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .location {
+        height: 500px;
+        margin: 30px auto 0 auto;
+        padding: 20px 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .location h2 {
+        font-size: 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .location .map {
+        width: 90%;
+        height: 45%;
+        margin: 30px auto;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .socialmedia {
+        width: 100%;
+        height: 500px;
+        text-align: center;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .socialmedia h2 {
+        color: #ececeb;
+        padding: 20px 0 0 0;
+        font-size: 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .socialmedia svg {
+        margin: 0 5px 0 0;
+        font-size: 45px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .socialmedia div {
+        color: #ececeb;
+        margin: 15px;
+    }
+    .sec-22 .socialmedia .three-element {
+        display: block;
+        padding-top: 0px;
+    }
+    .sec-22 .socialmedia .two-element {
+        display: block;
+        padding-top: 0px;
+    }
+    .sec-22 .socialmedia p {
+        color: #ececeb;
+        text-align: center;
+        font-size: 22px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .btn button {
+        font-size: 14px;
+        width: 65px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 form textarea {
+        width: 70%;
+        margin: 20px auto;
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:572px) {
+    .sec-22 .profile-edit {
+        height: 910px;
+    }
+    .sec-22 .profile-edit .back-image {
+        width: 100%;
+        height: 120px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .profile-edit .profile-image img {
+        height: 160px;
+        margin: -90px 0 0 0;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .profile-edit button {
+        background-color: #ececeb;
+        margin: 10px 0;
+        padding: 5px;
+        border: none;
+        border-radius: 10px;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+    .sec-22 form label {
+        font-size: 20px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 form input {
+        width: 80%;
+        padding: 8px;
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 form select {
+        width: 80%;
+        background-color: #1b1c1e;
+        color: #ececeb;
+        padding: 10px;
+        border: none;
+        border-bottom: 2px solid rgba(0, 0, 0, 0);
+        transition: 0.3s;
+    }
+    .sec-22 form .show-number {
+        width: 3%;
+    }
+    .sec-22 form .show-email {
+        width: 3%;
+    }
+    .sec-22 .show {
+        font-size: 14px;
+        text-align: center;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .location {
+        height: 500px;
+        margin: 30px auto 0 auto;
+        padding: 20px 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .location h2 {
+        font-size: 40px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .location .map {
+        width: 90%;
+        height: 45%;
+        margin: 30px auto;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .socialmedia {
+        width: 100%;
+        height: 530px;
+        text-align: center;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .socialmedia h2 {
+        color: #ececeb;
+        padding: 20px 0 0 0;
+        font-size: 40px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .socialmedia svg {
+        margin: 0 5px 0 0;
+        font-size: 45px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .socialmedia div {
+        color: #ececeb;
+        margin: 15px;
+    }
+    .sec-22 .socialmedia p {
+        color: #ececeb;
+        text-align: center;
+        font-size: 20px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .socialmedia .three-element {
+        display: block;
+        padding-top: 0px;
+    }
+    .sec-22 .socialmedia .two-element {
+        display: block;
+        padding-top: 0px;
+    }
+    .sec-22 form textarea {
+        width: 70%;
+        margin: 20px auto;
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:395px) {
+    .sec-22 .profile-edit {
+        height: 880px;
+    }
+    .sec-22 .profile-edit .back-image {
+        width: 100%;
+        height: 120px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .profile-edit .profile-image img {
+        height: 150px;
+        margin: -90px 0 0 0;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .profile-edit button {
+        background-color: #ececeb;
+        margin: 10px 0;
+        padding: 5px;
+        border: none;
+        border-radius: 10px;
+        font-size: 13px;
+        transition: 0.3s;
+    }
+    .sec-22 form label {
+        font-size: 19px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 form input {
+        width: 80%;
+        padding: 8px;
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .show {
+        font-size: 13px;
+        text-align: center;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .location {
+        height: 500px;
+        margin: 30px auto 0 auto;
+        padding: 20px 50px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .location h2 {
+        font-size: 35px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .location .map {
+        width: 90%;
+        height: 45%;
+        margin: 30px auto;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .socialmedia {
+        width: 100%;
+        height: 520px;
+        text-align: center;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .socialmedia h2 {
+        color: #ececeb;
+        padding: 20px 0 0 0;
+        font-size: 35px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .socialmedia svg {
+        margin: 0 5px 0 0;
+        font-size: 45px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .socialmedia div {
+        color: #ececeb;
+        margin: 15px;
+    }
+    .sec-22 .socialmedia p {
+        color: #ececeb;
+        text-align: center;
+        font-size: 18px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 .socialmedia .three-element {
+        display: block;
+        padding-top: 0px;
+    }
+    .sec-22 .socialmedia .two-element {
+        display: block;
+        padding-top: 0px;
+    }
+    .sec-22 .btn button {
+        font-size: 13px;
+        width: 55px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-22 form textarea {
+        width: 70%;
+        margin: 20px auto;
+        font-size: 13px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+
+/*End Profile-edits */
