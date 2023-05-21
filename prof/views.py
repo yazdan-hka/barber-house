@@ -20,7 +20,7 @@ def crop_to_square(image):
     else:
         extra = (height - width) / 2
         img = img.crop((0, extra, width, height - extra))
-    img = img.resize((300, 300))
+    img = img.resize((900, 900))
     buffer = BytesIO()
     img.save(buffer, format='JPEG')
     image_file = InMemoryUploadedFile(buffer, None, 'temp.jpg', 'image/jpeg', buffer.getbuffer().nbytes, None)
@@ -254,7 +254,7 @@ def post_picture(request):
                     if 'description' in form.cleaned_data and form.cleaned_data['description']:
                         post.description = form.cleaned_data['description']
                     post.category = form.cleaned_data['category']
-                    post.image = form.cleaned_data['image']
+                    post.image = crop_to_square(form.cleaned_data['image'])
                     post.braider = request.user
                     post.save()
 
