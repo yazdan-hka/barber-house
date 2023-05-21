@@ -15,6 +15,16 @@
     <link rel="stylesheet" href="{% static 'styles/messages.css' %}">
     <script src="{% static 'scripts/all.min.js' %}"></script>
     <title>Hairstyles</title>
+    <style>
+        .something{
+        color:black;
+        background-color:rgb(20, 20, 20, 30%);
+        padding:20px;
+        text-decoration:bold;
+        border-radius:15px;
+        border:solid black 1px;
+        }
+    </style>
 
 {% endblock %}
 
@@ -54,12 +64,17 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="upload">
-                        <img src="../img/profile/post/11.png" alt="Braide Post ">
                         <h3>Upload post</h3>
+                        <b>
+                            <p style="text-align:left;">* The uploaded image will be cropped as square if it is not already a square.</p>
+                            <p style="text-align:left;">* The uploaded image must be 1MB or less.</p>
+                            <p style="text-align:left;">* Description and category make your post more valuable and attract traffic to your profile.</p>
+
+                        </b>
                     </div>
                 </div>
                 <form method="post" enctype="multipart/form-data">
-                        {{ form.image }}
+                    {{ form.image }}
                     {% csrf_token %}
                     <div class="col-md-6">
                         <div class="details">
@@ -71,12 +86,13 @@
                                 {{ form.category }}
                         </div>
                     </div>
+                <div class="btn">
+<!--                    <button>Cansel</button>-->
+                    <button>Post</button>
+                </div>
                 </form>
             </div>
-            <div class="btn">
-                <button>Cansel</button>
-                <button>Post</button>
-            </div>
+
         </div>
     </section>
 
@@ -88,6 +104,6 @@
 {% block script %}
 
     <script src="{% static 'scripts/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'scripts/script.js' %}"></script>
+    <script src="{% static 'scripts/script.js' %}"></script>z
 
 {% endblock %}

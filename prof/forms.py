@@ -47,7 +47,7 @@ class PictureForm(forms.Form):
             'max_size': 'Please select a file smaller than 2 MB'
         },
         validators=[],
-        widget=forms.ClearableFileInput(attrs={'style': 'color:white;'})
+        widget=forms.ClearableFileInput(attrs={'class': 'something'})
     )
 
 class EditProfile(forms.Form):
