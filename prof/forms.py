@@ -325,7 +325,7 @@ class EditProfile(forms.Form):
     profile_picture = forms.ImageField(
         label='',
         required=False,
-        help_text='Maximum file size is 2 MB',
+        help_text='',
         error_messages={
             'invalid': 'Please select a valid image file',
             'max_size': 'Please select a file smaller than 2 MB'
