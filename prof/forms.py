@@ -357,6 +357,12 @@ class EditProfile(forms.Form):
         # widget=forms.TextInput(attrs={'autofocus': True, 'placeholder': 'Description', 'class': 'text'})
     )
 
+    biography = forms.CharField(
+        max_length=1024,
+        label='',
+        widget=forms.Textarea(attrs={'class':'form-control', 'placeholder':'Text your Biography...'})
+    )
+
     instagram = forms.URLField(
         max_length=234,
         label='',

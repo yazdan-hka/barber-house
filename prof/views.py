@@ -46,6 +46,7 @@ def profile(request, user_name):
         # 'post',
         'publicinfo__first_name',
         'publicinfo__last_name',
+        'publicinfo__biography',
         'locationinfo__city',
         'locationinfo__country',
         'phone_number',
@@ -77,6 +78,7 @@ def edit_profile(request):
         # 'post',
         'publicinfo__first_name',
         'publicinfo__last_name',
+        'publicinfo__biography',
         'locationinfo__city',
         'locationinfo__country',
         'phone_number',
@@ -99,6 +101,7 @@ def edit_profile(request):
     'user_name': dt['user_name'],
     'first_name': dt['publicinfo__first_name'],
     'last_name': dt['publicinfo__last_name'],
+    'biography': dt['publicinfo__biography'],
     'city': dt['locationinfo__city'],
     'country': dt['locationinfo__country'],
     # '': dt['phone_number'],
@@ -124,8 +127,10 @@ def edit_profile(request):
                 profile_picture = request.FILES['profile_picture']
             except:
                 profile_picture = dt['publicinfo__profile_picture']
+
             first_name = form_data['first_name'].value()
             last_name = form_data['last_name'].value()
+            biography = form_data['biography'].value()
             city = form_data['city'].value()
             country = form_data['country'].value()
             instagram = form_data['instagram'].value()
@@ -135,6 +140,8 @@ def edit_profile(request):
             youtube = form_data['youtube'].value()
             business_name = form_data['business_name'].value()
             website = form_data['website'].value()
+
+
 
             if instagram == '':
                 instagram = None
@@ -151,6 +158,9 @@ def edit_profile(request):
             if tiktok == '':
                 tiktok = None
 
+            if biography == '':
+                biography = None
+
             braider = Braider.objects.get(user_name=dt['user_name'])
             print('\n', type(braider), '\n')
 
@@ -164,11 +174,12 @@ def edit_profile(request):
             else:
                 pass
 
-            if dict_values['first_name'] != first_name or dict_values['last_name'] != last_name or dict_values['profile_picture'] != profile_picture:
+            if dict_values['biography'] != biography or dict_values['first_name'] != first_name or dict_values['last_name'] != last_name or dict_values['profile_picture'] != profile_picture:
                 print('pub info is fucking changed.')
                 try:
                     braider.publicinfo.first_name = first_name
                     braider.publicinfo.last_name = last_name
+                    braider.publicinfo.biography = biography
                     if braider.publicinfo.profile_picture != profile_picture:
                         braider.publicinfo.profile_picture.delete()
                         picture = crop_to_square(profile_picture)
