@@ -91,6 +91,9 @@ class Braider(models.Model):
         token = secrets.token_urlsafe(32)
         verification = Verification(token=token, rel=self)
 
+        if 'pbkdf2_sha256$' not in self.password:
+            self.password = make_password(self.password)
+
         super().save()
         verification.save()
 class Post(models.Model):
