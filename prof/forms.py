@@ -28,14 +28,14 @@ class PictureForm(forms.Form):
         label='',
         # required=True,
         validators=[],
-        widget=forms.TextInput(attrs={'autofocus': True, 'placeholder': 'Description', 'class': 'text'})
+        widget=forms.Textarea(attrs={ 'id': 'exampleFormControlTextarea1', 'class': 'form-control'})
     )
     category = forms.ChoiceField(
         choices=braid_types,
         label='',
         # required=True,
         validators=[],
-        widget=forms.Select(attrs={'autofocus': True, 'placeholder': 'Category', 'class': 'text'})
+        widget=forms.Select(attrs={'id': 'category', 'class': 'form-select'})
     )
     image = forms.ImageField(
         label='Choose an image',
@@ -47,7 +47,7 @@ class PictureForm(forms.Form):
             'max_size': 'Please select a file smaller than 2 MB'
         },
         validators=[],
-        widget=forms.ClearableFileInput(attrs={'style': 'color:white;'})
+        widget=forms.ClearableFileInput(attrs={'class': 'something'})
     )
 
 class EditProfile(forms.Form):
@@ -325,7 +325,7 @@ class EditProfile(forms.Form):
     profile_picture = forms.ImageField(
         label='',
         required=False,
-        help_text='Maximum file size is 2 MB',
+        help_text='',
         error_messages={
             'invalid': 'Please select a valid image file',
             'max_size': 'Please select a file smaller than 2 MB'
@@ -355,6 +355,12 @@ class EditProfile(forms.Form):
         required=True,
         validators=[],
         # widget=forms.TextInput(attrs={'autofocus': True, 'placeholder': 'Description', 'class': 'text'})
+    )
+
+    biography = forms.CharField(
+        max_length=1024,
+        label='',
+        widget=forms.Textarea(attrs={'class':'form-control', 'placeholder':'Text your Biography...'})
     )
 
     instagram = forms.URLField(

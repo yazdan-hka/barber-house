@@ -1,0 +1,77 @@
+/* Main color #1b1c1e
+Secend color #ececeb
+Third color #bfbfbf
+other #5d0088 & #003380
+width,height,background,margin,padding,font*/
+
+
+/* Start General Setting */
+
+@font-face {
+    font-family: Open Sans regular;
+    src: url("../Fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: Open Sans bold;
+    src: url("../Fonts/OpenSans-Semibold.ttf");
+}
+
+body {
+    font-family: Open Sans regular;
+    background-color: #1b1c1e;
+}
+
+
+/* End General Setting */
+
+
+/* Start Sec23 */
+
+.sec-23 .col-md-6 {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.sec-23 .braider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #5d0088;
+    color: #1b1c1e;
+    text-align: center;
+}
+
+.sec-23 .customer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #003380;
+    color: #1b1c1e;
+    text-align: center;
+}
+
+.sec-23 .title h2 {
+    font-size: 50px;
+    padding: 0 20px !important;
+    font-family: open sans bold;
+}
+
+.sec-23 p {
+    padding: 20px 40px;
+    font-size: 18px;
+}
+
+.sec-23 button {
+    background-color: #ececeb;
+    padding: 5px;
+    border: none;
+    font-size: 17px;
+    transition: 0.3s;
+}
+
+.sec-23 button:hover {
+    background-color: #bfbfbf;
+    transition: 0.3s;
+}

@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
         <link rel="stylesheet" href="{% static 'styles/messages.css' %}">
         <link rel="stylesheet" href="{% static 'styles/profile-edits.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/responsiveprofile.css' %}">
         <link rel="stylesheet" href="{% static 'styles/responsive.css' %}">
         <script src="{% static 'scripts/all.min.js' %}"></script>
         <title>Hairstyles</title>
@@ -33,7 +34,7 @@
                                 <img src="{% static 'img/logo.PNG' %}" alt="braid starz logo">
                             {% endif %}
                                 </div>
-                                <label for="#">Profile Picture</label>
+<!--                                <label for="#">Profile Picture</label>-->
 
                                 {{ form.profile_picture }}
 
@@ -76,6 +77,8 @@
 <!--                                        <br>-->
 <!--                                        <input type="checkbox" id="Email" value="Email" class="show-email">-->
 <!--                                        <label for="Email" class="show">Show on profile</label>-->
+                                        {{ form.biography }}
+<!--                                        <textarea class="form-control" placeholder="Text your Biography..."></textarea>-->
                                         <br>
                                     </div>
                                 </div>

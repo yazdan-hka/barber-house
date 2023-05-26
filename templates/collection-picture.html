@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 {% load static %}
 
@@ -50,30 +49,35 @@
                         </div>
                         <div class="description">
                             <p>{{ post.description }}</p>
+                            <p>Category: <span><b>{{ post.category }}</b></span></p>
                         </div>
-                        <div class="icon">
-                            <a href="#"><img src="{% static 'img/collection/icons/like.png' %}" alt="Like icon"></a>
-                            <a href="#"><img src="{% static 'img/collection/icons/comment.png' %}" alt="Comment icon"></a>
-                            <a href="#"><img src="{% static 'img/collection/icons/download.png' %}" alt="Download icon"></a>
-                            <a href="#"><img src="{% static 'img/collection/icons/share.png' %}" alt="Share icon"></a>
-                        </div>
-                        <div class="comment-title">
-                            <h2>Comments</h2>
-                        </div>
-                        <div class="comment">
-                            <div class="title-1">
-                                <div class="profile-1">
-                                    <img src="{% static 'img/collection/profile/2.png' %}" alt="Customer Profile">
-                                </div>
-                                <div class="name-1">
-                                    <h3>David</h3>
-                                </div>
-                            </div>
-                            <div class="comments-1">
-                                <p>This is a wonderfull braid i love it! This is a wonderfull braid i love it! This is a wonderfull braid i love it! This is a wonderfull braid i love it!</p>
-                            </div>
+<!--                        <div class="icon">-->
+<!--                            <a href="#"><img src="{% static 'img/collection/icons/like.png' %}" alt="Like icon"></a>-->
+<!--                            <a href="#"><img src="{% static 'img/collection/icons/comment.png' %}" alt="Comment icon"></a>-->
+<!--                            <a href="#"><img src="{% static 'img/collection/icons/download.png' %}" alt="Download icon"></a>-->
+<!--                            <a href="#"><img src="{% static 'img/collection/icons/share.png' %}" alt="Share icon"></a>-->
+<!--                            <a href="#"><img src="{% static 'img/collection/icons/edit.png' %}" alt="Edit icon"></a>-->
+<!--                            <a href="#"><img src="{% static 'img/collection/icons/delete.png' %}" alt="Delete icon"></a>-->
+<!--                        </div>-->
 
-                        </div>
+
+<!--                        <div class="comment-title">-->
+<!--                            <h2>Comments</h2>-->
+<!--                        </div>-->
+<!--                        <div class="comment">-->
+<!--                            <div class="title-1">-->
+<!--                                <div class="profile-1">-->
+<!--                                    <img src="{% static 'img/collection/profile/2.png' %}" alt="Customer Profile">-->
+<!--                                </div>-->
+<!--                                <div class="name-1">-->
+<!--                                    <h3>David</h3>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="comments-1">-->
+<!--                                <p>This is a wonderfull braid i love it! This is a wonderfull braid i love it! This is a wonderfull braid i love it! This is a wonderfull braid i love it!</p>-->
+<!--                            </div>-->
+
+<!--                        </div>-->
                     </div>
                 </div>
             </div>

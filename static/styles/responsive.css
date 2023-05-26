@@ -530,6 +530,12 @@
         font-size: 14px;
         transition: .5s all ease-in-out;
     }
+    footer p>a {
+        color: #ececeb;
+        text-decoration: none;
+        font-size: 16px;
+        transition: 0.3s;
+    }
     footer .icon svg {
         font-size: 23px;
         transition: .5s all ease-in-out;
@@ -927,6 +933,12 @@
     footer .menu ul li a {
         font-size: 13px;
         transition: .5s all ease-in-out;
+    }
+    footer p>a {
+        color: #ececeb;
+        text-decoration: none;
+        font-size: 14px;
+        transition: 0.3s;
     }
     footer .icon svg {
         font-size: 21px;
@@ -1604,8 +1616,11 @@
         transition: .5s all ease-in-out;
     }
     .sec-6 .description p {
-        font-size: 14px;
+        font-size: 16px;
         transition: .5s all ease-in-out;
+    }
+    .sec-6 .description span {
+        font-size: 14px;
     }
     .sec-6 .comment-title h2 {
         padding: 50px 10px 0 10px;
@@ -1627,7 +1642,7 @@
     }
     .sec-6 .comments-1 p {
         padding: 0 20px 20px 50px;
-        font-size: 13px;
+        font-size: 15px;
         border-bottom: 1px solid #1b1c1e;
         transition: .5s all ease-in-out;
     }
@@ -1687,8 +1702,11 @@
         transition: .5s all ease-in-out;
     }
     .sec-6 .description p {
-        font-size: 16px;
+        font-size: 17px;
         transition: .5s all ease-in-out;
+    }
+    .sec-6 .description span {
+        font-size: 15px;
     }
     .sec-6 .profile-1 {
         width: 10%;
@@ -1722,7 +1740,7 @@
     }
     .sec-6 .comments-1 p {
         padding: 0 20px 20px 50px;
-        font-size: 15px;
+        font-size: 16px;
         border-bottom: 1px solid #1b1c1e;
         transition: .5s all ease-in-out;
     }
@@ -1765,8 +1783,11 @@
         transition: .5s all ease-in-out;
     }
     .sec-6 .description p {
-        font-size: 14px;
+        font-size: 15px;
         transition: .5s all ease-in-out;
+    }
+    .sec-6 .description span {
+        font-size: 13px;
     }
     .sec-6 .profile-1 {
         width: 10%;
@@ -1801,7 +1822,7 @@
     }
     .sec-6 .comments-1 p {
         padding: 0 20px 20px 50px;
-        font-size: 13px;
+        font-size: 14px;
         border-bottom: 1px solid #1b1c1e;
         transition: .5s all ease-in-out;
     }
@@ -1844,8 +1865,11 @@
         transition: .5s all ease-in-out;
     }
     .sec-6 .description p {
-        font-size: 12px;
+        font-size: 13px;
         transition: .5s all ease-in-out;
+    }
+    .sec-6 .description span {
+        font-size: 11px;
     }
     .sec-6 .profile-1 {
         width: 10%;
@@ -1880,7 +1904,7 @@
     }
     .sec-6 .comments-1 p {
         padding: 0 20px 20px 50px;
-        font-size: 11px;
+        font-size: 12px;
         border-bottom: 1px solid #1b1c1e;
         transition: .5s all ease-in-out;
     }
@@ -3556,559 +3580,545 @@
 /* End Registerfirst */
 
 
-/* Start Post-details */
-
-@media only screen and (max-width:768px) {
-    .sec-20 .post-details {
-        width: 550px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-20 .post img {
-        width: 450px;
-        height: 450px;
-        margin: 18px 0 0 0;
-        border-radius: 30px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-20 textarea {
-        resize: none;
-        width: 450px;
-        height: 180px;
-        margin: 18px auto;
-        border-radius: 15px;
-        box-shadow: none !important;
-        font-size: 14px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-20 button {
-        background-color: #5d0088;
-        color: #ececeb;
-        padding: 4px 9px;
-        border: none;
-        border-radius: 10px;
-        font-size: 18px;
-        transition: .5s all ease-in-out;
-    }
-}
-
-@media only screen and (max-width:600px) {
-    .sec-20 .post-details {
-        width: 500px;
-        transition: .5s all ease-in-out;
-    }
-}
-
-@media only screen and (max-width:572px) {
-    .sec-20 .post-details {
-        width: 450px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-20 .post img {
-        width: 350px;
-        height: 350px;
-        margin: 16px 0 0 0;
-        border-radius: 30px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-20 textarea {
-        resize: none;
-        width: 350px;
-        height: 160px;
-        margin: 16px auto;
-        border-radius: 15px;
-        box-shadow: none !important;
-        font-size: 13px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-20 button {
-        background-color: #5d0088;
-        color: #ececeb;
-        padding: 3px 8px;
-        border: none;
-        border-radius: 10px;
-        font-size: 16px;
-        transition: .5s all ease-in-out;
-    }
-}
-
-@media only screen and (max-width:490px) {
-    .sec-20 .post-details {
-        width: 400px;
-        transition: .5s all ease-in-out;
-    }
-}
-
-@media only screen and (max-width:450px) {
-    .sec-20 .post-details {
-        width: 380px;
-        transition: .5s all ease-in-out;
-    }
-}
-
-@media only screen and (max-width:395px) {
-    .sec-20 .post-details {
-        width: 350px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-20 .post img {
-        width: 300px;
-        height: 300px;
-        margin: 14px 0 0 0;
-        border-radius: 30px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-20 textarea {
-        resize: none;
-        width: 300px;
-        height: 140px;
-        margin: 14px auto;
-        border-radius: 15px;
-        box-shadow: none !important;
-        font-size: 12px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-20 button {
-        background-color: #5d0088;
-        color: #ececeb;
-        padding: 2px 7px;
-        border: none;
-        border-radius: 10px;
-        font-size: 14px;
-        transition: .5s all ease-in-out;
-    }
-}
-
-
-/* End Post-details */
-
-
-/*Start Profile-edits */
+/* Start Question */
 
 @media only screen and (max-width:1200px) {
-    .sec-22 .profile-edit {
-        height: 630px;
-    }
-    .sec-22 .profile-edit .back-image {
-        width: 100%;
-        height: 140px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .profile-edit .profile-image img {
-        height: 180px;
-        margin: -90px 0 0 0;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 form label {
-        font-size: 23px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 form input {
-        width: 95%;
-        padding: 8px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .location {
-        height: 630px;
-        margin: 30px auto 0 auto;
-        padding: 20px 50px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .location h2 {
-        font-size: 55px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .location .map {
-        width: 90%;
-        height: 45%;
-        margin: 30px auto;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .socialmedia {
-        width: 100%;
-        height: 380px;
-        margin: 20px auto 30px auto;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .socialmedia h2 {
-        color: #ececeb;
-        padding: 20px 0 0 0;
-        font-size: 55px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .socialmedia svg {
-        margin: 0 5px 0 0;
+    .sec-23 .title h2 {
         font-size: 45px;
+        font-family: open sans bold;
         transition: .5s all ease-in-out;
     }
-    .sec-22 .socialmedia p {
-        color: #ececeb;
-        text-align: center;
-        font-size: 23px;
+    .sec-23 p {
+        padding: 20px 40px;
+        font-size: 17px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-23 button {
+        background-color: #ececeb;
+        padding: 5px;
+        border: none;
+        font-size: 16px;
+        transition: 0.3s;
         transition: .5s all ease-in-out;
     }
 }
 
 @media only screen and (max-width:992px) {
-    .sec-22 .profile-edit {
-        height: 590px;
-    }
-    .sec-22 .profile-edit .back-image {
-        width: 100%;
-        height: 120px;
+    .sec-23 .title h2 {
+        font-size: 40px;
+        font-family: open sans bold;
         transition: .5s all ease-in-out;
     }
-    .sec-22 .profile-edit .profile-image img {
-        height: 160px;
-        margin: -90px 0 0 0;
+    .sec-23 p {
+        padding: 20px 40px;
+        font-size: 16px;
         transition: .5s all ease-in-out;
     }
-    .sec-22 form label {
-        font-size: 22px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 form input {
-        width: 95%;
-        padding: 8px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .show {
+    .sec-23 button {
+        background-color: #ececeb;
+        padding: 5px;
+        border: none;
         font-size: 15px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .location {
-        height: 590px;
-        margin: 30px auto 0 auto;
-        padding: 20px 50px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .location h2 {
-        font-size: 40px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .location .map {
-        width: 90%;
-        height: 45%;
-        margin: 20px auto;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .socialmedia {
-        width: 100%;
-        height: 330px;
-        margin: 20px auto 30px auto;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .socialmedia h2 {
-        color: #ececeb;
-        padding: 20px 0 0 0;
-        font-size: 40px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .socialmedia svg {
-        margin: 0 5px 0 0;
-        font-size: 45px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .socialmedia div {
-        margin: 15px;
-    }
-    .sec-22 .socialmedia p {
-        color: #ececeb;
-        text-align: center;
-        font-size: 21px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .btn button {
-        font-size: 14px;
-        width: 65px;
+        transition: 0.3s;
         transition: .5s all ease-in-out;
     }
 }
 
 @media only screen and (max-width:768px) {
-    .sec-22 .profile-edit {
-        height: 850px;
+    .sec-23 .braider {
+        height: 400px;
     }
-    .sec-22 .profile-edit .back-image {
-        width: 100%;
-        height: 120px;
+    .sec-23 .customer {
+        height: 400px;
+    }
+    .sec-23 .title h2 {
+        font-size: 45px;
+        font-family: open sans bold;
         transition: .5s all ease-in-out;
     }
-    .sec-22 .profile-edit .profile-image img {
-        height: 170px;
-        margin: -90px 0 0 0;
+    .sec-23 p {
+        padding: 20px 40px;
+        font-size: 17px;
         transition: .5s all ease-in-out;
     }
-    .sec-22 .profile-edit button {
+    .sec-23 button {
         background-color: #ececeb;
-        margin: 10px 0;
         padding: 5px;
         border: none;
-        border-radius: 10px;
-        font-size: 15px;
+        font-size: 16px;
         transition: 0.3s;
-    }
-    .sec-22 form label {
-        font-size: 23px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 form input {
-        width: 80%;
-        padding: 8px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 form .show-number {
-        width: 3%;
-    }
-    .sec-22 form .show-email {
-        width: 3%;
-    }
-    .sec-22 .show {
-        font-size: 15px;
-        text-align: center;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .location {
-        height: 500px;
-        margin: 30px auto 0 auto;
-        padding: 20px 50px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .location h2 {
-        font-size: 50px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .location .map {
-        width: 90%;
-        height: 45%;
-        margin: 30px auto;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .socialmedia {
-        width: 100%;
-        height: 450px;
-        text-align: center;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .socialmedia h2 {
-        color: #ececeb;
-        padding: 20px 0 0 0;
-        font-size: 50px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .socialmedia svg {
-        margin: 0 5px 0 0;
-        font-size: 45px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .socialmedia div {
-        color: #ececeb;
-        margin: 15px;
-    }
-    .sec-22 .socialmedia .three-element {
-        display: block;
-        padding-top: 0px;
-    }
-    .sec-22 .socialmedia .two-element {
-        display: block;
-        padding-top: 0px;
-    }
-    .sec-22 .btn button {
-        font-size: 13px;
-        width: 60px;
         transition: .5s all ease-in-out;
     }
 }
 
 @media only screen and (max-width:572px) {
-    .sec-22 .profile-edit {
-        height: 820px;
+    .sec-23 .braider {
+        height: 400px;
     }
-    .sec-22 .profile-edit .back-image {
-        width: 100%;
-        height: 120px;
+    .sec-23 .customer {
+        height: 400px;
+    }
+    .sec-23 .title h2 {
+        font-size: 40px;
+        font-family: open sans bold;
         transition: .5s all ease-in-out;
     }
-    .sec-22 .profile-edit .profile-image img {
-        height: 160px;
-        margin: -90px 0 0 0;
+    .sec-23 p {
+        padding: 20px 40px;
+        font-size: 16px;
         transition: .5s all ease-in-out;
     }
-    .sec-22 .profile-edit button {
+    .sec-23 button {
         background-color: #ececeb;
-        margin: 10px 0;
         padding: 5px;
         border: none;
-        border-radius: 10px;
+        font-size: 15px;
+        transition: 0.3s;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:492px) {
+    .sec-23 .braider {
+        height: 400px;
+    }
+    .sec-23 .customer {
+        height: 400px;
+    }
+    .sec-23 .title h2 {
+        font-size: 35px;
+        font-family: open sans bold;
+        transition: .5s all ease-in-out;
+    }
+    .sec-23 p {
+        padding: 20px 40px;
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-23 button {
+        background-color: #ececeb;
+        padding: 5px;
+        border: none;
         font-size: 14px;
         transition: 0.3s;
-    }
-    .sec-22 form label {
-        font-size: 21px;
         transition: .5s all ease-in-out;
     }
-    .sec-22 form input {
-        width: 80%;
-        padding: 8px;
+}
+
+@media only screen and (max-width:492px) {
+    .sec-23 .braider {
+        height: 400px;
+    }
+    .sec-23 .customer {
+        height: 400px;
+    }
+    .sec-23 .title h2 {
+        font-size: 30px;
+        font-family: open sans bold;
         transition: .5s all ease-in-out;
     }
-    .sec-22 form .show-number {
-        width: 3%;
-    }
-    .sec-22 form .show-email {
-        width: 3%;
-    }
-    .sec-22 .show {
+    .sec-23 p {
+        padding: 20px 40px;
         font-size: 14px;
-        text-align: center;
         transition: .5s all ease-in-out;
     }
-    .sec-22 .location {
-        height: 500px;
-        margin: 30px auto 0 auto;
-        padding: 20px 50px;
+    .sec-23 button {
+        background-color: #ececeb;
+        padding: 5px;
+        border: none;
+        font-size: 13px;
+        transition: 0.3s;
         transition: .5s all ease-in-out;
     }
-    .sec-22 .location h2 {
-        font-size: 40px;
+}
+
+
+/* End Question */
+
+
+/* Start Privacy and Policy also Condition */
+
+@media only screen and (max-width:1200px) {
+    .sec-25 h1 {
+        padding: 28px 0;
+        font-size: 70px;
         transition: .5s all ease-in-out;
     }
-    .sec-22 .location .map {
-        width: 90%;
-        height: 45%;
-        margin: 30px auto;
+    .sec-25 p {
+        padding: 0 90px;
+        font-size: 20px;
         transition: .5s all ease-in-out;
     }
-    .sec-22 .socialmedia {
-        width: 100%;
-        height: 450px;
-        text-align: center;
+    .sec-25 h2 {
+        padding: 0 90px;
+        font-size: 55px;
         transition: .5s all ease-in-out;
     }
-    .sec-22 .socialmedia h2 {
-        color: #ececeb;
-        padding: 20px 0 0 0;
-        font-size: 40px;
+    .sec-25 ul li {
+        font-size: 20px;
         transition: .5s all ease-in-out;
     }
-    .sec-22 .socialmedia svg {
-        margin: 0 5px 0 0;
+}
+
+@media only screen and (max-width:992px) {
+    .sec-25 h1 {
+        padding: 26px 0;
+        font-size: 60px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-25 p {
+        padding: 0 80px;
+        font-size: 18px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-25 h2 {
+        padding: 0 80px;
         font-size: 45px;
         transition: .5s all ease-in-out;
     }
-    .sec-22 .socialmedia div {
-        color: #ececeb;
-        margin: 15px;
-    }
-    .sec-22 .socialmedia p {
-        color: #ececeb;
-        text-align: center;
-        font-size: 21px;
+    .sec-25 ul li {
+        font-size: 20px;
         transition: .5s all ease-in-out;
     }
-    .sec-22 .socialmedia .three-element {
-        display: block;
-        padding-top: 0px;
+}
+
+@media only screen and (max-width:572px) {
+    .sec-25 h1 {
+        padding: 24px 0;
+        font-size: 50px;
+        transition: .5s all ease-in-out;
     }
-    .sec-22 .socialmedia .two-element {
-        display: block;
-        padding-top: 0px;
+    .sec-25 p {
+        padding: 0 70px;
+        font-size: 16px;
+        transition: .5s all ease-in-out;
     }
-    .sec-22 .btn button {
-        font-size: 12px;
-        width: 55px;
+    .sec-25 h2 {
+        padding: 0 70px;
+        font-size: 40px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-25 ul li {
+        font-size: 16px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:492px) {
+    .sec-25 h1 {
+        padding: 22px 0;
+        font-size: 40px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-25 p {
+        padding: 0 60px;
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-25 h2 {
+        padding: 0 60px;
+        font-size: 30px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-25 ul li {
+        font-size: 14px;
         transition: .5s all ease-in-out;
     }
 }
 
 @media only screen and (max-width:395px) {
-    .sec-22 .profile-edit {
-        height: 780px;
-    }
-    .sec-22 .profile-edit .back-image {
-        width: 100%;
-        height: 120px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .profile-edit .profile-image img {
-        height: 150px;
-        margin: -90px 0 0 0;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .profile-edit button {
-        background-color: #ececeb;
-        margin: 10px 0;
-        padding: 5px;
-        border: none;
-        border-radius: 10px;
-        font-size: 13px;
-        transition: 0.3s;
-    }
-    .sec-22 form label {
-        font-size: 19px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 form input {
-        width: 80%;
-        padding: 8px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .show {
-        font-size: 13px;
-        text-align: center;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .location {
-        height: 500px;
-        margin: 30px auto 0 auto;
-        padding: 20px 50px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .location h2 {
+    .sec-25 h1 {
+        padding: 20px 0;
         font-size: 35px;
         transition: .5s all ease-in-out;
     }
-    .sec-22 .location .map {
-        width: 90%;
-        height: 45%;
-        margin: 30px auto;
+    .sec-25 p {
+        padding: 0 55px;
+        font-size: 13px;
         transition: .5s all ease-in-out;
     }
-    .sec-22 .socialmedia {
-        width: 100%;
-        height: 440px;
-        text-align: center;
+    .sec-25 h2 {
+        padding: 0 55px;
+        font-size: 25px;
         transition: .5s all ease-in-out;
     }
-    .sec-22 .socialmedia h2 {
-        color: #ececeb;
-        padding: 20px 0 0 0;
-        font-size: 35px;
+    .sec-25 ul li {
+        font-size: 13px;
         transition: .5s all ease-in-out;
-    }
-    .sec-22 .socialmedia svg {
-        margin: 0 5px 0 0;
-        font-size: 45px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .socialmedia div {
-        color: #ececeb;
-        margin: 15px;
-    }
-    .sec-22 .socialmedia p {
-        color: #ececeb;
-        text-align: center;
-        font-size: 19px;
-        transition: .5s all ease-in-out;
-    }
-    .sec-22 .socialmedia .three-element {
-        display: block;
-        padding-top: 0px;
-    }
-    .sec-22 .socialmedia .two-element {
-        display: block;
-        padding-top: 0px;
     }
 }
 
 
-/*End Profile-edits */
+/* End Privcy and Policy also Condition */
+
+
+/* Start Reset1 & Reset2*/
+
+@media only screen and (max-width:1200px) {
+    .sec-26 {
+        width: 100%;
+        height: 750px;
+        background-image: url("../img/section/sec16/sec16-2.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        text-align: center;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset {
+        width: 750px;
+        padding-top: 140px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset .reset-password h1 {
+        font-size: 48px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset p {
+        font-size: 17px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:992px) {
+    .sec-26 {
+        width: 100%;
+        height: 750px;
+        background-image: url("../img/section/sec16/sec16-3.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        text-align: center;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset {
+        width: 700px;
+        padding-top: 140px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset .reset-password h1 {
+        font-size: 46px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset p {
+        font-size: 16px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset label {
+        color: #ececeb;
+        margin-bottom: 5px;
+        font-size: 17px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset input {
+        width: 280px;
+        padding: 6px 10px;
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset .btn button {
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .sec-26 {
+        width: 100%;
+        height: 750px;
+        background-image: url("../img/section/sec16/sec16-4.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        text-align: center;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset {
+        width: 500px;
+        padding-top: 140px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset img {
+        width: 90px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset .reset-password h1 {
+        font-size: 45px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset p {
+        font-size: 16px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset .btn button {
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:572px) {
+    .sec-26 {
+        width: 100%;
+        height: 750px;
+        background-image: url("../img/section/sec16/sec16-5.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        text-align: center;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset {
+        width: 350px;
+        padding-top: 110px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset img {
+        width: 80px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset .reset-password h1 {
+        font-size: 40px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset p {
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset label {
+        color: #ececeb;
+        margin-bottom: 5px;
+        font-size: 16px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset input {
+        width: 260px;
+        padding: 6px 10px;
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset .btn button {
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+@media only screen and (max-width:395px) {
+    .sec-26 {
+        width: 100%;
+        height: 750px;
+        background-image: url("../img/section/sec16/sec16-6.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        text-align: center;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset {
+        width: 300px;
+        padding-top: 110px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset img {
+        width: 70px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset .reset-password h1 {
+        font-size: 35px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset p {
+        font-size: 14px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset label {
+        color: #ececeb;
+        margin-bottom: 5px;
+        font-size: 15px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset input {
+        width: 240px;
+        padding: 6px 10px;
+        font-size: 13px;
+        transition: .5s all ease-in-out;
+    }
+    .sec-26 .reset .btn button {
+        margin-top: 10px;
+        font-size: 13px;
+        transition: .5s all ease-in-out;
+    }
+}
+
+
+/* End Reset1 & Reset2 */
+
+
+footer {
+    background-color: #1b1c1e;
+}
+
+footer .menu {
+    width: 100%;
+    height: 250px;
+}
+
+footer .menu ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    margin-top: 35px;
+    padding-left: 0px !important;
+}
+
+footer .menu ul li h1 {
+    color: #ececeb;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+footer .menu ul li a {
+    color: #ececeb;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+footer .menu ul li a:hover {
+    color: #bfbfbf;
+    transition: 0.3s;
+}
+
+footer p {
+    text-align: center;
+}
+
+footer p>a {
+    color: #ececeb;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+footer p>a:hover {
+    color: #bfbfbf;
+    transition: 0.3s;
+}
+
+footer .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: #bfbfbf !important;
+    text-align: center;
+}
+
+footer .icon svg {
+    color: #1b1c1e;
+    padding: 0 8px;
+    font-size: 25px;
+    transition: 0.3s;
+}
+
+footer .icon svg:hover {
+    color: #ececeb;
+    transition: 0.3s;
+}

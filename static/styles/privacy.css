@@ -18,115 +18,12 @@ width,height,background,margin,padding,font*/
 }
 
 body {
-    width: 100%;
-    height: 800px;
-    background-image: url("../img/section/profile/bg.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-color: #1b1c1e;
     font-family: Open Sans regular;
+    background-color: #ececeb;
 }
 
 
 /* End General Setting */
-
-
-/* Start Sec 20 */
-
-.sec-20 .container {
-    max-width: 1000px;
-    background-color: rgba(236, 236, 235, 0.1);
-    margin: 50px auto;
-    padding: 30px;
-    border-radius: 20px;
-}
-
-.sec-20 .upload {
-    text-align: center;
-}
-
-.sec-20 .upload img {
-    border-radius: 20px;
-}
-
-.sec-20 .upload h3 {
-    color: #1b1c1e;
-    margin-top: 10px;
-    font-family: open sans bold;
-    font-size: 25px;
-}
-
-.sec-20 label {
-    color: #1b1c1e;
-    font-family: open sans bold;
-    font-size: 20px;
-}
-
-.sec-20 .details textarea {
-    width: 100%;
-    height: 200px;
-    background-color: #1b1c1e;
-    margin-bottom: 10px;
-    color: #ececeb;
-    resize: none;
-    box-shadow: none;
-    font-size: 16px;
-    border: none;
-    border-radius: 0;
-    border-bottom: 2px solid rgba(0, 0, 0, 0);
-    transition: 0.3s;
-}
-
-.sec-20 .details textarea:focus {
-    border: none;
-    box-shadow: none;
-    outline: none;
-    border-bottom: 2px solid #5d0088;
-    transition: 0.3s;
-}
-
-.sec-20 .details select {
-    width: 50%;
-    background-color: #1b1c1e;
-    color: #ececeb;
-    box-shadow: none;
-    border: none;
-    border-radius: 0;
-    border-bottom: 2px solid rgba(0, 0, 0, 0);
-    font-size: 17px;
-    transition: 0.3s;
-}
-
-.sec-20 .details select:focus {
-    border: none;
-    box-shadow: none;
-    outline: none;
-    border-bottom: 2px solid #5d0088;
-    transition: 0.3s;
-}
-
-.sec-20 .btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.sec-20 .btn button {
-    background-color: #1b1c1e;
-    color: #ececeb;
-    width: 70px;
-    margin: 10px 2px 0 2px;
-    padding: 6px 8px;
-    border: none;
-    border-radius: 10px;
-    font-size: 15px;
-    transition: 0.3s;
-}
-
-.sec-20 .btn button:hover {
-    color: #bfbfbf;
-    transition: 0.3s;
-}
 
 
 /* Start Navbar */
@@ -182,6 +79,13 @@ header .navbars a:hover {
     transition: 0.3s;
 }
 
+header #login img {
+    width: 35px;
+    height: 35px;
+    margin-top: 1px;
+    border-radius: 1000px;
+}
+
 header #login p {
     display: inline;
     color: #ececeb;
@@ -193,10 +97,38 @@ header #login p {
 /* End Navbar */
 
 
-/* Start Sec20 */
+/* Start Sec25 */
+
+.sec-25 h1 {
+    color: #1b1c1e;
+    padding: 30px 0;
+    text-align: center;
+    font-family: open sans bold;
+    font-size: 80px;
+}
+
+.sec-25 p {
+    color: #1b1c1e;
+    padding: 0 100px;
+    text-align: justify;
+    font-size: 22px;
+}
+
+.sec-25 h2 {
+    font-size: 60px;
+    padding: 0 100px;
+}
+
+.sec-25 ul {
+    padding: 0 100px;
+}
+
+.sec-25 ul li {
+    font-size: 22px;
+}
 
 
-/* End Sec20 */
+/* End Sec25 */
 
 
 /* Start Footer */
@@ -231,6 +163,22 @@ footer .menu ul li a {
 }
 
 footer .menu ul li a:hover {
+    color: #bfbfbf;
+    transition: 0.3s;
+}
+
+footer p {
+    text-align: center;
+}
+
+footer p>a {
+    color: #ececeb;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+footer p>a:hover {
     color: #bfbfbf;
     transition: 0.3s;
 }

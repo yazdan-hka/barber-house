@@ -185,18 +185,23 @@ header #login p {
 }
 
 .sec-14 .col-md-4 {
-    padding: 0 10px !important;
+    padding: 10px 10px !important;
 }
 
 .sec-14 .col-md-8 {
-    padding: 0 10px !important;
+    padding: 10px 10px !important;
 }
 
 .sec-14 .col-md-6 {
     padding: 20px 10px !important;
 }
 
+.sec-14 .col-12 {
+    padding: 10px 0 0 0 !important;
+}
+
 .sec-14 .details {
+    height: 100%;
     background-color: #ececeb;
     color: #1b1c1e;
     border-radius: 25px 25px 20px 20px;
@@ -240,7 +245,7 @@ header #login p {
 
 .sec-14 .post img {
     width: 100%;
-    height: 392px;
+    height: 100%;
     opacity: 0.5;
 }
 
@@ -253,13 +258,14 @@ header #login p {
 }
 
 .sec-14 h4 {
-    color: rgb(27, 28, 30, 0);
-    font-size: 100px;
+    color: #ececeb;
+    font-size: 40px;
+    text-align: center;
     transition: 0.3s;
 }
 
 .sec-14 h4:hover {
-    color: #1b1c1e;
+    color: #bfbfbf;
     transition: 0.3s;
 }
 
@@ -329,6 +335,19 @@ header #login p {
     color: #1b1c1e;
     font-size: 18px;
     text-align: center;
+}
+
+.sec-14 .bio {
+    width: 100%;
+    height: 180px;
+    color: #1b1c1e;
+    background-color: #ececeb;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.sec-14 .bio p {
+    font-size: 16px;
 }
 
 

@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 {% load static %}
 
@@ -120,20 +119,49 @@
                 <div class="col-md-8 position-relative">
                     <a href="{% url 'posts' user_name=braider.user_name %}">
                         <div class="post">
-
                             {% if braider.posts__image %}
                                 <img src="/media/{{ braider.posts__image }}" class="img-1" alt="braider {{ braider.user_name }} braid post from {{ braider.locationinfo__country }}, {{ braider.locationinfo__city }}">
                             {% else %}
-
+                                <img src="{% static 'img/logo.PNG' %}" alt="braid starz logo" class="img-1">
                             {% endif %}
-                                <img src="{% static 'img/logo.PNG' %}" alt="braid starz logo">
+<!--                                <img src="{% static 'img/logo.PNG' %}" alt="braid starz logo" class="img-2">-->
                         </div>
-                        <h4 class="position-absolute top-50 start-50 translate-middle">Post</h4>
+                        <h4 class="position-absolute top-50 start-50 translate-middle">Click to see more post</h4>
                     </a>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
+                    <div class="bio">
+                        <p>{{ braider.publicinfo__biography }}</p>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="map">
+                        <div class="details-business">
+                            <p>
+                                Business Name:
+                                <br>
+                                <b>
+                                    {{ braider.businessinfo__name }}
+                                </b>
+                                <br> Web site Address:
+                                <br>
+                                <b>
+                                    {{ braider.businessinfo__website }}
+                                </b>
+                            </p>
+                        </div>
+
+                            <div class="location">
+                            </div>
+
+                    </div>
+                </div>
+
+            <div class="row">
+                <div class="col-12">
                     <div class="socialmedia">
 
                         {% if braider.socialmedia__instagram %}
@@ -179,36 +207,10 @@
                                 </a>
                             </span>
                         {% endif %}
-<!--                            <span><a href="#"><i class="fa-brands fa-instagram instagram"></i></a></span>-->
-<!--                            <span><a href="#"><i class="fa-brands fa-twitter twitter"></i></a></span>-->
-<!--                            <span><a href="#"><i class="fa-brands fa-facebook facebook"></i></a></span>-->
-<!--                            <span><a href="#"><i class="fa-brands fa-tiktok tiktok" ></i></a></span>-->
-<!--                            <span><a href="#"><i class="fa-brands fa-youtube youtube" style="color:red"></i></a></span>-->
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <a href="#">
-                        <div class="map">
-                            <div class="details-business">
-                                <p>
-                                    Business Name:
-                                    <br>
-                                    <b>
-                                        {{ braider.businessinfo__name }}
-                                    </b>
-                                    <br> Web site Address:
-                                    <br>
-                                    <b>
-                                        {{ braider.businessinfo__website }}
-                                    </b>
-                                </p>
-                            </div>
-                            <div class="location">
+            </div>
 
-                            </div>
-                        </div>
-                    </a>
-                </div>
             </div>
     </section>
 
