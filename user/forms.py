@@ -4,6 +4,133 @@ from django.core.exceptions import ValidationError
 # from django.contrib.auth.forms import AuthenticationForm
 from main.models import Braider
 
+
+class CustomerRegistration(forms.Form):
+    def validate_password(value):
+
+        number = '0123456789'
+        chars = 'abcdefghijklmnopqrstuvwxyz'
+        cap_chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        wi = '!@#$%^&*()_-+={[}]|\\?/>,<.:;'
+        password = value
+
+        num = False
+        char = False
+        cap = False
+        wierd = False
+        le = False
+        stars = ''
+
+        if len(password) >= 8:
+            le = True
+        for i in number:
+            if i in password:
+                num = True
+        for i in chars:
+            if i in password:
+                char = True
+        for i in cap_chars:
+            if i in password:
+                cap = True
+        for i in wi:
+            if i in password:
+                wierd = True
+
+        if num or char:
+            stars = '*'
+        if num and char:
+            stars = '**'
+        if char and cap:
+            stars += '*'
+        if wierd:
+            stars += '*'
+        if le:
+            stars += '*'
+
+        if stars != '*****':
+            raise ValidationError('your password is week. are you sure you used capital and small letters, numbers, '
+                                  'and special characters in the length of 8 or more? '.title(),
+                                  params={'value': value})
+    def validate_username(value):
+        chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456_789'
+        for i in value:
+            if i not in chars:
+                error_css_class = 'invalid-username'
+                raise ValidationError(
+                    f'Invalid Username "{value}". be sure that your username includes only capital and small '
+                    'letters, numbers, and underscores(_).'.title(),
+                    params={'value': value})
+
+        if len(value) < 4:
+            raise ValidationError(
+                    f'Invalid Username "{value}". too shot user name. minimum length is 4 character.'.title(),
+                    params={'value': value})
+
+    first_name = forms.CharField(
+        max_length=30,
+        strip=False,
+        label='',
+        required=True,
+        validators=[],
+        widget=forms.TextInput(attrs={'class': 'text', 'placeholder': 'Firstname'})
+    )
+    last_name = forms.CharField(
+        strip=False,
+        label='',
+        required=True,
+        validators=[],
+        widget=forms.TextInput(attrs={'class': 'text', 'placeholder': 'Lastname'})
+    )
+
+    user_name = forms.CharField(
+        max_length=27,
+        strip=True,
+        label='',
+        required=True,
+        validators=[validate_username],
+        widget=forms.TextInput(attrs={'class': 'text', 'style': 'width:100%;','placeholder': 'Username(no white space)'})
+    )
+
+    email = forms.EmailField(
+        required=True,
+        max_length=254,
+        label='',
+        widget=forms.TextInput(attrs={'class': 'email', 'placeholder': 'Email Address'})
+    )
+    password1 = forms.CharField(
+        widget=forms.PasswordInput(attrs={'class': 'pass', 'placeholder': 'Password'}),
+        required=True,
+        max_length=120,
+        min_length=8,
+        validators=[validate_password]
+    )
+    password2 = forms.CharField(
+        widget=forms.PasswordInput(attrs={'class': 'pass', 'placeholder': 'Repeat Password'}),
+        required=True,
+        max_length=120,
+        min_length=8,
+    )
+    password = forms.CharField(
+        widget=forms.PasswordInput(attrs={'class': 'text', 'placeholder': 'Repeat Password'}),
+        required=False,
+        max_length=120,
+        min_length=8,
+    )
+
+    def clean(self):
+        cleaned_data = super().clean()
+
+        # Password Validation
+        pass1 = cleaned_data.get('password1')
+        pass2 = cleaned_data.get('password2')
+
+        if pass2 == pass1 and pass2:
+            cleaned_data['password'] = pass1
+        else:
+            raise ValidationError('Error. passwords are not the same. Try again.'.title())
+        return cleaned_data
+
+
 class BraiderRegistration(forms.Form):
 
     def validate_insta_id(value):
@@ -557,12 +684,6 @@ class BraiderRegistration(forms.Form):
         required=True,
         validators=[],
         widget=forms.TextInput(attrs={'class': 'text', 'placeholder': 'Lastname'})
-    )
-    user_type = forms.ChoiceField(
-        choices=acc_types,
-        required=True,
-        label='',
-        widget=forms.Select(attrs={'class': 'form-select email text-1', 'aria-label': 'Default select example'})
     )
     user_name = forms.CharField(
         max_length=27,

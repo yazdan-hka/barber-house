@@ -1,15 +1,16 @@
 from django.shortcuts import render, redirect
 # from django.urls import reverse
-from main.models import Braider, PublicInfo, SocialMedia, LocationInfo, BusinessInfo
+from main.models import Braider, PublicInfo, SocialMedia, LocationInfo, BusinessInfo, Customer
 from django.contrib import messages
-from .forms import BraiderRegistration, BraiderLogin
+from .forms import BraiderRegistration, BraiderLogin, CustomerRegistration
 from django.contrib.auth import authenticate, login, logout
 from django.core.exceptions import ValidationError
 from django.contrib.auth.hashers import make_password
 
 
 # Create your views here.
-
+def braider_or_customer(request):
+    return render(request, 'braider-or-customer.html')
 def register_page(request):
 
     if request.method == 'POST':
@@ -138,6 +139,39 @@ def register_page(request):
 
     context = {'form': form}
     return render(request, 'register.html', context)
+def customer_register(request):
+
+    if request.method == 'POST':
+        form = CustomerRegistration(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+
+            customer = Customer(
+                first_name=cd['first_name'],
+                last_name=cd['last_name'],
+                user_name=cd['user_name'],
+                email=cd['email'],
+                password=make_password(cd['password']),
+            )
+
+            try:
+                customer.full_clean()
+                customer.save()
+                messages.success(request, "your account have been created!".title())
+                return redirect('/')
+            except ValidationError as e:
+                for field, errors in e.message_dict.items():
+                    for error in errors:
+                        messages.error(request, error)
+        else:
+            for field_name, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f"\n{str(field_name).replace('_', ' ').title()}\n: {error}")
+    else:
+        form = CustomerRegistration()
+
+    context = {'form': form}
+    return render(request, 'customer-register.html', context)
 def login_page(request):
     form = BraiderLogin()
 
