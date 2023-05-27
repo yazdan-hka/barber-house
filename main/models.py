@@ -7,10 +7,6 @@ from django.core.validators import FileExtensionValidator, MaxValueValidator
 from django.db import models
 # Create your models here.
 
-types = (
-    ('c', 'braider'),
-    ('b', 'customer')
-)
 def validate_password(value):
     number = '0123456789'
     chars = 'abcdefghijklmnopqrstuvwxyz'
@@ -55,6 +51,15 @@ def validate_password(value):
         raise ValidationError('your password is week. are you sure you used capital and small letters, numbers, '
                               'and special characters in the length of 8 or more? '.title(),
                               params={'value': value})
+
+
+class Customer(models.Model):
+    user_name = models.CharField(max_length=27, null=False, unique=True)
+    email = models.EmailField(max_length=252, null=False, unique=True)
+    password = models.CharField(max_length=126, validators=[], null=False)
+    first_name = models.CharField(max_length=23, null=False)
+    last_name = models.CharField(max_length=22, null=False)
+
 class Braider(models.Model):
     user_name = models.CharField(max_length=27, null=False, unique=True)
     email = models.EmailField(max_length=252, null=False, unique=True)
@@ -125,7 +130,6 @@ class PublicInfo(models.Model):
     rel = models.OneToOneField(Braider, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=23, null=False)
     last_name = models.CharField(max_length=22, null=False)
-    user_type = models.CharField(max_length=8, choices=types, default='customer', null=False)
     biography = models.CharField(max_length=1024, null=True, blank=True, error_messages={'blank': 'are you serious?'})
     profile_picture = models.ImageField(
         upload_to='profile-pictures/',

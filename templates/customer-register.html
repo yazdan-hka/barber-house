@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Introducing different hairstyles">
+    <meta name="keywords" content="Hairstyles, New hairstyle, Old hairstyle, Different hairstyles">
+    <meta name="author" content="Arash Ajorlou">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/register.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/messages.css' %}">
+    <script src="{% static 'scripts/all.min.js' %}"></script>
+    <title>Hairstyles</title>
+</head>
+
+<body>
+
+    <section class="sec-17 overflow-hidden">
+
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="alert {% if message.tags %}alert-{{ message.tags }}"{% endif %}>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <div class="register">
+            <div class="user-login">
+                <i class="fa-regular fa-user"></i>
+                <h1>User Register</h1>
+            </div>
+
+            <form method='post'>
+            {% csrf_token %}
+
+                {{ form.first_name }}
+                {{ form.last_name }}
+                {{ form.user_name }}
+                {{ form.email }}
+                {{ form.password1 }}
+                {{ form.password2 }}
+
+                <button class="login-button">Sign up</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="{% static 'scripts/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'scripts/script.js' %}"></script>
+
+</body>
+
+</html>
