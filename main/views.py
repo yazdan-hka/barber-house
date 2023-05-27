@@ -85,4 +85,11 @@ def index(request):
     return render(request, 'index.html', context)
 
 def about(request):
+    from django.core.mail import send_mail
+    from django.conf import settings
+    send_mail(
+        subject='Add an eye-catching subject',
+        message='hey why it does no twork and i get error?',
+        from_email=settings.EMAIL_HOST_USER,
+        recipient_list=['yazdan.unknown@gmail.com'])
     return render(request, 'about.html')
