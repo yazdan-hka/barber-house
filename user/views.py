@@ -128,8 +128,15 @@ def register_page(request):
                                         form.add_error(field, error)
 
             if saved:
-                messages.success(request, 'your account have been created. wellcome to braidstarz! log in to access your profile'.title())
-                return redirect('login')
+
+                send_mail(
+                    subject='Email Validation Required',
+                    message=f'Hi {cd["first_name"]},\n\nThank you for signing up with our service. To complete your registration, please click on the following link to validate your email address:\n\nhttps://www.braidstarz.art/af4wtesra3r4weaa34rae3wdwf4aeh3a4ewr/\n\nIf you did not sign up for our service, you can safely ignore this email.\n\nThank you,\nThe BraidStarz Team',
+                    from_email=settings.EMAIL_HOST_USER,
+                    recipient_list=[cd['email']])
+
+                messages.success(request, 'One more step to create your account'.title())
+                return redirect('validate-your-email', cd['email'])
         else:
             for field_name, errors in form.errors.items():
                 for error in errors:
@@ -209,6 +216,10 @@ def fregister(request):
     return render(request, 'registerfirst.html')
 def flogin(request):
     return render(request, 'loginfirst.html')
+
+def validate_your_email(request, email):
+    context = {'email': email}
+    return render(request, 'validate-your-email', context)
 
 
 

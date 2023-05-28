@@ -4,6 +4,8 @@ from django.urls import reverse
 from django.db.models import Q
 from django.contrib import messages
 from .forms import BraiderFinder
+from django.core.mail import send_mail
+from django.conf import settings
 
 # Create your views here.
 
