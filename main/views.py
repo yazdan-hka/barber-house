@@ -50,30 +50,29 @@ def index(request):
             if braiders:
                 for braider in braiders:
                     try:
-                        if braider.publicinfo.user_type == 'b':
-                            braider_info.append({
-                                'user_name': braider.user_name,
-                                'country': braider.locationinfo.country,
-                                'city': braider.locationinfo.city,
-                                'profile_picture': braider.publicinfo.profile_picture,
-                                'website': braider.businessinfo.website,
-                                'name': braider.publicinfo.first_name + " " + braider.publicinfo.last_name,
-                                'url': reverse('profile', kwargs={'user_name': braider.user_name})
-                            })
-                        else:
-                            pass
+                        b = braider.locationinfo.country
                     except:
-                        if braider.publicinfo.user_type == 'b':
-                            braider_info.append({
-                                'user_name': braider.user_name,
-                                'country': braider.locationinfo.country,
-                                'city': braider.locationinfo.city,
-                                'profile_picture': braider.publicinfo.profile_picture,
-                                'name': braider.publicinfo.first_name + " " + braider.publicinfo.last_name,
-                                'url': reverse('profile', kwargs={'user_name': braider.user_name})
-                            })
-                        else:
-                            pass
+                        break
+
+                    try:
+                        braider_info.append({
+                            'user_name': braider.user_name,
+                            'country': braider.locationinfo.country,
+                            'city': braider.locationinfo.city,
+                            'profile_picture': braider.publicinfo.profile_picture,
+                            'website': braider.businessinfo.website,
+                            'name': braider.publicinfo.first_name + " " + braider.publicinfo.last_name,
+                            'url': reverse('profile', kwargs={'user_name': braider.user_name})
+                        })
+                    except:
+                        braider_info.append({
+                            'user_name': braider.user_name,
+                            'country': braider.locationinfo.country,
+                            'city': braider.locationinfo.city,
+                            'profile_picture': braider.publicinfo.profile_picture,
+                            'name': braider.publicinfo.first_name + " " + braider.publicinfo.last_name,
+                            'url': reverse('profile', kwargs={'user_name': braider.user_name})
+                        })
 
                 messages.success(request, f'Wow! {len(braider_info)} Braiders find you.'.title())
                 context = {'form': form, 'braiders': braider_info, 'posts': posts}

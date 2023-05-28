@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Introducing different hairstyles">
@@ -24,7 +24,9 @@
                 <img src="{% static 'img/password/icon/login.png' %}" alt="Reset Password Icon">
                 <h1>Validate Your Email</h1>
             </div>
-            <p>We have sent a validation email to <b>{{ email }}</b> . Complete creating your account by clicking on the validation link in the email we send to you.</p>
+            <p>We have sent a validation email to <b>your email</b>.
+                Complete creating your account by clicking on the validation link in the email we send to you.
+                If it was not in your inbox, check your spam too.</p>
         </div>
     </section>
 

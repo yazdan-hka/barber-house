@@ -199,7 +199,6 @@ class BraiderRegistration(forms.Form):
                     f'Invalid Username "{value}". too shot user name. minimum length is 4 character.'.title(),
                     params={'value': value})
 
-    acc_types = (('c', 'Customer'), ('b', 'Braider'))
     phone_codes = (('+1', 'USA (+1)'),
                    ('+44', 'UK (+44)'),
                    ('+213', 'Algeria (+213)'),

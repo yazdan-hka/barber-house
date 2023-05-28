@@ -114,7 +114,7 @@ class Verification(models.Model):
     rel = models.ForeignKey(Braider, on_delete=models.CASCADE)
     token = models.CharField(max_length=64, unique=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    expires_at = models.DateTimeField(default=datetime.now()+timedelta(days=1))
+    expires_at = models.DateTimeField(default=datetime.now()+timedelta(minutes=1))
     is_valid = models.BooleanField(default=True)
     # is_email_verified = models.BooleanField(default=False)
     # is_number_verified = models.BooleanField(default=False)
@@ -123,8 +123,6 @@ class Verification(models.Model):
         return datetime.now() >= self.expires_at
 
     def save(self, *args, **kwargs):
-        if self.is_expired():
-            self.is_valid = False
         super(Verification, self).save(*args, **kwargs)
 class PublicInfo(models.Model):
     rel = models.OneToOneField(Braider, on_delete=models.CASCADE)
