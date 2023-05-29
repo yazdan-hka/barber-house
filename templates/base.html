@@ -69,10 +69,7 @@
         </nav>
     </header>
 
-
-
-        {% block content %}
-            {% if messages %}
+        {% if messages %}
             <div class="messages">
                 {% for message in messages %}
                     <div class="alert {% if message.tags %} alert-{{ message.tags }}"{% endif %}>
@@ -81,6 +78,9 @@
                 {% endfor %}
             </div>
         {% endif %}
+
+        {% block content %}
+
         {% endblock %}
 
     <footer class="overflow-hidden">

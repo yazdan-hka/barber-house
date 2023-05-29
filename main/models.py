@@ -82,7 +82,7 @@ class Braider(models.Model):
     # is_staff = models.BooleanField(default=False)
 
     def __str__(self):
-        return f'{self.user_name} type: {PublicInfo.objects.filter(rel=self).first().user_type}'
+        return f'{self.user_name} type: {PublicInfo.objects.filter(rel=self).first()}'
     def is_authenticated(self):
         # Return True if the user is authenticated, else False.
         return True if self.pk else False
@@ -115,9 +115,8 @@ class Verification(models.Model):
     rel = models.ForeignKey(Braider, on_delete=models.CASCADE)
     token = models.CharField(max_length=64, unique=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    expires_at = models.DateTimeField(default=datetime.now()+timedelta(minutes=1))
-    is_valid = models.BooleanField(default=True)
-    # is_email_verified = models.BooleanField(default=False)
+    expires_at = models.DateTimeField(default=datetime.now()+timedelta(minutes=9))
+    is_email_verified = models.BooleanField(default=False)
     # is_number_verified = models.BooleanField(default=False)
 
     def is_expired(self):
@@ -126,6 +125,7 @@ class Verification(models.Model):
         return time >= self.expires_at
 
     def save(self, *args, **kwargs):
+        self.expires_at = datetime.now()+timedelta(minutes=9)
         super(Verification, self).save(*args, **kwargs)
 class PublicInfo(models.Model):
     rel = models.OneToOneField(Braider, on_delete=models.CASCADE)

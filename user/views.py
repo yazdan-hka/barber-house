@@ -6,6 +6,7 @@ from .forms import BraiderRegistration, BraiderLogin, CustomerRegistration
 from django.contrib.auth import authenticate, login, logout
 from django.core.exceptions import ValidationError
 from django.contrib.auth.hashers import make_password
+import secrets
 from django.core.mail import send_mail
 from django.conf import settings
 
@@ -198,12 +199,19 @@ def login_page(request):
 
         user = authenticate(request, username=username, password=password)
         print(user, 'user is authenticated')
+
         if user is not None:
+            verif = Verification.objects.filter(rel=user).first()
+
+            if verif.is_email_verified == False:
+                messages.error(request, 'your email must be verified for you to be able to log in. verify your email.'.title())
+                return redirect('validate-your-email', pk=user.id)
+
             login(request, user)
             print('user is logged in')
             
             if remember_me:
-                request.session.set_expiry(60 * 60 * 24 * 14)  # 2 weeks = 2 weeks' seconds
+                request.session.set_expiry(60 * 60 * 24 * 7)  # 1 weeks = 1 weeks' seconds
             messages.success(request, f'You are logged in dear {username}'.title())
             return redirect('/')
         else:
@@ -223,8 +231,13 @@ def flogin(request):
     return render(request, 'loginfirst.html')
 def validate_your_email(request, pk):
 
+    braider = Braider.objects.filter(id=pk).first()
+    token = secrets.token_urlsafe(32)
+    verification = Verification.objects.filter(rel=braider).first()
+    verification.token = token
+    verification.save()
+
     if request.method == 'POST':
-        braider = Braider.objects.filter(id=pk).first()
         email = braider.email
         token = Verification.objects.filter(rel=braider).first()
         link = f'http://127.0.0.1:8000/user/validate-email/{braider.id}/{token.token}/'
@@ -240,6 +253,7 @@ def validate_your_email(request, pk):
         #     messages.success(request, 'Email have been sent.')
         # except:
         #     messages.error(request, 'Email could not be sent. Try again.')
+        # return redirect('validate-your-email', pk=braider.id)
 
     return render(request, 'validate-your-email.html')
 def validate_email(request, token, id):
@@ -249,7 +263,10 @@ def validate_email(request, token, id):
     if matched_token:
         if matched_token.rel.id == id and matched_token.is_expired() is False:
             messages.success(request, 'Your account have been created. Log in to access your profile')
-            matched_token.is_valid = True
+
+            matched_token.is_email_verified = True
+            matched_token.save()
+
             return redirect('/user/login')
         else:
             messages.error(request, 'Token is invalid or expired.')
