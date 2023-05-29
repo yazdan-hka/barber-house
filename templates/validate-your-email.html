@@ -19,6 +19,15 @@
 <body>
 
     <section class="sec-26 overflow-hidden">
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="alert {% if message.tags %} alert-{{ message.tags }}"{% endif %}>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
         <div class="reset">
             <div class="reset-password">
                 <img src="{% static 'img/password/icon/login.png' %}" alt="Reset Password Icon">
@@ -28,6 +37,15 @@
                 Complete creating your account by clicking on the validation link in the email we send to you.
                 If it was not in your inbox, check your spam too.</p>
         </div>
+        <br>
+        <h4 style="color:white;">Didn't receive an email?
+        </h4>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" style="border-radius:7px;border:none;background-color:black;">
+                <h6 style="color:white; margin:10px;">Resend email</h6>
+            </button>
+        </form>
     </section>
 
     <script src="{% static 'scripts/bootstrap.bundle.min.js' %}"></script>

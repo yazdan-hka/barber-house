@@ -5,6 +5,7 @@ from django.contrib.auth.hashers import make_password, check_password
 from datetime import timedelta, datetime
 from django.core.validators import FileExtensionValidator, MaxValueValidator
 from django.db import models
+from django.utils import timezone
 # Create your models here.
 
 def validate_password(value):
@@ -120,7 +121,9 @@ class Verification(models.Model):
     # is_number_verified = models.BooleanField(default=False)
 
     def is_expired(self):
-        return datetime.now() >= self.expires_at
+        time = datetime.now()
+        time = timezone.make_aware(time)
+        return time >= self.expires_at
 
     def save(self, *args, **kwargs):
         super(Verification, self).save(*args, **kwargs)

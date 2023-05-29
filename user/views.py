@@ -131,9 +131,6 @@ def register_page(request):
 
             if saved:
                 token = Verification.objects.filter(rel=braider).first()
-                # validation_url = reverse('validate-email', args=[braider.pk, token])
-                # print(validation_url)
-
                 link = f'http://127.0.0.1:8000/user/validate-email/{braider.id}/{token.token}/'
                 print(link)
 
@@ -144,7 +141,7 @@ def register_page(request):
                 #     recipient_list=[cd['email']])
 
                 messages.success(request, 'One more step to create your account'.title())
-                return redirect('validate-your-email')
+                return redirect('validate-your-email', pk=braider.pk)
         else:
             for field_name, errors in form.errors.items():
                 for error in errors:
@@ -224,9 +221,27 @@ def fregister(request):
     return render(request, 'registerfirst.html')
 def flogin(request):
     return render(request, 'loginfirst.html')
-def validate_your_email(request):
-    return render(request, 'validate-your-email.html')
+def validate_your_email(request, pk):
 
+    if request.method == 'POST':
+        braider = Braider.objects.filter(id=pk).first()
+        email = braider.email
+        token = Verification.objects.filter(rel=braider).first()
+        link = f'http://127.0.0.1:8000/user/validate-email/{braider.id}/{token.token}/'
+
+        print(link)
+
+        # try:
+        #     send_mail(
+        #         subject='Email Validation Required',
+        #         message=f'Hi {braider.user_name},\n\nThank you for signing up with our service. To complete your registration, please click on the following link to validate your email address:\n\n{link}\n\nIf you did not sign up for our service, you can safely ignore this email.\n\nThank you,\nThe BraidStarz Team',
+        #         from_email=settings.EMAIL_HOST_USER,
+        #         recipient_list=[email])
+        #     messages.success(request, 'Email have been sent.')
+        # except:
+        #     messages.error(request, 'Email could not be sent. Try again.')
+
+    return render(request, 'validate-your-email.html')
 def validate_email(request, token, id):
 
     matched_token = Verification.objects.filter(token=token).first()
