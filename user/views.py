@@ -1,14 +1,14 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from main.models import Braider, PublicInfo, SocialMedia, LocationInfo, BusinessInfo, Customer, Verification
+from main.models import Braider, PublicInfo, SocialMedia, LocationInfo, BusinessInfo, Customer, Verification, CustomerVerification
 from django.contrib import messages
 from .forms import BraiderRegistration, BraiderLogin, CustomerRegistration
 from django.contrib.auth import authenticate, login, logout
 from django.core.exceptions import ValidationError
 from django.contrib.auth.hashers import make_password
 import secrets
-from django.core.mail import send_mail
-from django.conf import settings
+# from django.core.mail import send_mail
+# from django.conf import settings
 
 
 # Create your views here.
@@ -170,12 +170,24 @@ def customer_register(request):
             try:
                 customer.full_clean()
                 customer.save()
-                messages.success(request, "your account have been created!".title())
-                return redirect('/')
             except ValidationError as e:
                 for field, errors in e.message_dict.items():
                     for error in errors:
                         messages.error(request, error)
+
+            if customer.id:
+                token = CustomerVerification.objects.filter(rel=customer).first()
+                link = f'http://127.0.0.1:8000/user/validate-email/{customer.id}/{token.token}/'
+                print(link)
+
+                # send_mail(
+                #     subject='Email Validation Required',
+                #     message=f'Hi {cd["first_name"]},\n\nThank you for signing up with our service. To complete your registration, please click on the following link to validate your email address:\n\n{link}\n\nIf you did not sign up for our service, you can safely ignore this email.\n\nThank you,\nThe BraidStarz Team',
+                #     from_email=settings.EMAIL_HOST_USER,
+                #     recipient_list=[cd['email']])
+
+                messages.success(request, 'One more step to create your account'.title())
+                return redirect('validate-your-email', pk=customer.pk)
         else:
             for field_name, errors in form.errors.items():
                 for error in errors:
@@ -201,7 +213,12 @@ def login_page(request):
         print(user, 'user is authenticated')
 
         if user is not None:
-            verif = Verification.objects.filter(rel=user).first()
+            try:
+                verif = Verification.objects.filter(rel=user).first()
+            except:
+                verif = CustomerVerification.objects.filter(rel=user).first()
+
+            print(verif)
 
             if verif.is_email_verified == False:
                 messages.error(request, 'your email must be verified for you to be able to log in. verify your email.'.title())
@@ -230,17 +247,28 @@ def fregister(request):
 def flogin(request):
     return render(request, 'loginfirst.html')
 def validate_your_email(request, pk):
-
-    braider = Braider.objects.filter(id=pk).first()
-    token = secrets.token_urlsafe(32)
-    verification = Verification.objects.filter(rel=braider).first()
-    verification.token = token
-    verification.save()
+    try:
+        user = Braider.objects.filter(id=pk).first()
+        verification = Verification.objects.filter(rel=user).first()
+        token = secrets.token_urlsafe(32)
+        verification.token = token
+        verification.save()
+    except:
+        user = Customer.objects.filter(id=pk).first()
+        verification = CustomerVerification.objects.filter(rel=user).first()
+        token = secrets.token_urlsafe(32)
+        verification.token = token
+        verification.save()
 
     if request.method == 'POST':
-        email = braider.email
-        token = Verification.objects.filter(rel=braider).first()
-        link = f'http://127.0.0.1:8000/user/validate-email/{braider.id}/{token.token}/'
+        email = user.email
+
+        try:
+            token = Verification.objects.filter(rel=user).first()
+        except:
+            token = CustomerVerification.objects.filter(rel=user).first()
+
+        link = f'http://127.0.0.1:8000/user/validate-email/{user.id}/{token.token}/'
 
         print(link)
 
@@ -259,6 +287,10 @@ def validate_your_email(request, pk):
 def validate_email(request, token, id):
 
     matched_token = Verification.objects.filter(token=token).first()
+    if matched_token:
+        pass
+    else:
+        matched_token = CustomerVerification.objects.filter(token=token).first()
 
     if matched_token:
         if matched_token.rel.id == id and matched_token.is_expired() is False:

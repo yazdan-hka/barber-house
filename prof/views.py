@@ -253,10 +253,7 @@ def profile_details(request):
 def post_picture(request):
     context = {}
     if request.user:
-        type = PublicInfo.objects.filter(rel=request.user).first().user_type
-        print(type)
-
-        if type == "b":
+        if 'braider' in str(request.user):
             if request.method == 'POST':
                 form = PictureForm(request.POST, request.FILES)
                 if form.is_valid():

@@ -61,6 +61,20 @@ class Customer(models.Model):
     first_name = models.CharField(max_length=23, null=False)
     last_name = models.CharField(max_length=22, null=False)
 
+    def check_pass(self, raw_password):
+        return check_password(raw_password, self.password)
+
+    def save(self, update_fields=None):
+
+        token = secrets.token_urlsafe(32)
+        verification = CustomerVerification(token=token, rel=self)
+
+        if 'pbkdf2_sha256$' not in self.password:
+            self.password = make_password(self.password)
+
+        super().save()
+        verification.save()
+
 class Braider(models.Model):
     user_name = models.CharField(max_length=27, null=False, unique=True)
     email = models.EmailField(max_length=252, null=False, unique=True)
@@ -82,7 +96,7 @@ class Braider(models.Model):
     # is_staff = models.BooleanField(default=False)
 
     def __str__(self):
-        return f'{self.user_name} type: {PublicInfo.objects.filter(rel=self).first()}'
+        return f'braider {self.user_name} from: {self.locationinfo.country}, {self.locationinfo.city}'
     def is_authenticated(self):
         # Return True if the user is authenticated, else False.
         return True if self.pk else False
@@ -127,6 +141,25 @@ class Verification(models.Model):
     def save(self, *args, **kwargs):
         self.expires_at = datetime.now()+timedelta(minutes=9)
         super(Verification, self).save(*args, **kwargs)
+
+class CustomerVerification(models.Model):
+    rel = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    token = models.CharField(max_length=64, unique=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    expires_at = models.DateTimeField(default=datetime.now() + timedelta(minutes=9))
+    is_email_verified = models.BooleanField(default=False)
+
+    # is_number_verified = models.BooleanField(default=False)
+
+    def is_expired(self):
+        time = datetime.now()
+        time = timezone.make_aware(time)
+        return time >= self.expires_at
+
+    def save(self, *args, **kwargs):
+        self.expires_at = datetime.now() + timedelta(minutes=9)
+        super(CustomerVerification, self).save(*args, **kwargs)
+
 class PublicInfo(models.Model):
     rel = models.OneToOneField(Braider, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=23, null=False)
