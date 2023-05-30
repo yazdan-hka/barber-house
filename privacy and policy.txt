@@ -1,7 +1,11 @@
 Privacy Policy
 
-This privacy policy sets out how BraidStarz collect, use, and protect any personal information that you give us when you
-use our website.
+In this privacy policy:
+we, us, our, means BraidStarz team.
+you, your, braider, customer, user, means who ever use BraidStarz website.
+
+We consider the personal and public information of our users to be important, and we make every effort to ensure its
+utmost security and prevent data loss.
 
 We are committed to ensuring that your privacy is protected. Should we ask you to provide certain information by which
 you can be identified when using this website, then you can be assured that it will only be used in accordance with
@@ -10,16 +14,33 @@ this privacy statement.
 What we collect
 We may collect the following information:
 
+
 If you are a braider, we collect:
 
-Name and contact information including email address and phone number.
-Location information, such as country, city, address or/and exact location of your business.
-Links of social media accounts, such as Instagram, Youtube, Facebook, Tiktok, Twitter.
+firstname
+lastname
+username
+email
+phone number
+country
+city
+address and/or location
+Social medias' id:
+    instagram
+    twitter
+    tiktok
+    facebook
+    youtube
+Biography and profile picture (depending on users' choice).
+
 
 If you are a customer, we collect:
 
-Name and contact information including email address and phone number.
-Location information, such as country and city.
+First and last name, username, contact information including email address.
+
+
+For both types of users, braider and customer, we may collect information such as last time logged in, last time logged
+out, etc.
 
 What we do with the information we gather?
 
@@ -34,10 +55,22 @@ We may use the information to improve our products and services.
 If you are a Braider, we use your name and contact information, location information, links of social medias accounts
 to help our website visitors who look for Braider, to connect with you.
 
-We may also show these information in your profile, accessible by public, and we may show your email address and phone
-number in accordance to your decision.
+The pictures posted by braiders are added to our braid picture collection and made accessible to the public. Such posts
+include category and description.
 
-If you are a Customer, we use your location information to suggest you Braiders, which are near you.
+We may also show these information in your profile, accessible by public, and we may show your email address and phone
+number in accordance to your choice.
+
+If we dive more into detail, we use your username to help you log in, and show it in your profile. we use your firstname
+lastname for sending you more specific emails, and we show it on your profile and others will see it and identify you. we
+use your country and city and location information to show you to those who search these locations, and we show it in
+your profile so others will see where are your from. we may use your phone number and email to show it on your profile(
+based on your choice). we use your business name and website address to show on your profile and users will see them
+and use them. we use your profile picture to show it on your profile or where your username is used. we use your
+biography to let others know more about you. we use your social medias links to show them on your profile and let those
+who are interested get in touch with you and have your social media's id. we use the braid pictures you post for in your
+profile and collection, and those who visit your profile will see your braid work quality.
+
 
 We may periodically send promotional emails about new products, special offers or other information which we think you
 may find interesting using the email address which you have provided.
@@ -69,15 +102,3 @@ you should note that we do not have any control over that other website. Therefo
 protection and privacy of any information which you provide whilst visiting such sites and such sites are not governed
 by this privacy statement. You should exercise caution and look at the privacy statement applicable to the website in
 question.
-
-Controlling your personal information
-You may choose to restrict the collection or use of your personal information in the following ways:
-
-Whenever you are asked to fill in a form on the website, look for the box that you can click to indicate that you do not
-want the information to be used by anybody for direct marketing purposes
-If you have previously agreed to us using your personal information for direct marketing purposes, you may change your
-mind at any time by writing to or emailing us at braidstarz@gmail.com
-We will not sell, distribute or lease your personal information to third parties unless we have your permission or are
-required by law to do so.
-You may request details of personal information which we hold about you under the Data Protection Act 1998. A small fee
-will be payable. If you would like a copy of the
