@@ -129,8 +129,6 @@ class CustomerRegistration(forms.Form):
         else:
             raise ValidationError('Error. passwords are not the same. Try again.'.title())
         return cleaned_data
-
-
 class BraiderRegistration(forms.Form):
 
     def validate_insta_id(value):
@@ -779,7 +777,6 @@ class BraiderRegistration(forms.Form):
         else:
             raise ValidationError('Error. passwords are not the same. Try again.'.title())
         return cleaned_data
-
 class BraiderLogin(forms.Form):
     def validate_username(value):
         chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456_789'
@@ -821,8 +818,85 @@ class BraiderLogin(forms.Form):
         widget=forms.CheckboxInput(attrs={'class': 'form-check-input', 'id': 'flexCheckDefault'}),
         required=False
     )
+class CreateNewPassword(forms.Form):
+
+    def validate_password(value):
+
+        number = '0123456789'
+        chars = 'abcdefghijklmnopqrstuvwxyz'
+        cap_chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        wi = '!@#$%^&*()_-+={[}]|\\?/>,<.:;'
+        password = value
+
+        num = False
+        char = False
+        cap = False
+        wierd = False
+        le = False
+        stars = ''
+
+        if len(password) >= 8:
+            le = True
+        for i in number:
+            if i in password:
+                num = True
+        for i in chars:
+            if i in password:
+                char = True
+        for i in cap_chars:
+            if i in password:
+                cap = True
+        for i in wi:
+            if i in password:
+                wierd = True
+
+        if num or char:
+            stars = '*'
+        if num and char:
+            stars = '**'
+        if char and cap:
+            stars += '*'
+        if wierd:
+            stars += '*'
+        if le:
+            stars += '*'
+
+        if stars != '*****':
+            raise ValidationError('your password is week. are you sure you used capital and small letters, numbers, '
+                                  'and special characters in the length of 8 or more? '.title(),
+                                  params={'value': value})
 
 
+    password1 = forms.CharField(
+        widget=forms.PasswordInput(),
+        required=True,
+        max_length=120,
+        min_length=8,
+        validators=[validate_password]
+    )
+    password2 = forms.CharField(
+        widget=forms.PasswordInput(),
+        required=True,
+        max_length=120,
+        min_length=8,
+    )
+    password = forms.CharField(
+        widget=forms.PasswordInput(),
+        required=False,
+        max_length=120,
+        min_length=8,
+    )
 
+    def clean(self):
+        cleaned_data = super().clean()
 
+        # Password Validation
+        pass1 = cleaned_data.get('password1')
+        pass2 = cleaned_data.get('password2')
+
+        if pass2 == pass1 and pass2:
+            cleaned_data['password'] = pass1
+        else:
+            raise ValidationError('Error. passwords are not the same. Try again.'.title())
+        return cleaned_data
 

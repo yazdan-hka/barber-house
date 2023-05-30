@@ -2,11 +2,13 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from main.models import Braider, PublicInfo, SocialMedia, LocationInfo, BusinessInfo, Customer, Verification, CustomerVerification
 from django.contrib import messages
-from .forms import BraiderRegistration, BraiderLogin, CustomerRegistration
+from .forms import BraiderRegistration, BraiderLogin, CustomerRegistration, CreateNewPassword
 from django.contrib.auth import authenticate, login, logout
 from django.core.exceptions import ValidationError
 from django.contrib.auth.hashers import make_password
 import secrets
+from django.db.models import Q
+
 # from django.core.mail import send_mail
 # from django.conf import settings
 
@@ -306,6 +308,96 @@ def validate_email(request, token, id):
     else:
         messages.error(request, 'Token is invalid.')
         return redirect('/')
+def reset_your_password_1(request):
+    if request.method == 'POST':
+        query = request.POST['data']
+
+        if (
+                query == '' or
+                ' ' in query or
+                len(query) < 4 or
+                len(query) > 260
+        ):
+            messages.error(request, 'Wrong username or email.')
+            return redirect('reset-your-password-1')
+        else:
+            pass
+
+        try:
+            user = Braider.objects.filter(
+                Q(user_name__icontains=query) |
+                Q(email__icontains=query)
+            ).first()
+        except:
+            user = Customer.objects.filter(
+                Q(user_name__icontains=query) |
+                Q(email__icontains=query)
+            ).first()
+
+        if user:
+            try:
+                token = Verification.objects.filter(rel=user).first()
+            except:
+                token = CustomerVerification.objects.filter(rel=user).first()
+
+
+            link = f'http://127.0.0.1:8000/user/create-new-password/{user.id}/{token.token}/'
+            print(link)
+
+            # send_mail(
+            #     subject='Email Validation Required',
+            #     message=f'Hi {cd["first_name"]},\n\nThank you for signing up with our service. To complete your registration, please click on the following link to validate your email address:\n\n{link}\n\nIf you did not sign up for our service, you can safely ignore this email.\n\nThank you,\nThe BraidStarz Team',
+            #     from_email=settings.EMAIL_HOST_USER,
+            #     recipient_list=[cd['email']])
+            return redirect('reset-your-password-2')
+        else:
+            messages.success(request, f'There were no account associated with {query}. Try again or make a new account.')
+
+    return render(request, 'reset-your-password-1.html')
+def reset_your_password_2(request):
+    return render(request, 'reset-your-password-2.html')
+def create_new_password(request, token, id):
+
+    try:
+        token_exist = Verification.objects.filter(token=token).first()
+    except:
+        token_exist = CustomerVerification.objects.filter(token=token).first()
+
+    if token_exist:
+        try:
+            user = Braider.objects.filter(id=id).first()
+        except:
+            user = Customer.objects.filter(id=id).first()
+
+        if user:
+            if token_exist.rel.id == user.id:
+                form = CreateNewPassword()
+                context = {'form': form}
+                if request.method == 'POST':
+                    form = CreateNewPassword(request.POST)
+                    if form.is_valid():
+
+                        cleaned = form.clean()
+                        password = cleaned.get('password')
+
+                        user.password = password
+                        user.save()
+
+                        messages.success(request, 'Your password has been changed.')
+                        return redirect('/')
+                    else:
+                        for field_name, errors in form.errors.items():
+                            for error in errors:
+                                messages.error(request, f"\n{str(field_name).replace('_', ' ').title()}\n: {error}")
+
+            else:
+                messages.error(request, 'Token is invalid or expired. Do it again.')
+                return redirect('reset-your-password-1')
+    else:
+        messages.error(request, 'Invalid token.')
+        return redirect('reset-your-password-1')
+
+    return render(request, 'create-new-password.html', context)
 
 
 
