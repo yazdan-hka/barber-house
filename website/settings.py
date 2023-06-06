@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-akgm@^)hu%(rny_bw9%))n0%4m_=&nw^qc30q2ki_e81scjzdq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.braidstarz.com']
 
 
 # Application definition
@@ -85,12 +85,16 @@ DATABASES =\
     {'default':
         {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'braid-starz',
-            'USER': 'postgres',
-            'PASSWORD': 'password',
-            'HOST': 'localhost' # or post
+            'NAME': 'braidstarz',
+            'USER': 'braidstarzuser',
+            'PASSWORD': 'Z_ibWcUz4d@p6j!',
+            'HOST': 'braidstarz-3242.postgres.pythonanywhere-services.com',
+            'PORT': '13242',
+
         }
     }
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
