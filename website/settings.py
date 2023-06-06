@@ -184,4 +184,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
->>>>>>> 354e77ae1b4817698f8f2e4e80f98daa42b23b18
+
