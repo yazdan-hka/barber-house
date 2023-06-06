@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-akgm@^)hu%(rny_bw9%))n0%4m_=&nw^qc30q2ki_e81scjzdq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.braidstarz.com']
 
 
 # Application definition
@@ -81,17 +81,33 @@ SESSION_COOKIE_SECURE = False
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+#  for hosting 
+
 DATABASES =\
     {'default':
         {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'braid-starz',
-            'USER': 'postgres',
-            'PASSWORD': 'password',
-            'HOST': 'localhost' # or post
+            'NAME': 'braidstarz',
+            'USER': 'braidstarzuser',
+            'PASSWORD': 'Z_ibWcUz4d@p6j!',
+            'HOST': 'braidstarz-3242.postgres.pythonanywhere-services.com',
+            'PORT': '13242',
+
         }
     }
 
+# for local server
+
+# DATABASES =\
+#     {'default':
+#         {
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'NAME': 'braid-starz',
+#             'USER': 'postgres',
+#             'PASSWORD': 'password',
+#             'HOST': 'localhost' # or post
+#         }
+#     }
 
 
 
@@ -168,3 +184,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+>>>>>>> 354e77ae1b4817698f8f2e4e80f98daa42b23b18
