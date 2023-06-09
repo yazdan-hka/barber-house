@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-akgm@^)hu%(rny_bw9%))n0%4m_=&nw^qc30q2ki_e81scjzdq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.braidstarz.com']
+ALLOWED_HOSTS = ['www.braidstarz.com',  '127.0.0.1']
 
 
 # Application definition
