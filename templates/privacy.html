@@ -1,143 +1,193 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Introducing different hairstyles">
-    <meta name="keywords" content="Hairstyles, New hairstyle, Old hairstyle, Different hairstyles">
-    <meta name="author" content="Arash Ajorlou">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/privacy.css">
-    <link rel="stylesheet" href="styles/responsive.css">
-    <script src="scripts/all.min.js"></script>
-    <title>Hairstyles</title>
-</head>
+    {% block head %}
+        <meta charset="UTF-8">
+        <meta name="description" content="Introducing different hairstyles">
+        <meta name="keywords" content="Hairstyles, New hairstyle, Old hairstyle, Different hairstyles">
+        <meta name="author" content="Arash Ajorlou">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/privacy.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/responsive.css' %}">
+        <script src="{% static 'scripts/all.min.js' %}"></script>
+        <title>Hairstyles</title>
+    {% endblock %}
 
-<body>
+    {% block content %}
+        <section class="sec-25 overflow-hidden">
+            <h1>Privacy & Policy</h1>
 
-    <header>
-        <nav class="navbar navbar-expand-md bg-light navbars sticky-top">
-            <div class="container">
-                <a href="#">
-                    <h1 class="navbar-brand"><img src="img/logo.PNG" alt="Logo">BraidStraz</h1>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="collection.html">Collection</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="nfts.html">NFTs</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Youtube</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About Us</a>
-                        </li>
+            <h2>In this privacy policy:</h2>
+
+            <p>
+                we, us, our, means BraidStarz team.
+                you, your, braider, customer, user, means who ever use BraidStarz website.
+            </p>
+
+            <p>
+                We consider the personal and public information of our users to be important, and we make every effort to ensure its
+                utmost security and prevent data loss.
+            </p>
+
+            <p>
+                We are committed to ensuring that your privacy is protected. Should we ask you to provide certain information by which
+                you can be identified when using this website, then you can be assured that it will only be used in accordance with
+                this privacy statement.
+            </p>
+
+
+            <h2>What we collect</h2>
+
+            <p>
+                We may collect the following information:
+            </p>
+
+            <p>
+                <b>
+                    If you are a braider, we collect:
+                </b>
+            </p>
+
+            <ul>
+                <li>firstname</li>
+                <li>lastname</li>
+                <li>username</li>
+                <li>email</li>
+                <li>phone number</li>
+                <li>country</li>
+                <li>city</li>
+                <li>address and/or location</li>
+                <li>Social medias' id:</li>
+                    <ul>
+                        <li>instagram</li>
+                        <li>twitter</li>
+                        <li>tiktok</li>
+                        <li>facebook</li>
+                        <li>youtube</li>
                     </ul>
-                    <!-- <div id="login">
-                        <a class="signup" href="login & register/registerfirst.html">Sign up</a>
-                        <p>|</p>
-                        <a class="login" href="login & register/loginfirst.html">Login</a>
-                    </div> -->
-                    <div id="login">
-                        <a class="profile-img" href="login & register/registerfirst.html"><img src="img/profile/profile/6-1.png.jpg" alt="Profile Image"></a>
-                        <p>|</p>
-                        <a class="login" href="login & register/loginfirst.html">Logout</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
+                <li>Biography and profile picture (depending on users' choice).</li>
+            </ul>
 
-    <section class="sec-25 overflow-hidden">
-        <h1>Privacy & Policy</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed labore perspiciatis veritatis nulla, modi enim voluptatem quasi assumenda soluta quo numquam alias reprehenderit amet tenetur distinctio odio! Corporis, sit sequi? Lorem ipsum dolor
-            sit amet consectetur adipisicing elit. Minus, aspernatur amet recusandae quaerat aliquid, vel molestiae error accusantium laudantium iusto aliquam omnis inventore quis! Consequatur quas ipsum architecto atque quos? Lorem, ipsum dolor sit amet
-            consectetur adipisicing elit. Aperiam consequatur laudantium asperiores praesentium eos recusandae perferendis nostrum animi? Atque necessitatibus tempora animi quis ad maxime. Sapiente architecto dolorum labore sint! Lorem, ipsum dolor sit
-            amet consectetur adipisicing elit. Nisi molestias ea sit dolorem, consequuntur optio voluptatibus expedita incidunt veritatis aliquid pariatur voluptatem tempore, inventore a obcaecati ullam laboriosam, blanditiis ut. Lorem ipsum dolor sit
-            amet consectetur adipisicing elit. Perferendis suscipit quo unde ut delectus maiores optio, possimus aliquid amet! Non quas accusamus saepe consequuntur dolorem nemo velit aliquid quis totam. Lorem ipsum dolor, sit amet consectetur adipisicing
-            elit. Ex cumque odit voluptas quidem commodi perferendis magni unde quia maxime magnam? Praesentium, rem dignissimos molestias qui aut molestiae quibusdam eum tempore. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed labore perspiciatis
-            veritatis nulla, modi enim voluptatem quasi assumenda soluta quo numquam alias reprehenderit amet tenetur distinctio odio! Corporis, sit sequi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, aspernatur amet recusandae quaerat
-            aliquid, vel molestiae error accusantium laudantium iusto aliquam omnis inventore quis! Consequatur quas ipsum architecto atque quos? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam consequatur laudantium asperiores praesentium
-            eos recusandae perferendis nostrum animi? Atque necessitatibus tempora animi quis ad maxime. Sapiente architecto dolorum labore sint! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi molestias ea sit dolorem, consequuntur optio
-            voluptatibus expedita incidunt veritatis aliquid pariatur voluptatem tempore, inventore a obcaecati ullam laboriosam, blanditiis ut. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis suscipit quo unde ut delectus maiores
-            optio, possimus aliquid amet! Non quas accusamus saepe consequuntur dolorem nemo velit aliquid quis totam. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex cumque odit voluptas quidem commodi perferendis magni unde quia maxime
-            magnam? Praesentium, rem dignissimos molestias qui aut molestiae quibusdam eum tempore.
-        </p>
-        <h2>Test</h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem consectetur ad possimus incidunt. Excepturi cupiditate voluptate ab placeat quis obcaecati consequuntur illum, ea, ad quod sed dolor vel dolores nemo?Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Repellat soluta nobis pariatur distinctio sequi eveniet modi reiciendis voluptates enim ipsa dicta, facere iste quis ducimus dolores vero quaerat aspernatur veniam. Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Velit, repudiandae assumenda, accusamus fugit deserunt, ea nostrum veniam quam possimus praesentium iure sunt nesciunt expedita dolor modi enim hic officia numquam.</p>
-        <h2>Test 2</h2>
-        <ul>
-            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio laborum dignissimos modi commodi fugit, enim praesentium optio adipisci accusamus, non ipsa obcaecati qui quo exercitationem veniam magni cum autem maiores.</li>
-            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio laborum dignissimos modi commodi fugit, enim praesentium optio adipisci accusamus, non ipsa obcaecati qui quo exercitationem veniam magni cum autem maiores.</li>
-            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio laborum dignissimos modi commodi fugit, enim praesentium optio adipisci accusamus, non ipsa obcaecati qui quo exercitationem veniam magni cum autem maiores.</li>
-            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio laborum dignissimos modi commodi fugit, enim praesentium optio adipisci accusamus, non ipsa obcaecati qui quo exercitationem veniam magni cum autem maiores.</li>
-        </ul>
-    </section>
+            <p>
+                <b>
+                    If you are a customer, we collect:
+                </b>
+            </p>
 
-    <footer class="overflow-hidden">
-        <div class="menu">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <ul>
-                            <li>
-                                <h1>Collection</1>
-                            </li>
-                            <li>
-                                <a href="#"></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-4">
-                        <ul>
-                            <li>
-                                <h1>NFTs</h1>
-                            </li>
-                            <li>
-                                <a href="#"></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-4">
-                        <ul>
-                            <li>
-                                <h1>About</h1>
-                            </li>
-                            <li>
-                                <a href="#"></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <p><a href="#">Privacy and policy</a></p>
-        <div class="icon">
-            <span><a href="#"><i class="fa-brands fa-instagram"></i></a></span>
-            <span><a href="#"><i class="fa-brands fa-youtube"></i></a></span>
-            <span><a href="#"><i class="fa-brands fa-twitter"></i></a></span>
-            <span><a href="#"><i class="fa-brands fa-facebook"></i></a></span>
-            <span><a href="#"><i class="fa-brands fa-discord"></i></a></span>
-        </div>
-    </footer>
+            <p>
+                First and last name, username, contact information including email address.
+            </p>
 
-    <script src="scripts/bootstrap.bundle.min.js"></script>
-    <script src="scripts/script.js"></script>
+            <p>
+                For both types of users, braider and customer, we may collect information such as last time logged in, last time logged
+                out, etc.
+            </p>
 
-</body>
+            <h2>What we do with the information we gather?</h2>
 
-</html>
+            <p>
+                We may use your contact information to identify you to provide a better service to both Customers and Braiders.
+            </p>
+
+<!--            <p>-->
+<!--                We require this information to understand your needs and provide you with a better service, and in particular for the-->
+<!--                following reasons:-->
+<!--            </p>-->
+
+
+            <h2>Internal record keeping.</h2>
+
+            <p>
+                We may use the information to improve our products and services.
+            </p>
+
+            <p>
+                If you are a Braider, we use your name and contact information, location information, links of social medias accounts
+                to help our website visitors who look for Braider, to connect with you.
+            </p>
+
+            <p>
+                The pictures posted by braiders are added to our braid picture collection and made accessible to the public. Such posts
+                include category and description.
+            </p>
+
+            <p>
+                We may also show these information in your profile, accessible by public, and we may show your email address and phone
+                number in accordance to your choice.
+            </p>
+
+            <p>
+                If we dive more into detail, we use your username to help you log in, and show it in your profile. we use your firstname
+                lastname for sending you more specific emails, and we show it on your profile and others will see it and identify you. we
+                use your country and city and location information to show you to those who search these locations, and we show it in
+                your profile so others will see where are your from. we may use your phone number and email to show it on your profile(
+                based on your choice). we use your business name and website address to show on your profile and users will see them
+                and use them. we use your profile picture to show it on your profile or where your username is used. we use your
+                biography to let others know more about you. we use your social medias links to show them on your profile and let those
+                who are interested get in touch with you and have your social media's id. we use the braid pictures you post for in your
+                profile and collection, and those who visit your profile will see your braid work quality.
+            </p>
+
+            <p>
+                We may periodically send promotional emails about new products, special offers or other information which we think you
+                may find interesting using the email address which you have provided.
+                From time to time, we may also use your information to contact you for market research purposes. We may contact you by
+                email, phone, fax or mail. We may use the information to customise the website according to your interests.
+            </p>
+
+
+            <h2>Security</h2>
+
+
+            <p>
+                We are committed to ensuring that your information is secure. In order to prevent unauthorised access or disclosure, we
+                have put in place suitable physical, electronic and managerial procedures to safeguard and secure the information we
+                collect online.
+            </p>
+
+
+            <h2>How we use cookies</h2>
+
+
+            <p>
+                A cookie is a small file which asks permission to be placed on your computer's hard drive. Once you agree, the file is
+                added and the cookie helps analyse web traffic or lets you know when you visit a particular site. Cookies allow web
+                applications to respond to you as an individual. The web application can tailor its operations to your needs, likes and
+                dislikes by gathering and remembering information about your preferences.
+            </p>
+
+            <p>
+                We use traffic log cookies to identify which pages are being used. This helps us analyse data about web page traffic
+                and improve our website in order to tailor it to customer needs. We only use this information for statistical analysis
+                purposes and then the data is removed from the system.
+            </p>
+
+            <p>
+                Overall, cookies help us provide you with a better website, by enabling us to monitor which pages you find useful and
+                which you do not. A cookie in no way gives us access to your computer or any information about you, other than the data
+                you choose to share with us.
+            </p>
+
+
+            <h2>Links to other websites</h2>
+
+
+            <p>
+                Our website may contain links to other websites of interest. However, once you have used these links to leave our site,
+                you should note that we do not have any control over that other website. Therefore, we cannot be responsible for the
+                protection and privacy of any information which you provide whilst visiting such sites and such sites are not governed
+                by this privacy statement. You should exercise caution and look at the privacy statement applicable to the website in
+                question.
+            </p>
+
+        </section>
+    {% endblock %}
+
+    {% block script %}
+        <script src="{% static 'scripts/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'scripts/script.js' %}"></script>
+    {% endblock %}
+
