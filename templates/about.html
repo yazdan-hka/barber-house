@@ -42,6 +42,14 @@
             margin-top:20px;
             margin-bottom:20px;
         }
+
+        .send{
+            padding:5px 20px 5px 20px;
+            background-color:#660099;
+            border-radius:6px;
+            color:white;
+            text-shadow:0px 0px 4px black;
+        }
     </style>
     
 {% endblock %}
@@ -115,18 +123,24 @@
     <section class="sec-12 overflow-hidden">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="feedback">
-                        <form action="#">
+                <div class="col-md-6" >
+                    <div class="feedback" style="height:auto;">
+                        <form method="post">
+                            {% csrf_token %}
                             <label for="name">Your Name : </label>
-                            <input type="text" id="name">
+                            {{ form.name }}
                             <br>
                             <label for="email">Your Email : </label>
-                            <input type="text" id="email">
+                            {{ form.email }}
                             <br>
                             <label for="comment">Your Comment : </label><br>
-                            <textarea id="comment">
-                            </textarea>
+                            {{ form.message }}
+                            <br><br>
+                            <center>
+                                <button class="send">
+                                    Send
+                                </button>
+                            </center>
                         </form>
                     </div>
                 </div>

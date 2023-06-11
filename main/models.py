@@ -54,6 +54,11 @@ def validate_password(value):
                               params={'value': value})
 
 
+class Message(models.Model):
+    name = models.CharField(max_length=33, null=False)
+    email = models.EmailField(max_length=252, null=False)
+    message = models.CharField(max_length=512, null=False)
+
 class Customer(models.Model):
     user_name = models.CharField(max_length=27, null=False, unique=True)
     email = models.EmailField(max_length=252, null=False, unique=True)

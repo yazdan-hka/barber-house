@@ -3,9 +3,9 @@ from .models import Braider, Post
 from django.urls import reverse
 from django.db.models import Q
 from django.contrib import messages
-from .forms import BraiderFinder
-from django.core.mail import send_mail
-from django.conf import settings
+from .forms import BraiderFinder, MessageForm
+# from django.core.mail import send_mail
+# from django.conf import settings
 
 # Create your views here.
 
@@ -86,7 +86,16 @@ def index(request):
     return render(request, 'index.html', context)
 
 def about(request):
-    return render(request, 'about.html')
+    if request.method == 'POST':
+        form = MessageForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your message have been sent. we will get back to you as soon as possible.'.title())
+            return redirect('index')
+    else:
+        form = MessageForm()
+
+    return render(request, 'about.html', {'form': form})
 
 def privacy(request):
     return render(request, 'privacy.html')
