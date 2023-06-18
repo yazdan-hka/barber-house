@@ -286,12 +286,15 @@ def validate_your_email(request, pk):
         return redirect('validate-your-email', pk=user.id)
 
     return render(request, 'validate-your-email.html')
-def validate_email(request, token, id):
+def validate_email(request, id, token):
 
     matched_token = Verification.objects.filter(token=token).first()
+    print(f'match token is:\n\n{matched_token}\n\n')
     if matched_token:
+        print('matched_token true')
         pass
     else:
+        print('matched_token false, tryinhg to search another table')
         matched_token = CustomerVerification.objects.filter(token=token).first()
 
     if matched_token:
