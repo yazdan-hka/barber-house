@@ -79,11 +79,7 @@ SESSION_COOKIE_SECURE = False
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-<<<<<<< HEAD
-#  for hosting
-=======
 # for hosting
->>>>>>> link-fix
 
 DATABASES =\
     {'default':
