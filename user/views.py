@@ -349,7 +349,7 @@ def reset_your_password_1(request):
                 message=f'Hi {cd["first_name"]},\n\nWe received a request to reset your password. If you initiated this request, please click on the following link to reset your password:\n\n{link}\n\nIf you did not request a password reset, please ignore this email.\n\nThank you,\nThe BraidStarz Team',
                 from_email=settings.EMAIL_HOST_USER,
                 recipient_list=[cd['email']])
-            
+
             return redirect('reset-your-password-2')
         else:
             messages.success(request, f'There were no account associated with {query}. Try again or make a new account.')
