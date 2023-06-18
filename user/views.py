@@ -277,13 +277,13 @@ def validate_your_email(request, pk):
         try:
             send_mail(
                 subject='Email Validation Required',
-                message=f'Hi {braider.user_name},\n\nThank you for signing up with our service. To complete your registration, please click on the following link to validate your email address:\n\n{link}\n\nIf you did not sign up for our service, you can safely ignore this email.\n\nThank you,\nThe BraidStarz Team',
+                message=f'Hi {user.user_name},\n\nThank you for signing up with our service. To complete your registration, please click on the following link to validate your email address:\n\n{link}\n\nIf you did not sign up for our service, you can safely ignore this email.\n\nThank you,\nThe BraidStarz Team',
                 from_email=settings.EMAIL_HOST_USER,
                 recipient_list=[email])
             messages.success(request, 'Email have been sent.')
         except:
             messages.error(request, 'Email could not be sent. Try again.')
-        return redirect('validate-your-email', pk=braider.id)
+        return redirect('validate-your-email', pk=user.id)
 
     return render(request, 'validate-your-email.html')
 def validate_email(request, token, id):
