@@ -134,7 +134,7 @@ def register_page(request):
 
             if saved:
                 token = Verification.objects.filter(rel=braider).first()
-                link = f'http://127.0.0.1:8000/user/validate-email/{braider.id}/{token.token}/'
+                link = f'https://www.braidstarz.com/user/validate-email/{braider.id}/{token.token}/'
                 print(link)
 
                 send_mail(
@@ -179,7 +179,7 @@ def customer_register(request):
 
             if customer.id:
                 token = CustomerVerification.objects.filter(rel=customer).first()
-                link = f'http://127.0.0.1:8000/user/validate-email/{customer.id}/{token.token}/'
+                link = f'https://www.braidstarz.com/user/validate-email/{customer.id}/{token.token}/'
                 print(link)
 
                 send_mail(
@@ -270,7 +270,7 @@ def validate_your_email(request, pk):
         except:
             token = CustomerVerification.objects.filter(rel=user).first()
 
-        link = f'http://127.0.0.1:8000/user/validate-email/{user.id}/{token.token}/'
+        link = f'https://www.braidstarz.com/user/validate-email/{user.id}/{token.token}/'
 
         print(link)
 
@@ -341,7 +341,7 @@ def reset_your_password_1(request):
                 token = CustomerVerification.objects.filter(rel=user).first()
 
 
-            link = f'http://127.0.0.1:8000/user/create-new-password/{user.id}/{token.token}/'
+            link = f'https://www.braidstarz.com/user/create-new-password/{user.id}/{token.token}/'
             print(link)
 
             send_mail(
