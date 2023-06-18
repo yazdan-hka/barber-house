@@ -131,16 +131,14 @@
                         </div>
                     </div>
                     <div class="btn">
-                        <button>Cansel</button>
-                        <button>Ok</button>
+                        <button>Apply Changes</button>
                     </div>
                 </div>
             </form>
         </section>
     {% endblock %}
-    <script src="{% static 'scripts/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'scripts/script.js' %}"></script>
 
-</body>
-
-</html>
+    {% block script %}
+        <script src="{% static 'scripts/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'scripts/script.js' %}"></script>
+    {% endblock %}

@@ -9,8 +9,8 @@ from django.contrib.auth.hashers import make_password
 import secrets
 from django.db.models import Q
 
-# from django.core.mail import send_mail
-# from django.conf import settings
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 # Create your views here.
@@ -137,11 +137,11 @@ def register_page(request):
                 link = f'http://127.0.0.1:8000/user/validate-email/{braider.id}/{token.token}/'
                 print(link)
 
-                # send_mail(
-                #     subject='Email Validation Required',
-                #     message=f'Hi {cd["first_name"]},\n\nThank you for signing up with our service. To complete your registration, please click on the following link to validate your email address:\n\n{link}\n\nIf you did not sign up for our service, you can safely ignore this email.\n\nThank you,\nThe BraidStarz Team',
-                #     from_email=settings.EMAIL_HOST_USER,
-                #     recipient_list=[cd['email']])
+                send_mail(
+                    subject='Email Validation Required',
+                    message=f'Hi {cd["first_name"]},\n\nThank you for signing up with our service. To complete your registration, please click on the following link to validate your email address:\n\n{link}\n\nIf you did not sign up for our service, you can safely ignore this email.\n\nThank you,\nThe BraidStarz Team',
+                    from_email=settings.EMAIL_HOST_USER,
+                    recipient_list=[cd['email']])
 
                 messages.success(request, 'One more step to create your account'.title())
                 return redirect('validate-your-email', pk=braider.pk)
@@ -182,11 +182,11 @@ def customer_register(request):
                 link = f'http://127.0.0.1:8000/user/validate-email/{customer.id}/{token.token}/'
                 print(link)
 
-                # send_mail(
-                #     subject='Email Validation Required',
-                #     message=f'Hi {cd["first_name"]},\n\nThank you for signing up with our service. To complete your registration, please click on the following link to validate your email address:\n\n{link}\n\nIf you did not sign up for our service, you can safely ignore this email.\n\nThank you,\nThe BraidStarz Team',
-                #     from_email=settings.EMAIL_HOST_USER,
-                #     recipient_list=[cd['email']])
+                send_mail(
+                    subject='Email Validation Required',
+                    message=f'Hi {cd["first_name"]},\n\nThank you for signing up with our service. To complete your registration, please click on the following link to validate your email address:\n\n{link}\n\nIf you did not sign up for our service, you can safely ignore this email.\n\nThank you,\nThe BraidStarz Team',
+                    from_email=settings.EMAIL_HOST_USER,
+                    recipient_list=[cd['email']])
 
                 messages.success(request, 'One more step to create your account'.title())
                 return redirect('validate-your-email', pk=customer.pk)
@@ -274,16 +274,16 @@ def validate_your_email(request, pk):
 
         print(link)
 
-        # try:
-        #     send_mail(
-        #         subject='Email Validation Required',
-        #         message=f'Hi {braider.user_name},\n\nThank you for signing up with our service. To complete your registration, please click on the following link to validate your email address:\n\n{link}\n\nIf you did not sign up for our service, you can safely ignore this email.\n\nThank you,\nThe BraidStarz Team',
-        #         from_email=settings.EMAIL_HOST_USER,
-        #         recipient_list=[email])
-        #     messages.success(request, 'Email have been sent.')
-        # except:
-        #     messages.error(request, 'Email could not be sent. Try again.')
-        # return redirect('validate-your-email', pk=braider.id)
+        try:
+            send_mail(
+                subject='Email Validation Required',
+                message=f'Hi {braider.user_name},\n\nThank you for signing up with our service. To complete your registration, please click on the following link to validate your email address:\n\n{link}\n\nIf you did not sign up for our service, you can safely ignore this email.\n\nThank you,\nThe BraidStarz Team',
+                from_email=settings.EMAIL_HOST_USER,
+                recipient_list=[email])
+            messages.success(request, 'Email have been sent.')
+        except:
+            messages.error(request, 'Email could not be sent. Try again.')
+        return redirect('validate-your-email', pk=braider.id)
 
     return render(request, 'validate-your-email.html')
 def validate_email(request, token, id):
@@ -344,11 +344,12 @@ def reset_your_password_1(request):
             link = f'http://127.0.0.1:8000/user/create-new-password/{user.id}/{token.token}/'
             print(link)
 
-            # send_mail(
-            #     subject='Email Validation Required',
-            #     message=f'Hi {cd["first_name"]},\n\nThank you for signing up with our service. To complete your registration, please click on the following link to validate your email address:\n\n{link}\n\nIf you did not sign up for our service, you can safely ignore this email.\n\nThank you,\nThe BraidStarz Team',
-            #     from_email=settings.EMAIL_HOST_USER,
-            #     recipient_list=[cd['email']])
+            send_mail(
+                subject='Password Reset Request',
+                message=f'Hi {cd["first_name"]},\n\nWe received a request to reset your password. If you initiated this request, please click on the following link to reset your password:\n\n{link}\n\nIf you did not request a password reset, please ignore this email.\n\nThank you,\nThe BraidStarz Team',
+                from_email=settings.EMAIL_HOST_USER,
+                recipient_list=[cd['email']])
+
             return redirect('reset-your-password-2')
         else:
             messages.success(request, f'There were no account associated with {query}. Try again or make a new account.')

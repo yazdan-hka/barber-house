@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-akgm@^)hu%(rny_bw9%))n0%4m_=&nw^qc30q2ki_e81scjzdq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['www.braidstarz.com']
 
@@ -76,12 +76,14 @@ WSGI_APPLICATION = 'website.wsgi.application'
 # settings.py
 SESSION_COOKIE_SECURE = False
 
-
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+<<<<<<< HEAD
 #  for hosting
+=======
+# for hosting
+>>>>>>> link-fix
 
 DATABASES =\
     {'default':
@@ -108,7 +110,7 @@ DATABASES =\
 #             'HOST': 'localhost' # or post
 #         }
 #     }
-
+#
 
 
 # Password validation
@@ -184,4 +186,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
->>>>>>> 354e77ae1b4817698f8f2e4e80f98daa42b23b18
+
