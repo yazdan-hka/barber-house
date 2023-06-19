@@ -134,7 +134,7 @@ def register_page(request):
 
             if saved:
                 token = Verification.objects.filter(rel=braider).first()
-                link = f'https://www.braidstarz.com/user/validate-email/{braider.id}/{token.token}/'
+                link = f'https://www.braidstarz.com/user/validate-email/{braider.user_name}/{token.token}/'
                 print(link)
 
                 send_mail(
@@ -179,7 +179,7 @@ def customer_register(request):
 
             if customer.id:
                 token = CustomerVerification.objects.filter(rel=customer).first()
-                link = f'https://www.braidstarz.com/user/validate-email/{customer.id}/{token.token}/'
+                link = f'https://www.braidstarz.com/user/validate-email/{customer.user_name}/{token.token}/'
                 print(link)
 
                 send_mail(
@@ -270,7 +270,7 @@ def validate_your_email(request, pk):
         except:
             token = CustomerVerification.objects.filter(rel=user).first()
 
-        link = f'https://www.braidstarz.com/user/validate-email/{user.id}/{token.token}/'
+        link = f'https://www.braidstarz.com/user/validate-email/{user.user_name}/{token.token}/'
 
         print(link)
 
@@ -286,32 +286,55 @@ def validate_your_email(request, pk):
         return redirect('validate-your-email', pk=user.id)
 
     return render(request, 'validate-your-email.html')
-def validate_email(request, id, token):
+def validate_email(request, user_name, token):
 
-    print(token)
-    matched_token = Verification.objects.filter(token=token).first()
-    print(f'match token is:\n\n{matched_token}\n\n')
-    if matched_token:
-        print('matched_token true')
-        pass
-    else:
-        print('matched_token false, tryinhg to search another table')
-        matched_token = CustomerVerification.objects.filter(token=token).first()
+    try:
+        user = Braider.objects.filter(user_name=user_name).first()
+    except:
+        user = Customer.objects.filter(user_name=user_name).first()
 
-    if matched_token:
-        if matched_token.rel.id == id and matched_token.is_expired() is False:
-            messages.success(request, 'Your account have been created. Log in to access your profile')
+    if user:
+        try:
+            user_token = user.verification.token
+        except:
+            user_token = user.customerverification.token
 
-            matched_token.is_email_verified = True
-            matched_token.save()
+        if user_token:
+            if user_token == token and user_token.is_expired() is False:
+                user_token.is_email_verified = True
+                user_token.save()
+                messages.success(request, 'Your account have been created. Log in to access your profile')
+                return redirect('/user/login')
+            else:
+                messages.error(request, 'Token is invalid or expired.')
+                return redirect('/')
 
-            return redirect('/user/login')
-        else:
-            messages.error(request, 'Token is invalid or expired.')
-            return redirect('/')
     else:
         messages.error(request, 'Token is invalid.')
         return redirect('/')
+
+
+    # print(token)
+    # matched_token = Verification.objects.filter(token=token).first()
+    # if matched_token:
+    #     pass
+    # else:
+    #     matched_token = CustomerVerification.objects.filter(token=token).first()
+    #
+    # if matched_token:
+    #     if matched_token.rel.id == id and matched_token.is_expired() is False:
+    #         messages.success(request, 'Your account have been created. Log in to access your profile')
+    #
+    #         matched_token.is_email_verified = True
+    #         matched_token.save()
+    #
+    #         return redirect('/user/login')
+    #     else:
+    #         messages.error(request, 'Token is invalid or expired.')
+    #         return redirect('/')
+    # else:
+    #     messages.error(request, 'Token is invalid.')
+    #     return redirect('/')
 def reset_your_password_1(request):
     if request.method == 'POST':
         query = request.POST['data']

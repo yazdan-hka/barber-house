@@ -10,9 +10,9 @@ urlpatterns = [
     path('login/', views.login_page, name='login'),
     path('logout/', views.logout_page, name='logout'),
     path('validate-your-email/<int:pk>/', views.validate_your_email, name='validate-your-email'),
-    path('validate-email/<int:id>/<str:token>/', views.validate_email, name='validate-email'),
+    path('validate-email/<str:user_name>/<str:token>/', views.validate_email, name='validate-email'),
     path('reset-your-password-1/', views.reset_your_password_1, name='reset-your-password-1'),
     path('reset-your-password-2/', views.reset_your_password_2, name='reset-your-password-2'),
-    path('create-new-password/<int:id>/<str:token>/', views.create_new_password, name='create-new-password'),
+    path('create-new-password/<str:id>/<str:token>/', views.create_new_password, name='create-new-password'),
 
 ]
