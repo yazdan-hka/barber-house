@@ -277,7 +277,7 @@ def validate_your_email(request, pk):
         try:
             send_mail(
                 subject='Email Validation Required',
-                message=f'Hi {user.user_name},\n\nThank you for signing up with our service. To complete your registration, please click on the following link to validate your email address:\n\n{link}\n\nIf you did not sign up for our service, you can safely ignore this email.\n\nThank you,\nThe BraidStarz Team',
+                message=f'Hi {user.user_name},\n\nThank you for signing up with our service. To complete your <b>registration</b>, please click on the following link to validate your email address:\n\n{link}\n\nIf you did not sign up for our service, you can safely ignore this email.\n\nThank you,\nThe BraidStarz Team',
                 from_email=settings.EMAIL_HOST_USER,
                 recipient_list=[email])
             messages.success(request, 'Email have been sent.')
@@ -288,6 +288,7 @@ def validate_your_email(request, pk):
     return render(request, 'validate-your-email.html')
 def validate_email(request, id, token):
 
+    print(token)
     matched_token = Verification.objects.filter(token=token).first()
     print(f'match token is:\n\n{matched_token}\n\n')
     if matched_token:
