@@ -228,7 +228,7 @@ def login_page(request):
 
             login(request, user)
             print('user is logged in')
-            
+
             if remember_me:
                 request.session.set_expiry(60 * 60 * 24 * 7)  # 1 weeks = 1 weeks' seconds
             messages.success(request, f'You are logged in dear {username}'.title())
@@ -350,9 +350,9 @@ def reset_your_password_1(request):
 
             send_mail(
                 subject='Password Reset Request',
-                message=f'Hi {cd["first_name"]},\n\nWe received a request to reset your password. If you initiated this request, please click on the following link to reset your password:\n\n{link}\n\nIf you did not request a password reset, please ignore this email.\n\nThank you,\nThe BraidStarz Team',
+                message=f'Hi {user.user_name},\n\nWe received a request to reset your password. If you initiated this request, please click on the following link to reset your password:\n\n{link}\n\nIf you did not request a password reset, please ignore this email.\n\nThank you,\nThe BraidStarz Team',
                 from_email=settings.EMAIL_HOST_USER,
-                recipient_list=[cd['email']])
+                recipient_list=[user.email])
 
             return redirect('reset-your-password-2')
         else:
