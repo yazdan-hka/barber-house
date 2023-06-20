@@ -241,7 +241,7 @@ def logout_page(request):
     try:
         messages.success(request, f'you are logged out! comeback soon {request.user.first_name}'.title())
     except:
-        messages.success(request, f'you are logged out! goodbye..'.title(), )
+        messages.success(request, f'you are logged out! goodbye..'.title())
     logout(request)
     return redirect('/')
 def fregister(request):
@@ -294,10 +294,11 @@ def validate_email(request, user_name, token):
         user = Customer.objects.filter(user_name=user_name).first()
 
     if user:
+
         try:
-            user_token = user.verification.token
+            user_token = Verification.objects.filter(rel=user).first().token
         except:
-            user_token = user.customerverification.token
+            user_token = CustomerVerification.objects.filter(rel=user).first().token
 
         if user_token:
             if user_token == token and user_token.is_expired() is False:
