@@ -297,19 +297,19 @@ def validate_email(request, user_name, token):
 
     if user:
         try:
-            user_token = Verification.objects.filter(rel=user).first().token
+            verific = Verification.objects.filter(rel=user).first()
             print('trying to find associated token with braider object')
         except:
-            user_token = CustomerVerification.objects.filter(rel=user).first().token
+            verific = CustomerVerification.objects.filter(rel=user).first()
             print('trying to find associated token with customer object')
 
-        if user_token:
+        if verific:
             print('the token is True')
-            print(f'user token: {user_token}\n is expired: {user_token.is_expired()}\n token: {token}')
-            if user_token == token and user_token.is_expired() is False:
+            print(f'user token: {verific.token}\n is expired: {verific.is_expired()}\n token: {token}')
+            if verific.token == token and verific.is_expired() is False:
                 print('token is valid')
-                user_token.is_email_verified = True
-                user_token.save()
+                verific.is_email_verified = True
+                verific.save()
                 messages.success(request, 'Your account have been created. Log in to access your profile')
                 return redirect('/user/login')
             else:
