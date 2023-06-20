@@ -305,6 +305,7 @@ def validate_email(request, user_name, token):
 
         if user_token:
             print('the token is True')
+            print(f'user token: {user_token}\n is expired: {user_token.is_expired()}\n token: {token}')
             if user_token == token and user_token.is_expired() is False:
                 print('token is valid')
                 user_token.is_email_verified = True
