@@ -46,7 +46,7 @@
                             {% if braider.publicinfo__profile_picture != 'profile_pic.jpg' %}
                                 <img src="/media/{{ braider.publicinfo__profile_picture }}" alt="braider {{ braider.user_name }} profile picture from {{ braider.locationinfo__country }}, {{ braider.locationinfo__country }}">
                             {% else %}
-                                <img src="{% static 'img/logo.PNG' %}" alt="braid starz logo">
+                                <img src="{% static 'img/logo.png' %}" alt="braid starz logo">
                             {% endif %}
 
                             {% if user.is_authenticated and user.user_name == braider.user_name%}
@@ -83,7 +83,7 @@
                             {% if braider.publicinfo__profile_picture != 'profile_pic.jpg' %}
                                 <img src="/media/{{ braider.publicinfo__profile_picture }}" alt="braider {{ braider.user_name }} profile picture from {{ braider.locationinfo__country }}, {{ braider.locationinfo__city }}">
                             {% else %}
-                                <img src="{% static 'img/logo.PNG' %}" alt="braid starz logo">
+                                <img src="{% static 'img/logo.png' %}" alt="braid starz logo">
                             {% endif %}
                         </div>
                         <div class="details-braider">
@@ -122,9 +122,9 @@
                             {% if braider.posts__image %}
                                 <img src="/media/{{ braider.posts__image }}" class="img-1" alt="braider {{ braider.user_name }} braid post from {{ braider.locationinfo__country }}, {{ braider.locationinfo__city }}">
                             {% else %}
-                                <img src="{% static 'img/logo.PNG' %}" alt="braid starz logo" class="img-1">
+                                <img src="{% static 'img/logo.png' %}" alt="braid starz logo" class="img-1">
                             {% endif %}
-<!--                                <img src="{% static 'img/logo.PNG' %}" alt="braid starz logo" class="img-2">-->
+<!--                                <img src="{% static 'img/logo.png' %}" alt="braid starz logo" class="img-2">-->
                         </div>
                         <h4 class="position-absolute top-50 start-50 translate-middle">Click to see more post</h4>
                     </a>
