@@ -144,7 +144,7 @@ def register_page(request):
                     recipient_list=[cd['email']])
 
                 messages.success(request, 'One more step to create your account'.title())
-                return redirect('validate-your-email', pk=braider.pk)
+                return redirect('validate-your-email', user_name=braider.user_name)
         else:
             for field_name, errors in form.errors.items():
                 for error in errors:
@@ -189,7 +189,7 @@ def customer_register(request):
                     recipient_list=[cd['email']])
 
                 messages.success(request, 'One more step to create your account'.title())
-                return redirect('validate-your-email', pk=customer.pk)
+                return redirect('validate-your-email', user_name=customer.user_name)
         else:
             for field_name, errors in form.errors.items():
                 for error in errors:
@@ -224,13 +224,14 @@ def login_page(request):
 
             if verif.is_email_verified == False:
                 messages.error(request, 'your email must be verified for you to be able to log in. verify your email.'.title())
-                return redirect('validate-your-email', pk=user.id)
+                return redirect('validate-your-email', user_name=user.user_name)
+
+            if remember_me:
+                request.session.set_expiry(60 * 60 * 24 * 7)  # 1 weeks = 1 weeks' seconds
 
             login(request, user)
             print('user is logged in')
 
-            if remember_me:
-                request.session.set_expiry(60 * 60 * 24 * 7)  # 1 weeks = 1 weeks' seconds
             messages.success(request, f'You are logged in dear {username}'.title())
             return redirect('/')
         else:
@@ -248,31 +249,37 @@ def fregister(request):
     return render(request, 'registerfirst.html')
 def flogin(request):
     return render(request, 'loginfirst.html')
-def validate_your_email(request, pk):
+def validate_your_email(request, user_name):
+
     try:
-        user = Braider.objects.filter(id=pk).first()
+        user = Braider.objects.filter(user_name=user_name).first()
         verification = Verification.objects.filter(rel=user).first()
         token = secrets.token_urlsafe(32)
         verification.token = token
         verification.save()
     except:
-        user = Customer.objects.filter(id=pk).first()
+        user = Customer.objects.filter(user_name=user_name).first()
         verification = CustomerVerification.objects.filter(rel=user).first()
         token = secrets.token_urlsafe(32)
         verification.token = token
         verification.save()
 
+    email = user.email
+    link = f'https://www.braidstarz.com/user/validate-email/{user.user_name}/{token}/'
+
+    try:
+        send_mail(
+            subject='Email Validation Required',
+            message=f'Hi {user.user_name},\n\nThank you for signing up with our service. To complete your <b>registration</b>, please click on the following link to validate your email address:\n\n{link}\n\nIf you did not sign up for our service, you can safely ignore this email.\n\nThank you,\nThe BraidStarz Team',
+            from_email=settings.EMAIL_HOST_USER,
+            recipient_list=[email])
+        messages.success(request, 'Email have been sent.')
+    except:
+        messages.error(request, 'Email could not be sent. Try again.')
+
     if request.method == 'POST':
-        email = user.email
 
-        try:
-            token = Verification.objects.filter(rel=user).first()
-        except:
-            token = CustomerVerification.objects.filter(rel=user).first()
-
-        link = f'https://www.braidstarz.com/user/validate-email/{user.user_name}/{token.token}/'
-
-        print(link)
+        link = f'https://www.braidstarz.com/user/validate-email/{user.user_name}/{token}/'
 
         try:
             send_mail(
@@ -283,8 +290,8 @@ def validate_your_email(request, pk):
             messages.success(request, 'Email have been sent.')
         except:
             messages.error(request, 'Email could not be sent. Try again.')
-        return redirect('validate-your-email', pk=user.id)
 
+        return redirect('validate-your-email', user_name=user.user_name)
     return render(request, 'validate-your-email.html')
 def validate_email(request, user_name, token):
 
