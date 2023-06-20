@@ -290,26 +290,33 @@ def validate_email(request, user_name, token):
 
     try:
         user = Braider.objects.filter(user_name=user_name).first()
+        print('try to find braider associated with this user name')
     except:
         user = Customer.objects.filter(user_name=user_name).first()
+        print('try to find customer associated with this user name')
 
     if user:
-
         try:
             user_token = Verification.objects.filter(rel=user).first().token
+            print('trying to find associated token with braider object')
         except:
             user_token = CustomerVerification.objects.filter(rel=user).first().token
+            print('trying to find associated token with customer object')
 
         if user_token:
+            print('the token is True')
             if user_token == token and user_token.is_expired() is False:
+                print('token is valid')
                 user_token.is_email_verified = True
                 user_token.save()
                 messages.success(request, 'Your account have been created. Log in to access your profile')
                 return redirect('/user/login')
             else:
+                print('token is invalid')
                 messages.error(request, 'Token is invalid or expired.')
                 return redirect('/')
-
+        else:
+            print('no token')
     else:
         messages.error(request, 'Token is invalid.')
         return redirect('/')
