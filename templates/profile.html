@@ -46,7 +46,8 @@
                             {% if braider.publicinfo__profile_picture != 'profile_pic.jpg' %}
                                 <img src="/media/{{ braider.publicinfo__profile_picture }}" alt="braider {{ braider.user_name }} profile picture from {{ braider.locationinfo__country }}, {{ braider.locationinfo__country }}">
                             {% else %}
-                                <img src="{% static 'img/logo.png' %}" alt="braid starz logo">
+                                <img src="{% static 'img/profile/profile/prof-demo.jpg' %}" alt="demo profile picture">
+
                             {% endif %}
 
                             {% if user.is_authenticated and user.user_name == braider.user_name%}
@@ -83,13 +84,13 @@
                             {% if braider.publicinfo__profile_picture != 'profile_pic.jpg' %}
                                 <img src="/media/{{ braider.publicinfo__profile_picture }}" alt="braider {{ braider.user_name }} profile picture from {{ braider.locationinfo__country }}, {{ braider.locationinfo__city }}">
                             {% else %}
-                                <img src="{% static 'img/logo.png' %}" alt="braid starz logo">
+                                <img src="{% static 'img/profile/profile/prof-demo.jpg' %}" alt="demo profile picture">
                             {% endif %}
                         </div>
                         <div class="details-braider">
                             <p>Name:
                                 <b>
-                                    {{ braider.publicinfo__first_name|title }}  {{ braider.publicinfo__last_name|title }}
+                                    {{ braider.publicinfo__first_name|title }} {{ braider.publicinfo__last_name|title }}
                                 </b>
                             </p>
 
@@ -122,7 +123,7 @@
                             {% if braider.posts__image %}
                                 <img src="/media/{{ braider.posts__image }}" class="img-1" alt="braider {{ braider.user_name }} braid post from {{ braider.locationinfo__country }}, {{ braider.locationinfo__city }}">
                             {% else %}
-                                <img src="{% static 'img/logo.png' %}" alt="braid starz logo" class="img-1">
+                                   <img src="{% static 'img/profile/profile/prof-demo.jpg' %}" alt="braider {{ braider.user_name }}">
                             {% endif %}
 <!--                                <img src="{% static 'img/logo.png' %}" alt="braid starz logo" class="img-2">-->
                         </div>

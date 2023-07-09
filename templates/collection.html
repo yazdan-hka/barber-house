@@ -45,7 +45,11 @@
                         </div>
                         <div class="details">
                             <div class="profile">
-                                <img src="/media/{{ post.braider.publicinfo.profile_picture }}" alt="{{ post.braider.user_name }}">
+                                {% if post.braider.publicinfo.profile_picture %}
+                                   <img src="/media/{{ post.braider.publicinfo.profile_picture }}" alt="{{ post.braider.user_name }}">
+                                {% else %}
+                                   <img src="{% static 'img/profile/profile/prof-demo.jpg' %}" alt="demo profile picture">
+                                {% endif %}
                             </div>
                             <div class="description">
                                 <p>{{ post.description }}</p>
