@@ -690,13 +690,12 @@ class BraiderRegistration(forms.Form):
         validators=[validate_username],
         widget=forms.TextInput(attrs={'class': 'text', 'placeholder': 'Username(no white space)'})
     )
-    insta_id = forms.CharField(
-        max_length=40,
-        strip=True,
-        label='',
-        required=False,
-        validators=[],
-        widget=forms.TextInput(attrs={'class': 'text', 'placeholder': 'Your Instagram ID'})
+    insta_id = forms.URLField(
+            max_length=234,
+            label='',
+            required=False,
+            validators=[],
+            widget=forms.TextInput(attrs={'class': 'text', 'placeholder': 'URL of Instagram '})
     )
     website = forms.URLField(
         max_length=200,
