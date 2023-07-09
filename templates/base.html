@@ -29,37 +29,35 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'nft' %}">NFTs</a>
                         </li>
-                        <li class="nav-item">
-                        </li>
-                            <a class="nav-link" href="#">Youtube</a>
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link" href="#">Youtube</a>-->
+<!--                        </li>-->
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'about' %}">About Us</a>
                         </li>
                     </ul>
-
+                    <hr style="color:white;">
                     {% if user.is_authenticated %}
                         <div id="login">
-                            <a class="profile-img" href="{% url 'profile' user_name=user.user_name %}">
-<!--                            <img src="img/profile/profile/6-1.png.jpg" alt="Profile Image">-->
-                                {{ user.user_name }}
+                            <a class="profile-img" href="{% url 'profile' user_name=user.user_name %}" style="text-decoration:pueple underline;">
+                                {{ user.user_name }}&nbsp&nbsp
                             </a>
-                            <p>
-                                ||
-                            </p>
-                            <a class="login" href="{% url 'logout' %}">
-                                Logout
+                        </div>
+                        <div id="login">
+                            <a class="Login" href="{% url 'logout' %}">
+                                <p style="color:red;">Logout</p>
                             </a>
                         </div>
                     {% else %}
                         <div id="login">
                             <a class="signup" href="{% url 'braider-or-customer' %}">
-                                Sign up
+                                Sign up &nbsp&nbsp
                             </a>
-                            <p>
-                                |
-                            </p>
+                        </div>
+
+                        <div id="login">
                             <a class="login" href="{% url 'flogin' %}">
-                                Login
+                                 Login
                             </a>
                         </div>
                     {% endif %}
