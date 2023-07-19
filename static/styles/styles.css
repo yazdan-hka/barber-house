@@ -431,6 +431,25 @@ header #login p {
     font-size: 18px;
 }
 
+.plus {
+    position: fixed;
+    top: 92%;
+    right: 25px;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.plus svg {
+    display: block;
+    background-color: #ececeb;
+    color: #4783dd;
+    border-radius: 100px;
+    padding: 5px;
+    text-align: center;
+    font-size: 80px;
+    transition: all 0.3s ease;
+}
+
 
 /* End Sec4 */
 

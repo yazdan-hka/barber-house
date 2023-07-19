@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'styles/collection.css' %}">
     <link rel="stylesheet" href="{% static 'styles/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+
+
     <script src="{% static 'scripts/all.min.js' %}"></script>
     <title>Hairstyles</title>
 {% endblock %}
@@ -78,7 +81,13 @@
 <!--            <div class="next "><a href="# ">Next</a></div>-->
 <!--        </div>-->
     </section>
-
+    {% if user.is_authenticated %}
+        <a href="{% url 'post-picture' %}">
+            <span class="plus">
+                <i class="fa-solid fa-circle-plus"></i>
+            </span>
+        </a>
+    {% endif %}
 {% endblock %}
 
 
