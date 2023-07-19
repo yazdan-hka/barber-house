@@ -56,11 +56,13 @@ body {
     font-size: 50px;
     padding: 0 20px !important;
     font-family: open sans bold;
+    color:white;
 }
 
 .sec-23 p {
     padding: 20px 40px;
     font-size: 18px;
+    color:white;
 }
 
 .sec-23 button {
