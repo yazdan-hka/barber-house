@@ -157,7 +157,7 @@ def register_page(request):
         form = BraiderRegistration()
 
     context = {'form': form}
-    return render(request, 'validate-email-email-template.html', context)
+    return render(request, 'register.html', context)
 def customer_register(request):
 
     if request.method == 'POST':
