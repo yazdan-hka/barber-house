@@ -1,0 +1,1112 @@
+[33mcommit deee7a1251d3c5e8f1e71b003a0fe17a2ca85fc8[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: yazdan-hka <yazdan.hka@gmail.com>
+Date:   Mon Jul 24 12:58:00 2023 +0000
+
+    cache
+
+[33mcommit 11f6326eda1988d33d1b1c343f4b5404f1db04e2[m
+Merge: e3a8899 c04a994
+Author: yazdan-hka <yazdan.hka@gmail.com>
+Date:   Wed Jul 19 15:17:13 2023 +0000
+
+    None
+
+[33mcommit c04a994253a467772dc2fdc5f2f4e4e4cddd6d9e[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Wed Jul 19 18:45:34 2023 +0330
+
+    made changes to deploy on server
+
+[33mcommit e3a8899a7a69afa0ab6d7c92668f776eeb5fac29[m
+Author: yazdan-hka <yazdan.hka@gmail.com>
+Date:   Wed Jul 19 15:11:08 2023 +0000
+
+    fucking cache
+
+[33mcommit 66c57ce6a33e500297b70c791ff43a7fdd337b30[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Wed Jul 19 18:38:28 2023 +0330
+
+    some textes have been changed
+
+[33mcommit aaa79a8b52fb3645aa6c93804fdc83fac2252d24[m
+Merge: 2ca24f7 d4cf99f
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Wed Jul 19 18:08:33 2023 +0330
+
+    one day i will get rid of pycache..
+
+[33mcommit 2ca24f706733c53ce3dee3d9ad5276b6906e69a6[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Wed Jul 19 18:08:02 2023 +0330
+
+    merging
+
+[33mcommit d4cf99fa5c1965440e1e1f14cc73b97101ddc3e3[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Wed Jul 19 18:06:24 2023 +0330
+
+    email templates added, emailed updated, post button added.
+
+[33mcommit 14ebbe87bd4baf9187b8015329c7f4615e55f820[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sat Jul 15 09:12:40 2023 +0330
+
+    changes for working on localhost
+
+[33mcommit 3ad84e838cc97cc5434adb40edd28e529031b84a[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun Jul 9 11:55:37 2023 +0330
+
+    instagram converted to url field in register form, setting set to host.
+
+[33mcommit af208ea9c5233d8c02a9dcb04f2d119ea941f824[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun Jul 9 11:44:36 2023 +0330
+
+    post picture text are clear and white now, few changes in base.html
+
+[33mcommit 3f26ab9514430aeafbcbe0ece45048d9aed11e83[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun Jul 9 10:11:45 2023 +0330
+
+    altered the logo with demo profile picture
+
+[33mcommit 12e2b2df6f851803be6b5503c352222c0578f119[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun Jul 9 09:32:20 2023 +0330
+
+    profile demo picture added
+
+[33mcommit 4fa1973dbef2f3a4800e63722b6558b5eed5c518[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Tue Jun 20 14:53:08 2023 +0330
+
+    icons fix
+
+[33mcommit b9857b8297238142d478e6d440f7e558870e7ae9[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Tue Jun 20 14:00:42 2023 +0330
+
+    biogrpahy changed to not required
+
+[33mcommit 8013a71718ce64aa4f57c9bb9d1ec215c6941b9f[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Tue Jun 20 13:58:04 2023 +0330
+
+    PNG changed to png. i shall remember that url is case sensetive in static
+
+[33mcommit 8751f588400739b36c9f0ce3dbee46e9daf96041[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Tue Jun 20 13:50:42 2023 +0330
+
+    structure of some codes changed
+
+[33mcommit 0700b366145250c6cd164c397ee21e0c0b5e6b36[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Tue Jun 20 11:58:51 2023 +0330
+
+    i think it works no
+
+[33mcommit d39bb929d0d58deccb2a8732c7b7762c28da3354[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Tue Jun 20 11:46:39 2023 +0330
+
+    print user token
+
+[33mcommit ee8d6c28fa0ce6e4f58987fc373309c93610bed3[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Tue Jun 20 11:22:50 2023 +0330
+
+    debugging
+
+[33mcommit 2fe47c8866a75c3dd14ec6869dd029854dc0a0c5[m
+Author: yazdan-hka <yazdan.hka@gmail.com>
+Date:   Tue Jun 20 07:49:20 2023 +0000
+
+    debugging
+
+[33mcommit 33f0b8068644a5de76dc26ba1614eb5b6656fedd[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Tue Jun 20 00:10:05 2023 +0330
+
+    debugging email validation
+
+[33mcommit e37e542c8f8af25d18ae2145996794cfc5d97af3[m
+Author: yazdan-hka <yazdan.hka@gmail.com>
+Date:   Mon Jun 19 19:31:59 2023 +0000
+
+    debbugging reset password
+
+[33mcommit 83705195fa8ea5fb881a605de250fa8ca653ffcd[m
+Merge: c56d211 f857a28
+Author: yazdan-hka <yazdan.hka@gmail.com>
+Date:   Mon Jun 19 07:00:18 2023 +0000
+
+    debug
+
+[33mcommit c56d211b7af82955d5ac5571b0f21b944c920c27[m
+Author: yazdan-hka <yazdan.hka@gmail.com>
+Date:   Mon Jun 19 06:58:02 2023 +0000
+
+    cache
+
+[33mcommit f857a282f98ef7fe95e9bac7c5c985971386afd3[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Mon Jun 19 10:24:41 2023 +0330
+
+    still debuging. if the problem could not be found, i will make verification more easier.
+
+[33mcommit 30b47f61eb77b11867facf1a38b082f987bc6e92[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun Jun 18 20:07:52 2023 +0330
+
+    debugging token
+
+[33mcommit 50c0364b9b70c74d8805b440ac89ee25297b5224[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun Jun 18 19:47:29 2023 +0330
+
+    bug fix
+
+[33mcommit 6dd5145f450562e0ec855166e5de47535aa11e09[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun Jun 18 19:41:10 2023 +0330
+
+    links of send mail fixed
+
+[33mcommit 1e5f985966e409a87e2ff9a15c0dbe4d09af4d78[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun Jun 18 19:30:42 2023 +0330
+
+    none
+
+[33mcommit b4e270ec913b7d90a4999ac1df229be96ed399bc[m
+Merge: 2a19b1b 80ccfe3
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun Jun 18 19:29:45 2023 +0330
+
+    merging
+
+[33mcommit 80ccfe32569e2b208f30fdb60efed30a6645fed8[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun Jun 18 19:28:52 2023 +0330
+
+    switched to production
+
+[33mcommit 14d048743df648d501cfe466027e9b7bf71e65f8[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun Jun 18 19:26:57 2023 +0330
+
+    send_mails are uncommented, email of reset password is reset, now make it apt for getting it online
+
+[33mcommit a7b157ab564e051f5930f2744288787098ea819e[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun Jun 18 19:17:04 2023 +0330
+
+    link fix, social media link uploaded, nft page text is putet,
+
+[33mcommit c28da75775e4ce66d5889a5933e7cf8d2fbca4e9[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun Jun 11 12:41:21 2023 +0330
+
+    contact form is made. privacy policy done, some front debug has been done, now it is left putting content to footer and into nft page.
+
+[33mcommit 23950e2fd7592b3dae14895b165ddae4632036a5[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun Jun 11 12:02:05 2023 +0330
+
+    privacy and policy is added. some debug has been done.
+
+[33mcommit e16e038c6e77be27db90392491372a4e7dd5d2f3[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun Jun 11 11:08:07 2023 +0330
+
+    content with seo is provided.
+
+[33mcommit 8c4cad74ef91341172ee4eda7687b0e6c61fff07[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Fri Jun 9 12:54:11 2023 +0330
+
+    about us content and front is changed a little. now im thinking that should i make seperate page for communication or not.
+
+[33mcommit 3ccdceddd9eb8ac9b30754da7364f408786f082f[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Fri Jun 9 11:44:25 2023 +0330
+
+    test nfts have been removed from nft page
+
+[33mcommit 1b6c26bdc1557f9498f3a8d07f5ace6b42e3bdeb[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Tue Jun 6 11:41:04 2023 +0330
+
+    switched database
+
+[33mcommit aba87c502a0e501ebe9f0931b9bce8ac2d077b26[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Tue Jun 6 11:39:31 2023 +0330
+
+    bug in setting
+
+[33mcommit 2a19b1beb37481aee26f4534a9888b1085b57f8a[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Tue Jun 6 11:37:33 2023 +0330
+
+    database commented
+
+[33mcommit 2b0cb63f5c5223773f1e603295ec998da516fc2f[m
+Merge: 2f09cca 354e77a
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Tue Jun 6 11:32:50 2023 +0330
+
+    conflict solved.
+
+[33mcommit 2f09ccaa99b8072e48019780cd6bf9c13da2d3b8[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Tue Jun 6 11:29:13 2023 +0330
+
+    commit to pull
+
+[33mcommit 354e77ae1b4817698f8f2e4e80f98daa42b23b18[m
+Author: yazdan-hka <yazdan.hka@gmail.com>
+Date:   Tue Jun 6 07:52:52 2023 +0000
+
+    commiting from host provider. database setting is changed. all else is the same.  now the front sohuld be clened.
+
+[33mcommit dd734698b53bbffaacf9d8d2a52c50ea049ff4d4[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Wed May 31 17:25:40 2023 +0330
+
+    getting rid of useless files and making code ready to make it online
+
+[33mcommit 93d20e81b3c51706085f2a2bdebb24a348419230[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Tue May 30 19:15:04 2023 +0330
+
+    working on praivacy, i shall define how the user can delete or edit their information
+
+[33mcommit b5e72f1ec61f5ca2278f17e3cd7bbe09bad558f9[m
+Merge: e3aec3d 5877c55
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Tue May 30 17:24:20 2023 +0330
+
+    commit merge, all cache
+
+[33mcommit e3aec3d2af66b6d0fc9131053fc38b9661875b63[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Tue May 30 17:23:22 2023 +0330
+
+    cache
+
+[33mcommit 5877c557b015505c35a1ec0171acf5def51a3c8d[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Tue May 30 17:22:49 2023 +0330
+
+    reset password is added.
+
+[33mcommit 5dfb3b600a4237d43461aff18803e04cf111d26e[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Tue May 30 15:26:50 2023 +0330
+
+    html files added, now configuring url and make views.
+
+[33mcommit d35f0933bb7d9a9a10c99a6eb68291dd9dbffa51[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Tue May 30 15:11:31 2023 +0330
+
+    all cache
+
+[33mcommit bf06091706e781a85b0cba8454d7010a9f6baa78[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Tue May 30 14:47:57 2023 +0330
+
+    new verification table for customer is created, login features for customer coded, email validation for customer coded. now working on what happens when a customer logs ij
+
+[33mcommit f308829dfa5c28da0afde5f2fdaa3a57ea0f57da[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Tue May 30 00:57:09 2023 +0330
+
+    resend email is coded, and if the email is nnot valid, they must validate it to log it. now i wonder, should i do all of these with customer modle too. or because of long process i shall just use the braider model for customers too.
+
+[33mcommit a9aa2fab91b35780261d64ced4c2144eebdcc561[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Tue May 30 00:01:58 2023 +0330
+
+    token expiration time is 10 minutes. the resend email is coded but still, all send-mail are commented. now working on what happens if someone log in that did not validated his/her email.
+
+[33mcommit 6446a9ea662f4d752f55a9fd80d065f5b4c52978[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun May 28 21:41:37 2023 +0330
+
+    email validation can be sent but is commented. the token works. now working on how the token expiration make the link does not work and, what happens if someone doe snot validate his email. im glad the the process of email validation and passwrod reset is somhowe the same. now im about to go pedal. and i know its unprofessional to write like this in ocmmit message. whatever.
+
+[33mcommit 5cd92025805658728a56d112dba8967ce88312f8[m
+Merge: c4ad59e c8deb9c
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun May 28 17:55:51 2023 +0330
+
+    no conflict only cache
+
+[33mcommit c4ad59e1a4ecb49c9186d78722cdafa8ffac999f[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun May 28 17:53:45 2023 +0330
+
+    cache
+
+[33mcommit c8deb9cdc63e93c93837a2e78799ad9dacf8f3fb[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun May 28 17:53:27 2023 +0330
+
+    commit to merge to avoid bugs
+
+[33mcommit f014855fad4a1dca4928e57cd45ed5ef0fd15ea1[m
+Merge: 36471b1 0ab1a60
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sat May 27 23:08:01 2023 +0330
+
+    commiting merge
+
+[33mcommit 36471b1efced1e9066a2a06f64688b7ccb7645c3[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sat May 27 23:07:42 2023 +0330
+
+    cache
+
+[33mcommit 0ab1a6028ede8023f1bff9858c5cfc3da089be60[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sat May 27 23:07:12 2023 +0330
+
+    user type question page added, customer register from coded. no profile for customers yet.
+
+[33mcommit 3543fb00f0ea143c8a5eb440714cd6184c7786a9[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sat May 27 17:41:52 2023 +0330
+
+    cache
+
+[33mcommit 783e9bce2ac32fc954dc7e8b97d50cf14976faa1[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sat May 27 17:41:37 2023 +0330
+
+    i commit to change branch, due to problem in connection i work on this branch later.
+
+[33mcommit f578ee96f88d466170e3500cf435d57985494a18[m
+Merge: 044b3d7 c2d6678
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Fri May 26 13:12:41 2023 +0430
+
+    commiting mergintg
+
+[33mcommit 044b3d725bdc3ada11ce06c71a94e9c0b0484998[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Fri May 26 13:11:45 2023 +0430
+
+    pycache
+
+[33mcommit c2d66788f9214492e24aafb9f7cf1d4b9d6a57a6[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Fri May 26 02:15:14 2023 +0430
+
+    biography is added in profile and its edit and editprofile pages bug is fixed
+
+[33mcommit c3f777924faff3a3969e6f36ae4512a66898e9f6[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Fri May 26 01:29:05 2023 +0430
+
+    password saving bug fixed in a bad way just for development
+
+[33mcommit 376fa780c4c1ded28e7f6b9e898197e83db94fba[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Mon May 22 04:11:55 2023 +0430
+
+    edit profile is full of bugs i do not got the energy to fix it because im angry
+
+[33mcommit 4e9d97218dc6177dd21eda0db2578801c6c87367[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Mon May 22 03:45:08 2023 +0430
+
+    profile picture in collection-picture still have bug. the posts will be cropped now. privacy is cool now.
+
+[33mcommit c900a993d313338414f6ddddfae75d6ee1772e50[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun May 21 19:59:08 2023 +0430
+
+    the post is done. the profile picuture in the collection-picture have bugs. the posted picture must be cropped to squere
+
+[33mcommit b39fc78fabb530d294433739f95d7b055071e588[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Fri May 19 20:27:52 2023 +0430
+
+    static replaced, privacy on footer have bug, profile post have bug. now working on post-picture
+
+[33mcommit b007f95b42234083443ef246be0189d3e8548152[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Fri May 19 17:21:05 2023 +0430
+
+    none
+
+[33mcommit b98264c69996403a2d5213fcdc5fce8791c41583[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun May 7 18:42:37 2023 +0430
+
+    working on privacy and policy
+
+[33mcommit daaf66e8a2a2059e7d35b5ba4ed5e0f354fbf229[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Thu May 4 19:06:14 2023 +0430
+
+    changes of field validations, front changes, needed text extended. verification save is commented in save function of braider model.
+
+[33mcommit 663c4560643046e566487c8012d109016d2b69fe[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Thu May 4 02:03:39 2023 +0430
+
+    search bar is commented because it is of no use.
+
+[33mcommit abb35f367cd9266f507a9af47019e57d5c191bf0[m
+Merge: c922350 e9f499d
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Thu May 4 00:59:45 2023 +0430
+
+    cache again
+
+[33mcommit c922350c333da104f8f523a9d214bf52f61bfd4c[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Thu May 4 00:59:22 2023 +0430
+
+    cache
+
+[33mcommit e9f499df9947e3a843720323aabec76c444b03e3[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Thu May 4 00:58:23 2023 +0430
+
+    no big changes.
+
+[33mcommit 9443f60d5d68802222864d54ceca2e33fd5a126e[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Wed May 3 04:37:50 2023 +0430
+
+    croping the profile picture to square is added but not to upload posts, deleting the previous profile piicture is added.
+
+[33mcommit b4abe04c2bf74e9964d996c412b326a6e1cdcfab[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Tue May 2 19:39:47 2023 +0430
+
+    fixing all the profile picture htmls
+
+[33mcommit 441bbed2a39c46767be153e6b842eafad060867c[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Tue May 2 18:41:11 2023 +0430
+
+    css message is added to all .html. fixing the little things on website.
+
+[33mcommit ef0271725e91a1795d7f6676fc42c4492cf8fbd2[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Tue May 2 17:24:03 2023 +0430
+
+    the url of profile piicture is defined, but the problem is the image is not shown squer. and it makes it look bad
+
+[33mcommit f49666c929c6a11bf7e5fa4760830fc53f32f10f[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Tue May 2 16:53:43 2023 +0430
+
+    profile picture field is added both in edit profile and model, but not where it should be shown
+
+[33mcommit deec6fcbe6d85454fd9333d81de42a3c8ec1a081[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Mon May 1 22:30:24 2023 +0430
+
+    lot of work to be done
+
+[33mcommit c97efdfa7e2bdfc4dcf5d44ee427eccab8df6827[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Mon May 1 19:49:06 2023 +0430
+
+    edit profile is alright. post btn in profile missing. errors in register are not fine.
+
+[33mcommit ac677e5eb8d2b56cac1ba71e12ebb286f695edf8[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun Apr 30 08:05:08 2023 +0430
+
+    many things changed but the save does not work in edit-profile. now ill sleep
+
+[33mcommit 4311ac75c2fd5a90b36d03937e8ede146f8cb2f7[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun Apr 30 02:31:04 2023 +0430
+
+    saved, post, profile .html pages front change are configured but its not how i wanted
+
+[33mcommit 30dd250be5c40e24ebd6184705a5d1ecbb813142[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sat Apr 29 02:14:40 2023 +0430
+
+    profile api is done but its front is not. same as edit profile. profile picture and location and biography is missing
+
+[33mcommit 54fca39640c7697501ec6d77e6be6d12f9598ad5[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Fri Apr 28 19:50:25 2023 +0430
+
+    front i think its done.
+
+[33mcommit a26c5849ab20e2e2f98084c54591a88824f42dbe[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Fri Apr 28 18:41:54 2023 +0430
+
+    fixing front things
+
+[33mcommit 2bd4833323d2173f845881d649792b27cd4fd654[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Fri Apr 28 18:07:22 2023 +0430
+
+    trying to replace the static files
+
+[33mcommit b272b2da53e65fc596e193dc01e1582e20481471[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Fri Apr 28 04:40:44 2023 +0430
+
+    working on collection and post api is improved.
+
+[33mcommit 3e5eb15853f034adb537c21fbcb4cb3835bc6dfe[m
+Merge: 47b8aac ee4f57b
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Fri Apr 28 03:01:32 2023 +0430
+
+    huh
+
+[33mcommit 47b8aacaf3aa125cd316ce0d6235e334ef392761[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Fri Apr 28 03:00:32 2023 +0430
+
+    the same pycache files
+
+[33mcommit ee4f57b25df3d9620707543a40bd10e9dfcb5094[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Fri Apr 28 02:59:42 2023 +0430
+
+    post api is done but pretification is missing and bugs may appear
+
+[33mcommit 6656b265c7d3ac6faa6389ef0a12e5b39cbbe81b[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Fri Apr 28 01:28:16 2023 +0430
+
+    form is made. model and views.py or form have problems
+
+[33mcommit fcab42856efe88ef5579b67ce01ce95a70cd550f[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Wed Apr 26 18:54:01 2023 +0430
+
+    making post picture api
+
+[33mcommit 2af2041ba98cd8948c9e9f7e8bfc5e188b877cb6[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Wed Apr 26 02:08:39 2023 +0430
+
+    trust me i dont know i jjust want to turn of the system and go to sleep
+
+[33mcommit 883e8b5163ea9445827c2430c4a40b45ddfb4679[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Mon Apr 24 13:43:09 2023 +0430
+
+    login  and logout are finished, now working on braider finder
+
+[33mcommit 1d375fabbe451a057828d81fe3e4d9757655fb12[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Mon Apr 24 12:51:33 2023 +0430
+
+    debugging
+
+[33mcommit 1be3dd17dd2e12a62c1e69ed6f7e88a67de39ec6[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Mon Apr 24 12:39:26 2023 +0430
+
+    is_authenticated does not work. fixing it
+
+[33mcommit 9af90407abc5b0585c4c70e47da75fb427bfc3b6[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Mon Apr 24 12:20:47 2023 +0430
+
+    login form and backend is fixed. now workiing on logout api
+
+[33mcommit dff3a04e28b59090aa31b980cfe005f5cb55afec[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Mon Apr 24 11:12:07 2023 +0430
+
+    bugs are fixed, messages show, now working on loign
+
+[33mcommit 8f795952b363cfe42888e986dd44568a9b65eb5b[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Mon Apr 24 01:18:24 2023 +0430
+
+    register is fine, the errors messages must be fixed.
+
+[33mcommit 53bab72ef58aebd67daebf35cf55aad1e6e50b6f[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun Apr 23 22:15:50 2023 +0430
+
+    pycache
+
+[33mcommit 565d89a09a92c0c9a0251a48f3d34681daf72cf3[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun Apr 23 22:07:34 2023 +0430
+
+    db structure is changed. fixing login,register views and, braider finder.
+
+[33mcommit 940a07ee71a6127aeb0c9d7b501c770b4a8b77ab[m
+Merge: e57dd44 70d92a9
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun Apr 23 12:22:54 2023 +0430
+
+    finishing merge
+
+[33mcommit e57dd4490daed95f5f38f692be78959b5cc23d4f[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun Apr 23 12:17:21 2023 +0430
+
+    commiting to merge
+
+[33mcommit 70d92a96483ce31454761e79f7c62404b2f2c704[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun Apr 23 12:15:17 2023 +0430
+
+    login is finished, no bug, the inputs should be changed to django form
+
+[33mcommit 6730a9b58dd4a8343becb6d6f4026cf108679e12[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sat Apr 22 04:40:06 2023 +0430
+
+    bug fix, pretified register, messages css is not defined, website field is added, braider query is ok
+
+[33mcommit 3287d16ab2101779005f76975b83ca91e3512571[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sat Apr 22 00:15:46 2023 +0430
+
+    error fixed in login
+
+[33mcommit ab5f158f9bf3a5937bc88e527642b12b2e044caa[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Fri Apr 21 23:00:38 2023 +0430
+
+    all login is fine, but a big bug is that when you logout, you cannot login again. it must be debugged.
+
+[33mcommit d0268abf8ebbffc240bf8e576d2b474bf43bb7dd[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Fri Apr 21 14:48:57 2023 +0430
+
+    backend.py is added and codes are changed for login page
+
+[33mcommit 2c891de7780ea32b113cc069976dc61dc94f7c31[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Fri Apr 21 10:53:57 2023 +0430
+
+    working on login, commenting password validators for testing
+
+[33mcommit f2636512886f38e8196f90971f5f468f536b21a9[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Thu Apr 20 07:20:22 2023 +0430
+
+    country field length is increased to 50
+
+[33mcommit 47782da0a8bee7e3ea5d31c80e4db60b996e5b80[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Thu Apr 20 06:54:21 2023 +0430
+
+    all validation are compelete. object will be saved to db, we incrypted password, and showed in django admin customly.
+
+[33mcommit cb9fd09e4a19b2b0eb52f4221ae4c0acf61f84f2[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Wed Apr 19 10:31:16 2023 +0430
+
+    incompelete username validation, message progress, views.py form submission progress.
+
+[33mcommit 364ee36eed68b573e18e853b5bc572fc80b58e8c[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Wed Apr 19 09:08:40 2023 +0430
+
+    conflicts are solved
+
+[33mcommit e41d0d886f4a7a41c4f4864151b8f0cbf459b7db[m
+Merge: a08226c 1c397ca
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Wed Apr 19 08:59:28 2023 +0430
+
+    i do not like conflicts
+
+[33mcommit a08226ced307f6e120210a8b24b18242c1ecc693[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Wed Apr 19 08:57:35 2023 +0430
+
+    cache
+
+[33mcommit fc9df68426958da7e41bab90ad8fa45ca8895954[m
+Merge: 7c47051 d3515e0
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Wed Apr 19 08:51:29 2023 +0430
+
+    Merge branch 'master' of https://github.com/yazdan-hka/braid-starz
+
+[33mcommit 1c397ca813290fc3d7b3d248337ce501072690f4[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Wed Apr 19 08:49:31 2023 +0430
+
+    validation is configured but incompelete, messages are configured, but does not have a css class. html forms have been changed to django forms. fields are added. how to hash password is figured out. i must do more percise commits..
+
+[33mcommit d3515e009125eea64a99dc801a3d730dc54dce2a[m
+Author: Arash <arashajerlou98@gmail.com>
+Date:   Mon Apr 17 21:31:50 2023 +0430
+
+    new register
+
+[33mcommit 63b5ab04a898ba8b27956bf1bec3e9fb3d3c737f[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Mon Apr 17 21:12:57 2023 +0430
+
+    after register data will be saved in db, but, with no validation, working on messages.
+
+[33mcommit ea36be08546a000882a91929bc5234d4d48cc05a[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Mon Apr 17 16:38:55 2023 +0430
+
+    after registration it will redirect to login. now, one should be the validation of the fileds, another them being saved in db.
+
+[33mcommit 69f7e0bd2b67e579a738d361816c9ac743ae2a53[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun Apr 16 23:32:03 2023 +0430
+
+    still working on api but now sleeping.. reverse got error.
+
+[33mcommit 7c47051d0d55d6710fb6e176c81a331fe2fcea5c[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun Apr 16 20:10:29 2023 +0430
+
+    post and profile details static files are uploaded, but their name must be changed to post-media and edit-profile.
+
+[33mcommit 8f52c552efc5e109d2ef859a6f10a32d85a567a3[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun Apr 16 19:29:30 2023 +0430
+
+    admin is created, models is editable in admin panel, user type's attributes are changed.
+
+[33mcommit 923fc041f6b3605204c0f512f12f5992e6b6add6[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Sun Apr 16 19:02:29 2023 +0430
+
+    braider model is created, superuser is created, testing now..
+
+[33mcommit 22f8facfabd916c4e86446af23ee459de6ee0edb[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Fri Apr 14 21:17:48 2023 +0430
+
+    bug fix in colleciton page, number and city field are added to register page
+
+[33mcommit 0c472528fed725f561714b674dece76b0193bd87[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Thu Apr 13 22:42:41 2023 +0430
+
+    two new pages are added to templates, and they are edited with jinja and their URLConf is done.
+
+[33mcommit 5f2d29b235367599414206e48939047d24d19268[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Thu Apr 13 21:15:00 2023 +0430
+
+    fonts and immg folders are added to static  folder.
+
+[33mcommit 18e3b0f0df6d55bddad66b3696a2afc8e9a3653c[m
+Author: Yazdan <yazdan.hka@gmail.com>
+Date:   Thu Apr 13 21:03:01 2023 +0430
+
+    some files which i donno where did they came form are commited to see that how the static img files are going to be uploaded.
+
+[33mcommit 5c51b4af91613c188d11e60310bd81a74cb171f8[m
+Author: Y.Targoon <112862746+yazdan-hka@users.noreply.github.com>
+Date:   Thu Apr 13 19:25:58 2023 +0330
+
+    Delete static/img/loginfirst directory
+
+[33mcommit 8dc993434bc73f17732ba57d73379966b53a5ffc[m
+Author: Y.Targoon <112862746+yazdan-hka@users.noreply.github.com>
+Date:   Thu Apr 13 19:22:05 2023 +0330
+
+    added the img folder via upload
+
+[33mcommit daa42b351050543ff899240b889a043897063b27[m
+Author: Y.Targoon <112862746+yazdan-hka@users.noreply.github.com>
+Date:   Thu Apr 13 18:56:50 2023 +0330
+
+    Add files via upload
+    
+    static/scripts & static/styles has been uploaded. now they are going to be tested to see if the static folder is duplicated or not.
+
+[33mcommit e502ed916da673326e494f4f868c48779e813f7e[m
+Author: Y.Targoon <112862746+yazdan-hka@users.noreply.github.com>
+Date:   Thu Apr 13 18:50:32 2023 +0330
+
+    Add files via upload
+    
+    all the new files and folder are uploaded except static and assets, because of big size and amount error.
+
+[33mcommit d0ce71b12a3e6e242dadfda0ad7914beb04e7f74[m
+Author: Y.Targoon <112862746+yazdan-hka@users.noreply.github.com>
+Date:   Thu Apr 13 18:43:50 2023 +0330
+
+    Delete run.py
+
+[33mcommit 2f4468e3015ebdf052e582fe8d5c63fcacd790e5[m
+Author: Y.Targoon <112862746+yazdan-hka@users.noreply.github.com>
+Date:   Thu Apr 13 18:43:19 2023 +0330
+
+    Delete BRAIDSTARZ directory
+    
+    same reason i deleted the previous direcctory.
+
+[33mcommit d2c4496cefbcbab4dab0c8bc178275fd819bb8c4[m
+Author: Y.Targoon <112862746+yazdan-hka@users.noreply.github.com>
+Date:   Thu Apr 13 18:42:33 2023 +0330
+
+    Delete .idea directory
+    
+    im gonna upload new files
+
+[33mcommit 5490ac95297b2dc1b604415755a9cf408c6adef4[m
+Author: Y.Targoon <112862746+yazdan-hka@users.noreply.github.com>
+Date:   Thu Apr 13 12:14:47 2023 +0330
+
+    Create README.md
+    
+    description of braidstarz
+
+[33mcommit 0632b6ec7ec89027edf6498e00c59f99810926f8[m
+Author: yazdan-hka <yazdan.hka@gmail.com>
+Date:   Mon Sep 19 12:59:23 2022 +0430
+
+    the different is that small that i can write it in the commit massge you fool
+
+[33mcommit ab855744d532f0900f5d3275b4a0ccf0009ed4c0[m
+Author: yazdan-hka <yazdan.hka@gmail.com>
+Date:   Sun Sep 18 11:52:54 2022 +0430
+
+    tiktok added to all file but bugs may appear. email has been removed form profile page, few design diffrances in register form, table should be droped and created.
+
+[33mcommit b843a20acee7724d68c5db1f3b8f87f66e682066[m
+Author: yazdan-hka <yazdan.hka@gmail.com>
+Date:   Sun Sep 18 11:23:59 2022 +0430
+
+    new files are replaced
+
+[33mcommit 2fd5ba75b8270ae74fc095a9b253d5465e4acd87[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Sat Sep 17 22:42:31 2022 +0430
+
+    -
+
+[33mcommit 170cf594464006157a687f274962f30c4328d2b7[m
+Merge: 838c2d4 f84382c
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Tue Sep 13 23:15:46 2022 +0430
+
+    conflict fix
+
+[33mcommit f84382ce68c2a5d9c49c2cca5691ccd88c687249[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Tue Sep 13 23:10:29 2022 +0430
+
+    routes is updated and detail for image is finished. allthe image generators should return a random list of all availble images. the rest of the collection should be displayed in every detail of image page
+
+[33mcommit dcaccba3ad672dd0279e160c1e7b34e9c37004ca[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Tue Sep 13 22:48:49 2022 +0430
+
+    image page route and html file is added.
+
+[33mcommit 30722d239a0d3716f1479b54e13725687b220e0f[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Tue Sep 13 22:32:15 2022 +0430
+
+    collection images have been centrelized.
+
+[33mcommit 445a11e96211e777d2ded7ee8c5ae7a4e61912c6[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Tue Sep 13 21:31:31 2022 +0430
+
+    header is added
+
+[33mcommit 8a3766798c0d4586ff22781493681b46fa35ef95[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Tue Sep 13 19:03:10 2022 +0430
+
+    the way of a href and name of image generato is changed
+
+[33mcommit 838c2d4670b98b19efd9e11dc8875eaf005e9201[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Tue Sep 13 18:55:34 2022 +0430
+
+    i dont remember
+
+[33mcommit 92ca5f0c4fa5f5494ddb7a0e6bb7ac27d6c54b78[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Tue Sep 13 18:49:51 2022 +0430
+
+    sorce of imagtes changed and url change in home.html
+
+[33mcommit 035db698ac1e1044bb240156ccf6a24879c05777[m
+Merge: 3b9dff0 ccb8d43
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Tue Sep 13 18:05:50 2022 +0430
+
+    merging shit
+
+[33mcommit 3b9dff03d8d1f89ec8e6a7318ce03ff4f9259233[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Tue Sep 13 18:00:16 2022 +0430
+
+    cache shit
+
+[33mcommit ccb8d4399ee76ae94575a58f1f2d0817044b1c4d[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Tue Sep 13 17:58:25 2022 +0430
+
+    the test db has beencreated but now is deleted
+
+[33mcommit 7e623f46b65be40b005c643ea66729637d33ae62[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Tue Sep 13 17:56:21 2022 +0430
+
+    2 routes added. a function added.
+
+[33mcommit d7a38b42d05c7499cbd24221af90654203e827c8[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Tue Sep 13 17:51:03 2022 +0430
+
+    verify html is added. braiders had few changes and new culomns.
+
+[33mcommit 2c9a51a04c8916847fc96c200a18fa31139ca6ac[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Mon Sep 12 22:09:03 2022 +0430
+
+    a page is added. the whole process is not done yet. db uri in init is changed and before merging should be reversed, few changes in routes.py
+
+[33mcommit 6e9250dac99ac5ecf581fe3267849b4eab22dd37[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Mon Sep 12 19:15:35 2022 +0430
+
+    bug fix
+
+[33mcommit 9e00188a71d599c2571307e01d6881531542dbc4[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Mon Sep 12 13:08:10 2022 +0430
+
+    some of the names table culomns is changed.
+
+[33mcommit 6f9e8a25cac5e958dbcd6eb68b51114613acada2[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Sat Sep 10 09:24:46 2022 +0430
+
+    structre changed and few design changes, but, the way which images of collection are displayed is not standard and should be worken on.
+
+[33mcommit 4a7dc955b32da198846a3daec208d53d9a251e0a[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Thu Sep 8 00:34:05 2022 +0430
+
+    few design changes but th e filter container hover does not work properly yet
+
+[33mcommit f76ed8887326c2c5d7f76c98cd347d77d5e5444d[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Wed Sep 7 14:41:08 2022 +0430
+
+    click for more href is chenged to collection
+
+[33mcommit 88fe01a5f8daec9734bf501f63302018c67252ae[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Wed Sep 7 12:54:58 2022 +0430
+
+    few design changes on collection images
+
+[33mcommit 40c2aba7a6a18cbfef021d2d7bd457f1802b0a6c[m
+Merge: 1109da5 4e4a766
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Wed Sep 7 02:57:38 2022 +0430
+
+    image generator in routes.py have written, new photo of braidstarz is added, design of colletion demo have changed
+
+[33mcommit 1109da530b87f9aa59c38311a94e120e8b698283[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Wed Sep 7 02:55:35 2022 +0430
+
+    cache files
+
+[33mcommit 4e4a766301cafec65b2cf2b0153599dfd71e0bb2[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Wed Sep 7 02:51:02 2022 +0430
+
+    image generator is added to routes.py on collection_filter_page
+
+[33mcommit 48c2b15edb044a093f4f4f321d3a7d3b8eeb5928[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Wed Sep 7 02:49:48 2022 +0430
+
+    design changed, the algorithem of deployin the images changed.
+
+[33mcommit 1093ba903fcd036c04439d2937861ffda2171d65[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Wed Sep 7 02:48:36 2022 +0430
+
+    astral logo image added
+
+[33mcommit 10a108eb0db8b7b353b9f998c33f9757be9e5744[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Wed Sep 7 01:05:06 2022 +0430
+
+    the front of the images changed.
+
+[33mcommit 6a4484921236145bcef7a6bcc08c273c49bc44d2[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Mon Sep 5 18:18:45 2022 +0430
+
+    collection demo has been added to home.html
+
+[33mcommit 1a60b8cc83134b9c9f3f7c52338303e7f1e8ce83[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Mon Sep 5 18:04:16 2022 +0430
+
+    bug fix
+
+[33mcommit 44ca59a2807a438f42785f6e67055e19354d5523[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Mon Sep 5 17:57:34 2022 +0430
+
+    something wierd
+
+[33mcommit 4f057cf824ee634ac9e766de36fd145e10dc91a6[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Mon Sep 5 17:04:53 2022 +0430
+
+    bug fix
+
+[33mcommit 900c7fb9e1f5c3c4a4648447b02afc3fd5261fc1[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Mon Dec 31 23:31:53 2007 +0330
+
+    bug fix in route
+
+[33mcommit 312bd8a1b1d3ed491c17186f29e9f043de36eb55[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Mon Sep 5 14:10:38 2022 +0430
+
+    few bugs in routes.py fixed
+
+[33mcommit e728f38a83812a5d962ab2281467a201094e565f[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Mon Sep 5 14:08:12 2022 +0430
+
+    few typo fixed in base.html
+
+[33mcommit bebef20c21542df4fb4e4817e342608211b8f9f4[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Mon Sep 5 14:03:26 2022 +0430
+
+    little prettifiation is done.
+
+[33mcommit bd149237fd59ffd3278daa137e51fd4c0bb9f559[m
+Author: Yazdan <yazdan.unknown@gmail.com>
+Date:   Mon Sep 5 13:47:19 2022 +0430
+
+    all the braidstarz file is added. last version, but collection-deno is missing.
