@@ -40,34 +40,61 @@
             <form method='post'>
             {% csrf_token %}
 
-                {{ form.first_name }}
-                {{ form.last_name }}
+                <div id="userInfo">
+                    {{ form.first_name }}
+                    {{ form.last_name }}
+    
+                    {{ form.user_name }}
+                    {{ form.insta_id }}
+                    <div class="phone-number">
+                        {{ form.phone_code }}
+                        {{ form.phone_number }}
+                    </div>
+                    <button class="register-button" onclick="nextRegisterSection()">Next</button>
+                </div>
+                
 
-                {{ form.user_name }}
-                {{ form.insta_id }}
-
-                <div class="country-city">
+                <div class="country-city display-none">
                     {{ form.country }}
                     {{ form.city }}
-                </div>
-                {{ form.website }}
-                {{ form.email }}
-                {{ form.password1 }}
-                {{ form.password2 }}
-
-                <div class="phone-number">
-                    {{ form.phone_code }}
-                    {{ form.phone_number }}
+                    <button class="register-button" onclick="nextRegisterSection()">Next</button>
                 </div>
 
-                <button class="login-button">Sign up</button>
+                <div class="display-none" id="authInfo">
+                    {{ form.website }}
+                    {{ form.email }}
+                    {{ form.password1 }}
+                    {{ form.password2 }}
+                    <button class="login-button">Sign up</button>
+                </div>
+
+                
+
+                
             </form>
         </div>
     </section>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{% static 'scripts/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'scripts/script.js' %}"></script>
+    <script defer>
 
+        function nextRegisterSection(){
+            if($("#userInfo").hasClass('display-none') == false){
+                $("#userInfo").addClass('display-none');                
+                $(".country-city").removeClass('display-none');
+                return;
+            }
+
+            if($("#userInfo").hasClass('display-none') == true && 
+            $(".country-city").hasClass('display-none') == false)
+            {
+                $(".country-city").addClass('display-none');
+                $("#authInfo").removeClass('display-none');                
+            }
+
+        }
+    </script>
 </body>
 
 </html>
