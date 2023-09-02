@@ -531,5 +531,17 @@ footer .icon svg:hover {
     transition: 0.3s;
 }
 
+.sign-up-btn {
+    width: 95px;
+    height: 40px;
+    background-image: url("../img/home/button.png");
+    background-color: rgba(0, 0, 0, 0);
+    color: #ececeb;
+    padding: 8px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: 0.3s;
+}
 
 /* End Footer */
