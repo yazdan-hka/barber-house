@@ -94,10 +94,14 @@ body {
     outline: none;
     font-size: 16px;
     transition: 0.3s;
+    width: 100%;
 }
 
 .sec-17 .register .country-city {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .sec-17 .register .email {

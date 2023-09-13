@@ -1,83 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
+    {% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Introducing different hairstyles">
-    <meta name="keywords" content="Hairstyles, New hairstyle, Old hairstyle, Different hairstyles">
-    <meta name="author" content="Arash Ajorlou">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'styles/register.css' %}">
-    <link rel="stylesheet" href="{% static 'styles/responsive.css' %}">
-    <link rel="stylesheet" href="{% static 'styles/messages.css' %}">
-    <script src="{% static 'scripts/all.min.js' %}"></script>
-    <title>BraidStarz | Register</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Introducing different hairstyles">
+        <meta name="keywords"
+            content="Hairstyles, New hairstyle, Old hairstyle, Different hairstyles">
+        <meta name="author" content="Arash Ajorlou">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/register.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/responsive.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/messages.css' %}">
+        <script src="{% static 'scripts/all.min.js' %}"></script>
+        <title>BraidStarz | Register</title>
+    </head>
 
-<body>
+    <body>
 
-    <section class="sec-17 overflow-hidden">
+        <section class="sec-17 overflow-hidden">
 
-        {% if messages %}
+            {% if messages %}
             <div class="messages">
                 {% for message in messages %}
-                    <div class="alert {% if message.tags %}alert-{{ message.tags }}"{% endif %}>
-                        {{ message }}
-                    </div>
+                <div class="alert {% if message.tags %}alert-{{ message.tags }}"
+                    {% endif %}>
+                    {{ message }}
+                </div>
                 {% endfor %}
             </div>
-        {% endif %}
+            {% endif %}
 
-        <div class="register">
-            <div class="user-login">
-                <i class="fa-regular fa-user"></i>
-                <h1>User Register</h1>
-            </div>
+            <div class="register">
+                <div class="user-login">
+                    <i class="fa-regular fa-user"></i>
+                    <h1>User Register</h1>
+                </div>
 
-            <form method='post'>
-            {% csrf_token %}
+                <form method='post'>
+                    {% csrf_token %}
 
-                <div id="userInfo">
-                    {{ form.first_name }}
-                    {{ form.last_name }}
-    
-                    {{ form.user_name }}
-                    {{ form.insta_id }}
-                    <div class="phone-number">
-                        {{ form.phone_code }}
-                        {{ form.phone_number }}
+                    <div id="userInfo">
+                        {{ form.first_name }}
+                        {{ form.last_name }}
+
+                        {{ form.user_name }}
+                        {{ form.insta_id }}
+                        <div class="phone-number">
+                            {{ form.phone_code }}
+                            {{ form.phone_number }}
+                        </div>
+                        <button class="register-button"
+                            onclick="nextRegisterSection()">Next</button>
                     </div>
-                    <button class="register-button" onclick="nextRegisterSection()">Next</button>
-                </div>
-                
 
-                <div class="country-city display-none">
-                    {{ form.country }}
-                    {{ form.city }}
-                    <button class="register-button" onclick="nextRegisterSection()">Next</button>
-                </div>
+                    <div class="country-city display-none">
+                        {{ form.country }}
+                        {{ form.city }}
 
-                <div class="display-none" id="authInfo">
-                    {{ form.website }}
-                    {{ form.email }}
-                    {{ form.password1 }}
-                    {{ form.password2 }}
-                    <button class="login-button">Sign up</button>
-                </div>
+                        <button class="register-button"
+                            onclick="backRegisterSection()">Back</button>
+                        <button class="register-button"
+                            onclick="nextRegisterSection()">Next</button>
+                    </div>
 
-                
+                    <div class="display-none" id="authInfo">
+                        {{ form.website }}
+                        {{ form.email }}
+                        {{ form.password1 }}
+                        {{ form.password2 }}
+                        <button class="register-button"
+                            onclick="backRegisterSection()">Back</button>
+                        <button class="login-button">Sign up</button>
+                    </div>
 
-                
-            </form>
-        </div>
-    </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="{% static 'scripts/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'scripts/script.js' %}"></script>
-    <script defer>
+                </form>
+            </div>
+        </section>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="{% static 'scripts/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'scripts/script.js' %}"></script>
+        <script defer>
 
         function nextRegisterSection(){
             if($("#userInfo").hasClass('display-none') == false){
@@ -94,7 +102,22 @@
             }
 
         }
+
+        function backRegisterSection(){
+            if($(".country-city").hasClass('display-none') == false){
+                $(".country-city").addClass('display-none');
+                $("#userInfo").removeClass('display-none');
+                return;
+            }
+
+            if($(".country-city").hasClass('display-none') == true &&
+            $("#authInfo").hasClass('display-none') == false){
+                $("#authInfo").addClass('display-none');
+                $(".country-city").removeClass('display-none');
+                return;
+            }
+        }
     </script>
-</body>
+    </body>
 
 </html>
