@@ -206,7 +206,7 @@ def customer_register(request):
         form = CustomerRegistration()
 
     context = {'form': form}
-    return render(request, 'customer-validate-email-email-template.html', context)
+    return render(request, 'customer-register.html', context)
 def login_page(request):
     form = BraiderLogin()
 
