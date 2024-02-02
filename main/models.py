@@ -81,6 +81,7 @@ class Customer(models.Model):
         verification.save()
 
 class Braider(models.Model):
+
     user_name = models.CharField(max_length=27, null=False, unique=True)
     email = models.EmailField(max_length=252, null=False, unique=True)
     password = models.CharField(max_length=126, validators=[], null=False)
@@ -101,7 +102,10 @@ class Braider(models.Model):
     # is_staff = models.BooleanField(default=False)
 
     def __str__(self):
-        return f'braider {self.user_name} from: {self.locationinfo.country}, {self.locationinfo.city}'
+        try:
+            return f'braider {self.user_name} from: {self.locationinfo.country}, {self.locationinfo.city}'
+        except:
+            return f'braider {self.user_name} || {self.email}'
     def is_authenticated(self):
         # Return True if the user is authenticated, else False.
         return True if self.pk else False
@@ -109,7 +113,7 @@ class Braider(models.Model):
         return check_password(raw_password, self.password)
     def update_last_login(self):
         self.last_login = datetime.now()
-    def save(self, update_fields=None):
+    def save(self, update_fields=False, force_insert=False, using=False):
 
         self.update_last_login()
 

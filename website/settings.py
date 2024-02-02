@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-akgm@^)hu%(rny_bw9%))n0%4m_=&nw^qc30q2ki_e81scjzdq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.braidstarz.com']
-# ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['www.braidstarz.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'phonenumber_field',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -82,31 +83,31 @@ SESSION_COOKIE_SECURE = False
 
 # for hosting
 #
-DATABASES =\
-    {'default':
-        {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'braidstarz',
-            'USER': 'braidstarzuser',
-            'PASSWORD': 'Z_ibWcUz4d@p6j!',
-            'HOST': 'braidstarz-3242.postgres.pythonanywhere-services.com',
-            'PORT': '13242',
-
-        }
-    }
-
-# for local server
-
 # DATABASES =\
 #     {'default':
 #         {
 #             'ENGINE': 'django.db.backends.postgresql',
-#             'NAME': 'braid-starz',
-#             'USER': 'postgres',
-#             'PASSWORD': 'password',
-#             'HOST': 'localhost' # or post
+#             'NAME': 'braidstarz',
+#             'USER': 'braidstarzuser',
+#             'PASSWORD': 'Z_ibWcUz4d@p6j!',
+#             'HOST': 'braidstarz-3242.postgres.pythonanywhere-services.com',
+#             'PORT': '13242',
+
 #         }
 #     }
+
+# for local server
+
+DATABASES =\
+    {'default':
+        {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'braid-starz',
+            'USER': 'postgres',
+            'PASSWORD': 'password',
+            'HOST': 'localhost' # or post
+        }
+    }
 
 
 # Password validation
@@ -137,7 +138,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 #
-
 
 # Email configuration
 
@@ -181,5 +181,21 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-
+AUTH_PASSWORD_VALIDATORS =  [
+    {
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+        "OPTIONS": {
+            "min_length": 8,
+        },
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+    },
+]
+from django.contrib.auth.password_validation import NumericPasswordValidator
