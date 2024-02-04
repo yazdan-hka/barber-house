@@ -6,6 +6,7 @@ urlpatterns = [
     path('fregister/', views.fregister, name='fregister'),
     path('flogin/', views.flogin, name='flogin'),
     path('register/', views.register_page, name='register'),
+    path('api/register/', views.RegisterBraiderAPIView.as_view(), name='braider-register'),
     path('customer-register/', views.customer_register, name='customer-register'),
     path('login/', views.login_page, name='login'),
     path('logout/', views.logout_page, name='logout'),

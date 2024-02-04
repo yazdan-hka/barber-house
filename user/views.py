@@ -11,10 +11,19 @@ from django.db.models import Q
 from django.core.mail import send_mail
 from django.conf import settings
 from django.template.loader import render_to_string
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.request import Request
+from rest_framework import status
+from .serializer import RegisterBraiderSerializer
 
 # Create your views here.
 def braider_or_customer(request):
     return render(request, 'braider-or-customer.html')
+
+def braider_register(request):
+    return render(request, 'regiater-braider.html')
+
 def register_page(request):
 
     if request.method == 'POST':
@@ -158,6 +167,37 @@ def register_page(request):
 
     context = {'form': form}
     return render(request, 'register.html', context)
+
+class RegisterBraiderAPIView(APIView):
+
+    def post(self, request: Request, *args, **kwargs):
+        serializer = RegisterBraiderSerializer(data=request.data)
+
+        if serializer.is_valid():
+            # Save the data to the database using the serializer's create method
+            braider_instance = serializer.create(serializer.validated_data)
+
+            braider = Braider.objects.filter(user_name=request.data['user_name']).first()
+            first_name = request.data['public_info']['first_name']
+
+            token = Verification.objects.filter(rel=braider).first()
+            link = f'https://www.braidstarz.com/user/validate-email/{first_name}/{token.token}/'
+
+            context = {'name': first_name, 'link': link}
+            html_message = render_to_string('validate-email-email-template.html', context)
+
+            send_mail(
+                subject='Email Validation Required',
+                message=f'Hi {first_name},\n\nThank you for signing up with our service. To complete your registration, please click on the following link to validate your email address:\n\n{link}\n\nIf you did not sign up for our service, you can safely ignore this email.\n\nThank you,\nThe BraidStarz Team',
+                from_email=settings.EMAIL_HOST_USER,
+                html_message=html_message,
+                recipient_list=[request.data['email']],
+            )
+
+            return Response(braider_instance, {"message": "Registration successful"}, status=status.HTTP_201_CREATED)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 def customer_register(request):
 
     if request.method == 'POST':
