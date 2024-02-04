@@ -24,6 +24,150 @@ def braider_or_customer(request):
 def braider_register(request):
     return render(request, 'regiater-braider.html')
 
+def register_page(request):
+
+    if request.method == 'POST':
+        form = BraiderRegistration(request.POST)
+        if form.is_valid():
+
+            cd = form.cleaned_data
+
+            braider = Braider(
+                user_name=cd['user_name'],
+                email=cd['email'],
+                password=make_password(cd['password']),
+                phone_number=cd['phone_number'],
+            )
+
+            saved = False
+
+            try:
+                braider.full_clean()
+                braider.save()
+                if braider.id:
+                    saved = True
+
+            except ValidationError as e:
+                print('it may be 37')
+                for field, errors in e.message_dict.items():
+                    for error in errors:
+                        messages.error(request, error)
+                try:
+                    braider.delete()
+                except:
+                    print(braider.id)
+                    print('braider was not delete. ')
+            if saved:
+                saved = False
+                pub = PublicInfo(
+                    first_name=cd['first_name'],
+                    last_name=cd['last_name'],
+                    rel=braider
+                )
+                try:
+                    pub.full_clean()
+                    pub.save()
+                    if pub.id:
+                        saved = True
+                except ValidationError as e:
+                    print('it may be 62')
+
+                    braider.delete()
+                    for field, errors in e.message_dict.items():
+                        for error in errors:
+                            form.add_error(field, error)
+
+                if saved:
+                    saved = False
+                    loc = LocationInfo(
+                        country=cd['country'],
+                        city=cd['city'],
+                        rel=braider
+                    )
+                    try:
+                        loc.full_clean()
+                        loc.save()
+                        if loc.id:
+                            saved = True
+                    except ValidationError as e:
+                        braider.delete()
+                        print('it may be 83')
+
+                        for field, errors in e.message_dict.items():
+                            for error in errors:
+                                form.add_error(field, error)
+
+                    if saved:
+                        saved = False
+                        realins = cd['insta_id']
+                        if realins == '':
+                            realins = None
+                        soc = SocialMedia(
+                            instagram=realins,
+                            rel=braider
+                        )
+                        try:
+                            soc.full_clean()
+                            soc.save()
+                            if soc.id:
+                                saved = True
+
+                        except ValidationError as e:
+                            braider.delete()
+                            print('it may be 106')
+
+                            print('validation is made')
+                            for field, errors in e.message_dict.items():
+                                for error in errors:
+                                    form.add_error(field, error)
+                        if saved:
+                            saved = False
+                            bus = BusinessInfo(
+                                rel=braider,
+                                website=cd['website']
+                            )
+                            try:
+                                bus.full_clean()
+                                bus.save()
+                                if bus.id:
+                                    saved = True
+                            except ValidationError as e:
+                                print('it may be 124')
+
+                                braider.delete()
+                                print('validation is made')
+                                for field, errors in e.message_dict.items():
+                                    for error in errors:
+                                        form.add_error(field, error)
+
+            if saved:
+                token = Verification.objects.filter(rel=braider).first()
+                link = f'https://www.braidstarz.com/user/validate-email/{braider.user_name}/{token.token}/'
+                print(link)
+
+                context = {'name': cd['first_name'], 'link': link}
+                html_message = render_to_string('validate-email-email-template.html', context)
+
+                send_mail(
+                    subject='Email Validation Required',
+                    message=f'Hi {cd["first_name"]},\n\nThank you for signing up with our service. To complete your registration, please click on the following link to validate your email address:\n\n{link}\n\nIf you did not sign up for our service, you can safely ignore this email.\n\nThank you,\nThe BraidStarz Team',
+                    from_email=settings.EMAIL_HOST_USER,
+                    html_message=html_message,
+                    recipient_list=[cd['email']],
+                )
+
+                messages.success(request, 'One more step to create your account'.title())
+                return redirect('validate-your-email', user_name=braider.user_name)
+        else:
+            for field_name, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f"\n{str(field_name).replace('_', ' ').title()}\n: {error}")
+    else:
+        form = BraiderRegistration()
+
+    context = {'form': form}
+    return render(request, 'register.html', context)
+
 class RegisterBraiderAPIView(APIView):
 
     def post(self, request: Request, *args, **kwargs):
