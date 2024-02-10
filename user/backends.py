@@ -7,15 +7,10 @@ class BraiderBackend(BaseBackend):
     def authenticate(self, request, username=None, password=None, **kwargs):
         try:
             user = Braider.objects.get(user_name=username)
+            if user.check_pass(password):
+                return user
         except Braider.DoesNotExist:
-            try:
-                user = Customer.objects.get(user_name=username)
-            except Customer.DoesNotExist:
-                return None
-
-        if user.check_pass(password):
-            return user
-
+            pass
         return None
 
 
@@ -35,7 +30,16 @@ class BraiderBackend(BaseBackend):
             return None
 
 
-class CustomBackend(ModelBackend):
+class CustomerBackend(ModelBackend):
+
+    def authenticate(self, request, username=None, password=None):
+        try:
+            user = Customer.objects.get(user_name=username)
+            if user.check_pass(password):
+                return user
+        except Customer.DoesNotExist:
+            return None
+
     def update_last_login(self, request, user):
         """
         Update the last_login date for the user

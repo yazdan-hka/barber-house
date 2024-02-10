@@ -15,7 +15,9 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.request import Request
 from rest_framework import status
-from .serializer import RegisterBraiderSerializer
+from .serializer import RegisterBraiderSerializer, LoginBraiderSerializer
+
+
 
 # Create your views here.
 def braider_or_customer(request):
@@ -247,6 +249,50 @@ def customer_register(request):
 
     context = {'form': form}
     return render(request, 'customer-register.html', context)
+
+class LoginAPIView(APIView):
+    def post(self, request):
+        serializer = LoginBraiderSerializer(data=request.data)
+
+        if serializer.is_valid():
+            username = serializer.validated_data['username']
+            password = serializer.validated_data['password']
+            remember_me = serializer.validated_data.get('remember_me', False)
+
+            user = authenticate(request, username=username, password=password)
+
+            if user is not None:
+                if "Customer object " in str(user):
+                    try:
+                        verif = CustomerVerification.objects.filter(rel=user).first()
+                    except CustomerVerification.DoesNotExist:
+                        verif = None
+
+                    if verif and not verif.is_email_verified:
+                        messages.error(request, 'Your email must be verified before you can log in. Please verify your email.')
+                        return Response({'error': 'Email not verified'}, status=status.HTTP_400_BAD_REQUEST)
+                else:
+                    try:
+                        verif = Verification.objects.filter(rel=user).first()
+                    except Verification.DoesNotExist:
+                        verif = None
+
+                    if verif and not verif.is_email_verified:
+                        messages.error(request, 'Your email must be verified before you can log in. Please verify your email.')
+                        return Response({'error': 'Email not verified'}, status=status.HTTP_400_BAD_REQUEST)
+                if remember_me:
+                    request.session.set_expiry(60 * 60 * 24 * 7)  # 1 week in seconds
+
+                login(request, user)
+
+                messages.success(request, f'You are logged in dear {username}')
+                return Response({'message': f'You are logged in dear {username}'})
+            else:
+                messages.error(request, 'Wrong username or password')
+                return Response({'error': 'Wrong username or password'}, status=status.HTTP_401_UNAUTHORIZED)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 def login_page(request):
     form = BraiderLogin()
 

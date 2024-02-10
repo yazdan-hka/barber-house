@@ -1,8 +1,9 @@
 from django.contrib import admin
-from .models import Braider, PublicInfo, SocialMedia, Post, LocationInfo, Verification, BusinessInfo
+from .models import Braider, PublicInfo, SocialMedia, Post, LocationInfo, Verification, BusinessInfo, Customer
 
 # Register your models here.
 admin.site.register(Braider)
+admin.site.register(Customer)
 admin.site.register(PublicInfo)
 admin.site.register(SocialMedia)
 admin.site.register(Post)

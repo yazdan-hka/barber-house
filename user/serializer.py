@@ -148,3 +148,14 @@ class RegisterBraiderSerializer(serializers.ModelSerializer):
         return braider_instance
 
 #  endregion
+    
+
+class LoginBraiderSerializer(serializers.Serializer):
+    username = serializers.CharField(max_length=27)
+    password = serializers.CharField()
+    remember_me = serializers.BooleanField(default=False)
+
+    def validate_username(self, value):
+        if not re.match(r'^[a-zA-Z0-9_]+$', value):
+            raise serializers.ValidationError(f'Invalid Username "{value}". Ensure your username includes only letters, numbers, and underscores (_).'.title())
+        return value

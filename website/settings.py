@@ -118,7 +118,7 @@ SESSION_COOKIE_MAX_AGE = 3600  # This sets the session cookie age to 1 hour (360
 
 AUTHENTICATION_BACKENDS = [
     'user.backends.BraiderBackend',
-    'user.backends.CustomBackend',
+    'user.backends.CustomerBackend',
     'django.contrib.auth.backends.ModelBackend',
 ]
 
