@@ -196,9 +196,29 @@ class RegisterBraiderAPIView(APIView):
                 recipient_list=[request.data['email']],
             )
 
-            return Response(braider_instance, {"message": "Registration successful"}, status=status.HTTP_201_CREATED)
+            resp = {
+                'status': status.HTTP_201_CREATED, 
+                'data': None, 
+                'messages': {
+                        'success' : "Registration Successful",
+                        'warning' : None,
+                        'error' : None,
+                        }
+                }
+
+            return Response(resp, status=status.HTTP_201_CREATED)
         else:
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            resp = {
+                'status': status.HTTP_400_BAD_REQUEST, 
+                'data': request.data, 
+                'messages': {
+                        'success' : None,
+                        'warning' : None,
+                        'error' : serializer.errors,
+                        }
+                }
+            
+            return Response(resp, status=status.HTTP_400_BAD_REQUEST)
 
 def customer_register(request):
 

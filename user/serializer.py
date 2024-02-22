@@ -97,7 +97,7 @@ class RegisterBraiderSerializer(serializers.ModelSerializer):
         uppercase_count = sum(1 for char in value if char.isupper())
         
         if uppercase_count < 1:
-            raise serializers.ValidationError({'password': 'Use UPPERCASE letters for more security.'.title()})
+            raise serializers.ValidationError('Use UPPERCASE letters for more security.'.title())
 
         return value
 
