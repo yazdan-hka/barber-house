@@ -179,22 +179,22 @@ class RegisterBraiderAPIView(APIView):
             # Save the data to the database using the serializer's create method
             braider_instance = serializer.create(serializer.validated_data)
 
-            braider = Braider.objects.filter(user_name=request.data['user_name']).first()
-            first_name = request.data['public_info']['first_name']
+            # braider = Braider.objects.filter(user_name=request.data['user_name']).first()
+            # first_name = request.data['public_info']['first_name']
 
-            token = Verification.objects.filter(rel=braider).first()
-            link = f'https://www.braidstarz.com/user/validate-email/{first_name}/{token.token}/'
+            # token = Verification.objects.filter(rel=braider).first()
+            # link = f'https://www.braidstarz.com/user/validate-email/{first_name}/{token.token}/'
 
-            context = {'name': first_name, 'link': link}
-            html_message = render_to_string('validate-email-email-template.html', context)
+            # context = {'name': first_name, 'link': link}
+            # html_message = render_to_string('validate-email-email-template.html', context)
 
-            send_mail(
-                subject='Email Validation Required',
-                message=f'Hi {first_name},\n\nThank you for signing up with our service. To complete your registration, please click on the following link to validate your email address:\n\n{link}\n\nIf you did not sign up for our service, you can safely ignore this email.\n\nThank you,\nThe BraidStarz Team',
-                from_email=settings.EMAIL_HOST_USER,
-                html_message=html_message,
-                recipient_list=[request.data['email']],
-            )
+            # send_mail(
+            #     subject='Email Validation Required',
+            #     message=f'Hi {first_name},\n\nThank you for signing up with our service. To complete your registration, please click on the following link to validate your email address:\n\n{link}\n\nIf you did not sign up for our service, you can safely ignore this email.\n\nThank you,\nThe BraidStarz Team',
+            #     from_email=settings.EMAIL_HOST_USER,
+            #     html_message=html_message,
+            #     recipient_list=[request.data['email']],
+            # )
 
             resp = {
                 'status': status.HTTP_201_CREATED, 
@@ -282,6 +282,7 @@ class LoginAPIView(APIView):
             user = authenticate(request, username=username, password=password)
 
             if user is not None:
+                '''
                 if "Customer object " in str(user):
                     try:
                         verif = CustomerVerification.objects.filter(rel=user).first()
@@ -300,18 +301,54 @@ class LoginAPIView(APIView):
                     if verif and not verif.is_email_verified:
                         messages.error(request, 'Your email must be verified before you can log in. Please verify your email.')
                         return Response({'error': 'Email not verified'}, status=status.HTTP_400_BAD_REQUEST)
+                '''
                 if remember_me:
                     request.session.set_expiry(60 * 60 * 24 * 7)  # 1 week in seconds
 
                 login(request, user)
 
-                messages.success(request, f'You are logged in dear {username}')
-                return Response({'message': f'You are logged in dear {username}'})
+                resp = {
+                'status': status.HTTP_202_ACCEPTED, 
+                'data': None,
+                'messages': {
+                    'success' : f'you are logged in dear {username}'.title(),
+                    'warning' : None,
+                    'error' : None,
+                    }
+                }
+
+                return Response(resp, status=status.HTTP_202_ACCEPTED)
             else:
-                messages.error(request, 'Wrong username or password')
-                return Response({'error': 'Wrong username or password'}, status=status.HTTP_401_UNAUTHORIZED)
+                
+                resp = {
+                'status': status.HTTP_401_UNAUTHORIZED, 
+                'data': {
+                    'username': username, 
+                    'password': password
+                    },
+                'messages': {
+                    'success' : None,
+                    'warning' : None,
+                    'error' : 'Wrong username or password'.title(),
+                    }
+                }
+                return Response(resp, status=status.HTTP_401_UNAUTHORIZED)
         else:
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            
+            resp = {
+            'status': status.HTTP_400_BAD_REQUEST, 
+            'data': {
+                'username': username, 
+                'password': password
+                },
+            'messages': {
+                'success' : None,
+                'warning' : None,
+                'error' : serializer.errors,
+                }
+            }
+
+            return Response(resp, status=status.HTTP_400_BAD_REQUEST)
 
 def login_page(request):
     form = BraiderLogin()
