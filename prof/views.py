@@ -1,7 +1,13 @@
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.request import Request
+from rest_framework.pagination import PageNumberPagination
+from rest_framework import status
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.contrib import messages
 from django.core.exceptions import ValidationError
 from .forms import PictureForm, EditProfile
+from .serializers import BraiderProfileSerializer
 from main.models import Braider
 from main.models import Post, PublicInfo, SocialMedia, LocationInfo, BusinessInfo
 from django.contrib.auth.decorators import login_required
@@ -10,6 +16,37 @@ from io import BytesIO
 from django.core.files.uploadedfile import InMemoryUploadedFile
 
 # Create your views here.
+
+class BraiderProfileAPIView(APIView):
+    def get(self, request: Request, user_name):
+        try:
+            braider = Braider.objects.get(user_name=user_name)
+            serializer = BraiderProfileSerializer(braider)
+
+            resp = {
+                'status': status.HTTP_200_OK,
+                'data': serializer.data, 
+                'messages': {
+                        'success' : None,
+                        'warning' : None,
+                        'error' : None,
+                        }
+                }
+
+            return Response(resp, status=status.HTTP_200_OK)
+        except Braider.DoesNotExist:
+
+            resp = {
+                'status': status.HTTP_404_NOT_FOUND,
+                'data': None, 
+                'messages': {
+                        'success' : None,
+                        'warning' : None,
+                        'error' : 'Braider Not Found',
+                        }
+                }
+
+            return Response(resp, status=status.HTTP_404_NOT_FOUND)
 
 def crop_to_square(image):
     img = Image.open(image)
