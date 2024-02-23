@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect
 from django.urls import reverse
 from main.models import Braider, PublicInfo, SocialMedia, LocationInfo, BusinessInfo, Customer, Verification, CustomerVerification
 from django.contrib import messages
@@ -15,7 +15,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.request import Request
 from rest_framework import status
-from .serializer import RegisterBraiderSerializer, LoginBraiderSerializer
+from .serializer import RegisterBraiderSerializer, LoginBraiderSerializer, RegisterCustomerSerializer
 
 
 
@@ -198,7 +198,7 @@ class RegisterBraiderAPIView(APIView):
 
             resp = {
                 'status': status.HTTP_201_CREATED, 
-                'data': None, 
+                'data': {'first_name': request.data['public_info']['first_name']}, 
                 'messages': {
                         'success' : "Registration Successful",
                         'warning' : None,
@@ -207,6 +207,38 @@ class RegisterBraiderAPIView(APIView):
                 }
 
             return Response(resp, status=status.HTTP_201_CREATED)
+        else:
+            resp = {
+                'status': status.HTTP_400_BAD_REQUEST, 
+                'data': None, 
+                'messages': {
+                        'success' : None,
+                        'warning' : None,
+                        'error' : serializer.errors,
+                        }
+                }
+            
+            return Response(resp, status=status.HTTP_400_BAD_REQUEST)
+        
+class RegisterCustomerAPIView(APIView):
+
+    def post(self, request: Request, *args, **kwargs):
+        serializer = RegisterCustomerSerializer(data=request.data)
+
+        if serializer.is_valid():
+            customer_instance = serializer.create(serializer.validated_data)
+
+            resp = {
+                'status': status.HTTP_201_CREATED, 
+                'data': None, 
+                'messages': {
+                        'success' : "Registration Successful",
+                        'warning' : None,
+                        'error' : None,
+                        }
+                }
+            return Response(resp, status=status.HTTP_201_CREATED)
+                
         else:
             resp = {
                 'status': status.HTTP_400_BAD_REQUEST, 
@@ -219,6 +251,8 @@ class RegisterBraiderAPIView(APIView):
                 }
             
             return Response(resp, status=status.HTTP_400_BAD_REQUEST)
+
+
 
 def customer_register(request):
 
@@ -337,10 +371,7 @@ class LoginAPIView(APIView):
             
             resp = {
             'status': status.HTTP_400_BAD_REQUEST, 
-            'data': {
-                'username': username, 
-                'password': password
-                },
+            'data': None,
             'messages': {
                 'success' : None,
                 'warning' : None,

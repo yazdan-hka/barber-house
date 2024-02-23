@@ -89,6 +89,7 @@ class Braider(models.Model):
     show_phone = models.BooleanField(default=False)
     show_email = models.BooleanField(default=False)
     last_login = models.DateTimeField(null=True, blank=True)
+    is_active = models.BooleanField(default=True)
     # posted_pictures = models.ImageField(
     #     upload_to='posted-pictures/',
     #     default='posted_media.jpg',
