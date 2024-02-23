@@ -201,8 +201,8 @@ class LocationInfo(models.Model):
     # location
 class BusinessInfo(models.Model):
     rel = models.OneToOneField(Braider, on_delete=models.CASCADE)
-    name = models.CharField(max_length=81, null=True, blank=True)
-    address = models.CharField(max_length=252, null=True, blank=True)
+    name = models.CharField(max_length=81, null=True, blank=True, default='Not Specified')
+    address = models.CharField(max_length=252, null=True, blank=True, default='Not Specified')
     website = models.URLField(max_length=234, null=True, blank=True)
 
 
