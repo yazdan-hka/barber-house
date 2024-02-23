@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect
 from django.urls import reverse
 from main.models import Braider, PublicInfo, SocialMedia, LocationInfo, BusinessInfo, Customer, Verification, CustomerVerification
 from django.contrib import messages
@@ -15,17 +15,263 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.request import Request
 from rest_framework import status
-from .serializer import RegisterBraiderSerializer, LoginBraiderSerializer
+from .serializer import RegisterBraiderSerializer, LoginBraiderSerializer, RegisterCustomerSerializer, LoginCustomerSerializer
 
 
 
 # Create your views here.
+
+class RegisterBraiderAPIView(APIView):
+
+    def post(self, request: Request, *args, **kwargs):
+        serializer = RegisterBraiderSerializer(data=request.data)
+
+        if serializer.is_valid():
+            # Save the data to the database using the serializer's create method
+            braider_instance = serializer.create(serializer.validated_data)
+
+            # braider = Braider.objects.filter(user_name=request.data['user_name']).first()
+            # first_name = request.data['public_info']['first_name']
+
+            # token = Verification.objects.filter(rel=braider).first()
+            # link = f'https://www.braidstarz.com/user/validate-email/{first_name}/{token.token}/'
+
+            # context = {'name': first_name, 'link': link}
+            # html_message = render_to_string('validate-email-email-template.html', context)
+
+            # send_mail(
+            #     subject='Email Validation Required',
+            #     message=f'Hi {first_name},\n\nThank you for signing up with our service. To complete your registration, please click on the following link to validate your email address:\n\n{link}\n\nIf you did not sign up for our service, you can safely ignore this email.\n\nThank you,\nThe BraidStarz Team',
+            #     from_email=settings.EMAIL_HOST_USER,
+            #     html_message=html_message,
+            #     recipient_list=[request.data['email']],
+            # )
+
+            resp = {
+                'status': status.HTTP_201_CREATED, 
+                'data': {'first_name': request.data['public_info']['first_name']}, 
+                'messages': {
+                        'success' : "Registration Successful",
+                        'warning' : None,
+                        'error' : None,
+                        }
+                }
+
+            return Response(resp, status=status.HTTP_201_CREATED)
+        else:
+            resp = {
+                'status': status.HTTP_400_BAD_REQUEST, 
+                'data': None, 
+                'messages': {
+                        'success' : None,
+                        'warning' : None,
+                        'error' : serializer.errors,
+                        }
+                }
+            
+            return Response(resp, status=status.HTTP_400_BAD_REQUEST)
+class LoginBraiderAPIView(APIView):
+    def post(self, request):
+        serializer = LoginBraiderSerializer(data=request.data)
+
+        if serializer.is_valid():
+            username = serializer.validated_data['username']
+            password = serializer.validated_data['password']
+            remember_me = serializer.validated_data.get('remember_me', False)
+
+            user = authenticate(request, username=username, password=password)
+
+            if user is not None:
+                '''
+                if "Customer object " in str(user):
+                    try:
+                        verif = CustomerVerification.objects.filter(rel=user).first()
+                    except CustomerVerification.DoesNotExist:
+                        verif = None
+
+                    if verif and not verif.is_email_verified:
+                        messages.error(request, 'Your email must be verified before you can log in. Please verify your email.')
+                        return Response({'error': 'Email not verified'}, status=status.HTTP_400_BAD_REQUEST)
+                else:
+                    try:
+                        verif = Verification.objects.filter(rel=user).first()
+                    except Verification.DoesNotExist:
+                        verif = None
+
+                    if verif and not verif.is_email_verified:
+                        messages.error(request, 'Your email must be verified before you can log in. Please verify your email.')
+                        return Response({'error': 'Email not verified'}, status=status.HTTP_400_BAD_REQUEST)
+                '''
+                if remember_me:
+                    request.session.set_expiry(60 * 60 * 24 * 7)  # 1 week in seconds
+
+                login(request, user)
+
+                resp = {
+                'status': status.HTTP_202_ACCEPTED, 
+                'data': None,
+                'messages': {
+                    'success' : f'you are logged in dear {username}'.title(),
+                    'warning' : None,
+                    'error' : None,
+                    }
+                }
+
+                return Response(resp, status=status.HTTP_202_ACCEPTED)
+            else:
+                
+                resp = {
+                'status': status.HTTP_401_UNAUTHORIZED, 
+                'data': {
+                    'username': username, 
+                    'password': password
+                    },
+                'messages': {
+                    'success' : None,
+                    'warning' : None,
+                    'error' : 'Wrong username or password'.title(),
+                    }
+                }
+                return Response(resp, status=status.HTTP_401_UNAUTHORIZED)
+        else:
+            
+            resp = {
+            'status': status.HTTP_400_BAD_REQUEST, 
+            'data': None,
+            'messages': {
+                'success' : None,
+                'warning' : None,
+                'error' : serializer.errors,
+                }
+            }
+
+            return Response(resp, status=status.HTTP_400_BAD_REQUEST)
+class RegisterCustomerAPIView(APIView):
+
+    def post(self, request: Request, *args, **kwargs):
+        serializer = RegisterCustomerSerializer(data=request.data)
+
+        if serializer.is_valid():
+            customer_instance = serializer.create(serializer.validated_data)
+
+            resp = {
+                'status': status.HTTP_201_CREATED, 
+                'data': None, 
+                'messages': {
+                        'success' : "Registration Successful",
+                        'warning' : None,
+                        'error' : None,
+                        }
+                }
+            return Response(resp, status=status.HTTP_201_CREATED)
+                
+        else:
+            resp = {
+                'status': status.HTTP_400_BAD_REQUEST, 
+                'data': None, 
+                'messages': {
+                        'success' : None,
+                        'warning' : None,
+                        'error' : serializer.errors,
+                        }
+                }
+            
+            return Response(resp, status=status.HTTP_400_BAD_REQUEST)
+class LoginCustomerAPIView(APIView):
+    def post(self, request):
+        serializer = LoginCustomerSerializer(data=request.data)
+
+        if serializer.is_valid():
+            username = serializer.validated_data['username']
+            password = serializer.validated_data['password']
+            remember_me = serializer.validated_data.get('remember_me', False)
+
+            user = authenticate(request, username=username, password=password)
+
+            if user is not None:
+                '''
+                if "Customer object " in str(user):
+                    try:
+                        verif = CustomerVerification.objects.filter(rel=user).first()
+                    except CustomerVerification.DoesNotExist:
+                        verif = None
+
+                    if verif and not verif.is_email_verified:
+                        messages.error(request, 'Your email must be verified before you can log in. Please verify your email.')
+                        return Response({'error': 'Email not verified'}, status=status.HTTP_400_BAD_REQUEST)
+                else:
+                    try:
+                        verif = Verification.objects.filter(rel=user).first()
+                    except Verification.DoesNotExist:
+                        verif = None
+
+                    if verif and not verif.is_email_verified:
+                        messages.error(request, 'Your email must be verified before you can log in. Please verify your email.')
+                        return Response({'error': 'Email not verified'}, status=status.HTTP_400_BAD_REQUEST)
+                '''
+                if remember_me:
+                    request.session.set_expiry(60 * 60 * 24 * 7)  # 1 week in seconds
+
+                login(request, user)
+
+                resp = {
+                'status': status.HTTP_202_ACCEPTED, 
+                'data': None,
+                'messages': {
+                    'success' : f'you are logged in dear {username}'.title(),
+                    'warning' : None,
+                    'error' : None,
+                    }
+                }
+
+                return Response(resp, status=status.HTTP_202_ACCEPTED)
+            else:
+                
+                resp = {
+                'status': status.HTTP_401_UNAUTHORIZED, 
+                'data': {
+                    'username': username, 
+                    'password': password
+                    },
+                'messages': {
+                    'success' : None,
+                    'warning' : None,
+                    'error' : 'Wrong username or password'.title(),
+                    }
+                }
+                return Response(resp, status=status.HTTP_401_UNAUTHORIZED)
+        else:
+            
+            resp = {
+            'status': status.HTTP_400_BAD_REQUEST, 
+            'data': None,
+            'messages': {
+                'success' : None,
+                'warning' : None,
+                'error' : serializer.errors,
+                }
+            }
+
+            return Response(resp, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def braider_or_customer(request):
     return render(request, 'braider-or-customer.html')
-
 def braider_register(request):
     return render(request, 'regiater-braider.html')
-
 def register_page(request):
 
     if request.method == 'POST':
@@ -169,57 +415,6 @@ def register_page(request):
 
     context = {'form': form}
     return render(request, 'register.html', context)
-
-class RegisterBraiderAPIView(APIView):
-
-    def post(self, request: Request, *args, **kwargs):
-        serializer = RegisterBraiderSerializer(data=request.data)
-
-        if serializer.is_valid():
-            # Save the data to the database using the serializer's create method
-            braider_instance = serializer.create(serializer.validated_data)
-
-            # braider = Braider.objects.filter(user_name=request.data['user_name']).first()
-            # first_name = request.data['public_info']['first_name']
-
-            # token = Verification.objects.filter(rel=braider).first()
-            # link = f'https://www.braidstarz.com/user/validate-email/{first_name}/{token.token}/'
-
-            # context = {'name': first_name, 'link': link}
-            # html_message = render_to_string('validate-email-email-template.html', context)
-
-            # send_mail(
-            #     subject='Email Validation Required',
-            #     message=f'Hi {first_name},\n\nThank you for signing up with our service. To complete your registration, please click on the following link to validate your email address:\n\n{link}\n\nIf you did not sign up for our service, you can safely ignore this email.\n\nThank you,\nThe BraidStarz Team',
-            #     from_email=settings.EMAIL_HOST_USER,
-            #     html_message=html_message,
-            #     recipient_list=[request.data['email']],
-            # )
-
-            resp = {
-                'status': status.HTTP_201_CREATED, 
-                'data': None, 
-                'messages': {
-                        'success' : "Registration Successful",
-                        'warning' : None,
-                        'error' : None,
-                        }
-                }
-
-            return Response(resp, status=status.HTTP_201_CREATED)
-        else:
-            resp = {
-                'status': status.HTTP_400_BAD_REQUEST, 
-                'data': request.data, 
-                'messages': {
-                        'success' : None,
-                        'warning' : None,
-                        'error' : serializer.errors,
-                        }
-                }
-            
-            return Response(resp, status=status.HTTP_400_BAD_REQUEST)
-
 def customer_register(request):
 
     if request.method == 'POST':
@@ -269,87 +464,6 @@ def customer_register(request):
 
     context = {'form': form}
     return render(request, 'customer-register.html', context)
-
-class LoginAPIView(APIView):
-    def post(self, request):
-        serializer = LoginBraiderSerializer(data=request.data)
-
-        if serializer.is_valid():
-            username = serializer.validated_data['username']
-            password = serializer.validated_data['password']
-            remember_me = serializer.validated_data.get('remember_me', False)
-
-            user = authenticate(request, username=username, password=password)
-
-            if user is not None:
-                '''
-                if "Customer object " in str(user):
-                    try:
-                        verif = CustomerVerification.objects.filter(rel=user).first()
-                    except CustomerVerification.DoesNotExist:
-                        verif = None
-
-                    if verif and not verif.is_email_verified:
-                        messages.error(request, 'Your email must be verified before you can log in. Please verify your email.')
-                        return Response({'error': 'Email not verified'}, status=status.HTTP_400_BAD_REQUEST)
-                else:
-                    try:
-                        verif = Verification.objects.filter(rel=user).first()
-                    except Verification.DoesNotExist:
-                        verif = None
-
-                    if verif and not verif.is_email_verified:
-                        messages.error(request, 'Your email must be verified before you can log in. Please verify your email.')
-                        return Response({'error': 'Email not verified'}, status=status.HTTP_400_BAD_REQUEST)
-                '''
-                if remember_me:
-                    request.session.set_expiry(60 * 60 * 24 * 7)  # 1 week in seconds
-
-                login(request, user)
-
-                resp = {
-                'status': status.HTTP_202_ACCEPTED, 
-                'data': None,
-                'messages': {
-                    'success' : f'you are logged in dear {username}'.title(),
-                    'warning' : None,
-                    'error' : None,
-                    }
-                }
-
-                return Response(resp, status=status.HTTP_202_ACCEPTED)
-            else:
-                
-                resp = {
-                'status': status.HTTP_401_UNAUTHORIZED, 
-                'data': {
-                    'username': username, 
-                    'password': password
-                    },
-                'messages': {
-                    'success' : None,
-                    'warning' : None,
-                    'error' : 'Wrong username or password'.title(),
-                    }
-                }
-                return Response(resp, status=status.HTTP_401_UNAUTHORIZED)
-        else:
-            
-            resp = {
-            'status': status.HTTP_400_BAD_REQUEST, 
-            'data': {
-                'username': username, 
-                'password': password
-                },
-            'messages': {
-                'success' : None,
-                'warning' : None,
-                'error' : serializer.errors,
-                }
-            }
-
-            return Response(resp, status=status.HTTP_400_BAD_REQUEST)
-
 def login_page(request):
     form = BraiderLogin()
 
