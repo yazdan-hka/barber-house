@@ -118,14 +118,14 @@ class Braider(models.Model):
 
         self.update_last_login()
 
-        token = secrets.token_urlsafe(32)
-        verification = Verification(token=token, rel=self)
+        # token = secrets.token_urlsafe(32)
+        # verification = Verification(token=token, rel=self)
 
         if 'pbkdf2_sha256$' not in self.password:
             self.password = make_password(self.password)
 
         super().save()
-        verification.save()
+        # verification.save()
 class Post(models.Model):
     braider = models.ForeignKey(Braider, on_delete=models.CASCADE, related_name='posts')
     image = models.ImageField(upload_to='posts/', null=False, error_messages={'blank': 'you cannot post a picture without the picture itself. right?'.title()})
