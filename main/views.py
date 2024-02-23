@@ -1,8 +1,8 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.request import Request
+from rest_framework.pagination import PageNumberPagination
 from rest_framework import status
-from rest_framework import filters
 from .serializers import SearchBraiderSerializer, Search
 from django.shortcuts import render, redirect
 from .models import Braider, Post
@@ -29,8 +29,8 @@ class SearchBraidersAPIView(APIView):
                     Q(socialmedia__instagram__icontains=keyword) |
                     Q(businessinfo__name__icontains=keyword) 
                 )
+            
             count = len(braiders)
-
             results = SearchBraiderSerializer(braiders, many=True)
 
             if count > 0:
@@ -47,7 +47,7 @@ class SearchBraidersAPIView(APIView):
 
                 return Response(resp, status=status.HTTP_200_OK)
             else:
-                
+
                 resp = {
                     'status': status.HTTP_200_OK, 
                     'data': results.data, 
