@@ -23,16 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-akgm@^)hu%(rny_bw9%))n0%4m_=&nw^qc30q2ki_e81scjzdq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-# ALLOWED_HOSTS = ['www.braidstarz.com']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.braidstarz.com']
+# ALLOWED_HOSTS = []
 
-
-REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10,  # Number of items per page
-}
 
 # Application definition
 
@@ -86,33 +81,33 @@ SESSION_COOKIE_SECURE = False
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# for hosting
-#
-# DATABASES =\
-#     {'default':
-#         {
-#             'ENGINE': 'django.db.backends.postgresql',
-#             'NAME': 'braidstarz',
-#             'USER': 'braidstarzuser',
-#             'PASSWORD': 'Z_ibWcUz4d@p6j!',
-#             'HOST': 'braidstarz-3242.postgres.pythonanywhere-services.com',
-#             'PORT': '13242',
-
-#         }
-#     }
-
-# for local server
+for hosting
 
 DATABASES =\
     {'default':
         {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'braid-starz',
-            'USER': 'postgres',
-            'PASSWORD': 'password',
-            'HOST': 'localhost' # or post
+            'NAME': 'braidstarz',
+            'USER': 'braidstarzuser',
+            'PASSWORD': 'Z_ibWcUz4d@p6j!',
+            'HOST': 'braidstarz-3242.postgres.pythonanywhere-services.com',
+            'PORT': '13242',
+
         }
     }
+
+# for local server
+
+# DATABASES =\
+#     {'default':
+#         {
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'NAME': 'braid-starz',
+#             'USER': 'postgres',
+#             'PASSWORD': 'password',
+#             'HOST': 'localhost' # or post
+#         }
+#     }
 
 
 # Password validation
