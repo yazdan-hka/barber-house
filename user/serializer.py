@@ -36,7 +36,6 @@ class RegisterPublicInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = PublicInfo
         fields = ['first_name', 'last_name']
-
 class RegisterSocialMediaSerializer(serializers.ModelSerializer):
     class Meta:
         model = SocialMedia
@@ -51,12 +50,10 @@ class RegisterSocialMediaSerializer(serializers.ModelSerializer):
         validated_data = super().validate(attrs)
         self.validate_instagram(attrs['instagram'])
         return validated_data    
-
 class RegisterLocationInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = LocationInfo
         fields = ['country', 'city']
-
 class RegisterBusinessInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = BusinessInfo
@@ -71,7 +68,6 @@ class RegisterBusinessInfoSerializer(serializers.ModelSerializer):
                 raise serializers.ValidationError('URL Must Be Valid. Check Again.')
 
             return value
-
 class RegisterBraiderSerializer(serializers.ModelSerializer):
     public_info = RegisterPublicInfoSerializer()
     social_media = RegisterSocialMediaSerializer()
@@ -214,3 +210,19 @@ class RegisterCustomerSerializer(serializers.ModelSerializer):
 
 
         return data
+    
+    def create(self, validated_data):
+        # Create a new Customer instance using the provided validated data
+        customer_instance = Customer.objects.create(**validated_data)
+        return customer_instance
+class LoginCustomerSerializer(serializers.Serializer):
+    username = serializers.CharField(max_length=27)
+    password = serializers.CharField()
+    remember_me = serializers.BooleanField(default=False)
+
+    def validate_username(self, value):
+        if not re.match(r'^[a-zA-Z0-9_]+$', value):
+            raise serializers.ValidationError(f'Invalid Username "{value}". Ensure your username includes only letters, numbers, and underscores (_).'.title())
+        return value
+    
+

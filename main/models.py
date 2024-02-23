@@ -65,21 +65,21 @@ class Customer(models.Model):
     password = models.CharField(max_length=126, validators=[], null=False)
     first_name = models.CharField(max_length=23, null=False)
     last_name = models.CharField(max_length=22, null=False)
+    last_login = models.DateTimeField(default=timezone.now)
 
     def check_pass(self, raw_password):
         return check_password(raw_password, self.password)
 
-    def save(self, update_fields=None):
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
 
-        token = secrets.token_urlsafe(32)
-        verification = CustomerVerification(token=token, rel=self)
+        # token = secrets.token_urlsafe(32)
+        # verification = CustomerVerification(token=token, rel=self)
 
         if 'pbkdf2_sha256$' not in self.password:
             self.password = make_password(self.password)
 
-        super().save()
-        verification.save()
-
+        super().save(force_insert=force_insert, force_update=force_update, using=using, update_fields=update_fields)
+        # verification.save()
 class Braider(models.Model):
 
     user_name = models.CharField(max_length=27, null=False, unique=True)
